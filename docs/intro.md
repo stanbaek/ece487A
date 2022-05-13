@@ -11,7 +11,7 @@
 - **Course Schedule**: Posted here and subject to change.
 
 
-## 📡 Communication and Control (C2)
+## 📡 Communication
 - All communication and lecture 📓 materials will be provided through a course and section Team.
 - Laboratory 🔬 work will be posted here.
 - Videos 🎥 will be uploaded to a YouTube channel for your convenience. 

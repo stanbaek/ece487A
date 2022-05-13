@@ -3,8 +3,12 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: mymarkdownfile
+parts: 
+  - caption: Course Intro
+    chapters:
+    - file: schedule.md
+    - file: notebooks.ipynb
+  - caption: Lab 1
+    chapters:
+    - file: markdown-notebooks
+    - file: mymarkdownfile
