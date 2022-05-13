@@ -4,6 +4,7 @@
 title: Fundamentals of Robotics
 author: Stan Baek
 logo: ece487.png
+copyright: '2022' # Copyright year to be placed in the footer
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
