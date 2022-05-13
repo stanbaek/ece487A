@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markdown Files &#8212; Fundamentals of Robotics</title>
+    <title>&lt;no title&gt; &#8212; Fundamentals of Robotics</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="ECE 487 Fundamentals of Robotics" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -103,9 +101,9 @@ const thebe_selector_output = ".output, .cell_output"
   Course Intro
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
    Markdown Files
   </a>
  </li>
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/markdown.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/schedule.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -192,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2Fschedule.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -217,27 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directivs">
-   Sample Roles and Directivs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
-  </a>
- </li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
             </nav>
@@ -248,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markdown Files</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -257,27 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-myst">
-   What is MyST?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-roles-and-directivs">
-   Sample Roles and Directivs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learn-more">
-   Learn more
-  </a>
- </li>
+                            <ul class="simple visible nav section-nav flex-column">
 </ul>
 
                         </nav>
@@ -287,60 +245,262 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">¶</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<div class="section" id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">¶</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
-</div>
-<div class="section" id="sample-roles-and-directivs">
-<h2>Sample Roles and Directivs<a class="headerlink" href="#sample-roles-and-directivs" title="Permalink to this headline">¶</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
+  <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<p>This schedule is subject to change as appropriate.</p>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
-</div>
-<div class="section" id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="section" id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
-</div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Lesson</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+<th class="head"><p><strong>Topic</strong></p></th>
+<th class="head"><p><strong>Due</strong></p></th>
+<th class="head"><p><strong>Note</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L1</p></td>
+<td><p>5-Jan</p></td>
+<td><p>Intro to Robotics</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L2</p></td>
+<td><p>7-Jan</p></td>
+<td><p>Linear Algebra Review</p></td>
+<td><p>HW0, Cadet Intro</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L3</p></td>
+<td><p>11-Jan</p></td>
+<td><p>Pose in 2D Space</p></td>
+<td><p>HW1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L4</p></td>
+<td><p>13-Jan</p></td>
+<td><p>Rotation in 3D</p></td>
+<td><p>HW2</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L5</p></td>
+<td><p>18-Jan</p></td>
+<td><p>Matrix Review</p></td>
+<td><p>HW3</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L6</p></td>
+<td><p>20-Jan</p></td>
+<td><p>Euler Angles</p></td>
+<td><p>HW4</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L7</p></td>
+<td><p>24-Jan</p></td>
+<td><p>Extracting Euler Angles</p></td>
+<td><p>HW5</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L8</p></td>
+<td><p>26-Jan</p></td>
+<td><p>Singularity &amp; Gimbal Lock</p></td>
+<td><p>HW6</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L9</p></td>
+<td><p>28-Jan</p></td>
+<td><p>ICE 1 - Python Intro</p></td>
+<td><p>HW7</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L10</p></td>
+<td><p>1-Feb</p></td>
+<td><p>ICE 2 - Numpy</p></td>
+<td><p>HW8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L11</p></td>
+<td><p>3-Feb</p></td>
+<td><p>Lab 1 - Spatial Maths</p></td>
+<td><p>HW9</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L12</p></td>
+<td><p>7-Feb</p></td>
+<td><p>Quaternions</p></td>
+<td><p>Lab1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L13</p></td>
+<td><p>9-Feb</p></td>
+<td><p>Quaternions</p></td>
+<td><p>HW10</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L14</p></td>
+<td><p>11-Feb</p></td>
+<td><p>Quaternions</p></td>
+<td><p>HW11</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L15</p></td>
+<td><p>15-Feb</p></td>
+<td><p>GR 1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L16</p></td>
+<td><p>17-Feb</p></td>
+<td><p>Pose in 3D Space</p></td>
+<td><p>HW12</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L17</p></td>
+<td><p>22-Feb</p></td>
+<td><p>Danavit-Hartenberg Representation</p></td>
+<td><p>HW13</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L18</p></td>
+<td><p>24-Feb</p></td>
+<td><p>Forward Kinematics</p></td>
+<td><p>HW14</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L19</p></td>
+<td><p>1-Mar</p></td>
+<td><p>Forward Kinematics</p></td>
+<td><p>HW15</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L20</p></td>
+<td><p>3-Mar</p></td>
+<td><p>ICE 3</p></td>
+<td><p>HW16</p></td>
+<td><p>Forward Kinematics</p></td>
+</tr>
+<tr class="row-even"><td><p>L21</p></td>
+<td><p>7-Mar</p></td>
+<td><p>Lab 2</p></td>
+<td><p>HW17</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L22</p></td>
+<td><p>9-Mar</p></td>
+<td><p>Lab 2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L23</p></td>
+<td><p>14-Mar</p></td>
+<td><p>Inverse Kinematics 1</p></td>
+<td><p>Lab2 Due</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L24</p></td>
+<td><p>16-Mar</p></td>
+<td><p>Inverse Kinematics 2</p></td>
+<td><p>HW18</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L25</p></td>
+<td><p>18-Mar</p></td>
+<td><p>Inverse Kinematics 3</p></td>
+<td><p>HW19</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L26</p></td>
+<td><p>29-Mar</p></td>
+<td><p>Inverse Kinematics 4</p></td>
+<td><p>HW20</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L27</p></td>
+<td><p>31-Mar</p></td>
+<td><p>Project 1</p></td>
+<td><p>P1 Preflight</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L28</p></td>
+<td><p>4-Apr</p></td>
+<td><p>Project 1</p></td>
+<td><p>P1 checkpoint1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L29</p></td>
+<td><p>6-Apr</p></td>
+<td><p>Image Processing</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L30</p></td>
+<td><p>8-Apr</p></td>
+<td><p>Morphology</p></td>
+<td><p>Project 1 Due</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L31</p></td>
+<td><p>12-Apr</p></td>
+<td><p>ICE4</p></td>
+<td><p>HW21</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L32</p></td>
+<td><p>14-Apr</p></td>
+<td><p>HSV, Lab3</p></td>
+<td><p>HW22</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L33</p></td>
+<td><p>18-Apr</p></td>
+<td><p>Lab4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L34</p></td>
+<td><p>20-Apr</p></td>
+<td><p>GR2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L35</p></td>
+<td><p>22-Apr</p></td>
+<td><p>Lab4</p></td>
+<td><p>Lab3 Due</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L36</p></td>
+<td><p>26-Apr</p></td>
+<td><p>Camera Model</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L37</p></td>
+<td><p>28-Apr</p></td>
+<td><p>Project 2</p></td>
+<td><p>Lab4 Due</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L38</p></td>
+<td><p>2-May</p></td>
+<td><p>Project 2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L39</p></td>
+<td><p>4-May</p></td>
+<td><p>Project 2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L40</p></td>
+<td><p>6-May</p></td>
+<td><p>Project 2</p></td>
+<td><p>P2 Due Midnight</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 
     <script type="text/x-thebe-config">
     {
@@ -366,21 +526,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">ECE 487 Fundamentals of Robotics</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
