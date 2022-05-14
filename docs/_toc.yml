@@ -3,7 +3,7 @@
 
 format: jb-book
 root: intro
-parts: 
+parts:
   - caption: Course Intro
     chapters:
     - file: schedule.md
