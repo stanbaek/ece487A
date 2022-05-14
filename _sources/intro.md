@@ -17,19 +17,15 @@
 - Videos 🎥 will be uploaded to a YouTube channel for your convenience. 
 - Bitbucket will be used for students to provide their source code 📄 for homework and laboratory assignments. 
 
+## 👨‍🏫 Instructor
+- Dr. Stan Baek
+- Fairchild, 2E38
+- stanbaek.github.io
 
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/notebooks.ipynb]
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 
-:::{note}
-Here is a note
-:::
-
-Check out the content pages bundled with this sample book to see more.
 
 ```{tableofcontents}
 ```
