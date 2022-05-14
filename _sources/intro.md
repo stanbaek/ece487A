@@ -23,7 +23,7 @@
 - stanbaek.github.io
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/notebooks.ipynb]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/notebooks.ipynb)
 
 
 
