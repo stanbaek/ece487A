@@ -5,15 +5,12 @@
 - Fairchild, 2E38
 - stanbaek.github.io
 
-##  Course Goal:  
-Provide cadets with fundamental knowledge and skills to design and control robotic  systems.
-
 ## 📝 Course information
 - **Course Goal**: Provide students with fundamental knowledge and skills to design and control robotic 🤖 systems.
 - **Prerequisites**: ECE 382, ECE 346, Math344/346 or instructor approval
 - **Course Text**:  There is no required textbook.  Reading materials/labs are posted here.
 - **Course Website**: All files are conveniently distributed via the **Teams** site.  
-- **Syllabus**: Official syllabus found [here](./files/syllabus.pdf)
+- **Syllabus**: Official syllabus can be found in the **Teams** site.
 - **Course Schedule**: Posted [here](schedule.md) and subject to change.
 
 ## 📡 Communication

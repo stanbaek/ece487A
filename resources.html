@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Fundamentals of Robotics</title>
+    <title>Resources &#8212; Fundamentals of Robotics</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,10 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Course Schedule" href="schedule.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,14 +104,14 @@ const thebe_selector_output = ".output, .cell_output"
   Course Intro
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    Course Schedule
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="resources.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Resources
   </a>
  </li>
@@ -173,6 +175,23 @@ const thebe_selector_output = ".output, .cell_output"
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/resources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -184,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2Fresources.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -205,6 +224,36 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbooks-and-online-lectures">
+   Textbooks and Online Lectures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-textbooks">
+     Recommended Textbooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#online-lecture-series-by-k-lynch-northwestern-univ">
+     Online Lecture Series by K. Lynch (Northwestern Univ.)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra">
+     Linear Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -212,30 +261,123 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>Resources</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbooks-and-online-lectures">
+   Textbooks and Online Lectures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-textbooks">
+     Recommended Textbooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#online-lecture-series-by-k-lynch-northwestern-univ">
+     Online Lecture Series by K. Lynch (Northwestern Univ.)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra">
+     Linear Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="tex2jax_ignore mathjax_ignore section" id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="textbooks-and-online-lectures">
+<h2>Textbooks and Online Lectures<a class="headerlink" href="#textbooks-and-online-lectures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="recommended-textbooks">
+<h3>Recommended Textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Peter Corke, <a class="reference external" href="https://petercorke.com/rvc/home/"><strong>Robotics, Vision, and Control</strong></a>, Springer, 1st &amp; 2nd ed., free 1st ed <a class="reference external" href="https://link.springer.com/content/pdf/10.1007%2F978-3-642-20144-8.pdf">pdf</a>; easy to read but sometimes skips details.</p></li>
+<li><p>Craig, <strong>Introduction to Robotics: Mehcanics and Control</strong>.  Pearson, 4th ed.; most popular textbook and easy to read.</p></li>
+<li><p>Spong, Hutchinson, &amp; Viidyasagar, <strong>Robot Modeling and Control</strong>; alternative to Craig’s book, more in-depth math, covers a great deal of contents not covered by Craig.</p></li>
+<li><p>Murray, Li, &amp; Sastry, <strong>A Mathematical Introduction to Robotics Manipualtion</strong>, free <a class="reference external" href="http://www.cds.caltech.edu/~murray/mlswiki/?title=First_edition">pdf</a>; must-have book for roboticists, extremeley hard to read. don’t read it if you are a biginner - you will hate robotics, UC Berkeley <a class="reference external" href="https://ucb-ee106.github.io/106a-fa20site/">EE106A/206A</a></p></li>
+</ul>
+</div>
+<div class="section" id="online-lecture-series-by-k-lynch-northwestern-univ">
+<h3>Online Lecture Series by K. Lynch (Northwestern Univ.)<a class="headerlink" href="#online-lecture-series-by-k-lynch-northwestern-univ" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Modern Robotics <a class="reference external" href="https://www.youtube.com/watch?v=jVu-Hijns70&amp;list=PLggLP4f-rq02vX0OQQ5vrCxbJrzamYDfx&amp;ab_channel=NorthwesternRobotics">YouTube Channel</a></p></li>
+<li><p>Textbook: Modern Robotics: mechanics, planning and control</p></li>
+<li><p>Textbook <a class="reference external" href="http://hades.mech.northwestern.edu/index.php/Modern_Robotics">Wiki</a></p></li>
+<li><p>Textbook <a class="reference external" href="http://hades.mech.northwestern.edu/images/2/25/MR-v2.pdf">pdf</a></p></li>
+<li><p>Coursera <a class="reference external" href="https://www.coursera.org/specializations/modernrobotics">course</a> (free to enroll)</p></li>
+<li><p>Lynch’s course <a class="reference external" href="http://hades.mech.northwestern.edu/index.php/ME_449_Robotic_Manipulation">website</a></p></li>
+</ul>
+</div>
+<div class="section" id="linear-algebra">
+<h3>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">¶</a></h3>
+<p><strong>The best Linear Algebra textbook in the world (I think)</strong></p>
+<ul class="simple">
+<li><p><strong>textbook</strong>: Gilbert Strang, <a class="reference external" href="https://math.mit.edu/~gs/linearalgebra/"><strong>Introductioin to Linear Algebra</strong></a></p></li>
+<li><p>G. Strang’s phenomenal <a class="reference external" href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/">lecture videos at MIT</a></p></li>
+<li><p>You can also find many of his lecture videos in <strong>YouTube</strong>.</p></li>
+<li><p>If you want to go to <strong>graduate school</strong> and study robotics, computer vision, information system, machine learning, artificial intelligence, or data science, you should have a strong background in linear algebra.</p></li>
+</ul>
+</div>
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Course Schedule</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="markdown-notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
