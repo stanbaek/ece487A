@@ -1,4 +1,4 @@
-# Course Schedule
+# 📆 Course Schedule
 
 ```{note}
 This schedule is subject to change as appropriate.
