@@ -1,9 +1,9 @@
 # ECE 487 Fundamentals of Robotics
 
-## 👨‍🏫 Instructor
-- Dr. Stan Baek
-- Fairchild, 2E38
-- stanbaek.github.io
+## 👨‍🏫 Instructor Information
+[![name](https://img.shields.io/badge/Instructor-Dr.%20Stan%20Baek-blue)](https://stanbaek.github.io)
+![office](https://img.shields.io/badge/Office-Fairchild%202E38-red)
+[![web](https://img.shields.io/badge/Web-stanbaek.github.io-orange)](https://stanbaek.github.io)
 
 ## 📝 Course information
 - **Course Goal**: Provide students with fundamental knowledge and skills to design and control robotic 🤖 systems.
@@ -42,11 +42,6 @@ Unless  specifically directed otherwise, the collaboration policy for this cours
 - GRs are individual efforts. No collaboration is allowed while taking these exams. All electronic devices (phones, smartwatches, computers, tablets, etc.) must be placed out of sight for the duration of the event. If any electronic device is seen during the event, the student will receive a zero for that effort. 
 - While working on projects, you may collaborate only with your own team and with the ECE 487 instructor.  
 - For graded homework assignments and labs, you may collaborate with any other cadet currently enrolled in ECE 487.  You may also reference the posted answers and solutions.
-
-
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/notebooks.ipynb)
-
 
 
 ```{tableofcontents}
