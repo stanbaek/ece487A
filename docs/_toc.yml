@@ -4,11 +4,15 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Course Intro
+  - caption: Course Info
     chapters:
     - file: schedule.md
-    - file: notebooks.ipynb
+    - file: resources.md
+    - file: python.md
+    - file: robots.md
   - caption: Lab 1
     chapters:
-    - file: markdown-notebooks
+    - file: Lab1/markdown-notebooks
+    - file: Lab1/markdown
     - file: mymarkdownfile
+    - file: notebooks.ipynb

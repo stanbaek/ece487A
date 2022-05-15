@@ -1,5 +1,13 @@
 # Markdown Files
 
+
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/notebooks.ipynb)
+
+
+
+
 Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
 in regular markdown files (`.md`), you'll write in the same flavor of markdown
 called **MyST Markdown**.
