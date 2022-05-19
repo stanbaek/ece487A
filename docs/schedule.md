@@ -3,6 +3,7 @@
 ```{note}
 This schedule is subject to change as appropriate.
 ```
+**Last Updated: 17 May 2022**
 
  **Lesson** | **Date** | **Topic**                 | **Due**          | **Note** 
 ------------|----------|---------------------------|------------------|-----------
