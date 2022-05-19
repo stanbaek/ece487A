@@ -41,7 +41,7 @@ age = 726
 type(name)
 
 # Let's try to combine a string with an integer
-print(character + age)
+# print(character + age)
 
 # Now let's convert integer to string for printing
 print(character + " is " + str(age) + " years old.")
@@ -64,14 +64,32 @@ print(x)
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mTypeError[0m                                 Traceback (most recent call last)
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
 Input [1;32mIn [6][0m, in [0;36m<module>[1;34m[0m
-[0;32m     22[0m [38;5;28mtype[39m(name)
-[0;32m     24[0m [38;5;66;03m# Let's try to combine a string with an integer[39;00m
-[1;32m---> 25[0m [38;5;28mprint[39m([43mcharacter[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[43mage[49m)
-[0;32m     27[0m [38;5;66;03m# Now let's convert integer to string for printing[39;00m
 [0;32m     28[0m [38;5;28mprint[39m(character [38;5;241m+[39m [38;5;124m"[39m[38;5;124m is [39m[38;5;124m"[39m [38;5;241m+[39m [38;5;28mstr[39m(age) [38;5;241m+[39m [38;5;124m"[39m[38;5;124m years old.[39m[38;5;124m"[39m)
+[0;32m     30[0m [38;5;66;03m# You can ask for input from the user. [39;00m
+[1;32m---> 31[0m age [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mHow old are you? [39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m     33[0m [38;5;28mtype[39m(age)
+[0;32m     35[0m [38;5;66;03m# Since age is a string variable. We need to convert it to integer.[39;00m
 
-[1;31mTypeError[0m: can only concatenate str (not "int") to str
-TypeError: can only concatenate str (not "int") to str
+File [1;32m~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004[0m, in [0;36mKernel.raw_input[1;34m(self, prompt)[0m
+[0;32m    997[0m [38;5;124;03m"""Forward raw_input to frontends[39;00m
+[0;32m    998[0m 
+[0;32m    999[0m [38;5;124;03mRaises[39;00m
+[0;32m   1000[0m [38;5;124;03m------[39;00m
+[0;32m   1001[0m [38;5;124;03mStdinNotImplementedError if active frontend doesn't support stdin.[39;00m
+[0;32m   1002[0m [38;5;124;03m"""[39;00m
+[0;32m   1003[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m-> 1004[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(
+[0;32m   1005[0m         [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m   1006[0m     )
+[0;32m   1007[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[0;32m   1008[0m     [38;5;28mstr[39m(prompt),
+[0;32m   1009[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[0;32m   1010[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[0;32m   1011[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[0;32m   1012[0m )
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
