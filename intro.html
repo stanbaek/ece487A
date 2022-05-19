@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="📆 Course Schedule" href="schedule.html" />
+    <link rel="next" title="📌 Syllabus" href="syllabus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,10 +102,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Course Intro
+  Course Info
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   📌 Syllabus
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="schedule.html">
    📆 Course Schedule
@@ -132,6 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Lab1/pythonintro.html">
+   ICE 1: Introduction to Python3
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Lab1/markdown-notebooks.html">
    Notebooks with MyST Markdown
   </a>
@@ -141,13 +153,20 @@ const thebe_selector_output = ".output, .cell_output"
    Markdown Files
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lab 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mymarkdownfile.html">
    Here’s my sample title
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
+  <a class="reference internal" href="Lab2/notebooks.html">
    Content with notebooks
   </a>
  </li>
@@ -255,12 +274,24 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#late-policy">
-   🏃 Late Policy:
+   ⏰ Late Policy:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaboration-policy">
-   🤝 Collaboration Policy:
+  <a class="reference internal nav-link" href="#documentation-requirements">
+   📄 Documentation Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-documentation">
+     Sample Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymous-recommendations-from-c2022">
+   🔑 Anonymous Recommendations from C2022
   </a>
   <ul class="nav section-nav flex-column">
   </ul>
@@ -302,12 +333,24 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#late-policy">
-   🏃 Late Policy:
+   ⏰ Late Policy:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaboration-policy">
-   🤝 Collaboration Policy:
+  <a class="reference internal nav-link" href="#documentation-requirements">
+   📄 Documentation Requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-documentation">
+     Sample Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymous-recommendations-from-c2022">
+   🔑 Anonymous Recommendations from C2022
   </a>
   <ul class="nav section-nav flex-column">
   </ul>
@@ -336,21 +379,23 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>Prerequisites</strong>: ECE 382, ECE 346, Math344/346 or instructor approval</p></li>
 <li><p><strong>Course Text</strong>:  There is no required textbook.  Reading materials/labs are posted here.</p></li>
 <li><p><strong>Course Website</strong>: All files are conveniently distributed via the <strong>Teams</strong> site.</p></li>
-<li><p><strong>Syllabus</strong>: Official syllabus can be found in the <strong>Teams</strong> site.</p></li>
+<li><p><strong>Syllabus</strong>: Posted <a class="reference internal" href="syllabus.html"><span class="doc std std-doc">here</span></a>.</p></li>
 <li><p><strong>Course Schedule</strong>: Posted <a class="reference internal" href="schedule.html"><span class="doc std std-doc">here</span></a> and subject to change.</p></li>
 </ul>
 </div>
 <div class="section" id="communication">
 <h2>📡 Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>All communication and lecture 📓 materials will be provided through a course and section Team.</p></li>
+<li><p>All communication and announcement 📣 will be provided through a course and section Team.</p></li>
+<li><p>All lecture 📓 materials will be provided through a course and section Team.</p></li>
 <li><p>Laboratory 🔬 work will be posted here.</p></li>
-<li><p>Videos 🎥 will be uploaded to a YouTube channel for your convenience.</p></li>
-<li><p>Bitbucket will be used for students to provide their source code 📄 for homework and laboratory assignments.</p></li>
+<li><p>All assignments must be submitted in <a class="reference external" href="https://www.gradecope.com">Gradescope</a></p></li>
+<li><p><a class="reference external" href="https://www.bitbucket.com">Bitbucket</a> will be used for students to provide their source code 📄 for homework and laboratory assignments.</p></li>
+<li><p>Videos 🎥 will be uploaded to a <a class="reference external" href="https://www.youtube.com">YouTube channel</a> for your convenience.</p></li>
 </ul>
 </div>
 <div class="section" id="late-policy">
-<h2>🏃 Late Policy:<a class="headerlink" href="#late-policy" title="Permalink to this headline">¶</a></h2>
+<h2>⏰ Late Policy:<a class="headerlink" href="#late-policy" title="Permalink to this headline">¶</a></h2>
 <p><strong>If problems arise with graded assignments, see your instructor in advance</strong></p>
 <ul class="simple">
 <li><p>The cutoff for <strong>on-time submission is 07:00 🕖 a.m.</strong> on the due date.</p></li>
@@ -362,19 +407,57 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Late submissions (penalty or not) are not accepted after the hard deadline or after the solution to the assignment is published. No late submissions (penalty or not) will be accepted for the assignments right before GRs.</p></li>
 </ul>
 </div>
-<div class="section" id="collaboration-policy">
-<h2>🤝 Collaboration Policy:<a class="headerlink" href="#collaboration-policy" title="Permalink to this headline">¶</a></h2>
-<p>Unless  specifically directed otherwise, the collaboration policy for this course is:</p>
+<div class="section" id="documentation-requirements">
+<h2>📄 Documentation Requirements<a class="headerlink" href="#documentation-requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>For all assignments in this course, unless otherwise noted on the assignment, you may work with anyone.  We expect all graded work, including cod and written reports, to be in your own work. Copying another person’s work, with or without documentation, will result in <strong>NO</strong> 🚫 academic credit. Furthermore, copying without attribution is dishonorable and will be dealt with as an honor code violation.</p></li>
-<li><p>All help received on work submitted for grading must be documented in accordance with the course documentation 📝 policy.</p></li>
-<li><p>GRs are individual efforts. No collaboration is allowed while taking these exams. All electronic devices (phones, smartwatches, computers, tablets, etc.) must be placed out of sight for the duration of the event. If any electronic device is seen during the event, the student will receive a zero for that effort.</p></li>
-<li><p>While working on projects, you may collaborate only with your own team and with the ECE 487 instructor.</p></li>
-<li><p>For graded homework assignments and labs, you may collaborate with any other cadet currently enrolled in ECE 487.  You may also reference the posted answers and solutions.</p></li>
+<li><p>All help received on work submitted for grading must be documented in accordance with the course documentation policy.</p></li>
+<li><p>Each documentation statement must be specific enough that it explicitly describes what assistance was provided, how it was used in completing the assignment, and who provided the assistance.</p></li>
+<li><p>If no help was received on this assignment, the documentation statement must state “None.”</p></li>
+<li><p>If you checked answers with anyone, you must document with whom on which problems. You must document whether you made any changes or not.  If you did make changes, you must document the problems you changed and the reasons why.</p></li>
+<li><p>Vague documentation statements will result in a 5% deduction on the assignment.</p></li>
+</ul>
+<div class="section" id="sample-documentation">
+<h3>Sample Documentation<a class="headerlink" href="#sample-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following examples when writing your own detailed documentation
+statements:</p>
+<p><strong>Bad Example</strong>: Cadet McFly explained how the flux capacitor worked.</p>
+<p><strong>Good Example</strong>: Cadet McFly explained how the flux capacitor worked conceptually, using diagrams and the assignment materials. He did not look at my code nor did I look at his code during this discussion.</p>
+<p><strong>Bad Example</strong>: Cadet McFly helped fix my get_flux() method.</p>
+<p><strong>Good Example</strong>: Cadet McFly helped fix my get_flux() method by looking at my code and finding that I had current_flux &lt; max_flux instead of current_flux &lt;= max_flux on line 85. Note: A situation such as this may result in less than full credit for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
+<p><strong>Bad Example</strong>: Cadet McFly and I worked together on the get_flux() method.</p>
+<p><strong>Good Example</strong>: Cadet McFly and I worked together on the get_flux() method, each contributing equally to its development. Prior to this help, neither of our own get_flux() methods were working. My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, at most half credit would be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
+<p><strong>Bad Example</strong>: Cadet McFly showed me how the get_flux() method works.</p>
+<p><strong>Good Example</strong>: Cadet McFly showed me how the get_flux() method works by letting me look at his code. Prior to this help my own get_flux() method was not working.  My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
+<p><strong>Bad Example</strong>: Cadet McFly showed me how the get_flux() method works.</p>
+<p><strong>Good Example</strong>:: Cadet McFly showed me how the get_flux() method works by looking at my code and talking me through each line as I wrote it.  Prior to this help my own get_flux() method was wrong.  My get_flux() method is now nearly identical to Cadet McFly’s get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.</p>
+</div>
+</div>
+<div class="section" id="anonymous-recommendations-from-c2022">
+<h2>🔑 Anonymous Recommendations from C2022<a class="headerlink" href="#anonymous-recommendations-from-c2022" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Just do the <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span> and don’t take grace days on homework assignments if you don’t absolutely have to, it’ll just set you back more.</p></li>
+<li><p>linear algebra</p></li>
+<li><p>Go in for help when you need it. Dr. Baek is great at explaining things even when you fall behind.</p></li>
+<li><p>If writing in notetakers is your learning style, ask for them earlier in the semester.</p></li>
+<li><p>Doing all the <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span>, asking questions when you’re confused</p></li>
+<li><p>Using the lesson slides and going in for EI as sometimes the slides dont cover everything</p></li>
+<li><p>I would recommend using notetakers in class, and prioritizing the <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span> and getting EI early.</p></li>
+<li><p>Make sure to do the homework!</p></li>
+<li><p>Start <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span> early and don’t get discouraged by the amount of math</p></li>
+<li><p>I would recommend to go over the notetakers especially while doing homework in order to succeed in this course.</p></li>
+<li><p>Get help early, dont fall behind, be good at coding matlab and python.</p></li>
+<li><p>Work together but don’t copy.</p></li>
+<li><p>start early, don’t take too many difficult classes.</p></li>
+<li><p>Do NOT wait to start <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span>/labs/projects. As soon as you learn the material attempt it so you can ask questions. Also don’t rely on grace days, use them only when it is a necessity.</p></li>
+<li><p>start early! Aask questions??</p></li>
+<li><p>Stay on top of the <span class="math notranslate nohighlight">\(\color{red}{\text{homework}}\)</span>, labs, and ICEs because they build on eachother and go pretty quickly!</p></li>
+<li><p>Students should “dig into” python as soon and as quickly as they can (don’t hesitate).</p></li>
+<li><p>Keep up with the class and use grace days strategically.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Intro</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Info</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="syllabus.html">📌 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">📆 Course Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">💎 Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">🐍 Python Tutorials</a></li>
@@ -384,10 +467,18 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 1</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Lab1/pythonintro.html">ICE 1: Introduction to Python3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab1/pythonintro.html#debugging-python">Debugging Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab1/pythonintro.html#homework">Homework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lab1/markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lab1/markdown.html">Markdown Files</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 2</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="mymarkdownfile.html">Here’s my sample title</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab2/notebooks.html">Content with notebooks</a></li>
 </ul>
 </div>
 </div>
@@ -418,10 +509,10 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="schedule.html" title="next page">
+    <a class='right-next' id="next-link" href="syllabus.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">📆 Course Schedule</p>
+        <p class="prev-next-title">📌 Syllabus</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
