@@ -60,32 +60,26 @@ Unless  specifically directed otherwise, the collaboration policy for this cours
 - If you checked answers with anyone, you must document with whom on which problems. You must document whether you made any changes or not.  If you did make changes, you must document the problems you changed and the reasons why.
 - Vague documentation statements will result in a 5% deduction on the assignment.
 
-### Sample Documentation (section
+### Sample Documentation 
 Consider the following examples when writing your own detailed documentation 
 statements:
 
-**Bad Example**: Cadet McFly explained how the flux capacitor worked.
-
+**Bad Example**: Cadet McFly explained how the flux capacitor worked. </br>
 **Good Example**: Cadet McFly explained how the flux capacitor worked conceptually, using diagrams and the assignment materials. He did not look at my code nor did I look at his code during this discussion.
 
 
-**Bad Example**: Cadet McFly helped fix my get_flux() method.
-
+**Bad Example**: Cadet McFly helped fix my get_flux() method. </br>
 **Good Example**: Cadet McFly helped fix my get_flux() method by looking at my code and finding that I had current_flux < max_flux instead of current_flux <= max_flux on line 85. Note: A situation such as this may result in less than full credit for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
 
-**Bad Example**: Cadet McFly and I worked together on the get_flux() method.
-
+**Bad Example**: Cadet McFly and I worked together on the get_flux() method. </br>
 **Good Example**: Cadet McFly and I worked together on the get_flux() method, each contributing equally to its development. Prior to this help, neither of our own get_flux() methods were working. My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, at most half credit would be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
 
-**Bad Example**: Cadet McFly showed me how the get_flux() method works.
-
+**Bad Example**: Cadet McFly showed me how the get_flux() method works. </br>
 **Good Example**: Cadet McFly showed me how the get_flux() method works by letting me look at his code. Prior to this help my own get_flux() method was not working.  My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
-
-**Bad Example**: Cadet McFly showed me how the get_flux() method works.
-
+**Bad Example**: Cadet McFly showed me how the get_flux() method works.  </br>
 **Good Example**:: Cadet McFly showed me how the get_flux() method works by looking at my code and talking me through each line as I wrote it.  Prior to this help my own get_flux() method was wrong.  My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
 
