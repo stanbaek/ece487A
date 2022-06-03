@@ -117,8 +117,3 @@ For missed GRs, the following policies are outlined in USAFA FOI 537-3:
 ## Laboratories
 Labs are held in 2E48, but may include a prelab assignment that must be done before coming to class. The labs tend to be very hardware/software intensive and will probably require debugging to isolate and fix problems. In-class time is your primary chance to get active help for these problems so the more you prepare outside of class, the more successful you’ll be. The 53 minutes go by extremely fast - don’t waste them!
 
-## Final Project
-The final project will be a culmination of the learned material and will include a robot maze and competition. The final project will include a formal laboratory write-up and seven-minute presentation describing your design, solution, and results. The final project is worth 25% of your final grade.
-
-## Miscellaneous
-This course is designed to help in your development as an engineer or cyber scientist.  Feel free to provide feedback on the lessons and labs at any time.  If you have ideas to improve or enhance the course, please let me know.  The class builds on concepts from the prerequisites, so it is important for you to seek help as soon as you need it.   Procrastination is truly the enemy in a hardware design course.  A little foresight and planning and a lot of effort will result in an extremely rewarding experience serving as the basis for future microprocessor design work.
