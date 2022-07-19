@@ -9,17 +9,16 @@
 - **Course Goal**: Provide students with fundamental knowledge and skills to design and control robotic 🤖 systems.
 - **Prerequisites**: ECE 382, ECE 346, Math344/346 or instructor approval
 - **Course Text**:  There is no required textbook.  Reading materials/labs are posted here.
-- **Course Website**: All files are conveniently distributed via the **Teams** site.  
 - **Syllabus**: Posted [here](syllabus.md).
 - **Course Schedule**: Posted [here](schedule.md) and subject to change.
 
 ## 📡 Communication
 - All communication and announcement 📣 will be provided through a course and section Team.
-- All lecture 📓 materials will be provided through a course and section Team.
+- All lecture 📓 materials will be provided through MS Teams.
 - Laboratory 🔬 work will be posted here.
 - All assignments must be submitted in [Gradescope](https://www.gradecope.com)
 - [Bitbucket](https://www.bitbucket.com) will be used for students to provide their source code 📄 for homework and laboratory assignments.
-- Videos 🎥 will be uploaded to a [YouTube channel](https://www.youtube.com) for your convenience.
+- Videos 🎥 will be uploaded to a [YouTube channel](https://www.youtube.com/watch?v=RcfQyc3R-tA&list=PLdXU2qMgwlRtIJIXX8bZWp8W-YwxSDODq&ab_channel=StanBaek) for your convenience.
 
 
 ## ⏰ Late Policy:  
@@ -45,32 +44,25 @@
 Consider the following examples when writing your own detailed documentation 
 statements:
 
-**Bad Example**: Cadet McFly explained how the flux capacitor worked.
-
+**Bad Example**: Cadet McFly explained how the flux capacitor worked. </br>
 **Good Example**: Cadet McFly explained how the flux capacitor worked conceptually, using diagrams and the assignment materials. He did not look at my code nor did I look at his code during this discussion.
 
 
-**Bad Example**: Cadet McFly helped fix my get_flux() method.
-
+**Bad Example**: Cadet McFly helped fix my get_flux() method. </br>
 **Good Example**: Cadet McFly helped fix my get_flux() method by looking at my code and finding that I had current_flux < max_flux instead of current_flux <= max_flux on line 85. Note: A situation such as this may result in less than full credit for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
 
-**Bad Example**: Cadet McFly and I worked together on the get_flux() method.
-
+**Bad Example**: Cadet McFly and I worked together on the get_flux() method. </br>
 **Good Example**: Cadet McFly and I worked together on the get_flux() method, each contributing equally to its development. Prior to this help, neither of our own get_flux() methods were working. My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, at most half credit would be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
 
-**Bad Example**: Cadet McFly showed me how the get_flux() method works.
-
+**Bad Example**: Cadet McFly showed me how the get_flux() method works. </br>
 **Good Example**: Cadet McFly showed me how the get_flux() method works by letting me look at his code. Prior to this help my own get_flux() method was not working.  My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
-
-**Bad Example**: Cadet McFly showed me how the get_flux() method works.
-
+**Bad Example**: Cadet McFly showed me how the get_flux() method works.  </br>
 **Good Example**:: Cadet McFly showed me how the get_flux() method works by looking at my code and talking me through each line as I wrote it.  Prior to this help my own get_flux() method was wrong.  My get_flux() method is now nearly identical to Cadet McFly's get_flux() method. Note: In a situation such as this, points would not be earned for the get_flux() method, but due to the documentation statement there is no violation of the honor code.
 
-
-## 🔑 Anonymous Recommendations from C2022
+## 🔑 Recommendations from 22ers - `Homework!!`
 
 - Just do the $\color{red}{\text{homework}}$ and don't take grace days on homework assignments if you don't absolutely have to, it'll just set you back more.
 - linear algebra
@@ -86,7 +78,7 @@ statements:
 - Work together but don't copy.
 - start early, don't take too many difficult classes.
 - Do NOT wait to start $\color{red}{\text{homework}}$/labs/projects. As soon as you learn the material attempt it so you can ask questions. Also don't rely on grace days, use them only when it is a necessity.
-- start early! Aask questions??
+- start early! Ask questions??
 - Stay on top of the $\color{red}{\text{homework}}$, labs, and ICEs because they build on eachother and go pretty quickly!
 - Students should "dig into" python as soon and as quickly as they can (don't hesitate).
 - Keep up with the class and use grace days strategically.

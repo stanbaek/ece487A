@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="🤖 Robots, Robots, and Robots" href="../robots.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -138,12 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   Lab 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   ICE 1: Introduction to Python3
-  </a>
- </li>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="markdown-notebooks.html">
    Notebooks with MyST Markdown
@@ -164,11 +157,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../mymarkdownfile.html">
    Here’s my sample title
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Lab2/notebooks.html">
-   Content with notebooks
   </a>
  </li>
 </ul>
@@ -515,25 +503,14 @@ Blocks can contain text or code, and for blocks containing code, click <strong><
 -->
 <p>This will open the Python Shell. The Shell is where you can enter code and see the responses and output of code you have programmed into Python.  This is a kind of sandbox, where you’re able to try out some simple code and processes. For example, in the Shell enter: <code class="docutils literal notranslate"><span class="pre">2+2</span></code>.  If you press enter, it will display the answer <code class="docutils literal notranslate"><span class="pre">4</span></code> on the next line.
 Try the following code in the Shell.  You can also select the following cell and press <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> to run the code in the cell, but unlike the Shell, it will only display the output of the last line in the cell.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
 <span class="s2">&quot;hello&quot;</span><span class="o">+</span><span class="s2">&quot; world&quot;</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
-</div>
-<p>The Python Shell acts very much like a calculator since code is basically a series of mathematical interactions with the system.  Try the follownig code</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>    <span class="c1"># add two integers</span>
+<p>The Python Shell acts very much like a calculator since code is basically a series of mathematical interactions with the system.  Try the follownig code in the Python Shell.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>    <span class="c1"># add two integers</span>
 <span class="mi">2</span><span class="o">+</span><span class="mf">2.0</span>  <span class="c1"># add an integer to a floating point number</span>
 <span class="mi">2</span><span class="o">*</span><span class="mi">3</span>    <span class="c1"># 2 times 3</span>
 <span class="mi">2</span><span class="o">**</span><span class="mi">2</span>   <span class="c1"># 2 squared</span>
@@ -546,37 +523,21 @@ Try the following code in the Shell.  You can also select the following cell and
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="saving-and-executing-your-code">
 <h3>Saving and Executing Your Code<a class="headerlink" href="#saving-and-executing-your-code" title="Permalink to this headline">¶</a></h3>
 <p>While working in the Shell is perfectly fine for small code snippets, it is not desirable for longer program listings. In this section, we will save a code as a text file and execute it from Terminal. First, open a text editor such as notepad, notepad++, atom, sublime_text, etc.  Enter the following code</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;is&quot;</span>
 <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;cool&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python is cool
-Pythoniscool
+<p>Save the file as <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and exit.  Execute the code with the following command in Terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Save the file as <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and exit.  Execute the code with the following command in Terminal.  <strong>Do not include the exclamation mark at the beginning</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a to 10</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a to 10</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="c1"># print a</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -587,16 +548,6 @@ Pythoniscool
 <span class="sd">You can also use three double quotes.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nYou can also use three double quotes.\n&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -702,34 +653,10 @@ True
 Stan Baek: the legendary pirate captain is 726 years old.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">character</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="c1"># You can ask for input from the user. </span>
-<span class="ne">---&gt; </span><span class="mi">31</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How old are you? &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="c1"># Since age is a string variable. We need to convert it to integer.</span>
-
-<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>How old are you?  44
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141
 </pre></div>
 </div>
 </div>
@@ -1158,21 +1085,7 @@ Dragon
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../robots.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">🤖 Robots, Robots, and Robots</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="markdown-notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

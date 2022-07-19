@@ -1,6 +1,6 @@
 # 💎 Resources
 
-## Recommended Textbooks 📚
+## 📚 Recommended Textbooks 
 - Peter Corke, [**Robotics, Vision, and Control**](https://petercorke.com/rvc/home/), Springer, 1st & 2nd ed., free 1st ed [pdf](https://link.springer.com/content/pdf/10.1007%2F978-3-642-20144-8.pdf); easy to read but sometimes skips details.
 - Craig, **Introduction to Robotics: Mehcanics and Control**.  Pearson, 4th ed.; most popular textbook and easy to read.  
 - Spong, Hutchinson, & Viidyasagar, **Robot Modeling and Control**; alternative to Craig's book, more in-depth math, covers a great deal of contents not covered by Craig.
