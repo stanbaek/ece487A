@@ -13,10 +13,11 @@ parts:
     - file: robots.md
   - caption: Lab 1
     chapters:
-    - file: Lab1/pythonintro.ipynb
-    - file: Lab1/markdown-notebooks
-    - file: Lab1/markdown
+    - file: Lab1/markdown-notebooks.md
+    - file: Lab1/markdown.md
+    - file: Lab1/Intro-to-Python.ipynb
+    - file: Lab1/Jupyter-Notebooks-Colab.ipynb
+    - file: Lab1/Jupyter-Notebooks.ipynb
   - caption: Lab 2
     chapters:
     - file: mymarkdownfile
-    - file: Lab2/notebooks.ipynb

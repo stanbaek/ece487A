@@ -27,6 +27,13 @@ With MyST Markdown, you can define code cells with a directive like so:
 print(2 + 2)
 ```
 
+---
+tags: [raises-exception]
+---
+print(thisvariabledoesntexist)
+
+
+
 When your book is built, the contents of any `{code-cell}` blocks will be
 executed with your default Jupyter kernel, and their outputs will be displayed
 in-line with the rest of your content.

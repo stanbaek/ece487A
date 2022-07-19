@@ -8,11 +8,15 @@ copyright: '2022' # Copyright year to be placed in the footer
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
+#######################################################################################
+# Execution settings
 execute:
-  execute_notebooks: force
+  execute_notebooks         : auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  allow_errors              : true # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
 
 # Define the name of the latex output file for PDF builds
 latex:
+  latex_engine: pdflatex  # one of 'pdflatex', 'xelatex' (recommended for unicode), 'luatex', 'platex', 'uplatex'
   latex_documents:
     targetname: ece487.tex
 
@@ -32,3 +36,12 @@ html:
   favicon: favicon.ico
   use_issues_button: true
   use_repository_button: true
+
+
+#######################################################################################
+# Advanced and power-user settings
+sphinx:
+  extra_extensions:   # A list of extra extensions to load by Sphinx.
+  - sphinx_inline_tabs
+  config:   # key-value pairs to directly over-ride the Sphinx configuration
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
