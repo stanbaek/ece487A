@@ -269,12 +269,34 @@ const thebe_selector_output = ".output, .cell_output"
      Executing Code in PyCharm Console
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-code-in-pycharm-terminal">
+     Executing Code in PyCharm Terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-code-in-pycharm-ide">
+     Executing Code in PyCharm IDE
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-variables">
-   Types of Variables
+  <a class="reference internal nav-link" href="#debugging-python">
+   Debugging Python
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-programming">
+   Python Programming
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#string-operators">
@@ -402,12 +424,34 @@ const thebe_selector_output = ".output, .cell_output"
      Executing Code in PyCharm Console
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-code-in-pycharm-terminal">
+     Executing Code in PyCharm Terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-code-in-pycharm-ide">
+     Executing Code in PyCharm IDE
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-variables">
-   Types of Variables
+  <a class="reference internal nav-link" href="#debugging-python">
+   Debugging Python
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-programming">
+   Python Programming
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#string-operators">
@@ -512,7 +556,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="running-python-in-command-prompt-or-terminal-for-mac">
 <h3>Running Python in Command Prompt (or Terminal for Mac)<a class="headerlink" href="#running-python-in-command-prompt-or-terminal-for-mac" title="Permalink to this headline">¶</a></h3>
 <p>Open Windows Terminal (or Terminal for Mac) and run <code class="docutils literal notranslate"><span class="pre">python</span></code> in Windows or <code class="docutils literal notranslate"><span class="pre">python3</span></code> in Mac.</p>
-<a class="reference internal image-reference" href="../_images/Terminal.png"><img alt="../_images/Terminal.png" class="align-center" src="../_images/Terminal.png" style="width: 460px;" /></a>
+<a class="reference internal image-reference" href="../_images/Terminal.png"><img alt="../_images/Terminal.png" class="align-center" src="../_images/Terminal.png" style="width: 560px;" /></a>
+<br>
 <p>This will open the Python Shell. The Shell is where you can enter code and see the responses and output of code you have programmed into Python.  This is a kind of sandbox, where you’re able to try out some simple code and processes. For example, in the Shell enter: <code class="docutils literal notranslate"><span class="pre">2+2</span></code>.  If you press enter, it will display the answer <code class="docutils literal notranslate"><span class="pre">4</span></code> on the next line.</p>
 <p>Try the following code in the Shell. In the Colab environment, you can also select the following cell and click the arrow button to run the code in the cell, but unlike the Shell, it will only display the output of the last line in the cell.</p>
 <div class="cell docutils container">
@@ -573,20 +618,79 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Executing Code in PyCharm Console<a class="headerlink" href="#executing-code-in-pycharm-console" title="Permalink to this headline">¶</a></h3>
 <p>Open PyCharm and click Python Consol at the bottom. This is a Python Shell embedded in PyCharm.</p>
 <a class="reference internal image-reference" href="../_images/PycharmPythonConsole.png"><img alt="../_images/PycharmPythonConsole.png" class="align-center" src="../_images/PycharmPythonConsole.png" style="width: 600px;" /></a>
-<p>Try the following code</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2+2&quot;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
-<span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="s1">&#39;world&#39;</span>
+<br>
+Try the following code
+```Python
+2+2
+print(2+2)
+print("2+2")
+a = 1
+b = 2
+print(a+b)
+'Hello ' + 'world'
+```</div>
+<div class="section" id="executing-code-in-pycharm-terminal">
+<h3>Executing Code in PyCharm Terminal<a class="headerlink" href="#executing-code-in-pycharm-terminal" title="Permalink to this headline">¶</a></h3>
+<p>Click on Python Terminal at the bottom. This is a Terminal embedded in PyCharm.</p>
+<a class="reference internal image-reference" href="../_images/PycharmPythonTerminal.png"><img alt="../_images/PycharmPythonTerminal.png" class="align-center" src="../_images/PycharmPythonTerminal.png" style="width: 600px;" /></a>
+<p>Enter the following into the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executing-code-in-pycharm-ide">
+<h3>Executing Code in PyCharm IDE<a class="headerlink" href="#executing-code-in-pycharm-ide" title="Permalink to this headline">¶</a></h3>
+<p>Ensure <code class="docutils literal notranslate"><span class="pre">main</span></code> is selected as shown below.  Click the Run button or <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">F10</span></code> to run the code.</p>
+<a class="reference internal image-reference" href="../_images/PycharmRunningCode.png"><img alt="../_images/PycharmRunningCode.png" class="align-center" src="../_images/PycharmRunningCode.png" style="width: 600px;" /></a>
+<br>
+It will print `Hi, PyCharm`.
+<p>Another thing to note is we can make comments in python by starting a line with <code class="docutils literal notranslate"><span class="pre">#</span></code>. Comments are lines in your code that do not perform any function and are intended only to inform others (and your future self) about the purpose of your code. It is a good idea to document the purpose of your code at the beginning of the code with comments and to leave short and concise comments throughout your code. Many people get lazy and fail to comment their code, but don’t fall prey to that trap!</p>
+<p>Use the hash symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> to comment out a line of code.  You can use three single or double quotes to comment out multiple lines. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a to 10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># print a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Use three single quotes to comment out a block of code</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">You can also use three double quotes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nYou can also use three double quotes.\n&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="types-of-variables">
-<h2>Types of Variables<a class="headerlink" href="#types-of-variables" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="debugging-python">
+<h2>Debugging Python<a class="headerlink" href="#debugging-python" title="Permalink to this headline">¶</a></h2>
+<p>Clikc View &gt; Appearance &gt; Toolbar as shown below</p>
+<a class="reference internal image-reference" href="../_images/PycharmToolbar.png"><img alt="../_images/PycharmToolbar.png" class="align-center" src="../_images/PycharmToolbar.png" style="width: 460px;" /></a>
+<br>
+<p>The most important tools in programming, namely <strong>debugger</strong>, will appear!</p>
+<a class="reference internal image-reference" href="../_images/PycharmDebuggingTools.png"><img alt="../_images/PycharmDebuggingTools.png" class="align-center" src="../_images/PycharmDebuggingTools.png" style="width: 460px;" /></a>
+<br>
+<p>Click the space between line number 9 and the code to place a breakpoint. Click the Debug button or <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">F9</span></code> to start debugging.</p>
+<a class="reference internal image-reference" href="../_images/PycharmBreakpoint.png"><img alt="../_images/PycharmBreakpoint.png" class="align-center" src="../_images/PycharmBreakpoint.png" style="width: 460px;" /></a>
+<br>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Debugger</span></code> window, you can find the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable with its value <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code></p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Console</span></code> tab and enter <code class="docutils literal notranslate"><span class="pre">name</span></code>.  It will display the value of <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/PycharmDebugConsole.png"><img alt="../_images/PycharmDebugConsole.png" class="align-center" src="../_images/PycharmDebugConsole.png" style="width: 460px;" /></a>
+</div>
+<div class="section" id="python-programming">
+<h2>Python Programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Numeric types:</p>
 <ul>
@@ -721,6 +825,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <hr></div>
+</div>
 <div class="section" id="string-operators">
 <h2>String Operators<a class="headerlink" href="#string-operators" title="Permalink to this headline">¶</a></h2>
 <p>Some of the arithmetic operators also have meaning for strings. E.g. for string concatenation use + sign</p>
@@ -869,6 +974,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b^2 = b**2 = 4**2 = 16
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -881,7 +989,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Modulo returns the remainder of dividing the left hand operand by right hand operand)
-remainder of b/9 = remainder of 4/9 = 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remainder of b/9 = remainder of 4/9 = 4
 </pre></div>
 </div>
 </div>
@@ -998,6 +1108,9 @@ d &gt;= e: False
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y &gt; x
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1070,7 +1183,10 @@ d &gt;= e: False
 2 3
 3 6
 4 10
-5 15
+5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15
 6 21
 7 28
 8 36
@@ -1165,7 +1281,9 @@ Exited with x==10
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
-[&#39;of&#39;, &#39;things&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;of&#39;, &#39;things&#39;]
 </pre></div>
 </div>
 </div>
@@ -1277,6 +1395,9 @@ PSYC 347 - COMPUTATIONAL MODELS OF HUMAN SOCIAL BEHAVIOR AND NEUROSCIENCE
 dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <hr></div>
@@ -1318,9 +1439,7 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 1
 2
 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
 5
 </pre></div>
 </div>
@@ -1356,7 +1475,9 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 1 S
 2 Y
 3 C
-4 H
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 H
 </pre></div>
 </div>
 </div>
@@ -1424,9 +1545,6 @@ r
 ...running for loop
 
 [&#39;list&#39;, &#39;of&#39;, &#39;python&#39;, &#39;things&#39;, &#39;.&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1999,9 +2117,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.87333006, 0.79731958],
-       [0.50005011, 0.22602157],
-       [0.42181278, 0.48190923]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.74982099, 0.25997958],
+       [0.34392265, 0.18960024],
+       [0.50402989, 0.00889648]])
 </pre></div>
 </div>
 </div>
@@ -2013,8 +2131,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.87333006, 0.79731958, 0.50005011],
-       [0.22602157, 0.42181278, 0.48190923]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.74982099, 0.25997958, 0.34392265],
+       [0.18960024, 0.50402989, 0.00889648]])
 </pre></div>
 </div>
 </div>
@@ -2049,10 +2167,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.15091721 0.36627369 0.79162585 0.63647292]
- [0.983927   0.84853183 0.05922154 0.54555168]
- [0.28529083 0.92715917 0.17470003 0.10171662]
- [0.38263165 0.29629734 0.79503352 0.14853587]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.80688415 0.23299053 0.58158318 0.77303785]
+ [0.07177275 0.5089303  0.10957005 0.7424618 ]
+ [0.8396247  0.24284082 0.24058557 0.78396944]
+ [0.70707362 0.22252004 0.8268799  0.82010079]]
 </pre></div>
 </div>
 </div>
@@ -2064,10 +2182,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.50917213, 3.66273686, 7.91625849, 6.36472919],
-       [9.83926996, 8.4853183 , 0.59221539, 5.45551683],
-       [2.8529083 , 9.27159169, 1.74700031, 1.01716618],
-       [3.82631647, 2.96297344, 7.95033518, 1.4853587 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8.06884155, 2.32990531, 5.81583181, 7.73037849],
+       [0.71772753, 5.08930303, 1.09570055, 7.42461804],
+       [8.39624697, 2.42840824, 2.40585571, 7.83969443],
+       [7.0707362 , 2.22520041, 8.26879902, 8.20100786]])
 </pre></div>
 </div>
 </div>
@@ -2080,9 +2198,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.15091721 0.36627369 0.79162585 0.63647292 0.983927   0.84853183
- 0.05922154 0.54555168 0.28529083 0.92715917 0.17470003 0.10171662
- 0.38263165 0.29629734 0.79503352 0.14853587]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.80688415 0.23299053 0.58158318 0.77303785 0.07177275 0.5089303
+ 0.10957005 0.7424618  0.8396247  0.24284082 0.24058557 0.78396944
+ 0.70707362 0.22252004 0.8268799  0.82010079]
 </pre></div>
 </div>
 </div>
@@ -2094,10 +2212,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.15091721, 0.36627369, 0.79162585, 0.63647292, 0.983927  ,
-        0.84853183, 0.05922154, 0.54555168],
-       [0.28529083, 0.92715917, 0.17470003, 0.10171662, 0.38263165,
-        0.29629734, 0.79503352, 0.14853587]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.80688415, 0.23299053, 0.58158318, 0.77303785, 0.07177275,
+        0.5089303 , 0.10957005, 0.7424618 ],
+       [0.8396247 , 0.24284082, 0.24058557, 0.78396944, 0.70707362,
+        0.22252004, 0.8268799 , 0.82010079]])
 </pre></div>
 </div>
 </div>
@@ -2109,10 +2227,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.15091721, 0.36627369, 0.79162585, 0.63647292],
-       [0.983927  , 0.84853183, 0.05922154, 0.54555168],
-       [0.28529083, 0.92715917, 0.17470003, 0.10171662],
-       [0.38263165, 0.29629734, 0.79503352, 0.14853587]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.80688415, 0.23299053, 0.58158318, 0.77303785],
+       [0.07177275, 0.5089303 , 0.10957005, 0.7424618 ],
+       [0.8396247 , 0.24284082, 0.24058557, 0.78396944],
+       [0.70707362, 0.22252004, 0.8268799 , 0.82010079]])
 </pre></div>
 </div>
 </div>
@@ -2125,13 +2243,19 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.77639795 0.9771591  0.19492678 0.17600487 0.79683229 0.43088288]
-  [0.91678494 0.90456636 0.68507003 0.00902598 0.76809089 0.18929061]
-  [0.16552813 0.59260469 0.31701737 0.93896609 0.42224923 0.72683006]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[9.06216714e-01 5.07455858e-01 1.14107734e-01 5.49945969e-02
+   9.70255727e-01 9.17063562e-02]
+  [9.55433376e-01 7.96061659e-02 4.35415967e-01 4.31683032e-01
+   3.46400113e-01 6.04904209e-02]
+  [3.73685937e-01 3.00001502e-01 8.27043976e-01 7.50093197e-01
+   5.37151811e-01 5.11091699e-01]]
 
- [[0.12776262 0.10730391 0.59071572 0.76819707 0.37426461 0.25038568]
-  [0.53711552 0.41556266 0.2719141  0.32834171 0.36171586 0.96161188]
-  [0.80089066 0.43126299 0.59257724 0.67304172 0.72427602 0.96201555]]]
+ [[6.38678560e-01 2.04843246e-01 8.52752898e-02 9.15505837e-01
+   8.35619545e-04 6.13280610e-02]
+  [3.65648530e-01 8.06716479e-01 4.91737420e-01 6.99670184e-01
+   4.28462019e-01 9.84407999e-02]
+  [6.03344584e-01 1.45115113e-01 3.53926672e-01 5.61909810e-01
+   1.21252118e-01 2.91390229e-01]]]
 </pre></div>
 </div>
 </div>
@@ -2143,12 +2267,15 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.77639795 0.9771591  0.19492678 0.17600487 0.79683229 0.43088288
- 0.91678494 0.90456636 0.68507003 0.00902598 0.76809089 0.18929061
- 0.16552813 0.59260469 0.31701737 0.93896609 0.42224923 0.72683006
- 0.12776262 0.10730391 0.59071572 0.76819707 0.37426461 0.25038568
- 0.53711552 0.41556266 0.2719141  0.32834171 0.36171586 0.96161188
- 0.80089066 0.43126299 0.59257724 0.67304172 0.72427602 0.96201555]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9.06216714e-01 5.07455858e-01 1.14107734e-01 5.49945969e-02
+ 9.70255727e-01 9.17063562e-02 9.55433376e-01 7.96061659e-02
+ 4.35415967e-01 4.31683032e-01 3.46400113e-01 6.04904209e-02
+ 3.73685937e-01 3.00001502e-01 8.27043976e-01 7.50093197e-01
+ 5.37151811e-01 5.11091699e-01 6.38678560e-01 2.04843246e-01
+ 8.52752898e-02 9.15505837e-01 8.35619545e-04 6.13280610e-02
+ 3.65648530e-01 8.06716479e-01 4.91737420e-01 6.99670184e-01
+ 4.28462019e-01 9.84407999e-02 6.03344584e-01 1.45115113e-01
+ 3.53926672e-01 5.61909810e-01 1.21252118e-01 2.91390229e-01]
 </pre></div>
 </div>
 </div>
@@ -2160,10 +2287,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.15091721 0.983927   0.28529083 0.38263165]
- [0.36627369 0.84853183 0.92715917 0.29629734]
- [0.79162585 0.05922154 0.17470003 0.79503352]
- [0.63647292 0.54555168 0.10171662 0.14853587]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.80688415 0.07177275 0.8396247  0.70707362]
+ [0.23299053 0.5089303  0.24284082 0.22252004]
+ [0.58158318 0.10957005 0.24058557 0.8268799 ]
+ [0.77303785 0.7424618  0.78396944 0.82010079]]
 </pre></div>
 </div>
 </div>
