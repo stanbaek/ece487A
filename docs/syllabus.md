@@ -19,8 +19,7 @@ The overall **weighting** of the graded items is:
 |------------------------|-------------|------------------------|-------------|
 |     GRs                |     25%     |     GRs                |     25%     |
 |     Labs               |     25%     |     Labs               |     10%     |
-|     Homework           |     48%     |     Homework           |     38%     |
-|     Skills   Review    |      2%     |     Skills   Review    |      2%     |
+|Homework + Skills Review|     50%     |Homework + Skills Review|     40%     |
 |                        |             |     Final   Project    |     25%     |
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
