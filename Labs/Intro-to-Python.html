@@ -296,22 +296,22 @@ const thebe_selector_output = ".output, .cell_output"
      Variables
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-and-logic-operators">
+     Math and Logic Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-variables">
+     Working with Variables
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#string-operators">
-   String Operators
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#math-operators">
-   Math Operators
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logical-operators">
-   Logical Operators
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditional-logic-if">
@@ -451,22 +451,22 @@ const thebe_selector_output = ".output, .cell_output"
      Variables
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math-and-logic-operators">
+     Math and Logic Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical Operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-variables">
+     Working with Variables
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#string-operators">
-   String Operators
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#math-operators">
-   Math Operators
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logical-operators">
-   Logical Operators
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditional-logic-if">
@@ -824,181 +824,56 @@ It will print `Hi, PyCharm`.
 </div>
 </div>
 </div>
-<hr></div>
 </div>
-<div class="section" id="string-operators">
-<h2>String Operators<a class="headerlink" href="#string-operators" title="Permalink to this headline">¶</a></h2>
-<p>Some of the arithmetic operators also have meaning for strings. E.g. for string concatenation use + sign</p>
-<p>String repetition: Use * sign with a number of repetitions</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assigning and combining strings</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># f-strings</span>
-<span class="n">firstname</span> <span class="o">=</span> <span class="s1">&#39;Shawn&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My name is </span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Shawn
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combining f-strings</span>
-<span class="n">firstname</span> <span class="o">=</span> <span class="s1">&#39;Shawn&#39;</span>
-<span class="n">lastname</span> <span class="o">=</span> <span class="s1">&#39;Rhoads&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My name is </span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">lastname</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Shawn Rhoads
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat String without spaces</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HelloHelloHelloHelloHello
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat String with spaces</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Hello Hello Hello Hello 
-</pre></div>
-</div>
-</div>
-</div>
-<hr></div>
-<div class="section" id="math-operators">
-<h2>Math Operators<a class="headerlink" href="#math-operators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="math-and-logic-operators">
+<h3>Math and Logic Operators<a class="headerlink" href="#math-and-logic-operators" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>+, -, *, and /</p></li>
 <li><p>Exponentiation **</p></li>
 <li><p>Modulo % (Remainder)</p></li>
 </ul>
+<p>Try the  following code in Python Console.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">7</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">2</span><span class="o">+</span><span class="mf">2.0</span>
+<span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+<span class="mi">2</span><span class="o">**</span><span class="mi">3</span>   <span class="c1"># exponentiation </span>
+<span class="mi">2</span><span class="o">**</span><span class="mi">128</span> 
+<span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+<span class="mi">2</span><span class="o">/</span><span class="mf">3.0</span>
+<span class="mi">2</span><span class="o">//</span><span class="mi">3</span>   <span class="c1"># integer division</span>
+<span class="mi">4</span><span class="o">//</span><span class="mi">3</span>   
+<span class="mi">2</span><span class="o">%</span><span class="k">3</span>    # modulo
+<span class="mi">4</span><span class="o">%</span><span class="k">3</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="o">|</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># convert a number to binary after bit operations</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="o">^</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">6</span><span class="p">)</span>   <span class="c1"># boolean expressions</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">6</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">6</span> <span class="ow">or</span> <span class="n">b</span><span class="o">==</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">a</span><span class="o">==</span><span class="mi">6</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">6</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 9
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+True
+False
+True
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subtraction</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b = a-5 = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">-5 = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b = a-5 = 9-5 = 4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b*2 = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">*2 = </span><span class="si">{</span><span class="n">b</span><span class="o">*</span><span class="mi">2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b*2 = 4*2 = 8
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Division</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;a/3 = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">/3 = </span><span class="si">{</span><span class="n">a</span><span class="o">/</span><span class="mi">3</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a/3 = 9/3 = 3.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exponentiation</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;b^2 = b**2 = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">**2 = </span><span class="si">{</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b^2 = b**2 = 4**2 = 16
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modulo </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Modulo returns the remainder of dividing the left hand operand by right hand operand)&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;remainder of b/9 = remainder of </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">/9 = </span><span class="si">{</span><span class="n">b</span><span class="o">%</span><span class="mi">9</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Modulo returns the remainder of dividing the left hand operand by right hand operand)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remainder of b/9 = remainder of 4/9 = 4
-</pre></div>
-</div>
-</div>
-</div>
-<hr></div>
 <div class="section" id="logical-operators">
-<h2>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h2>
+<h3>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h3>
 <p>Perform logical comparison and return Boolean value</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="c1"># x is equal to y</span>
 <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="c1"># x is not equal to y</span>
@@ -1008,7 +883,81 @@ It will print `Hi, PyCharm`.
 <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="c1"># x is less than or equal to y</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="working-with-variables">
+<h3>Working with Variables<a class="headerlink" href="#working-with-variables" title="Permalink to this headline">¶</a></h3>
+<p>In programming languages, variables are containers that store simple information. In Python, variables can store strings or numbers. A string is a block of text, such as “Stan Baek is the legendary pirate captain.” A number can be an integer or a decimal number.  Try the the following code in Python Console.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string variable</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Stan Baek&quot;</span>
+
+<span class="c1"># You can check the type in use by issuing the type() command</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># It will return &lt;class &#39;str&#39;&gt;</span>
+
+<span class="c1"># Add a new string variable </span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;the legendary pirate captain&quot;</span>
+
+<span class="c1"># You can add (+) string variables to combine them into a new variable</span>
+<span class="n">character</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">title</span>
+
+<span class="c1"># print</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+
+<span class="c1"># integer variable</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">726</span>
+
+<span class="c1"># Check the type using type()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s try to combine a string with an integer</span>
+<span class="c1"># For string concatenation use + sign</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">character</span> <span class="o">+</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="c1"># Now let&#39;s convert integer to string for printing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">character</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span><span class="p">)</span>
+
+<span class="c1"># You can ask for input from the user. </span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How old are you? &quot;</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+
+<span class="c1"># Since age is a string variable. We need to convert it to integer.</span>
+<span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span>
+
+<span class="c1"># Numbers with a decimal point are floating point variables</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">3.141</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stan Baek: the legendary pirate captain
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1"># Let&#39;s try to combine a string with an integer</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># For string concatenation use + sign</span>
+<span class="ne">---&gt; </span><span class="mi">26</span> <span class="nb">print</span><span class="p">(</span><span class="n">character</span> <span class="o">+</span> <span class="n">age</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Now let&#39;s convert integer to string for printing</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">character</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; years old.&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few things are going on here while creating variables. First, Python lets us define variables using the convention variable_name = value. As long as the variable name is unique (it is not the name of a function, module, or other variable), we can define our variable this way. For strings, single quotes or double quotes must be used around the text that needs to be in the variable; it doesn’t matter whether you choose single or double quotes, just stay consistent.</p>
+<hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Works for strings</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
@@ -1047,6 +996,7 @@ d &gt;= e: False
 </div>
 </div>
 <hr></div>
+</div>
 <div class="section" id="conditional-logic-if">
 <h2>Conditional Logic (if…)<a class="headerlink" href="#conditional-logic-if" title="Permalink to this headline">¶</a></h2>
 <p>Unlike most other languages, Python uses tab formatting rather than closing conditional statements (e.g., end)</p>
@@ -1106,9 +1056,6 @@ d &gt;= e: False
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y &gt; x
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1183,10 +1130,7 @@ d &gt;= e: False
 2 3
 3 6
 4 10
-5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15
+5 15
 6 21
 7 28
 8 36
@@ -1281,9 +1225,7 @@ Exited with x==10
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;of&#39;, &#39;things&#39;]
+[&#39;of&#39;, &#39;things&#39;]
 </pre></div>
 </div>
 </div>
@@ -1395,9 +1337,6 @@ PSYC 347 - COMPUTATIONAL MODELS OF HUMAN SOCIAL BEHAVIOR AND NEUROSCIENCE
 dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <hr></div>
@@ -1475,9 +1414,7 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 1 S
 2 Y
 3 C
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 H
+4 H
 </pre></div>
 </div>
 </div>
@@ -1847,9 +1784,7 @@ Fat Cat says Meow! Meow!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not running on Colab... Printing list of files
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;.\\Intro-to-Python.ipynb&#39;, &#39;.\\Jupyter-Notebooks-Colab.ipynb&#39;, &#39;.\\Jupyter-Notebooks.ipynb&#39;]
+[&#39;.\\Intro-to-Python.ipynb&#39;, &#39;.\\Jupyter-Notebooks-Colab.ipynb&#39;, &#39;.\\Jupyter-Notebooks.ipynb&#39;]
 </pre></div>
 </div>
 </div>
@@ -2117,9 +2052,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.74982099, 0.25997958],
-       [0.34392265, 0.18960024],
-       [0.50402989, 0.00889648]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.36601804, 0.31211447],
+       [0.79259932, 0.86743001],
+       [0.73200117, 0.03368362]])
 </pre></div>
 </div>
 </div>
@@ -2131,8 +2066,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.74982099, 0.25997958, 0.34392265],
-       [0.18960024, 0.50402989, 0.00889648]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.36601804, 0.31211447, 0.79259932],
+       [0.86743001, 0.73200117, 0.03368362]])
 </pre></div>
 </div>
 </div>
@@ -2167,10 +2102,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.80688415 0.23299053 0.58158318 0.77303785]
- [0.07177275 0.5089303  0.10957005 0.7424618 ]
- [0.8396247  0.24284082 0.24058557 0.78396944]
- [0.70707362 0.22252004 0.8268799  0.82010079]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.78518989 0.45823599 0.84930046 0.46190211]
+ [0.66133182 0.80596566 0.25482294 0.33961594]
+ [0.85032625 0.05618652 0.44856662 0.36758076]
+ [0.1136041  0.91432884 0.60056565 0.59467392]]
 </pre></div>
 </div>
 </div>
@@ -2182,10 +2117,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8.06884155, 2.32990531, 5.81583181, 7.73037849],
-       [0.71772753, 5.08930303, 1.09570055, 7.42461804],
-       [8.39624697, 2.42840824, 2.40585571, 7.83969443],
-       [7.0707362 , 2.22520041, 8.26879902, 8.20100786]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7.85189889, 4.5823599 , 8.49300461, 4.61902113],
+       [6.61331818, 8.05965657, 2.54822937, 3.39615945],
+       [8.50326249, 0.5618652 , 4.48566625, 3.67580757],
+       [1.13604104, 9.14328844, 6.00565647, 5.94673915]])
 </pre></div>
 </div>
 </div>
@@ -2198,9 +2133,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.80688415 0.23299053 0.58158318 0.77303785 0.07177275 0.5089303
- 0.10957005 0.7424618  0.8396247  0.24284082 0.24058557 0.78396944
- 0.70707362 0.22252004 0.8268799  0.82010079]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.78518989 0.45823599 0.84930046 0.46190211 0.66133182 0.80596566
+ 0.25482294 0.33961594 0.85032625 0.05618652 0.44856662 0.36758076
+ 0.1136041  0.91432884 0.60056565 0.59467392]
 </pre></div>
 </div>
 </div>
@@ -2212,10 +2147,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.80688415, 0.23299053, 0.58158318, 0.77303785, 0.07177275,
-        0.5089303 , 0.10957005, 0.7424618 ],
-       [0.8396247 , 0.24284082, 0.24058557, 0.78396944, 0.70707362,
-        0.22252004, 0.8268799 , 0.82010079]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78518989, 0.45823599, 0.84930046, 0.46190211, 0.66133182,
+        0.80596566, 0.25482294, 0.33961594],
+       [0.85032625, 0.05618652, 0.44856662, 0.36758076, 0.1136041 ,
+        0.91432884, 0.60056565, 0.59467392]])
 </pre></div>
 </div>
 </div>
@@ -2227,10 +2162,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.80688415, 0.23299053, 0.58158318, 0.77303785],
-       [0.07177275, 0.5089303 , 0.10957005, 0.7424618 ],
-       [0.8396247 , 0.24284082, 0.24058557, 0.78396944],
-       [0.70707362, 0.22252004, 0.8268799 , 0.82010079]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78518989, 0.45823599, 0.84930046, 0.46190211],
+       [0.66133182, 0.80596566, 0.25482294, 0.33961594],
+       [0.85032625, 0.05618652, 0.44856662, 0.36758076],
+       [0.1136041 , 0.91432884, 0.60056565, 0.59467392]])
 </pre></div>
 </div>
 </div>
@@ -2243,19 +2178,13 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[9.06216714e-01 5.07455858e-01 1.14107734e-01 5.49945969e-02
-   9.70255727e-01 9.17063562e-02]
-  [9.55433376e-01 7.96061659e-02 4.35415967e-01 4.31683032e-01
-   3.46400113e-01 6.04904209e-02]
-  [3.73685937e-01 3.00001502e-01 8.27043976e-01 7.50093197e-01
-   5.37151811e-01 5.11091699e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.29817142 0.52088512 0.11822079 0.61556114 0.65022489 0.8180617 ]
+  [0.0715029  0.77582715 0.42408254 0.44099092 0.3825982  0.28991146]
+  [0.72384186 0.50307956 0.95322549 0.30311203 0.19646652 0.2721926 ]]
 
- [[6.38678560e-01 2.04843246e-01 8.52752898e-02 9.15505837e-01
-   8.35619545e-04 6.13280610e-02]
-  [3.65648530e-01 8.06716479e-01 4.91737420e-01 6.99670184e-01
-   4.28462019e-01 9.84407999e-02]
-  [6.03344584e-01 1.45115113e-01 3.53926672e-01 5.61909810e-01
-   1.21252118e-01 2.91390229e-01]]]
+ [[0.27674294 0.25586873 0.23042284 0.18729542 0.09349552 0.26427937]
+  [0.74615471 0.76786072 0.00226245 0.27045856 0.32062519 0.73569697]
+  [0.71470934 0.01483846 0.81977278 0.27523882 0.75905363 0.59819927]]]
 </pre></div>
 </div>
 </div>
@@ -2267,15 +2196,12 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9.06216714e-01 5.07455858e-01 1.14107734e-01 5.49945969e-02
- 9.70255727e-01 9.17063562e-02 9.55433376e-01 7.96061659e-02
- 4.35415967e-01 4.31683032e-01 3.46400113e-01 6.04904209e-02
- 3.73685937e-01 3.00001502e-01 8.27043976e-01 7.50093197e-01
- 5.37151811e-01 5.11091699e-01 6.38678560e-01 2.04843246e-01
- 8.52752898e-02 9.15505837e-01 8.35619545e-04 6.13280610e-02
- 3.65648530e-01 8.06716479e-01 4.91737420e-01 6.99670184e-01
- 4.28462019e-01 9.84407999e-02 6.03344584e-01 1.45115113e-01
- 3.53926672e-01 5.61909810e-01 1.21252118e-01 2.91390229e-01]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.29817142 0.52088512 0.11822079 0.61556114 0.65022489 0.8180617
+ 0.0715029  0.77582715 0.42408254 0.44099092 0.3825982  0.28991146
+ 0.72384186 0.50307956 0.95322549 0.30311203 0.19646652 0.2721926
+ 0.27674294 0.25586873 0.23042284 0.18729542 0.09349552 0.26427937
+ 0.74615471 0.76786072 0.00226245 0.27045856 0.32062519 0.73569697
+ 0.71470934 0.01483846 0.81977278 0.27523882 0.75905363 0.59819927]
 </pre></div>
 </div>
 </div>
@@ -2287,10 +2213,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.80688415 0.07177275 0.8396247  0.70707362]
- [0.23299053 0.5089303  0.24284082 0.22252004]
- [0.58158318 0.10957005 0.24058557 0.8268799 ]
- [0.77303785 0.7424618  0.78396944 0.82010079]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.78518989 0.66133182 0.85032625 0.1136041 ]
+ [0.45823599 0.80596566 0.05618652 0.91432884]
+ [0.84930046 0.25482294 0.44856662 0.60056565]
+ [0.46190211 0.33961594 0.36758076 0.59467392]]
 </pre></div>
 </div>
 </div>
