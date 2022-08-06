@@ -21,8 +21,8 @@ latex:
     targetname: ece487.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+# bibtex_bibfiles:
+#  - references.bib
 
 # Information about where the book exists on the web
 repository:
@@ -37,6 +37,25 @@ html:
   use_issues_button: true
   use_repository_button: true
 
+output: 
+  html_document:
+    number_sections: true
+   
+parse:
+  myst_enable_extensions:
+    # for parsing of dollar $ and $$ encapsulated math.
+    - dollarmath
+    #  for direct parsing of amsmath LaTeX environments.
+    - amsmath
+    # To auto-detect HTML-like links in your markdown and convert them to hyperlinks.
+    - linkify
+    # To allow you to define markdown “variables” and substitute text in using them. See Substitutions and variables in markdown.
+    - substitution
+    # To allow you to use ::: fences for admonitions, in order to make them easier to render in interfaces that do not support MyST. See Markdown-friendly directives with :::.
+    - colon_fence
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - html_image
 
 #######################################################################################
 # Advanced and power-user settings
