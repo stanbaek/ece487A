@@ -422,33 +422,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="install-code-composer-studio-ccs">
 <h3>Install Code Composer Studio (CCS).<a class="headerlink" href="#install-code-composer-studio-ccs" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://www.ti.com/tool/download/CCSTUDIO/11.2.0.00007">https://www.ti.com/tool/download/CCSTUDIO/11.2.0.00007</a> to download <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">on-demand</span> <span class="pre">installer</span> <span class="pre">for</span> <span class="pre">CCS</span> <span class="pre">IDE</span></code>. For Mac users, download <code class="docutils literal notranslate"><span class="pre">macOS</span> <span class="pre">on-demand</span> <span class="pre">installer</span> <span class="pre">for</span> <span class="pre">CCS</span> <span class="pre">IDE</span></code>.  Do not download version 12 since it was recently released and there will be multiple patches next few months.</p></li>
-<li><p>Run the installer by double clicking the <code class="docutils literal notranslate"><span class="pre">ccs_setup_11.X.X.X.exe</span></code> executable.</p></li>
-<li><p>Begin the installation process, by default it will ask you to install under a <code class="docutils literal notranslate"><span class="pre">ti</span></code> folder, which is recommended.</p></li>
-<li><p>Select <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">Installation</span></code> (Recommended)</p></li>
-<li><p>Select the processor support for <code class="docutils literal notranslate"><span class="pre">SimpleLink</span> <span class="pre">MSP432</span> <span class="pre">MCUs</span></code>.</p></li>
-<li><p>Ensure the default Install debug probe is selected and leave the rest unselected.</p></li>
-<li><p>Click Next until installation begins.</p></li>
-<li><p>Click Finish and your installation should proceed to completion.</p></li>
-</ul>
-<a class="reference internal image-reference" href="Labs/figures/CCS_Setup.gif"><img alt="Labs/figures/CCS_Setup.gif" class="align-center" src="Labs/figures/CCS_Setup.gif" /></a>
-<br>
 </div>
 <div class="section" id="import-project-files">
 <h3>Import Project Files.<a class="headerlink" href="#import-project-files" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Open CCS.</p></li>
-<li><p>When asked to <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">a</span> <span class="pre">directory</span> <span class="pre">as</span> <span class="pre">workspace</span></code>, select <code class="docutils literal notranslate"><span class="pre">Browse</span></code> and browse to your <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folder. Select the <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">this</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">default</span> <span class="pre">and</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">ask</span> <span class="pre">again</span></code> check box. Click <code class="docutils literal notranslate"><span class="pre">Launch</span></code></p></li>
-<li><p>Import all the projects into CSS. <strong>File &gt; Import…</strong>  Choose <strong>Code Composer Studio &gt; CCS Projects</strong> and click <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
-<li><p>Select <code class="docutils literal notranslate"><span class="pre">Search</span> <span class="pre">Directory</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Browse...</span></code> option. Browse to the <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folder.</p></li>
-<li><p>CCS should discover many projects inside the <code class="docutils literal notranslate"><span class="pre">workspace</span></code>.  Click <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">All</span></code> (<strong>DO NOT</strong> check <code class="docutils literal notranslate"><span class="pre">Automatically</span> <span class="pre">import...</span></code> or <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">projects...</span></code> options). This will have CCS reference the project from the original location and preserve the original directory structure required to build. Click <code class="docutils literal notranslate"><span class="pre">Finish</span></code>.</p></li>
-<li><p>In Project Explorer, expand <code class="docutils literal notranslate"><span class="pre">HW01_Git</span></code> and double click test.txt to open. Edit the file and save.</p></li>
-<li><p>Commit and push to Bitbucket. Enter your password if prompted.</p></li>
-<li><p>Refresh your Bitbucket repository to observe the changes.</p></li>
-</ul>
-<a class="reference internal image-reference" href="Labs/figures/CCS_Config.gif"><img alt="Labs/figures/CCS_Config.gif" class="align-center" src="Labs/figures/CCS_Config.gif" /></a>
-<br>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.</p>
@@ -465,12 +441,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><strong>[25 Points]</strong> Provide a screenshot of your Bitbucket repository as shown below</p></li>
 </ul>
-<a class="reference internal image-reference" href="Labs/figures/install11.PNG"><img alt="Labs/figures/install11.PNG" class="align-center" src="Labs/figures/install11.PNG" /></a>
 <br>
 <ul class="simple">
 <li><p><strong>[25 Points]</strong> Go to Windows Settings &gt; Apps.  Click on Code Composer Studio and take a screenshot as shown below.  For Mac users, it is in the Applications folder.</p></li>
 </ul>
-<a class="reference internal image-reference" href="Labs/figures/install12.PNG"><img alt="Labs/figures/install12.PNG" class="align-center" src="Labs/figures/install12.PNG" /></a>
 <br>
 <ul class="simple">
 <li><p><strong>[-30 Points]</strong> Take a picture of your screen with a mobile device or digital camera and submit it in Gradescope. Yes, I am serious…</p></li>
