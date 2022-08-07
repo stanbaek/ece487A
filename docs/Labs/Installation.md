@@ -96,39 +96,9 @@ After you push your assignments to Git, it is your responsibility to check your 
 
 ### Install Code Composer Studio (CCS).
 
-- Go to https://www.ti.com/tool/download/CCSTUDIO/11.2.0.00007 to download `Windows on-demand installer for CCS IDE`. For Mac users, download `macOS on-demand installer for CCS IDE`.  Do not download version 12 since it was recently released and there will be multiple patches next few months.   
-- Run the installer by double clicking the `ccs_setup_11.X.X.X.exe` executable.
-- Begin the installation process, by default it will ask you to install under a `ti` folder, which is recommended.
-- Select `Custom Installation` (Recommended)
-- Select the processor support for `SimpleLink MSP432 MCUs`.
-- Ensure the default Install debug probe is selected and leave the rest unselected.
-- Click Next until installation begins.
-- Click Finish and your installation should proceed to completion.
-
-```{image} ./figures/CCS_Setup.gif
-:scale: 50%
-:align: center
-```
-<br>
 
 ### Import Project Files.
 
-- Open CCS.
-- When asked to `Select a directory as workspace`, select `Browse` and browse to your `workspace` folder. Select the `Use this as the default and do not ask again` check box. Click `Launch`   
-- Import all the projects into CSS. **File > Import...**  Choose **Code Composer Studio > CCS Projects** and click `Next`.
-- Select `Search Directory` and click the `Browse...` option. Browse to the `workspace` folder.
-- CCS should discover many projects inside the `workspace`.  Click `Select All` (**DO NOT** check `Automatically import...` or `Copy projects...` options). This will have CCS reference the project from the original location and preserve the original directory structure required to build. Click `Finish`.
-- In Project Explorer, expand `HW01_Git` and double click test.txt to open. Edit the file and save.
-- Commit and push to Bitbucket. Enter your password if prompted.
-- Refresh your Bitbucket repository to observe the changes. 
-
-
-```{image} ./figures/CCS_Config.gif
-:scale: 50%
-:align: center
-```
-
-<br>
 
 ```{Attention} 
 It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.
@@ -144,19 +114,10 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 
 - **[25 Points]** Provide a screenshot of your Bitbucket repository as shown below
 
-```{image} ./figures/install11.PNG
-:scale: 75%
-:align: center
-```
-
 <br>
 
 - **[25 Points]** Go to Windows Settings > Apps.  Click on Code Composer Studio and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
 
-```{image} ./figures/install12.PNG
-:scale: 50%
-:align: center
-```
 
 <br>
 
