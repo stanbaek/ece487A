@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="✏️ HW 1 Setting up Bitbucket" href="Installation.html" />
+    <link rel="prev" title="🤖 Robots, Robots, and Robots" href="../robots.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,11 +140,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Installation.html">
-   ✏️ HW 1 Setting up Bitbucket
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Introduction to Python3
@@ -582,7 +577,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Running Python in Command Prompt (or Terminal for Mac)<a class="headerlink" href="#running-python-in-command-prompt-or-terminal-for-mac" title="Permalink to this headline">¶</a></h3>
 <p>Open Windows Terminal (or Terminal for Mac) and run <code class="docutils literal notranslate"><span class="pre">python</span></code> in Windows or <code class="docutils literal notranslate"><span class="pre">python3</span></code> in Mac.</p>
 <br>
-<img src="./figures/Terminal.png" alt="Terminal" class="bg-primary" width="540px">
+<center>
+<img src="https://github.com/stanbaek/ece487/blob/main/docs/Labs/figures/Terminal.png" alt="Terminal" class="bg-primary" width="540px">
+</center>
 <br>
 <p>This will open the Python Shell. The Shell is where you can enter code and see the responses and output of code you have programmed into Python.  This is a kind of sandbox, where you’re able to try out some simple code and processes. For example, in the Shell enter: <code class="docutils literal notranslate"><span class="pre">2+2</span></code>.  If you press enter, it will display the answer <code class="docutils literal notranslate"><span class="pre">4</span></code> on the next line.</p>
 <p>Try the following code in the Shell. In the Colab environment, you can also select the following cell and click the arrow button to run the code in the cell, but unlike the Shell, it will only display the output of the last line in the cell.</p>
@@ -865,6 +862,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1817,9 +1817,7 @@ S
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m
 O
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d
+d
 E
 l
 S
@@ -2306,9 +2304,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.60230449, 0.99253092],
-       [0.07588795, 0.50839371],
-       [0.33187643, 0.25262463]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.94129588, 0.97943996],
+       [0.51384175, 0.69531964],
+       [0.1538404 , 0.64594086]])
 </pre></div>
 </div>
 </div>
@@ -2320,8 +2318,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.60230449, 0.99253092, 0.07588795],
-       [0.50839371, 0.33187643, 0.25262463]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.94129588, 0.97943996, 0.51384175],
+       [0.69531964, 0.1538404 , 0.64594086]])
 </pre></div>
 </div>
 </div>
@@ -2356,10 +2354,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.02036702 0.87664048 0.65742606 0.03369244]
- [0.32558787 0.14999225 0.98895168 0.04247213]
- [0.84293153 0.98340351 0.78123201 0.4223539 ]
- [0.46795898 0.08043753 0.34132198 0.39420497]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.27400398 0.05185794 0.62560086 0.8532529 ]
+ [0.25934927 0.95586419 0.26958342 0.6347064 ]
+ [0.10475853 0.64702856 0.50033474 0.97335025]
+ [0.52797913 0.27747109 0.58188876 0.78352622]]
 </pre></div>
 </div>
 </div>
@@ -2371,10 +2369,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.20367025, 8.76640476, 6.5742606 , 0.33692437],
-       [3.25587873, 1.49992246, 9.88951679, 0.42472132],
-       [8.42931533, 9.83403513, 7.81232011, 4.22353897],
-       [4.6795898 , 0.80437532, 3.41321981, 3.94204971]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.74003976, 0.51857939, 6.25600861, 8.53252903],
+       [2.5934927 , 9.55864191, 2.69583419, 6.34706403],
+       [1.04758529, 6.47028561, 5.00334741, 9.73350247],
+       [5.27979129, 2.7747109 , 5.81888759, 7.83526219]])
 </pre></div>
 </div>
 </div>
@@ -2387,9 +2385,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.02036702 0.87664048 0.65742606 0.03369244 0.32558787 0.14999225
- 0.98895168 0.04247213 0.84293153 0.98340351 0.78123201 0.4223539
- 0.46795898 0.08043753 0.34132198 0.39420497]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.27400398 0.05185794 0.62560086 0.8532529  0.25934927 0.95586419
+ 0.26958342 0.6347064  0.10475853 0.64702856 0.50033474 0.97335025
+ 0.52797913 0.27747109 0.58188876 0.78352622]
 </pre></div>
 </div>
 </div>
@@ -2401,10 +2399,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.02036702, 0.87664048, 0.65742606, 0.03369244, 0.32558787,
-        0.14999225, 0.98895168, 0.04247213],
-       [0.84293153, 0.98340351, 0.78123201, 0.4223539 , 0.46795898,
-        0.08043753, 0.34132198, 0.39420497]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27400398, 0.05185794, 0.62560086, 0.8532529 , 0.25934927,
+        0.95586419, 0.26958342, 0.6347064 ],
+       [0.10475853, 0.64702856, 0.50033474, 0.97335025, 0.52797913,
+        0.27747109, 0.58188876, 0.78352622]])
 </pre></div>
 </div>
 </div>
@@ -2416,10 +2414,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.02036702, 0.87664048, 0.65742606, 0.03369244],
-       [0.32558787, 0.14999225, 0.98895168, 0.04247213],
-       [0.84293153, 0.98340351, 0.78123201, 0.4223539 ],
-       [0.46795898, 0.08043753, 0.34132198, 0.39420497]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.27400398, 0.05185794, 0.62560086, 0.8532529 ],
+       [0.25934927, 0.95586419, 0.26958342, 0.6347064 ],
+       [0.10475853, 0.64702856, 0.50033474, 0.97335025],
+       [0.52797913, 0.27747109, 0.58188876, 0.78352622]])
 </pre></div>
 </div>
 </div>
@@ -2432,13 +2430,13 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.41970553 0.74844538 0.42262858 0.88198138 0.07109924 0.18431547]
-  [0.01292801 0.24056665 0.76454301 0.78932721 0.49219652 0.48690683]
-  [0.95550639 0.96275563 0.14109824 0.28963083 0.24927792 0.25162004]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.39669947 0.04696282 0.12841107 0.03340166 0.24406584 0.05421474]
+  [0.26698227 0.77009866 0.16372273 0.03201847 0.18223865 0.44823146]
+  [0.10973321 0.01543069 0.20642934 0.17935616 0.11185442 0.14446377]]
 
- [[0.46113296 0.16729198 0.51740664 0.11540183 0.47359695 0.75816743]
-  [0.97405495 0.63243841 0.21678474 0.05605357 0.83054518 0.08466426]
-  [0.42116289 0.25043348 0.78404645 0.11139323 0.62971263 0.36596743]]]
+ [[0.26343444 0.99223542 0.5708101  0.72408464 0.3303261  0.98838493]
+  [0.63028879 0.19152946 0.44853022 0.52165304 0.34501076 0.34224476]
+  [0.99898708 0.29155445 0.14858769 0.8656498  0.54728499 0.64146125]]]
 </pre></div>
 </div>
 </div>
@@ -2450,12 +2448,12 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.41970553 0.74844538 0.42262858 0.88198138 0.07109924 0.18431547
- 0.01292801 0.24056665 0.76454301 0.78932721 0.49219652 0.48690683
- 0.95550639 0.96275563 0.14109824 0.28963083 0.24927792 0.25162004
- 0.46113296 0.16729198 0.51740664 0.11540183 0.47359695 0.75816743
- 0.97405495 0.63243841 0.21678474 0.05605357 0.83054518 0.08466426
- 0.42116289 0.25043348 0.78404645 0.11139323 0.62971263 0.36596743]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.39669947 0.04696282 0.12841107 0.03340166 0.24406584 0.05421474
+ 0.26698227 0.77009866 0.16372273 0.03201847 0.18223865 0.44823146
+ 0.10973321 0.01543069 0.20642934 0.17935616 0.11185442 0.14446377
+ 0.26343444 0.99223542 0.5708101  0.72408464 0.3303261  0.98838493
+ 0.63028879 0.19152946 0.44853022 0.52165304 0.34501076 0.34224476
+ 0.99898708 0.29155445 0.14858769 0.8656498  0.54728499 0.64146125]
 </pre></div>
 </div>
 </div>
@@ -2467,10 +2465,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.02036702 0.32558787 0.84293153 0.46795898]
- [0.87664048 0.14999225 0.98340351 0.08043753]
- [0.65742606 0.98895168 0.78123201 0.34132198]
- [0.03369244 0.04247213 0.4223539  0.39420497]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.27400398 0.25934927 0.10475853 0.52797913]
+ [0.05185794 0.95586419 0.64702856 0.27747109]
+ [0.62560086 0.26958342 0.50033474 0.58188876]
+ [0.8532529  0.6347064  0.97335025 0.78352622]]
 </pre></div>
 </div>
 </div>
@@ -2551,11 +2549,11 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Installation.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../robots.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">✏️ HW 1 Setting up Bitbucket</p>
+            <p class="prev-next-title">🤖 Robots, Robots, and Robots</p>
         </div>
     </a>
 </div>
