@@ -13,6 +13,5 @@ parts:
     - file: robots.md
   - caption: Labs 
     chapters:
-    - file: Labs/Installation.ipynb
     - file: Labs/Intro-to-Python.ipynb
 
