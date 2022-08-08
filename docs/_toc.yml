@@ -13,6 +13,7 @@ parts:
     - file: robots.md
   - caption: Labs 
     chapters:
+    - file: Labs/Installation.md
     - file: Labs/PythonIntro.ipynb
     - file: Labs/PythonContainers.ipynb
 
