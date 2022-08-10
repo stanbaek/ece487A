@@ -30,7 +30,8 @@ The **Grade distribution** for this course is shown below.
 ```
 <br>
 Electrical and Computer Engineering courses are contract graded using the following 100 point scale:
-   
+
+
 |     Grade       |     Grade      |     Grade       |     Grade     |   
 |:---------------:|:--------------:|:---------------:|:-------------:|
 | 93 <= A <= 100  | 87 <= B+ < 90  | 77 <= C+ < 80   | 60 <= D < 70  | 
