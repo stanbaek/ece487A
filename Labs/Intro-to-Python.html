@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Python3 &#8212; Fundamentals of Robotics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,13 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -58,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="🤖 Robots, Robots, and Robots" href="../robots.html" />
+    <link rel="prev" title="✏️ HW 1 Setting up Bitbucket" href="Installation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,14 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   ECE 487 Fundamentals of Robotics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ECE 487 Fundamentals of Robotics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Info
  </span>
@@ -140,6 +155,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Installation.html">
+   ✏️ HW 1 Setting up Bitbucket
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Introduction to Python3
@@ -148,107 +168,209 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/Intro-to-Python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/stanbaek/ece487"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/Intro-to-Python.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/Intro-to-Python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/Intro-to-Python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/stanbaek/ece487"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/Intro-to-Python.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Labs/Intro-to-Python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-python">
    Running Python
@@ -396,12 +518,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Introduction to Python3</h1>
@@ -565,21 +686,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/Intro-to-Python.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-python3">
-<h1>Introduction to Python3<a class="headerlink" href="#introduction-to-python3" title="Permalink to this headline">¶</a></h1>
-<hr><div class="section" id="running-python">
-<h2>Running Python<a class="headerlink" href="#running-python" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="running-python-in-command-prompt-or-terminal-for-mac">
-<h3>Running Python in Command Prompt (or Terminal for Mac)<a class="headerlink" href="#running-python-in-command-prompt-or-terminal-for-mac" title="Permalink to this headline">¶</a></h3>
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/shawnrhoads/gu-psyc-347/blob/master/docs/module-01-01_Intro-to-Python.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python3">
+<h1>Introduction to Python3<a class="headerlink" href="#introduction-to-python3" title="Permalink to this headline">#</a></h1>
+<hr><section id="running-python">
+<h2>Running Python<a class="headerlink" href="#running-python" title="Permalink to this headline">#</a></h2>
+<section id="running-python-in-command-prompt-or-terminal-for-mac">
+<h3>Running Python in Command Prompt (or Terminal for Mac)<a class="headerlink" href="#running-python-in-command-prompt-or-terminal-for-mac" title="Permalink to this headline">#</a></h3>
 <p>Open Windows Terminal (or Terminal for Mac) and run <code class="docutils literal notranslate"><span class="pre">python</span></code> in Windows or <code class="docutils literal notranslate"><span class="pre">python3</span></code> in Mac.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/Terminal.png?raw=true" alt="Terminal" class="bg-primary" width="540px">
-</center>
+<a class="reference internal image-reference" href="../_images/Terminal.png"><img alt="../_images/Terminal.png" class="align-center" src="../_images/Terminal.png" style="width: 560px;" /></a>
 <br>
 <p>This will open the Python Shell. The Shell is where you can enter code and see the responses and output of code you have programmed into Python.  This is a kind of sandbox, where you’re able to try out some simple code and processes. For example, in the Shell enter: <code class="docutils literal notranslate"><span class="pre">2+2</span></code>.  If you press enter, it will display the answer <code class="docutils literal notranslate"><span class="pre">4</span></code> on the next line.</p>
 <p>Try the following code in the Shell. In the Colab environment, you can also select the following cell and click the arrow button to run the code in the cell, but unlike the Shell, it will only display the output of the last line in the cell.</p>
@@ -621,9 +740,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Now enter <code class="docutils literal notranslate"><span class="pre">exit()</span></code> to leave the Python Shell.</p>
-</div>
-<div class="section" id="saving-and-executing-your-code">
-<h3>Saving and Executing Your Code<a class="headerlink" href="#saving-and-executing-your-code" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="saving-and-executing-your-code">
+<h3>Saving and Executing Your Code<a class="headerlink" href="#saving-and-executing-your-code" title="Permalink to this headline">#</a></h3>
 <p>While working in the Shell is perfectly fine for small code snippets, it is not desirable for longer program listings. In this section, we will save a code as a text file and execute it from Terminal. First, open a text editor such as notepad, notepad++, atom, sublime_text, etc.  Enter the following code</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;is&quot;</span>
@@ -636,14 +755,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="executing-code-in-pycharm-console">
-<h3>Executing Code in PyCharm Console<a class="headerlink" href="#executing-code-in-pycharm-console" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="executing-code-in-pycharm-console">
+<h3>Executing Code in PyCharm Console<a class="headerlink" href="#executing-code-in-pycharm-console" title="Permalink to this headline">#</a></h3>
 <p>Open PyCharm and click Python Consol at the bottom. This is a Python Shell embedded in PyCharm.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmPythonConsole.png?raw=true" alt="Terminal" class="bg-primary" width="600px">
-</center>
+<a class="reference internal image-reference" href="../_images/PycharmPythonConsole.png"><img alt="../_images/PycharmPythonConsole.png" class="align-center" src="../_images/PycharmPythonConsole.png" style="width: 700px;" /></a>
 <br>
 <p>Try the following code</p>
 <div class="cell docutils container">
@@ -669,27 +785,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="executing-code-in-pycharm-terminal">
-<h3>Executing Code in PyCharm Terminal<a class="headerlink" href="#executing-code-in-pycharm-terminal" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="executing-code-in-pycharm-terminal">
+<h3>Executing Code in PyCharm Terminal<a class="headerlink" href="#executing-code-in-pycharm-terminal" title="Permalink to this headline">#</a></h3>
 <p>Click on Python Terminal at the bottom. This is a Terminal embedded in PyCharm.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmPythonTerminal.png?raw=true" alt="Terminal" class="bg-primary" width="640px">
-</center>
-<br>
+<a class="reference internal image-reference" href="../_images/PycharmPythonTerminal.png"><img alt="../_images/PycharmPythonTerminal.png" class="align-center" src="../_images/PycharmPythonTerminal.png" style="width: 700px;" /></a>
 <p>Enter the following into the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="executing-code-in-pycharm-ide">
-<h3>Executing Code in PyCharm IDE<a class="headerlink" href="#executing-code-in-pycharm-ide" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="executing-code-in-pycharm-ide">
+<h3>Executing Code in PyCharm IDE<a class="headerlink" href="#executing-code-in-pycharm-ide" title="Permalink to this headline">#</a></h3>
 <p>Ensure <code class="docutils literal notranslate"><span class="pre">main</span></code> is selected as shown below.  Click the Run button or <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">F10</span></code> to run the code.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmRunningCode.png?raw=true" alt="Terminal" class="bg-primary" width="640px">
-</center>
+<a class="reference internal image-reference" href="../_images/PycharmRunningCode.png"><img alt="../_images/PycharmRunningCode.png" class="align-center" src="../_images/PycharmRunningCode.png" style="width: 700px;" /></a>
 <br>
 <p>It will print
 <code class="docutils literal notranslate"><span class="pre">Hi,</span> <span class="pre">PyCharm</span></code></p>
@@ -719,40 +828,27 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="debugging-python">
-<h2>Debugging Python<a class="headerlink" href="#debugging-python" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="debugging-python">
+<h2>Debugging Python<a class="headerlink" href="#debugging-python" title="Permalink to this headline">#</a></h2>
 <p>Clikc View &gt; Appearance &gt; Toolbar as shown below</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmToolbar.png?raw=true" alt="Terminal" class="bg-primary" width="600px">
-</center>
+<a class="reference internal image-reference" href="../_images/PycharmToolbar.png"><img alt="../_images/PycharmToolbar.png" class="align-center" src="../_images/PycharmToolbar.png" style="width: 460px;" /></a>
 <br>
 <p>The most important tools in programming, namely <strong>debugger</strong>, will appear!</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmDebuggingTools.png?raw=true" alt="Terminal" class="bg-primary" width="600px">
-</center>
+<a class="reference internal image-reference" href="../_images/PycharmDebuggingTools.png"><img alt="../_images/PycharmDebuggingTools.png" class="align-center" src="../_images/PycharmDebuggingTools.png" style="width: 460px;" /></a>
 <br>
 <p>Click the space between line number 9 and the code to place a breakpoint. Click the Debug button or <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">F9</span></code> to start debugging.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmBreakpoint.png?raw=true" alt="Terminal" class="bg-primary" width="700px">
-</center>
+<a class="reference internal image-reference" href="../_images/PycharmBreakpoint.png"><img alt="../_images/PycharmBreakpoint.png" class="align-center" src="../_images/PycharmBreakpoint.png" style="width: 660px;" /></a>
 <br>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Debugger</span></code> window, you can find the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable with its value <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code></p>
 <p>Click the <code class="docutils literal notranslate"><span class="pre">Console</span></code> tab and enter <code class="docutils literal notranslate"><span class="pre">name</span></code>.  It will display the value of <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<br>
-<center>
-<img src="https://github.com/stanbaek/ece487/blob/gh-pages/_images/PycharmDebugConsole.png?raw=true" alt="Terminal" class="bg-primary" width="640px">
-</center>
-<br>
-</div>
-<div class="section" id="python-programming">
-<h2>Python Programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="variables">
-<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/PycharmDebugConsole.png"><img alt="../_images/PycharmDebugConsole.png" class="align-center" src="../_images/PycharmDebugConsole.png" style="width: 660px;" /></a>
+</section>
+<section id="python-programming">
+<h2>Python Programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">#</a></h2>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Numeric types:</p>
 <ul>
@@ -886,17 +982,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="math-operators">
-<h3>Math Operators<a class="headerlink" href="#math-operators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="math-operators">
+<h3>Math Operators<a class="headerlink" href="#math-operators" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>+, -, *, and /</p></li>
 <li><p>Exponentiation **</p></li>
 <li><p>Modulo % (Remainder)</p></li>
 </ul>
-</div>
-<div class="section" id="logic-operators">
-<h3>Logic Operators<a class="headerlink" href="#logic-operators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="logic-operators">
+<h3>Logic Operators<a class="headerlink" href="#logic-operators" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="c1"># x is equal to y</span>
 <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="c1"># x is not equal to y</span>
 <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="c1"># x is greater than y</span>
@@ -944,9 +1040,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="working-with-variables">
-<h3>Working with Variables<a class="headerlink" href="#working-with-variables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="working-with-variables">
+<h3>Working with Variables<a class="headerlink" href="#working-with-variables" title="Permalink to this headline">#</a></h3>
 <p>In programming languages, variables are containers that store simple information. In Python, variables can store strings or numbers. A string is a block of text, such as “Stan Baek is the legendary pirate captain.” A number can be an integer or a decimal number.  Try the the following code in Python Console.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1004,7 +1100,7 @@ True
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 26&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1"># Let&#39;s try to combine a string with an integer</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1"># For string concatenation use + sign</span>
@@ -1018,9 +1114,9 @@ True
 </div>
 </div>
 <p>A few things are going on here while creating variables. First, Python lets us define variables using the convention variable_name = value. As long as the variable name is unique (it is not the name of a function, module, or other variable), we can define our variable this way. For strings, single quotes or double quotes must be used around the text that needs to be in the variable; it doesn’t matter whether you choose single or double quotes, just stay consistent.</p>
-</div>
-<div class="section" id="functions-and-modules">
-<h3>Functions and Modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="functions-and-modules">
+<h3>Functions and Modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this headline">#</a></h3>
 <p>The next step is to tackle built-in functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1111,9 +1207,9 @@ The legendary pirate captain is   726.2500 years old.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="python-modules">
-<h3>Python Modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="python-modules">
+<h3>Python Modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">#</a></h3>
 <p>Additional functions can be added to python through modules. Modules are packages of additional functionality built by others. Typically, a module is comprised of compiled code that serves a specific function. To use advanced mathematical functions, enter import math</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1149,7 +1245,7 @@ By importing all modules at the beginning of the script, we ensure that all modu
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [18],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1174,9 +1270,9 @@ By importing all modules at the beginning of the script, we ensure that all modu
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="conditions">
-<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="conditions">
+<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements control conditional code execution. The general format of a conditional state is as follows:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
     <span class="n">statements</span>
@@ -1211,28 +1307,28 @@ By importing all modules at the beginning of the script, we ensure that all modu
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [20],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a four-letter word: &quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s2">&quot;is a four-letter word. Well done.&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
+<span class="nn">File c:\program files\python38\lib\site-packages\ipykernel\kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
@@ -1257,28 +1353,28 @@ By importing all modules at the beginning of the script, we ensure that all modu
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [21],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to play? &quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">hand</span> <span class="o">==</span> <span class="s2">&quot;Rock&quot;</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is a valid play&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
+<span class="nn">File c:\program files\python38\lib\site-packages\ipykernel\kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
@@ -1299,28 +1395,28 @@ By importing all modules at the beginning of the script, we ensure that all modu
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to play? &quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">hand</span> <span class="o">==</span> <span class="s2">&quot;Rock&quot;</span> <span class="ow">or</span> <span class="n">hand</span> <span class="o">==</span> <span class="s2">&quot;Paper&quot;</span> <span class="ow">or</span> <span class="n">hand</span> <span class="o">==</span> <span class="s2">&quot;Sciccors&quot;</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is a valid play&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
+<span class="nn">File c:\program files\python38\lib\site-packages\ipykernel\kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
@@ -1341,37 +1437,37 @@ By importing all modules at the beginning of the script, we ensure that all modu
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [23],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to play? &quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">hand</span> <span class="ow">in</span>  <span class="p">(</span><span class="s2">&quot;Rock&quot;</span><span class="p">,</span> <span class="s2">&quot;Paper&quot;</span><span class="p">,</span> <span class="s2">&quot;Scissors&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is a valid play&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
+<span class="nn">File c:\program files\python38\lib\site-packages\ipykernel\kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="loops">
-<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="loops">
+<h3>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h3>
 <p>Let’s start with a simple <code class="docutils literal notranslate"><span class="pre">while</span></code> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1454,10 +1550,10 @@ Dragon
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="python-containers">
-<h2>Python Containers<a class="headerlink" href="#python-containers" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="python-containers">
+<h2>Python Containers<a class="headerlink" href="#python-containers" title="Permalink to this headline">#</a></h2>
 <p>There are 4 main types of builtin containers for storing data in Python:</p>
 <ul class="simple">
 <li><p>list <span class="math notranslate nohighlight">\(\checkmark\)</span></p></li>
@@ -1465,8 +1561,8 @@ Dragon
 <li><p>set</p></li>
 <li><p>tuple</p></li>
 </ul>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
 <p>In Python, a list is a mutable sequence of values. Mutable means that we can change separate entries within a list.</p>
 <ul class="simple">
 <li><p>Each value in the list is an element or item</p></li>
@@ -1602,9 +1698,9 @@ PSYC 347 - COMPUTATIONAL MODELS OF HUMAN SOCIAL BEHAVIOR AND NEUROSCIENCE
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>In Python, a dictionary (or dict) is mapping between a set of indices (keys) and a set of values</p></li>
 <li><p>The items in a dictionary are key-value pairs</p></li>
@@ -1654,10 +1750,10 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </div>
 </div>
 </div>
-<hr></div>
-</div>
-<div class="section" id="id1">
-<h2>Loops<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<hr></section>
+</section>
+<section id="id1">
+<h2>Loops<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><strong>for</strong> loop is probably the most popular loop construct in Python:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">do_statements</span>
@@ -1693,9 +1789,7 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 1
 2
 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
 5
 </pre></div>
 </div>
@@ -1751,9 +1845,7 @@ t
 h
 o
 n
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+ 
 i
 s
  
@@ -1880,9 +1972,9 @@ S
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h2>
 <p><em>(from: <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">https://realpython.com/python3-object-oriented-programming/</a>)</em></p>
 <blockquote>
 "The primitive data structures available in Python, like numbers, strings, and lists are designed to represent simple things like the cost of something, the name of a poem, and your favorite colors, respectively.
@@ -2019,9 +2111,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
 <p>A Module is a python file that contains a collection of related definitions. Python has hundreds of standard modules. These are organized into what is known as the <a class="reference external" href="http://docs.python.org/library/">Python Standard Library</a>. You can also create and use your own modules. To use functionality from a module, you first have to import the entire module or parts of it into your namespace</p>
 <p>To import the entire module:
 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code></p>
@@ -2094,8 +2186,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-<div class="section" id="numpy">
-<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<section id="numpy">
+<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h3>
 <p>NumPy is the fundamental package for scientific computing with Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2223,8 +2315,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-<div class="section" id="creating-arrays">
-<h4>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h4>
+<section id="creating-arrays">
+<h4>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h4>
 <p>You can create an array from a regular Python list or tuple using the array function. The type of the resulting array is deduced from the type of the elements in the sequences.</p>
 <p>A frequent error consists in calling array with multiple numeric arguments, rather than providing a single list of numbers as an argument.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>    <span class="c1"># WRONG</span>
@@ -2325,9 +2417,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.2904637 , 0.52137716],
-       [0.0220304 , 0.12610863],
-       [0.45916547, 0.22059987]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.65092077, 0.54555929],
+       [0.7835153 , 0.63980471],
+       [0.24950138, 0.67120678]])
 </pre></div>
 </div>
 </div>
@@ -2339,8 +2431,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.2904637 , 0.52137716, 0.0220304 ],
-       [0.12610863, 0.45916547, 0.22059987]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.65092077, 0.54555929, 0.7835153 ],
+       [0.63980471, 0.24950138, 0.67120678]])
 </pre></div>
 </div>
 </div>
@@ -2358,9 +2450,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="shape-manipulation">
-<h4>Shape Manipulation<a class="headerlink" href="#shape-manipulation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="shape-manipulation">
+<h4>Shape Manipulation<a class="headerlink" href="#shape-manipulation" title="Permalink to this headline">#</a></h4>
 <p>Three main functions include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ravel()</span></code> flattens an array</p></li>
@@ -2375,10 +2467,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.98399807 0.53856983 0.80586773 0.57302695]
- [0.98948902 0.18980981 0.44738272 0.56567989]
- [0.53229138 0.71444809 0.88094356 0.54271546]
- [0.82377315 0.04753273 0.72208038 0.35591215]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00226945 0.91558285 0.35862273 0.73268645]
+ [0.14821489 0.13824873 0.4919975  0.31221504]
+ [0.10564957 0.82576352 0.73641615 0.64516495]
+ [0.6943225  0.84865838 0.63946317 0.21782388]]
 </pre></div>
 </div>
 </div>
@@ -2390,10 +2482,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.8399807 , 5.38569827, 8.05867732, 5.73026945],
-       [9.89489019, 1.8980981 , 4.47382722, 5.65679893],
-       [5.32291377, 7.14448087, 8.80943558, 5.4271546 ],
-       [8.23773151, 0.47532732, 7.2208038 , 3.55912148]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.02269453, 9.15582848, 3.58622725, 7.32686445],
+       [1.48214886, 1.38248735, 4.919975  , 3.12215042],
+       [1.05649573, 8.25763522, 7.36416146, 6.45164955],
+       [6.94322503, 8.48658384, 6.39463169, 2.17823885]])
 </pre></div>
 </div>
 </div>
@@ -2406,9 +2498,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.98399807 0.53856983 0.80586773 0.57302695 0.98948902 0.18980981
- 0.44738272 0.56567989 0.53229138 0.71444809 0.88094356 0.54271546
- 0.82377315 0.04753273 0.72208038 0.35591215]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.00226945 0.91558285 0.35862273 0.73268645 0.14821489 0.13824873
+ 0.4919975  0.31221504 0.10564957 0.82576352 0.73641615 0.64516495
+ 0.6943225  0.84865838 0.63946317 0.21782388]
 </pre></div>
 </div>
 </div>
@@ -2420,10 +2512,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.98399807, 0.53856983, 0.80586773, 0.57302695, 0.98948902,
-        0.18980981, 0.44738272, 0.56567989],
-       [0.53229138, 0.71444809, 0.88094356, 0.54271546, 0.82377315,
-        0.04753273, 0.72208038, 0.35591215]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00226945, 0.91558285, 0.35862273, 0.73268645, 0.14821489,
+        0.13824873, 0.4919975 , 0.31221504],
+       [0.10564957, 0.82576352, 0.73641615, 0.64516495, 0.6943225 ,
+        0.84865838, 0.63946317, 0.21782388]])
 </pre></div>
 </div>
 </div>
@@ -2435,10 +2527,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.98399807, 0.53856983, 0.80586773, 0.57302695],
-       [0.98948902, 0.18980981, 0.44738272, 0.56567989],
-       [0.53229138, 0.71444809, 0.88094356, 0.54271546],
-       [0.82377315, 0.04753273, 0.72208038, 0.35591215]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00226945, 0.91558285, 0.35862273, 0.73268645],
+       [0.14821489, 0.13824873, 0.4919975 , 0.31221504],
+       [0.10564957, 0.82576352, 0.73641615, 0.64516495],
+       [0.6943225 , 0.84865838, 0.63946317, 0.21782388]])
 </pre></div>
 </div>
 </div>
@@ -2451,13 +2543,13 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.64314344 0.07020922 0.81029254 0.76884036 0.03053681 0.10749098]
-  [0.62449907 0.90783824 0.0567003  0.5185489  0.45889124 0.12438166]
-  [0.14231242 0.30687028 0.79052379 0.59341    0.44731472 0.33109185]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.37869055 0.36344658 0.20404249 0.83701062 0.62427361 0.89673771]
+  [0.80542774 0.30942848 0.39368225 0.59510736 0.7475919  0.30723481]
+  [0.35945777 0.27783995 0.31425943 0.67209919 0.32068814 0.11450276]]
 
- [[0.33531073 0.03650599 0.00735016 0.64038268 0.2869092  0.79674856]
-  [0.66860367 0.27770196 0.84403079 0.40057783 0.29189258 0.80501502]
-  [0.33833094 0.20031519 0.91510105 0.56239112 0.60615674 0.86171693]]]
+ [[0.86978381 0.01152886 0.87980839 0.22588266 0.13733968 0.97302367]
+  [0.25892413 0.58917582 0.8391028  0.25793316 0.81694907 0.51680654]
+  [0.12504761 0.9526839  0.81715963 0.05861669 0.87024474 0.75536775]]]
 </pre></div>
 </div>
 </div>
@@ -2469,12 +2561,12 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.64314344 0.07020922 0.81029254 0.76884036 0.03053681 0.10749098
- 0.62449907 0.90783824 0.0567003  0.5185489  0.45889124 0.12438166
- 0.14231242 0.30687028 0.79052379 0.59341    0.44731472 0.33109185
- 0.33531073 0.03650599 0.00735016 0.64038268 0.2869092  0.79674856
- 0.66860367 0.27770196 0.84403079 0.40057783 0.29189258 0.80501502
- 0.33833094 0.20031519 0.91510105 0.56239112 0.60615674 0.86171693]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.37869055 0.36344658 0.20404249 0.83701062 0.62427361 0.89673771
+ 0.80542774 0.30942848 0.39368225 0.59510736 0.7475919  0.30723481
+ 0.35945777 0.27783995 0.31425943 0.67209919 0.32068814 0.11450276
+ 0.86978381 0.01152886 0.87980839 0.22588266 0.13733968 0.97302367
+ 0.25892413 0.58917582 0.8391028  0.25793316 0.81694907 0.51680654
+ 0.12504761 0.9526839  0.81715963 0.05861669 0.87024474 0.75536775]
 </pre></div>
 </div>
 </div>
@@ -2486,19 +2578,19 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.98399807 0.98948902 0.53229138 0.82377315]
- [0.53856983 0.18980981 0.71444809 0.04753273]
- [0.80586773 0.44738272 0.88094356 0.72208038]
- [0.57302695 0.56567989 0.54271546 0.35591215]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00226945 0.14821489 0.10564957 0.6943225 ]
+ [0.91558285 0.13824873 0.82576352 0.84865838]
+ [0.35862273 0.4919975  0.73641615 0.63946317]
+ [0.73268645 0.31221504 0.64516495 0.21782388]]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="the-zen-of-python">
-<h2>“The Zen of Python”<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="the-zen-of-python">
+<h2>“The Zen of Python”<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">#</a></h2>
 <p><em>from <a class="reference external" href="https://github.com/jakevdp/WhirlwindTourOfPython/blob/master/00-Introduction.ipynb">Whirlwind Tour of Python</a></em></p>
 <p>“Python aficionados are often quick to point out how “intuitive”, “beautiful”, or “fun” Python is. While I tend to agree, I also recognize that beauty, intuition, and fun often go hand in hand with familiarity, and so for those familiar with other languages such florid sentiments can come across as a bit smug. Nevertheless, I hope that if you give Python a chance, you’ll see where such impressions might come from. And if you really want to dig into the programming philosophy that drives much of the coding practice of Python power-users, a nice little Easter egg exists in the Python interpreter: simply close your eyes, meditate for a few minutes, and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code>”</p>
 <div class="cell docutils container">
@@ -2533,17 +2625,17 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="for-more-on-why-python">
-<h2>For more on “Why python?”<a class="headerlink" href="#for-more-on-why-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="for-more-on-why-python">
+<h2>For more on “Why python?”<a class="headerlink" href="#for-more-on-why-python" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.talyarkoni.org/blog/2013/11/18/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">The homogenization of scientific computing, or why Python is steadily eating other languages’ lunch</a></p></li>
 <li><p><a class="reference external" href="https://www.apa.org/science/about/psa/2019/07/python-research">A brief introduction to Python for psychological science research</a></p></li>
 <li><p><a class="reference external" href="https://dominiquemakowski.github.io/post/r_or_python/">R or Python for Psychologists</a></p></li>
 <li><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-biodatasci-072018-021237">Poldrack, R. A., Gorgolewski, K. J., &amp; Varoquaux, G. (2019). Computational and informatics advances for reproducible data analysis in neuroimaging. Annual Review of Biomedical Data Science, 2(1), 119–138.</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2567,35 +2659,41 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../robots.html" title="previous page">
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Installation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">🤖 Robots, Robots, and Robots</p>
+            <p class="prev-next-title">✏️ HW 1 Setting up Bitbucket</p>
         </div>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Stan Baek<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Stan Baek<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

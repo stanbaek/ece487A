@@ -5,23 +5,23 @@ This schedule is subject to change as appropriate.
 ```
 **Last Updated: 17 May 2022**
 
- **Lesson** |  **Topic**                 | **Due**          | **Note**
-------------|---------------------------|------------------|-----------
- L1      | Intro to Robotics         |                  |           
- L2      | Linear Algebra Review     | HW0, Cadet Intro |           
- L3      | Pose in 2D Space          | HW1              |           
- L4      | Rotation in 3D            | HW2              |           
- L5      | Matrix Review             | HW3              |           
- L6      | Euler Angles              | HW4              |           
- L7      | Extracting Euler Angles   | HW5              |           
- L8      | Singularity & Gimbal Lock | HW6              |           
- L9      | ICE 1 - Python Intro      | HW7              |           
- L10     | ICE 2 - Numpy                     | HW8        |    
- L11     |  Lab 1 - Spatial Maths             | HW9        |    
- L12     |  Quaternions                       | Lab1       |    
- L13     |  Quaternions                       | HW10       |    
- L14     |  Quaternions                       | HW11       |    
- L15     |  GR 1                              |            |    
+ **Lesson** |  **Topic**                | **Due**      | **Note**
+------------|---------------------------|--------------|-----------
+ L1      | Intro to Robotics            |              |           
+ L2      | Linear Algebra Review        | Cadet Intro  |           
+ L3      | Pose in 2D Space             | HW1          |           
+ L4      | Rotation in 3D               | HW2, Skills Review |           
+ L5      | Euler Angles                 | HW3          |           
+ L6      | Extracting Euler Angles      | HW4          |           
+ L7      | Singularity & Gimbal Lock    | HW5          |           
+ L8      | Singularity & Gimbal Lock    | HW6          |           
+ L9      | ICE 1 - Python Intro         | HW7          |           
+ L10     | ICE 2 - Numpy                | HW8          |    
+ L11     | Lab 1 - Spatial Maths        | HW9          |    
+ L12     | Quaternions                  | Lab1         |    
+ L13     | Quaternions                  | HW10         |    
+ L14     | Quaternions                  | HW11         |    
+ L15     | GR 1                         |              |    
  L16     | Pose in 3D Space                  | HW12       |    
  L17     | Danavit-Hartenberg Representation | HW13       |    
  L18     | Forward Kinematics                | HW14       |    
@@ -33,10 +33,10 @@ This schedule is subject to change as appropriate.
  L24     | Inverse Kinematics 2              | HW18       |    
  L25     | Inverse Kinematics 3              | HW19       |    
  L26     | Inverse Kinematics 4              | HW20       |    
- L27     | Project 1                         | P1 Preflight|   
- L28     | Project 1                         | P1 checkpoint1  |
+ L27     | Project 1                         | P1 Preflight   |   
+ L28     | Project 1                         | P1 checkpoint1 |
  L29     | Image Processing                  |                |
- L30     | Morphology   | Project 1 Due   |
+ L30     | Morphology                        | Project 1 Due  |
  L31     | ICE4         | HW21            |
  L32     | HSV, Lab3    | HW22            |
  L33     | Lab4         |                 |
