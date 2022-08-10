@@ -13,7 +13,7 @@ The course schedule is [here](schedule.md)
 
 ## Grade Distribution and Policy
 
-The overall **weighting** of the graded items is:
+The **Grade distribution** for this course is shown below.
 
 |     Prog               |             |     Final              |             |
 |------------------------|-------------|------------------------|-------------|
@@ -23,9 +23,6 @@ The overall **weighting** of the graded items is:
 |                        |             |     Final   Project    |     25%     |
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
-
-
-The **Grade distribution** for this course is shown in the chart below.
 
 ```{image} ./images/GradeDistribution.png
 :width: 760
