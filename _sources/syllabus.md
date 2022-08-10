@@ -15,7 +15,7 @@ The course schedule is [here](schedule.md)
 
 The overall **weighting** of the graded items is:
 
-<center>    
+<div align="center">  
 |     Prog               |             |     Final              |             |
 |------------------------|-------------|------------------------|-------------|
 |     GRs                |     30%     |     GRs                |     20%     |
@@ -25,7 +25,7 @@ The overall **weighting** of the graded items is:
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
 
-</center>
+</div>
 
 The **Grade distribution** for this course is shown in the chart below.
 
@@ -33,9 +33,10 @@ The **Grade distribution** for this course is shown in the chart below.
 :width: 760
 :align: center
 ```
-
+<br>
+Electrical and Computer Engineering courses are contract graded using the following 100 point scale:
 <center>
-
+   
 |     Grade             |     Grade           |   
 |-----------------------|---------------------|
 |     93 <= A <= 100    |     77 <= C+ < 80   |  
