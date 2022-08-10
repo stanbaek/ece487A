@@ -55,7 +55,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProject` folder.  The figure below shows an example of a local `PycharmProject` folder on your computer.
 
 
-```{image} ./figures/PycharmProjectFolder.png
+```{image} ./figures/PycharmProjectsFolder.png
 :scale: 80%
 :align: center
 ```
