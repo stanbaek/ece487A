@@ -13,26 +13,30 @@ The course schedule is [here](schedule.md)
 
 ## Grade Distribution and Policy
 
-The overall **weighting** of the graded items is:
+The **Grade distribution** for this course is shown below.
 
 |     Prog               |             |     Final              |             |
 |------------------------|-------------|------------------------|-------------|
-|     GRs                |     25%     |     GRs                |     25%     |
-|     Labs               |     25%     |     Labs               |     10%     |
-|Homework + Skills Review|     50%     |Homework + Skills Review|     40%     |
+|     GRs                |     30%     |     GRs                |     20%     |
+|     Labs               |     30%     |     Labs               |     15%     |
+|Homework + Skills Review|     40%     |Homework + Skills Review|     40%     |
 |                        |             |     Final   Project    |     25%     |
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
 
-The **Grade distribution** for this course is shown in the chart below.
+```{image} ./images/GradeDistribution.png
+:width: 760
+:align: center
+```
 
-|     Grade             |     Grade           |   
-|-----------------------|---------------------|
-|     93 <= A <= 100    |     77 <= C+ < 80   |  
-|     90 <= A- < 93     |     73 <= C < 77    |   
-|     87 <= B+ < 90     |     70 <= C- < 73   |   
-|     83 <= B < 87      |     60 <= D < 70    |   
-|     80 <= B- < 83     |     0 <= F < 60     |   
+Electrical and Computer Engineering courses are contract graded using the following 100 point scale.
+<br>
+|     Grade       |     Grade      |     Grade       |     Grade     |   
+|:---------------:|:--------------:|:---------------:|:-------------:|
+| 93 <= A <= 100  | 87 <= B+ < 90  | 77 <= C+ < 80   | 60 <= D < 70  | 
+| 90 <= A- < 93   | 83 <= B < 87   | 73 <= C < 77    | 0 <= F < 60   | 
+|                 | 80 <= B- < 83  | 70 <= C- < 73   |               |
+
 
 You must complete all minimum functionalities on labs in order to complete the course.  Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”
 
