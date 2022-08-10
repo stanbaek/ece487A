@@ -17,14 +17,24 @@ The overall **weighting** of the graded items is:
 
 |     Prog               |             |     Final              |             |
 |------------------------|-------------|------------------------|-------------|
-|     GRs                |     25%     |     GRs                |     25%     |
-|     Labs               |     25%     |     Labs               |     10%     |
-|Homework + Skills Review|     50%     |Homework + Skills Review|     40%     |
+|     GRs                |     30%     |     GRs                |     20%     |
+|     Labs               |     30%     |     Labs               |     15%     |
+|Homework + Skills Review|     40%     |Homework + Skills Review|     40%     |
 |                        |             |     Final   Project    |     25%     |
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
 
 The **Grade distribution** for this course is shown in the chart below.
+
+```{image} ./images/GradeDistribution.png
+:width: 640
+:align: center
+```
+
+
+
+
+
 
 |     Grade             |     Grade           |   
 |-----------------------|---------------------|

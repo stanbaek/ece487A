@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>Introduction to Python3 &#8212; Fundamentals of Robotics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Python &#8212; Fundamentals of Robotics</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -38,14 +40,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,21 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -88,10 +75,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -109,15 +95,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    ECE 487 Fundamentals of Robotics
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   ECE 487 Fundamentals of Robotics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Info
  </span>
@@ -162,23 +147,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Introduction to Python3
+   Introduction to Python
   </a>
  </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -186,191 +166,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/PythonContainers.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/stanbaek/ece487"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/PythonContainers.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Labs/PythonContainers.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Labs/PythonContainers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/stanbaek/ece487"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/PythonContainers.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/PythonContainers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-containers">
    Python Containers
@@ -434,14 +317,15 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Python3</h1>
+                <h1>Introduction to Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -518,15 +402,14 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/Intro-to-Python.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python3">
-<h1>Introduction to Python3<a class="headerlink" href="#introduction-to-python3" title="Permalink to this headline">#</a></h1>
-<hr><section id="python-containers">
-<h2>Python Containers<a class="headerlink" href="#python-containers" title="Permalink to this headline">#</a></h2>
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/PythonContainers.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">¶</a></h1>
+<hr><div class="section" id="python-containers">
+<h2>Python Containers<a class="headerlink" href="#python-containers" title="Permalink to this headline">¶</a></h2>
 <p>There are 4 main types of builtin containers for storing data in Python:</p>
 <ul class="simple">
 <li><p>list <span class="math notranslate nohighlight">\(\checkmark\)</span></p></li>
@@ -534,8 +417,8 @@ title="Print to PDF"
 <li><p>set</p></li>
 <li><p>tuple</p></li>
 </ul>
-<section id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
+<div class="section" id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
 <p>In Python, a list is a mutable sequence of values. Mutable means that we can change separate entries within a list.</p>
 <ul class="simple">
 <li><p>Each value in the list is an element or item</p></li>
@@ -671,9 +554,9 @@ PSYC 347 - COMPUTATIONAL MODELS OF HUMAN SOCIAL BEHAVIOR AND NEUROSCIENCE
 </div>
 </div>
 </div>
-</section>
-<section id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>In Python, a dictionary (or dict) is mapping between a set of indices (keys) and a set of values</p></li>
 <li><p>The items in a dictionary are key-value pairs</p></li>
@@ -723,10 +606,10 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </div>
 </div>
 </div>
-<hr></section>
-</section>
-<section id="loops">
-<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
+<hr></div>
+</div>
+<div class="section" id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
 <p><strong>for</strong> loop is probably the most popular loop construct in Python:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">do_statements</span>
@@ -880,9 +763,7 @@ r
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>M
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O
+O
 D
 E
 L
@@ -947,9 +828,9 @@ S
 </div>
 </div>
 </div>
-</section>
-<section id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <p><em>(from: <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">https://realpython.com/python3-object-oriented-programming/</a>)</em></p>
 <blockquote>
 "The primitive data structures available in Python, like numbers, strings, and lists are designed to represent simple things like the cost of something, the name of a poem, and your favorite colors, respectively.
@@ -1046,9 +927,6 @@ Fat Cat says Meow! Meow!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fat Cat is 6 years old. Fat Cat is tired. Fat Cat is not hungry. 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1089,9 +967,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-</section>
-<section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <p>A Module is a python file that contains a collection of related definitions. Python has hundreds of standard modules. These are organized into what is known as the <a class="reference external" href="http://docs.python.org/library/">Python Standard Library</a>. You can also create and use your own modules. To use functionality from a module, you first have to import the entire module or parts of it into your namespace</p>
 <p>To import the entire module:
 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code></p>
@@ -1149,9 +1027,6 @@ Fat Cat says Meow! Meow!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;oop.ipynb&#39;, &#39;PythonContainers.ipynb&#39;, &#39;PythonIntro.ipynb&#39;]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>It is also sometimes even cleaner to do this as a list comprehension</p>
@@ -1167,8 +1042,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-<section id="numpy">
-<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h3>
+<div class="section" id="numpy">
+<h3>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
 <p>NumPy is the fundamental package for scientific computing with Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1296,8 +1171,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-<section id="creating-arrays">
-<h4>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h4>
+<div class="section" id="creating-arrays">
+<h4>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h4>
 <p>You can create an array from a regular Python list or tuple using the array function. The type of the resulting array is deduced from the type of the elements in the sequences.</p>
 <p>A frequent error consists in calling array with multiple numeric arguments, rather than providing a single list of numbers as an argument.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>    <span class="c1"># WRONG</span>
@@ -1398,9 +1273,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.49724634, 0.39534488],
-       [0.38752706, 0.45846113],
-       [0.48910068, 0.3626038 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.94331426, 0.17652906],
+       [0.85392933, 0.00577964],
+       [0.30080971, 0.07532577]])
 </pre></div>
 </div>
 </div>
@@ -1412,8 +1287,8 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.49724634, 0.39534488, 0.38752706],
-       [0.45846113, 0.48910068, 0.3626038 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.94331426, 0.17652906, 0.85392933],
+       [0.00577964, 0.30080971, 0.07532577]])
 </pre></div>
 </div>
 </div>
@@ -1431,9 +1306,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 </div>
-</section>
-<section id="shape-manipulation">
-<h4>Shape Manipulation<a class="headerlink" href="#shape-manipulation" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="shape-manipulation">
+<h4>Shape Manipulation<a class="headerlink" href="#shape-manipulation" title="Permalink to this headline">¶</a></h4>
 <p>Three main functions include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ravel()</span></code> flattens an array</p></li>
@@ -1448,10 +1323,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.57964256 0.04420686 0.60221011 0.0675793 ]
- [0.5261019  0.41080225 0.79892667 0.35812482]
- [0.70237463 0.01832198 0.1804549  0.55798605]
- [0.4899662  0.85878256 0.3101798  0.2739414 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.1243615  0.93243603 0.28968234 0.3658878 ]
+ [0.46056836 0.66864405 0.01103474 0.20374691]
+ [0.21916019 0.18064295 0.56595244 0.71070019]
+ [0.54109422 0.05171769 0.78799203 0.72031058]]
 </pre></div>
 </div>
 </div>
@@ -1463,10 +1338,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.79642556, 0.44206863, 6.02210113, 0.675793  ],
-       [5.26101897, 4.10802251, 7.98926667, 3.58124817],
-       [7.02374632, 0.18321985, 1.80454898, 5.57986048],
-       [4.89966195, 8.58782556, 3.10179802, 2.73941401]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.24361497, 9.32436026, 2.89682344, 3.65887798],
+       [4.6056836 , 6.68644046, 0.11034744, 2.03746907],
+       [2.19160194, 1.80642948, 5.65952439, 7.10700192],
+       [5.41094217, 0.51717691, 7.87992032, 7.20310576]])
 </pre></div>
 </div>
 </div>
@@ -1479,9 +1354,9 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.57964256 0.04420686 0.60221011 0.0675793  0.5261019  0.41080225
- 0.79892667 0.35812482 0.70237463 0.01832198 0.1804549  0.55798605
- 0.4899662  0.85878256 0.3101798  0.2739414 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.1243615  0.93243603 0.28968234 0.3658878  0.46056836 0.66864405
+ 0.01103474 0.20374691 0.21916019 0.18064295 0.56595244 0.71070019
+ 0.54109422 0.05171769 0.78799203 0.72031058]
 </pre></div>
 </div>
 </div>
@@ -1493,10 +1368,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.57964256, 0.04420686, 0.60221011, 0.0675793 , 0.5261019 ,
-        0.41080225, 0.79892667, 0.35812482],
-       [0.70237463, 0.01832198, 0.1804549 , 0.55798605, 0.4899662 ,
-        0.85878256, 0.3101798 , 0.2739414 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.1243615 , 0.93243603, 0.28968234, 0.3658878 , 0.46056836,
+        0.66864405, 0.01103474, 0.20374691],
+       [0.21916019, 0.18064295, 0.56595244, 0.71070019, 0.54109422,
+        0.05171769, 0.78799203, 0.72031058]])
 </pre></div>
 </div>
 </div>
@@ -1508,10 +1383,10 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.57964256, 0.04420686, 0.60221011, 0.0675793 ],
-       [0.5261019 , 0.41080225, 0.79892667, 0.35812482],
-       [0.70237463, 0.01832198, 0.1804549 , 0.55798605],
-       [0.4899662 , 0.85878256, 0.3101798 , 0.2739414 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.1243615 , 0.93243603, 0.28968234, 0.3658878 ],
+       [0.46056836, 0.66864405, 0.01103474, 0.20374691],
+       [0.21916019, 0.18064295, 0.56595244, 0.71070019],
+       [0.54109422, 0.05171769, 0.78799203, 0.72031058]])
 </pre></div>
 </div>
 </div>
@@ -1524,13 +1399,13 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.90742125 0.03120513 0.62881728 0.28619698 0.96872261 0.60515621]
-  [0.16063679 0.59396825 0.93398187 0.18502465 0.85081748 0.62236084]
-  [0.60996626 0.57613804 0.09761332 0.15568666 0.27479017 0.90767411]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0.08492455 0.40024747 0.9173724  0.8057901  0.06206492 0.21362616]
+  [0.27896946 0.33073504 0.50803417 0.19530516 0.24741203 0.94058472]
+  [0.17169431 0.18130416 0.75975433 0.88884809 0.88305231 0.24566742]]
 
- [[0.35727024 0.63501793 0.20937958 0.21216809 0.9935455  0.14682172]
-  [0.93291893 0.33580195 0.93572448 0.17646277 0.84986206 0.87164393]
-  [0.99227766 0.67901872 0.57107007 0.87807645 0.79448835 0.60572093]]]
+ [[0.95151996 0.65446971 0.25261274 0.19335714 0.6004649  0.09116956]
+  [0.53971026 0.5064113  0.97656095 0.1360003  0.63826462 0.0327944 ]
+  [0.38931158 0.0672095  0.02097068 0.77848846 0.12421256 0.69125796]]]
 </pre></div>
 </div>
 </div>
@@ -1542,12 +1417,12 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.90742125 0.03120513 0.62881728 0.28619698 0.96872261 0.60515621
- 0.16063679 0.59396825 0.93398187 0.18502465 0.85081748 0.62236084
- 0.60996626 0.57613804 0.09761332 0.15568666 0.27479017 0.90767411
- 0.35727024 0.63501793 0.20937958 0.21216809 0.9935455  0.14682172
- 0.93291893 0.33580195 0.93572448 0.17646277 0.84986206 0.87164393
- 0.99227766 0.67901872 0.57107007 0.87807645 0.79448835 0.60572093]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.08492455 0.40024747 0.9173724  0.8057901  0.06206492 0.21362616
+ 0.27896946 0.33073504 0.50803417 0.19530516 0.24741203 0.94058472
+ 0.17169431 0.18130416 0.75975433 0.88884809 0.88305231 0.24566742
+ 0.95151996 0.65446971 0.25261274 0.19335714 0.6004649  0.09116956
+ 0.53971026 0.5064113  0.97656095 0.1360003  0.63826462 0.0327944
+ 0.38931158 0.0672095  0.02097068 0.77848846 0.12421256 0.69125796]
 </pre></div>
 </div>
 </div>
@@ -1559,22 +1434,19 @@ Fat Cat says Meow! Meow!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.57964256 0.5261019  0.70237463 0.4899662 ]
- [0.04420686 0.41080225 0.01832198 0.85878256]
- [0.60221011 0.79892667 0.1804549  0.3101798 ]
- [0.0675793  0.35812482 0.55798605 0.2739414 ]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.1243615  0.46056836 0.21916019 0.54109422]
+ [0.93243603 0.66864405 0.18064295 0.05171769]
+ [0.28968234 0.01103474 0.56595244 0.78799203]
+ [0.3658878  0.20374691 0.71070019 0.72031058]]
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="the-zen-of-python">
-<h2>“The Zen of Python”<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="the-zen-of-python">
+<h2>“The Zen of Python”<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
 <p><em>from <a class="reference external" href="https://github.com/jakevdp/WhirlwindTourOfPython/blob/master/00-Introduction.ipynb">Whirlwind Tour of Python</a></em></p>
 <p>“Python aficionados are often quick to point out how “intuitive”, “beautiful”, or “fun” Python is. While I tend to agree, I also recognize that beauty, intuition, and fun often go hand in hand with familiarity, and so for those familiar with other languages such florid sentiments can come across as a bit smug. Nevertheless, I hope that if you give Python a chance, you’ll see where such impressions might come from. And if you really want to dig into the programming philosophy that drives much of the coding practice of Python power-users, a nice little Easter egg exists in the Python interpreter: simply close your eyes, meditate for a few minutes, and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code>”</p>
 <div class="cell docutils container">
@@ -1609,17 +1481,17 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</section>
-<section id="for-more-on-why-python">
-<h2>For more on “Why python?”<a class="headerlink" href="#for-more-on-why-python" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="for-more-on-why-python">
+<h2>For more on “Why python?”<a class="headerlink" href="#for-more-on-why-python" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.talyarkoni.org/blog/2013/11/18/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/">The homogenization of scientific computing, or why Python is steadily eating other languages’ lunch</a></p></li>
 <li><p><a class="reference external" href="https://www.apa.org/science/about/psa/2019/07/python-research">A brief introduction to Python for psychological science research</a></p></li>
 <li><p><a class="reference external" href="https://dominiquemakowski.github.io/post/r_or_python/">R or Python for Psychologists</a></p></li>
 <li><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-biodatasci-072018-021237">Poldrack, R. A., Gorgolewski, K. J., &amp; Varoquaux, G. (2019). Computational and informatics advances for reproducible data analysis in neuroimaging. Annual Review of Biomedical Data Science, 2(1), 119–138.</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1643,11 +1515,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="PythonIntro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1656,28 +1526,24 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
         </div>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Stan Baek<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Stan Baek<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
