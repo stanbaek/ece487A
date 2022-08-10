@@ -52,10 +52,10 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 ```
 <br>
 
-- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProject` folder.  The figure below shows an example of a local `workspace` folder on your computer.
+- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProject` folder.  The figure below shows an example of a local `PycharmProject` folder on your computer.
 
 
-```{image} ./figures/git6.PNG
+```{image} ./figures/PycharmProjectFolder.png
 :scale: 80%
 :align: center
 ```
@@ -94,10 +94,18 @@ After you push your assignments to Git, it is your responsibility to check your 
 
 
 
-### Install Code Composer Studio (CCS).
+### Install PyCharm
 
+- Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
+- Ensure you have the installation optioned checked as shown below. 
 
-### Import Project Files.
+```{image} ./figures/PyCharmInstallationOptions.png
+:width: 460
+:align: center
+```
+<br>
+
+### PyCharm Configuration
 
 
 ```{Attention} 

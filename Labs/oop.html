@@ -479,6 +479,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
  &#39;__class__&#39;,
+ &#39;__class_getitem__&#39;,
  &#39;__contains__&#39;,
  &#39;__delattr__&#39;,
  &#39;__delitem__&#39;,
@@ -724,12 +725,6 @@ woof woof yap yap
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fat Cat is 6 years old. Fat Cat is tired. Fat Cat is hungry. 
-Fat Cat says Meow! Meow!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,20 +732,10 @@ Fat Cat says Meow! Meow!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fat Cat says Meow! Meow!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kitty</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fat Cat is 6 years old. Fat Cat is tired. Fat Cat is not hungry. 
 </pre></div>
 </div>
 </div>
@@ -768,11 +753,6 @@ Fat Cat says Meow! Meow!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fat Cat is 6 years old. Fat Cat is not tired. Fat Cat is not hungry. 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -784,11 +764,6 @@ Fat Cat says Meow! Meow!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kitty</span><span class="o">.</span><span class="n">meow</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Shawn says Meow! Meow!&#39;
 </pre></div>
 </div>
 </div>
@@ -831,7 +806,7 @@ Fat Cat says Meow! Meow!
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not running on Colab... Printing list of files
-[&#39;.\\oop.ipynb&#39;, &#39;.\\PythonContainers.ipynb&#39;, &#39;.\\PythonIntro.ipynb&#39;]
+[&#39;./module-02-01_Nonlinear-Modeling.ipynb&#39;, &#39;./module-03-00_Two-Armed-Bandit.ipynb&#39;, &#39;./module-03-02_RL-Exercises.ipynb&#39;, &#39;./module-01-03_Python-Exercises.ipynb&#39;, &#39;./module-01-02_Working-with-Data.ipynb&#39;, &#39;./module-04-00_Social-Learning.ipynb&#39;, &#39;./module-01-01_Intro-to-Python.ipynb&#39;, &#39;./module-03-01_Models-of-Learning.ipynb&#39;, &#39;./module-04-01_Prosocial-RL-Exercises.ipynb&#39;, &#39;./module-02-00_Linear-Modeling.ipynb&#39;, &#39;./module-01-00_Jupyter-Notebooks.ipynb&#39;, &#39;./module-02-02_Modeling-Exercises.ipynb&#39;]
 </pre></div>
 </div>
 </div>
@@ -847,21 +822,11 @@ Fat Cat says Meow! Meow!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;oop.ipynb&#39;, &#39;PythonContainers.ipynb&#39;, &#39;PythonIntro.ipynb&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>It is also sometimes even cleaner to do this as a list comprehension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data_file_list</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;oop.ipynb&#39;, &#39;PythonContainers.ipynb&#39;, &#39;PythonIntro.ipynb&#39;]
 </pre></div>
 </div>
 </div>

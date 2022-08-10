@@ -635,14 +635,6 @@ Computer says &#39;No&#39;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Content-type: text/html
-
-&lt;h1&gt; Hello World &lt;/h1&gt;
-Click &lt;a href=&quot;http://www.python.org&quot;&gt;here&lt;/a&gt;.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Strings are stored as sequences of characters indexed by integers starting at zero</p>
 <div class="cell docutils container">
@@ -793,14 +785,6 @@ lo Wo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dave
-[&#39;Mark&#39;, 7, 9, [0, 101]]
-7
-101
-</pre></div>
-</div>
-</div>
 </div>
 <p>Objects can be inserted and appended to a list.</p>
 <div class="cell docutils container">
@@ -811,36 +795,12 @@ lo Wo
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># List methods (insert)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">list_b</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">list_b</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;list_b&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List methods (append)</span>
 <span class="n">list_b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">list_b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># List methods (append)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">list_b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">list_b</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;list_b&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -918,7 +878,7 @@ lo Wo
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [18],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">stock</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">200</span>
 
@@ -1010,10 +970,7 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 <section id="installing-numpy-for-pycharm-projects">
 <h3>Installing NumPy for PyCharm Projects<a class="headerlink" href="#installing-numpy-for-pycharm-projects" title="Permalink to this headline">#</a></h3>
 <p>Open Your PyCharm project. Then, go to File &gt; Settings &gt; Project &gt; Python Interpreter. Click <code class="docutils literal notranslate"><span class="pre">+</span></code> as shown below</p>
-<div>
-<br>
-    <img src="figs/PythonInterpreter.png" width="350"/>
-</div>
+<p><img alt="SQRT" src="../_images/PythonInterpreter.png" /></p>
 <p>Search for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and choose the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package. Click <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Package</span></code> at the bottom.  Once the installation is complete, it will display <code class="docutils literal notranslate"><span class="pre">Package</span> <span class="pre">'numpy'</span> <span class="pre">installed</span> <span class="pre">successfully</span></code>.  Close the window. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> should be on the intalled packages list.</p>
 <p>In the future, you need to run the same procedure to install packages in PyCharm.  The packages we need include spatialmath-python, matplotlib, roboticstoolbox-python, and opencv-python.</p>
 </section>
@@ -1029,14 +986,6 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
-int32
-&lt;class &#39;numpy.ndarray&#39;&gt;
-float64
 </pre></div>
 </div>
 </div>
@@ -1060,15 +1009,6 @@ float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.5 2.  3. ]
- [4.  5.  6. ]]
-[1.5 2.  3. ]
-1.5
-1.5
-</pre></div>
-</div>
-</div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> creates an array full of zeros, the function ones creates an array full of ones, and the function empty creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is float64, but it can be specified via the key word argument dtype.</p>
 <div class="cell docutils container">
@@ -1079,27 +1019,6 @@ float64
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0. 0.]]
-[[[1 1 1 1]
-  [1 1 1 1]
-  [1 1 1 1]]
-
- [[1 1 1 1]
-  [1 1 1 1]
-  [1 1 1 1]]]
-[[6.23042070e-307 4.67296746e-307 1.69121096e-306 7.56603882e-307
-  9.34596888e-307]
- [1.42413555e-306 1.78019082e-306 1.37960147e-306 1.33511562e-306
-  2.22518251e-306]
- [1.33511969e-306 1.78022342e-306 1.05700345e-307 1.11261502e-306
-  1.42410839e-306]
- [7.56597770e-307 6.23059726e-307 1.42419530e-306 1.37961302e-306
-  1.78005909e-306]]
 </pre></div>
 </div>
 </div>
@@ -1114,12 +1033,6 @@ float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10 15 20 25]
-[0.  0.3 0.6 0.9 1.2 1.5 1.8]
-</pre></div>
-</div>
-</div>
 </div>
 <p>When <code class="docutils literal notranslate"><span class="pre">arange</span></code> is used with floating point arguments, it is generally not possible to predict the number of elements obtained, due to the finite floating point precision. For this reason, it is usually better to use the function <code class="docutils literal notranslate"><span class="pre">linspace</span></code> that receives as an argument the number of elements that we want, instead of the step:</p>
 <div class="cell docutils container">
@@ -1128,28 +1041,6 @@ float64
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>        <span class="c1"># useful to evaluate function at lots of points</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.  ]
-[0.         0.06346652 0.12693304 0.19039955 0.25386607 0.31733259
- 0.38079911 0.44426563 0.50773215 0.57119866 0.63466518 0.6981317
- 0.76159822 0.82506474 0.88853126 0.95199777 1.01546429 1.07893081
- 1.14239733 1.20586385 1.26933037 1.33279688 1.3962634  1.45972992
- 1.52319644 1.58666296 1.65012947 1.71359599 1.77706251 1.84052903
- 1.90399555 1.96746207 2.03092858 2.0943951  2.15786162 2.22132814
- 2.28479466 2.34826118 2.41172769 2.47519421 2.53866073 2.60212725
- 2.66559377 2.72906028 2.7925268  2.85599332 2.91945984 2.98292636
- 3.04639288 3.10985939 3.17332591 3.23679243 3.30025895 3.36372547
- 3.42719199 3.4906585  3.55412502 3.61759154 3.68105806 3.74452458
- 3.8079911  3.87145761 3.93492413 3.99839065 4.06185717 4.12532369
- 4.1887902  4.25225672 4.31572324 4.37918976 4.44265628 4.5061228
- 4.56958931 4.63305583 4.69652235 4.75998887 4.82345539 4.88692191
- 4.95038842 5.01385494 5.07732146 5.14078798 5.2042545  5.26772102
- 5.33118753 5.39465405 5.45812057 5.52158709 5.58505361 5.64852012
- 5.71198664 5.77545316 5.83891968 5.9023862  5.96585272 6.02931923
- 6.09278575 6.15625227 6.21971879 6.28318531]
 </pre></div>
 </div>
 </div>
@@ -1174,16 +1065,6 @@ float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20 30 40 50]
-[0 1 2 3]
-[20 29 38 47]
-[0 1 4 9]
-[ 9.12945251 -9.88031624  7.4511316  -2.62374854]
-[ True  True False False]
-</pre></div>
-</div>
-</div>
 </div>
 <p><span style="color:red"><strong>IMPORTANT</strong></span>
 Unlike in many matrix languages, the product operator <code class="docutils literal notranslate"><span class="pre">*</span></code> operates <strong>elementwise</strong> in NumPy arrays. The matrix product can be performed using the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator (in python &gt;=3.5) or the dot function or method:</p>
@@ -1197,18 +1078,6 @@ Unlike in many matrix languages, the product operator <code class="docutils lite
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span>   <span class="c1"># matrix product</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">))</span> <span class="c1"># matrix product</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>  <span class="c1"># matrix product</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 0]
- [0 4]]
-[[5 4]
- [3 4]]
-[[5 4]
- [3 4]]
-[[5 4]
- [3 4]]
 </pre></div>
 </div>
 </div>
@@ -1226,28 +1095,6 @@ Unlike in many matrix languages, the product operator <code class="docutils lite
 <span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>  <span class="c1"># b is not automatically converted to integer type</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 1 1]
- [1 1 1]]
-[[0.51182162 0.9504637  0.14415961]
- [0.94864945 0.31183145 0.42332645]]
-[[3 3 3]
- [3 3 3]]
-[[3.51182162 3.9504637  3.14415961]
- [3.94864945 3.31183145 3.42332645]]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>
-
-<span class="ne">UFuncTypeError</span>: Cannot cast ufunc &#39;add&#39; output from dtype(&#39;float64&#39;) to dtype(&#39;int32&#39;) with casting rule &#39;same_kind&#39;
 </pre></div>
 </div>
 </div>
@@ -1279,10 +1126,10 @@ A Python <code class="docutils literal notranslate"><span class="pre">list</span
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="n">bf234c89ddd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Error</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for ** or pow(): &#39;list&#39; and &#39;int&#39;
 </pre></div>
@@ -1413,37 +1260,6 @@ A complete list can be found in the reference below.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
- [4 5 6]]
-(2, 3)
-(2, 3)
-[[1 2]
- [3 4]
- [5 6]]
-(3, 2)
-[1 2 3 4 5 6]
-(6,)
-[[1 4]
- [2 5]
- [3 6]]
-[[1 4]
- [2 5]
- [3 6]]
-[[1 2 3]
- [3 4 5]
- [4 5 6]]
-[[1 3 2 3]
- [4 4 5 6]]
-[[0 1 2]
- [3 4 5]
- [6 7 8]]
-[0 4 8]
-[2 4 6]
-[6 4 2]
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="numpy-linalg">
@@ -1469,9 +1285,7 @@ A complete list can be found in the reference below.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2]
  [3 4]]
 -2.0000000000000004
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.   1. ]
+[[-2.   1. ]
  [ 1.5 -0.5]]
 [-0.37228132  5.37228132]
 [[-0.82456484 -0.41597356]
@@ -1500,9 +1314,7 @@ A complete list can be found in the reference below.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True False False]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
 True
 False
 True
@@ -1511,7 +1323,7 @@ False
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [35],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>            <span class="c1"># y is a list</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># np.all() takes a list argument</span>
 <span class="ne">----&gt; </span><span class="mi">9</span> <span class="nb">print</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
@@ -1652,7 +1464,9 @@ Object oriented programming</p>
 [1, [0, 9, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
-[1, [0, 9, 2], 3, 4, 5]
+[8, [0, 1, 2], 3, 4, 5]
+[1, [0, 1, 2], 3, 4, 5]
+[8, [0, 9, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
 </pre></div>
 </div>
@@ -1780,49 +1594,6 @@ Object oriented programming</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_______
-[0 0 0]
-[0 0 0]
-[0 0 0]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">Input In [41],</span> in <span class="ni">&lt;cell line: 109&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="n">current_player</span> <span class="o">^=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">main</span><span class="p">()</span>
-
-<span class="nn">Input In [41],</span> in <span class="ni">main</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">display_board</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">row</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player </span><span class="si">{</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">]</span><span class="si">}</span><span class="s2">: Enter the row you want to play (0,...,</span><span class="si">{</span><span class="n">board_size</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="n">col</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player </span><span class="si">{</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">]</span><span class="si">}</span><span class="s2">: Enter the column you want to play (0,...,</span><span class="si">{</span><span class="n">board_size</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">update_board</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">)):</span>
-
-<span class="nn">File c:\program files\python38\lib\site-packages\ipykernel\kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="problem-2">
@@ -1906,41 +1677,6 @@ Object oriented programming</p>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [42],</span> in <span class="ni">&lt;cell line: 75&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You have </span><span class="si">{</span><span class="n">num_errors</span><span class="si">}</span><span class="s2"> errors.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="n">main</span><span class="p">()</span>
-
-<span class="nn">Input In [42],</span> in <span class="ni">main</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="n">Rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span>             <span class="mi">0</span><span class="p">,</span>             <span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)],</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">)]])</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">R</span> <span class="o">=</span> <span class="n">Rz</span><span class="nd">@Ry@Rx</span>
-<span class="ne">---&gt; </span><span class="mi">39</span> <span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">get_rpy</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">Rz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span>             <span class="mi">0</span><span class="p">,</span>             <span class="mi">1</span><span class="p">]])</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="n">Ry2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span>  <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span>             <span class="mi">1</span><span class="p">,</span>            <span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>                <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
-
-<span class="nn">Input In [42],</span> in <span class="ni">get_rpy</span><span class="nt">(R)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd"> Find the ZYX Euler angles (psi, theta, phi) from rotation matrix R</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> :param R: a 3 by 3 numpy array representing a rotation in 3-D. </span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd"> :return: ZYX Euler angels (psi, theta, phi)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="sd"> </span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># write your code here</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="k">return</span> <span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span>
-
-<span class="ne">NameError</span>: name &#39;psi&#39; is not defined
 </pre></div>
 </div>
 </div>
