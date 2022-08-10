@@ -15,6 +15,7 @@ The course schedule is [here](schedule.md)
 
 The overall **weighting** of the graded items is:
 
+<center>    
 |     Prog               |             |     Final              |             |
 |------------------------|-------------|------------------------|-------------|
 |     GRs                |     30%     |     GRs                |     20%     |
@@ -24,17 +25,16 @@ The overall **weighting** of the graded items is:
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
 
+</center>
+
 The **Grade distribution** for this course is shown in the chart below.
 
 ```{image} ./images/GradeDistribution.png
-:width: 640
+:width: 760
 :align: center
 ```
 
-
-
-
-
+<center>
 
 |     Grade             |     Grade           |   
 |-----------------------|---------------------|
@@ -43,6 +43,8 @@ The **Grade distribution** for this course is shown in the chart below.
 |     87 <= B+ < 90     |     70 <= C- < 73   |   
 |     83 <= B < 87      |     60 <= D < 70    |   
 |     80 <= B- < 83     |     0 <= F < 60     |   
+
+</center>
 
 You must complete all minimum functionalities on labs in order to complete the course.  Even if an assignment is so late that no credit will be received, the assignment must be completed to the satisfaction of the instructor to prevent a grade of “Incomplete.”
 
