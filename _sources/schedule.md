@@ -15,18 +15,18 @@ This schedule is subject to change as appropriate.
  L6      | Extracting Euler Angles      | HW4          |           
  L7      | Singularity & Gimbal Lock    | HW5          |           
  L8      | Singularity & Gimbal Lock    | HW6          |           
- L9      | ICE 1 - Python Intro         | HW7          |           
- L10     | ICE 2 - Numpy                | HW8          |    
- L11     | Lab 1 - Spatial Maths        | HW9          |    
- L12     | Quaternions                  | Lab1         |    
- L13     | Quaternions                  | HW10         |    
- L14     | Quaternions                  | HW11         |    
+ L9      | Lab1 - Python Intro          | HW7, Prelab1 |           
+ L10     | Lab2 - Containers & Numpy    | Lab1         |    
+ L11     | Lab3 - Spatial Maths         | Lab2         |    
+ L12     | Quaternions                  | Lab3         |    
+ L13     | Quaternions                  | HW8          |    
+ L14     | Quaternions                  | HW9          |    
  L15     | GR 1                         |              |    
  L16     | Pose in 3D Space                  | HW12       |    
  L17     | Danavit-Hartenberg Representation | HW13       |    
  L18     | Forward Kinematics                | HW14       |    
  L19     | Forward Kinematics                | HW15       |    
- L20     | ICE 3                             | HW16       |    Forward Kinematics
+ L20     | Lab 2                             | HW16       |    Forward Kinematics
  L21     | Lab 2                             | HW17       |    
  L22     | Lab 2                             |            |    
  L23     | Inverse Kinematics 1              | Lab2 Due   |    
