@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>✏️ HW 1 Setting up Bitbucket &#8212; Fundamentals of Robotics</title>
+    <title>✏️ Software Configuration &#8212; Fundamentals of Robotics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to Python" href="PythonIntro.html" />
-    <link rel="prev" title="🤖 Robots, Robots, and Robots" href="../robots.html" />
+    <link rel="prev" title="Lab 1" href="lab1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -154,20 +154,49 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   ✏️ HW 1 Setting up Bitbucket
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="lab1.html">
+   Lab 1
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     ✏️ Software Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="PythonIntro.html">
+     Introduction to Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="PythonContainers.html">
+     Python Containers &amp; Numpy
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="PythonIntro.html">
-   Introduction to Python
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="lab2.html">
+   Lab 2
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="PythonContainers.html">
-   Python Containers &amp; Numpy
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="not_ready.html">
+     ✏️ Under construction
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -392,7 +421,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>✏️ HW 1 Setting up Bitbucket</h1>
+                <h1>✏️ Software Configuration</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -449,13 +478,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="hw-1-setting-up-bitbucket">
-<h1>✏️ HW 1 Setting up Bitbucket<a class="headerlink" href="#hw-1-setting-up-bitbucket" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="software-configuration">
+<h1>✏️ Software Configuration<a class="headerlink" href="#software-configuration" title="Permalink to this headline">#</a></h1>
 <section id="agenda">
 <h2>📜 Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Create a Bitbucket repository.</p></li>
 <li><p>Configure git repository.</p></li>
+<li><p>Install and Configure PyCharm</p></li>
 </ul>
 </section>
 <section id="procedure">
@@ -499,7 +529,7 @@ title="Print to PDF"
 <li><p>If it asks for a password, enter the app password you saved in the previous step.</p></li>
 <li><p>Notice that you have <code class="docutils literal notranslate"><span class="pre">(master)</span></code> at the end of the folder name. If you type <code class="docutils literal notranslate"><span class="pre">ls</span></code>, it should return nothing.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/GitClone.gif"><img alt="../_images/GitClone.gif" class="align-center" src="../_images/GitClone.gif" style="width: 640.1999999999999px; height: 446.4px;" /></a>
+<a class="reference internal image-reference" href="../_images/GitClone.gif"><img alt="../_images/GitClone.gif" class="align-center" src="../_images/GitClone.gif" style="width: 543.6px; height: 464.4px;" /></a>
 <br>
 <ul class="simple">
 <li><p>Go to Teams &gt; General &gt; Files &gt; Class Materials. Download the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder and copy everything into the <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder in your home directory. Do not copy the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder itself into the <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder.  The figure below shows an example of a local <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder on your computer.</p></li>
@@ -601,11 +631,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../robots.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">🤖 Robots, Robots, and Robots</p>
+            <p class="prev-next-title">Lab 1</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="PythonIntro.html" title="next page">
