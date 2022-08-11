@@ -1,8 +1,9 @@
-# ✏️ HW 1 Setting up Bitbucket
+# ✏️ Software Configuration
 
 ## 📜 Agenda
 - Create a Bitbucket repository.
 - Configure git repository.
+- Install and Configure PyCharm
 
 ## 💻 Procedure
 

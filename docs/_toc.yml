@@ -4,16 +4,22 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Course Info
-    chapters:
-    - file: syllabus.md
-    - file: schedule.md
-    - file: resources.md
-    - file: python.md
-    - file: robots.md
-  - caption: Labs 
-    chapters:
+- caption: Course Info
+  chapters:
+  - file: syllabus.md
+  - file: schedule.md
+  - file: resources.md
+  - file: python.md
+  - file: robots.md
+
+- caption: Labs 
+  chapters:
+  - file: Labs/lab1
+    sections:
     - file: Labs/Installation.md
     - file: Labs/PythonIntro.ipynb
     - file: Labs/PythonContainers.ipynb
 
+  - file: Labs/lab2
+    sections:
+    - file: Labs/not_ready.md
