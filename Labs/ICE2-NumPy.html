@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>💻 Python Containers &amp; Numpy &#8212; Fundamentals of Robotics</title>
+    <title>ECE387 ICE 2: String, List, Tuple, and Numpy &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -58,8 +58,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🔬 Lab 2" href="lab2.html" />
-    <link rel="prev" title="💻 Introduction to Python" href="PythonIntro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,55 +138,16 @@ const thebe_selector_output = ".output, .cell_output"
   Labs
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="lab1.html">
-   🔬 Lab 1
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PythonIntro.html">
+   Introduction to Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="Installation.html">
-     💻 Software Configuration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="PythonIntro.html">
-     💻 Introduction to Python
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     💻 Python Containers &amp; Numpy
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lab2.html">
-   🔬 Lab 2
+ <li class="toctree-l1">
+  <a class="reference internal" href="PythonContainers.html">
+   Python Containers &amp; Numpy
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="not_ready.html">
-     ✏️ Under construction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="oop.html">
-     💻 Object-Oriented Programming
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -231,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/PythonContainers.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Labs/ICE2-NumPy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -251,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/PythonContainers.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/ICE2-NumPy.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -272,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/PythonContainers.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/ICE2-NumPy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -294,98 +253,110 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#purpose">
-   Purpose
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   ECE387 ICE 2: String, List, Tuple, and Numpy
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-lists-tuples-and-dictionaries">
-   Strings, Lists, Tuples, and Dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strings">
-     Strings
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-note-on-this-document">
+     A note on this document
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuples">
-     Tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionaries">
-     Dictionaries
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-lists-and-tuples">
+   Strings, Lists, and Tuples
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples">
+     Tuples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy">
    NumPy
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-numpy-system-wide">
      Installing NumPy System-wide
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-numpy-for-pycharm-projects">
      Installing NumPy for PyCharm Projects
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-array">
      Creating Array
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-operations">
      Basic Operations
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indexing-slicing-and-iterating">
      Indexing, Slicing and Iterating
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-manipulation-routines">
      NumPy manipulation routines
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-linalg">
      numpy.linalg
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#logic-functions">
      Logic Functions
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homework">
    Homework
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-1">
      Problem 1
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-2">
      Problem 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
     </a>
    </li>
   </ul>
@@ -400,7 +371,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>💻 Python Containers & Numpy</h1>
+                <h1>ECE387 ICE 2: String, List, Tuple, and Numpy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -410,98 +381,110 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#purpose">
-   Purpose
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   ECE387 ICE 2: String, List, Tuple, and Numpy
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-lists-tuples-and-dictionaries">
-   Strings, Lists, Tuples, and Dictionaries
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strings">
-     Strings
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-note-on-this-document">
+     A note on this document
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuples">
-     Tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionaries">
-     Dictionaries
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#purpose">
+     Purpose
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strings-lists-and-tuples">
+   Strings, Lists, and Tuples
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples">
+     Tuples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy">
    NumPy
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-numpy-system-wide">
      Installing NumPy System-wide
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#installing-numpy-for-pycharm-projects">
      Installing NumPy for PyCharm Projects
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-array">
      Creating Array
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-operations">
      Basic Operations
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indexing-slicing-and-iterating">
      Indexing, Slicing and Iterating
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-manipulation-routines">
      NumPy manipulation routines
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-linalg">
      numpy.linalg
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#logic-functions">
      Logic Functions
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homework">
    Homework
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-1">
      Problem 1
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problem-2">
      Problem 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
     </a>
    </li>
   </ul>
@@ -515,22 +498,27 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/PythonContainers.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="python-containers-numpy">
-<h1>💻 Python Containers &amp; Numpy<a class="headerlink" href="#python-containers-numpy" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ece387-ice-2-string-list-tuple-and-numpy">
+<h1>ECE387 ICE 2: String, List, Tuple, and Numpy<a class="headerlink" href="#ece387-ice-2-string-list-tuple-and-numpy" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="a-note-on-this-document">
+<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this headline">¶</a></h2>
+<p>This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+</div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
 <p>This in-class exercise (ICE) will introduce Python data containers, such as lists, tuples, and strings.  It will also introduce NumPy, a fundametal package for scientific computing in Python.</p>
-<hr></div>
-<div class="section" id="strings-lists-tuples-and-dictionaries">
-<h2>Strings, Lists, Tuples, and Dictionaries<a class="headerlink" href="#strings-lists-tuples-and-dictionaries" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="strings-lists-and-tuples">
+<h1>Strings, Lists, and Tuples<a class="headerlink" href="#strings-lists-and-tuples" title="Permalink to this headline">¶</a></h1>
 <p>Reference: D. Beazley, Python Essential Reference, 4th ed, Addison Wesley, 2009</p>
 <div class="section" id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
 <p>To create string literals, enclose them in single, double, or triple quotes as follows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hellow World&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hellow WWorld&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Python is groovy&#39;</span>
 <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Computer says &#39;No&#39;&quot;&quot;&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -540,7 +528,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hellow World
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hellow WWorld
 Python is groovy
 Computer says &#39;No&#39;
 </pre></div>
@@ -555,6 +543,14 @@ Computer says &#39;No&#39;
 <span class="s1">&lt;h1&gt; Hello World &lt;/h1&gt;</span>
 <span class="s1">Click &lt;a href=&quot;http://www.python.org&quot;&gt;here&lt;/a&gt;.</span>
 <span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Content-type: text/html
+
+&lt;h1&gt; Hello World &lt;/h1&gt;
+Click &lt;a href=&quot;http://www.python.org&quot;&gt;here&lt;/a&gt;.
 </pre></div>
 </div>
 </div>
@@ -599,7 +595,7 @@ lo Wo
 </div>
 </div>
 <div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
 <p>Lists are sequences of arbitrary objects. You create a list by enclosing values in square brackets, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -623,23 +619,7 @@ lo Wo
 <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Paula&quot;</span><span class="p">)</span>
 <span class="n">names</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Thomas&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ann
-[&#39;Jeff&#39;, &#39;Mark&#39;, &#39;Thomas&#39;, &#39;Ann&#39;, &#39;Phil&#39;, &#39;Paula&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Lists can be sliced:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">stride</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
@@ -651,7 +631,9 @@ lo Wo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Jeff&#39;, &#39;Mark&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ann
+[&#39;Jeff&#39;, &#39;Mark&#39;, &#39;Thomas&#39;, &#39;Ann&#39;, &#39;Phil&#39;, &#39;Paula&#39;]
+[&#39;Jeff&#39;, &#39;Mark&#39;]
 [&#39;Thomas&#39;, &#39;Ann&#39;, &#39;Phil&#39;, &#39;Paula&#39;]
 [&#39;Jeff&#39;, &#39;Jeff&#39;, &#39;Thomas&#39;, &#39;Ann&#39;, &#39;Phil&#39;, &#39;Paula&#39;]
 [&#39;Dave&#39;, &#39;Mark&#39;, &#39;Jeff&#39;, &#39;Thomas&#39;, &#39;Ann&#39;, &#39;Phil&#39;, &#39;Paula&#39;]
@@ -708,29 +690,18 @@ lo Wo
 </pre></div>
 </div>
 </div>
-</div>
-<p>Objects can be inserted and appended to a list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List methods (insert)</span>
-<span class="n">list_b</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List methods (append)</span>
-<span class="n">list_b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_b</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dave
+[&#39;Mark&#39;, 7, 9, [0, 101]]
+7
+101
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="tuples">
-<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h3>
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
 <p>To create sinple data structures, you can pack a collection of values together into a single object using a <em>tuple</em>. You can create a tuple by enclosing group of values in parentheses like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,7 +772,7 @@ lo Wo
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">stock</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">stock</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">200</span>
 
@@ -811,61 +782,9 @@ lo Wo
 </div>
 </div>
 </div>
-<div class="section" id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>In Python, a dictionary (or dict) is mapping between a set of indices (keys) and a set of values</p></li>
-<li><p>The items in a dictionary are key-value pairs</p></li>
-<li><p>Keys can be any Python data type</p></li>
-<li><p>Dictionaries are unordered</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionaries</span>
-<span class="n">eng2sp</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">eng2sp</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;uno&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eng2sp</span><span class="p">)</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;one&#39;: &#39;uno&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eng2sp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="s1">&#39;uno&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="s1">&#39;dos&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="s1">&#39;tres&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eng2sp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;one&#39;: &#39;uno&#39;, &#39;two&#39;: &#39;dos&#39;, &#39;three&#39;: &#39;tres&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keys vs values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eng2sp</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eng2sp</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
-dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
-</pre></div>
-</div>
-</div>
-</div>
-<hr></div>
-</div>
-<div class="section" id="numpy">
-<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="numpy">
+<h1>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
 <p>NumPy’s main object is the homogeneous multidimensional array. It is a table of elements (usually numbers), all of the same type. In NumPy dimensions are called axes.</p>
 <p>For example, the array for the coordinates of a point in 3D space, <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">1]</span></code>, has one axis. That axis has 3 elements in it, so we say it has a length of 3. In the example pictured below, the array has 2 axes. The first axis has a length of 2, the second axis has a length of 3.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
@@ -874,7 +793,7 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </div>
 <p>Reference: <code class="docutils literal notranslate"><span class="pre">https://numpy.org/doc/stable/user/quickstart.html</span></code></p>
 <div class="section" id="installing-numpy-system-wide">
-<h3>Installing NumPy System-wide<a class="headerlink" href="#installing-numpy-system-wide" title="Permalink to this headline">¶</a></h3>
+<h2>Installing NumPy System-wide<a class="headerlink" href="#installing-numpy-system-wide" title="Permalink to this headline">¶</a></h2>
 <p>Open Windows Terminal and run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
 </pre></div>
@@ -891,14 +810,17 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </div>
 </div>
 <div class="section" id="installing-numpy-for-pycharm-projects">
-<h3>Installing NumPy for PyCharm Projects<a class="headerlink" href="#installing-numpy-for-pycharm-projects" title="Permalink to this headline">¶</a></h3>
+<h2>Installing NumPy for PyCharm Projects<a class="headerlink" href="#installing-numpy-for-pycharm-projects" title="Permalink to this headline">¶</a></h2>
 <p>Open Your PyCharm project. Then, go to File &gt; Settings &gt; Project &gt; Python Interpreter. Click <code class="docutils literal notranslate"><span class="pre">+</span></code> as shown below</p>
-<p><img alt="SQRT" src="../_images/PythonInterpreter.png" /></p>
+<div>
+<br>
+    <img src="figs/PythonInterpreter.png" width="350"/>
+</div>
 <p>Search for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and choose the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package. Click <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Package</span></code> at the bottom.  Once the installation is complete, it will display <code class="docutils literal notranslate"><span class="pre">Package</span> <span class="pre">'numpy'</span> <span class="pre">installed</span> <span class="pre">successfully</span></code>.  Close the window. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> should be on the intalled packages list.</p>
 <p>In the future, you need to run the same procedure to install packages in PyCharm.  The packages we need include spatialmath-python, matplotlib, roboticstoolbox-python, and opencv-python.</p>
 </div>
 <div class="section" id="creating-array">
-<h3>Creating Array<a class="headerlink" href="#creating-array" title="Permalink to this headline">¶</a></h3>
+<h2>Creating Array<a class="headerlink" href="#creating-array" title="Permalink to this headline">¶</a></h2>
 <p>You can create an array from a regular Python list or tuple using the array function. The type of the resulting array is deduced from the type of the elements in the sequences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,6 +831,14 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+int32
+&lt;class &#39;numpy.ndarray&#39;&gt;
+float64
 </pre></div>
 </div>
 </div>
@@ -932,6 +862,15 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.5 2.  3. ]
+ [4.  5.  6. ]]
+[1.5 2.  3. ]
+1.5
+1.5
+</pre></div>
+</div>
+</div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> creates an array full of zeros, the function ones creates an array full of ones, and the function empty creates an array whose initial content is random and depends on the state of the memory. By default, the dtype of the created array is float64, but it can be specified via the key word argument dtype.</p>
 <div class="cell docutils container">
@@ -942,6 +881,27 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0.]]
+[[[1 1 1 1]
+  [1 1 1 1]
+  [1 1 1 1]]
+
+ [[1 1 1 1]
+  [1 1 1 1]
+  [1 1 1 1]]]
+[[1.14990488e-311 6.32404027e-322 0.00000000e+000 0.00000000e+000
+  1.69119330e-306]
+ [1.16095484e-028 3.74168445e+233 1.35717430e+131 8.48585420e-096
+  9.43673373e-096]
+ [1.94009829e-109 8.29655075e-114 7.35874688e+223 9.21777565e+135
+  7.04128518e+164]
+ [9.45867484e-154 8.29655075e-114 4.06246946e-144 2.91237123e+257
+  4.71294503e+257]]
 </pre></div>
 </div>
 </div>
@@ -956,6 +916,12 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10 15 20 25]
+[0.  0.3 0.6 0.9 1.2 1.5 1.8]
+</pre></div>
+</div>
+</div>
 </div>
 <p>When <code class="docutils literal notranslate"><span class="pre">arange</span></code> is used with floating point arguments, it is generally not possible to predict the number of elements obtained, due to the finite floating point precision. For this reason, it is usually better to use the function <code class="docutils literal notranslate"><span class="pre">linspace</span></code> that receives as an argument the number of elements that we want, instead of the step:</p>
 <div class="cell docutils container">
@@ -967,10 +933,32 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.  ]
+[0.         0.06346652 0.12693304 0.19039955 0.25386607 0.31733259
+ 0.38079911 0.44426563 0.50773215 0.57119866 0.63466518 0.6981317
+ 0.76159822 0.82506474 0.88853126 0.95199777 1.01546429 1.07893081
+ 1.14239733 1.20586385 1.26933037 1.33279688 1.3962634  1.45972992
+ 1.52319644 1.58666296 1.65012947 1.71359599 1.77706251 1.84052903
+ 1.90399555 1.96746207 2.03092858 2.0943951  2.15786162 2.22132814
+ 2.28479466 2.34826118 2.41172769 2.47519421 2.53866073 2.60212725
+ 2.66559377 2.72906028 2.7925268  2.85599332 2.91945984 2.98292636
+ 3.04639288 3.10985939 3.17332591 3.23679243 3.30025895 3.36372547
+ 3.42719199 3.4906585  3.55412502 3.61759154 3.68105806 3.74452458
+ 3.8079911  3.87145761 3.93492413 3.99839065 4.06185717 4.12532369
+ 4.1887902  4.25225672 4.31572324 4.37918976 4.44265628 4.5061228
+ 4.56958931 4.63305583 4.69652235 4.75998887 4.82345539 4.88692191
+ 4.95038842 5.01385494 5.07732146 5.14078798 5.2042545  5.26772102
+ 5.33118753 5.39465405 5.45812057 5.52158709 5.58505361 5.64852012
+ 5.71198664 5.77545316 5.83891968 5.9023862  5.96585272 6.02931923
+ 6.09278575 6.15625227 6.21971879 6.28318531]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="basic-operations">
-<h3>Basic Operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h3>
+<h2>Basic Operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h2>
 <p>Arithmetic operators on arrays apply elementwise. A new array is created and filled with the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -985,6 +973,16 @@ dict_values([&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;])
 <span class="n">e</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20 30 40 50]
+[0 1 2 3]
+[20 29 38 47]
+[0 1 4 9]
+[ 9.12945251 -9.88031624  7.4511316  -2.62374854]
+[ True  True False False]
 </pre></div>
 </div>
 </div>
@@ -1004,6 +1002,18 @@ Unlike in many matrix languages, the product operator <code class="docutils lite
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 0]
+ [0 4]]
+[[5 4]
+ [3 4]]
+[[5 4]
+ [3 4]]
+[[5 4]
+ [3 4]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Some operations, such as <code class="docutils literal notranslate"><span class="pre">+=</span></code> and <code class="docutils literal notranslate"><span class="pre">*=</span></code>, act in place to modify an existing array rather than create a new one.</p>
 <div class="cell docutils container">
@@ -1018,6 +1028,28 @@ Unlike in many matrix languages, the product operator <code class="docutils lite
 <span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>  <span class="c1"># b is not automatically converted to integer type</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 1 1]
+ [1 1 1]]
+[[0.51182162 0.9504637  0.14415961]
+ [0.94864945 0.31183145 0.42332645]]
+[[3 3 3]
+ [3 3 3]]
+[[3.51182162 3.9504637  3.14415961]
+ [3.94864945 3.31183145 3.42332645]]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">a</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>
+
+<span class="ne">UFuncTypeError</span>: Cannot cast ufunc &#39;add&#39; output from dtype(&#39;float64&#39;) to dtype(&#39;int32&#39;) with casting rule &#39;same_kind&#39;
 </pre></div>
 </div>
 </div>
@@ -1049,10 +1081,10 @@ A Python <code class="docutils literal notranslate"><span class="pre">list</span
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="n">bf234c89ddd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Error</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for ** or pow(): &#39;list&#39; and &#39;int&#39;
 </pre></div>
@@ -1061,7 +1093,7 @@ A Python <code class="docutils literal notranslate"><span class="pre">list</span
 </div>
 </div>
 <div class="section" id="indexing-slicing-and-iterating">
-<h3>Indexing, Slicing and Iterating<a class="headerlink" href="#indexing-slicing-and-iterating" title="Permalink to this headline">¶</a></h3>
+<h2>Indexing, Slicing and Iterating<a class="headerlink" href="#indexing-slicing-and-iterating" title="Permalink to this headline">¶</a></h2>
 <p>One-dimensional arrays can be indexed, sliced and iterated over, much like lists and other Python sequences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,7 +1167,7 @@ A Python <code class="docutils literal notranslate"><span class="pre">list</span
 </div>
 </div>
 <div class="section" id="numpy-manipulation-routines">
-<h3>NumPy manipulation routines<a class="headerlink" href="#numpy-manipulation-routines" title="Permalink to this headline">¶</a></h3>
+<h2>NumPy manipulation routines<a class="headerlink" href="#numpy-manipulation-routines" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of functions for array manipulation. Let’s take look at a few of them.
 A complete list can be found in the reference below.</p>
 <p>Reference: <code class="docutils literal notranslate"><span class="pre">https://numpy.org/doc/stable/reference/routines.array-manipulation.html</span></code></p>
@@ -1183,10 +1215,41 @@ A complete list can be found in the reference below.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]]
+(2, 3)
+(2, 3)
+[[1 2]
+ [3 4]
+ [5 6]]
+(3, 2)
+[1 2 3 4 5 6]
+(6,)
+[[1 4]
+ [2 5]
+ [3 6]]
+[[1 4]
+ [2 5]
+ [3 6]]
+[[1 2 3]
+ [3 4 5]
+ [4 5 6]]
+[[1 3 2 3]
+ [4 4 5 6]]
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+[0 4 8]
+[2 4 6]
+[6 4 2]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="numpy-linalg">
-<h3>numpy.linalg<a class="headerlink" href="#numpy-linalg" title="Permalink to this headline">¶</a></h3>
+<h2>numpy.linalg<a class="headerlink" href="#numpy-linalg" title="Permalink to this headline">¶</a></h2>
 <p>Since matrix can be easily represented by a NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code>, NumPy contains a <code class="docutils literal notranslate"><span class="pre">linalg</span></code> submodule that provides various linear algebra functions.</p>
 <p>Reference: <code class="docutils literal notranslate"><span class="pre">https://numpy.org/doc/stable/reference/routines.linalg.html#module-numpy.linalg</span></code></p>
 <div class="cell docutils container">
@@ -1219,7 +1282,7 @@ A complete list can be found in the reference below.</p>
 </div>
 </div>
 <div class="section" id="logic-functions">
-<h3>Logic Functions<a class="headerlink" href="#logic-functions" title="Permalink to this headline">¶</a></h3>
+<h2>Logic Functions<a class="headerlink" href="#logic-functions" title="Permalink to this headline">¶</a></h2>
 <p>Reference: <code class="docutils literal notranslate"><span class="pre">https://numpy.org/doc/stable/reference/routines.logic.html</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1246,7 +1309,7 @@ False
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>            <span class="c1"># y is a list</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># np.all() takes a list argument</span>
 <span class="ne">----&gt; </span><span class="mi">9</span> <span class="nb">print</span><span class="p">((</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
@@ -1387,20 +1450,18 @@ Object oriented programming</p>
 [1, [0, 9, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
-[8, [0, 1, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[8, [0, 9, 2], 3, 4, 5]
+[1, [0, 9, 2], 3, 4, 5]
 [1, [0, 1, 2], 3, 4, 5]
 </pre></div>
 </div>
 </div>
 </div>
-<hr></div>
 </div>
-<div class="section" id="homework">
-<h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="homework">
+<h1>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
 <p>Create a folder called <code class="docutils literal notranslate"><span class="pre">ICE2</span></code> in your repository. Download <a class="reference external" href="http://tic-tac-toe.py">tic-tac-toe.py</a> from Teams and move it to the <code class="docutils literal notranslate"><span class="pre">ICE2</span></code> folder.  Complete the <code class="docutils literal notranslate"><span class="pre">check_game</span></code> function and push the code to your repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1517,10 +1578,53 @@ Object oriented programming</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_______
+[0 0 0]
+[0 0 0]
+[0 0 0]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="n">current_player</span> <span class="o">^=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Input In [35],</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">display_board</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">row</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player </span><span class="si">{</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">]</span><span class="si">}</span><span class="s2">: Enter the row you want to play (0,...,</span><span class="si">{</span><span class="n">board_size</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="n">col</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player </span><span class="si">{</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">]</span><span class="si">}</span><span class="s2">: Enter the column you want to play (0,...,</span><span class="si">{</span><span class="n">board_size</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">): &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">update_board</span><span class="p">(</span><span class="n">players</span><span class="p">[</span><span class="n">current_player</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">)):</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python38\site-packages\ipykernel\kernelbase.py:1004,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">999</span><span class="sd"> Raises</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span><span class="sd"> ------</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1003</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1004</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1005</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1009</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1011</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1012</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="problem-2">
-<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
 <p>Write a Python function that finds ZYX Euler angles from a rotation matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1603,6 +1707,56 @@ Object oriented programming</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You have </span><span class="si">{</span><span class="n">num_errors</span><span class="si">}</span><span class="s2"> errors.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Input In [36],</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="n">Rx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span>             <span class="mi">0</span><span class="p">,</span>             <span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">)],</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">gamma</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">gamma</span><span class="p">)]])</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">R</span> <span class="o">=</span> <span class="n">Rz</span><span class="nd">@Ry@Rx</span>
+<span class="ne">---&gt; </span><span class="mi">39</span> <span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">get_rpy</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">Rz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span>             <span class="mi">0</span><span class="p">,</span>             <span class="mi">1</span><span class="p">]])</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="n">Ry2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span>  <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>                <span class="p">[</span><span class="mi">0</span><span class="p">,</span>             <span class="mi">1</span><span class="p">,</span>            <span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>                <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+
+<span class="nn">Input In [36],</span> in <span class="ni">get_rpy</span><span class="nt">(R)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd"> Find the ZYX Euler angles (psi, theta, phi) from rotation matrix R</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> :param R: a 3 by 3 numpy array representing a rotation in 3-D. </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd"> :return: ZYX Euler angels (psi, theta, phi)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="sd"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># write your code here</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="k">return</span> <span class="n">psi</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span>
+
+<span class="ne">NameError</span>: name &#39;psi&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
+<p>Debug the following code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1632,21 +1786,7 @@ Object oriented programming</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="PythonIntro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">💻 Introduction to Python</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="lab2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🔬 Lab 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

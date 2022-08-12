@@ -1,9 +1,13 @@
-# ✏️ Software Configuration
+# 💻 Software Configuration
 
 ## 📜 Agenda
 - Create a Bitbucket repository.
 - Configure git repository.
 - Install and Configure PyCharm
+
+:::{note}
+Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.
+:::
 
 ## 💻 Procedure
 
@@ -48,7 +52,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Notice that you have `(master)` at the end of the folder name. If you type `ls`, it should return nothing.
 
 ```{image} ./figures/GitClone.gif
-:scale: 60%
+:width: 680
 :align: center
 ```
 <br>
@@ -57,10 +61,42 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 
 
 ```{image} ./figures/PycharmProjectsFolder.png
-:scale: 80%
+:width: 580
 :align: center
 ```
+<br>
 
+
+### Install and Configure PyCharm
+
+- Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
+- Ensure you have the installation optioned checked as shown below. 
+
+```{image} ./figures/PyCharmInstallationOptions.png
+:width: 440
+:align: center
+```
+<br>
+
+- Start PyCharm and create a new project.
+- Ensure the project location is `PycharmProjects` under your home folder, e.g., C:\Users\stanley.baek\PycharmProjects.
+- The location of virtual environment should be `env` under `PycharmProjects`, e.g., C:\Users\stanley.baek\PycharmProjects\env.
+
+```{image} ./figures/PycharmNewProject.gif
+:width: 720
+:align: center
+```
+<br>
+
+- Open Settings under the `File` menu and browse to `Project: PycharmProjects` > `Python Interpreter`.
+- Click `+` 
+- Search for `numpy` and click `Install Package`.
+- Install `matplotlib` as well.
+
+```{image} ./figures/InstallNumpy.gif
+:width: 720
+:align: center
+```
 <br>
 
 - Go back to Git Bash. If you have already closed it, right click on an empty space inside the `workspace` folder and select `Git Bash Here`.
@@ -70,7 +106,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Enter your username and password if prompted.
 
 ```{image} ./figures/GitPush.gif
-:scale: 60%
+:width: 640
 :align: center
 ```
 
@@ -83,31 +119,11 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 
 - Refresh your Bitbucket repository to observe the new files as shown below
 
-```{image} ./figures/git10.PNG
-:scale: 60%
+```{image} ./figures/BitBucketPushed.png
+:width: 640
 :align: center
 ```
 <br>
-
-```{Attention}
-After you push your assignments to Git, it is your responsibility to check your code has been successfully pushed to Bitbucket.
-```
-
-
-
-### Install PyCharm
-
-- Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
-- Ensure you have the installation optioned checked as shown below. 
-
-```{image} ./figures/PyCharmInstallationOptions.png
-:width: 460
-:align: center
-```
-<br>
-
-### PyCharm Configuration
-
 
 ```{Attention} 
 It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.
@@ -125,7 +141,7 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 
 <br>
 
-- **[25 Points]** Go to Windows Settings > Apps.  Click on Code Composer Studio and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
+- **[25 Points]** Go to Windows Settings > Apps.  Click on PyCharm and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
 
 
 <br>
