@@ -23,3 +23,4 @@ parts:
   - file: Labs/lab2
     sections:
     - file: Labs/not_ready.md
+    - file: Labs/oop.ipynb
