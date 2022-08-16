@@ -57,7 +57,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 ```
 <br>
 
-- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProject` folder.  The figure below shows an example of a local `PycharmProject` folder on your computer.
+- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProjects` folder.  The figure below shows an example of a local `PycharmProjects` folder on your computer.
 
 
 ```{image} ./figures/PycharmProjectsFolder.png
@@ -119,11 +119,14 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 
 - Refresh your Bitbucket repository to observe the new files as shown below
 
+<<<<<<< Updated upstream
 ```{image} ./figures/BitBucketPushed.png
 :width: 640
 :align: center
 ```
 <br>
+=======
+>>>>>>> Stashed changes
 
 ```{Attention} 
 It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.
