@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>✏️ Software Configuration &#8212; Fundamentals of Robotics</title>
+    <title>💻 Software Configuration &#8212; Fundamentals of Robotics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Python" href="PythonIntro.html" />
-    <link rel="prev" title="Lab 1" href="lab1.html" />
+    <link rel="next" title="💻 Introduction to Python" href="PythonIntro.html" />
+    <link rel="prev" title="🔬 Lab 1" href="lab1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="lab1.html">
-   Lab 1
+   🔬 Lab 1
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -166,24 +166,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     ✏️ Software Configuration
+     💻 Software Configuration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="PythonIntro.html">
-     Introduction to Python
+     💻 Introduction to Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="PythonContainers.html">
-     Python Containers &amp; Numpy
+     💻 Python Containers &amp; Numpy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="lab2.html">
-   Lab 2
+   🔬 Lab 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -194,6 +194,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="not_ready.html">
      ✏️ Under construction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oop.html">
+     💻 Object-Oriented Programming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ForwardKinematics.html">
+     Forward Kinematics
     </a>
    </li>
   </ul>
@@ -396,13 +406,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-pycharm">
-     Install PyCharm
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pycharm-configuration">
-     PyCharm Configuration
+    <a class="reference internal nav-link" href="#install-and-configure-pycharm">
+     Install and Configure PyCharm
     </a>
    </li>
   </ul>
@@ -421,7 +426,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>✏️ Software Configuration</h1>
+                <h1>💻 Software Configuration</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -452,13 +457,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-pycharm">
-     Install PyCharm
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pycharm-configuration">
-     PyCharm Configuration
+    <a class="reference internal nav-link" href="#install-and-configure-pycharm">
+     Install and Configure PyCharm
     </a>
    </li>
   </ul>
@@ -479,7 +479,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="software-configuration">
-<h1>✏️ Software Configuration<a class="headerlink" href="#software-configuration" title="Permalink to this headline">#</a></h1>
+<h1>💻 Software Configuration<a class="headerlink" href="#software-configuration" title="Permalink to this headline">#</a></h1>
 <section id="agenda">
 <h2>📜 Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -487,6 +487,10 @@ title="Print to PDF"
 <li><p>Configure git repository.</p></li>
 <li><p>Install and Configure PyCharm</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.</p>
+</div>
 </section>
 <section id="procedure">
 <h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h2>
@@ -529,12 +533,45 @@ title="Print to PDF"
 <li><p>If it asks for a password, enter the app password you saved in the previous step.</p></li>
 <li><p>Notice that you have <code class="docutils literal notranslate"><span class="pre">(master)</span></code> at the end of the folder name. If you type <code class="docutils literal notranslate"><span class="pre">ls</span></code>, it should return nothing.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/GitClone.gif"><img alt="../_images/GitClone.gif" class="align-center" src="../_images/GitClone.gif" style="width: 543.6px; height: 464.4px;" /></a>
+<a class="reference internal image-reference" href="../_images/GitClone.gif"><img alt="../_images/GitClone.gif" class="align-center" src="../_images/GitClone.gif" style="width: 680px;" /></a>
 <br>
 <ul class="simple">
-<li><p>Go to Teams &gt; General &gt; Files &gt; Class Materials. Download the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder and copy everything into the <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder in your home directory. Do not copy the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder itself into the <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder.  The figure below shows an example of a local <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder on your computer.</p></li>
+<li><p>Go to Teams &gt; General &gt; Files &gt; Class Materials. Download the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder and copy everything into the <code class="docutils literal notranslate"><span class="pre">PycharmProject</span></code> folder in your home directory. Do not copy the <code class="docutils literal notranslate"><span class="pre">PycharmProjects_XXXX</span></code> folder itself into the <code class="docutils literal notranslate"><span class="pre">PycharmProjects</span></code> folder.  The figure below shows an example of a local <code class="docutils literal notranslate"><span class="pre">PycharmProjects</span></code> folder on your computer.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/PycharmProjectsFolder.png"><img alt="../_images/PycharmProjectsFolder.png" class="align-center" src="../_images/PycharmProjectsFolder.png" style="width: 768.8000000000001px; height: 195.20000000000002px;" /></a>
+<a class="reference internal image-reference" href="../_images/PycharmProjectsFolder.png"><img alt="../_images/PycharmProjectsFolder.png" class="align-center" src="../_images/PycharmProjectsFolder.png" style="width: 580px;" /></a>
+<br>
+</section>
+<section id="install-and-configure-pycharm">
+<h3>Install and Configure PyCharm<a class="headerlink" href="#install-and-configure-pycharm" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Download the latest version of <a class="reference external" href="https://www.jetbrains.com/edu-products/download/#section=pycharm-edu">PyCharm Edu</a> and install it on your computer.</p></li>
+<li><p>Ensure you have the installation optioned checked as shown below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/PyCharmInstallationOptions.png"><img alt="../_images/PyCharmInstallationOptions.png" class="align-center" src="../_images/PyCharmInstallationOptions.png" style="width: 440px;" /></a>
+<br>
+<ul class="simple">
+<li><p>Start PyCharm and create a new project.</p></li>
+<li><p>Ensure the project location is <code class="docutils literal notranslate"><span class="pre">PycharmProjects</span></code> under your home folder, e.g., C:\Users\stanley.baek\PycharmProjects.</p></li>
+<li><p>The location of virtual environment should be <code class="docutils literal notranslate"><span class="pre">env</span></code> under <code class="docutils literal notranslate"><span class="pre">PycharmProjects</span></code>, e.g., C:\Users\stanley.baek\PycharmProjects\env.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/PycharmNewProject.gif"><img alt="../_images/PycharmNewProject.gif" class="align-center" src="../_images/PycharmNewProject.gif" style="width: 720px;" /></a>
+<br>
+<ul class="simple">
+<li><p>Open Settings under the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and browse to <code class="docutils literal notranslate"><span class="pre">Project:</span> <span class="pre">PycharmProjects</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Interpreter</span></code>.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and click <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Package</span></code>.</p></li>
+<li><p>Install the following packages</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spatialmath-python</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sympy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roboticstoolbox-python</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">opencv-python</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serial</span></code></p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/InstallNumpy.gif"><img alt="../_images/InstallNumpy.gif" class="align-center" src="../_images/InstallNumpy.gif" style="width: 720px;" /></a>
 <br>
 <ul class="simple">
 <li><p>Go back to Git Bash. If you have already closed it, right click on an empty space inside the <code class="docutils literal notranslate"><span class="pre">workspace</span></code> folder and select <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Bash</span> <span class="pre">Here</span></code>.</p></li>
@@ -543,7 +580,7 @@ title="Print to PDF"
 <li><p>Type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> as shown below</p></li>
 <li><p>Enter your username and password if prompted.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/GitPush.gif"><img alt="../_images/GitPush.gif" class="align-center" src="../_images/GitPush.gif" style="width: 640.1999999999999px; height: 446.4px;" /></a>
+<a class="reference internal image-reference" href="../_images/GitPush.gif"><img alt="../_images/GitPush.gif" class="align-center" src="../_images/GitPush.gif" style="width: 640px;" /></a>
 <br>
 <ul class="simple">
 <li><p>In the future you will repeat these three steps when committing your changes:</p>
@@ -555,24 +592,11 @@ title="Print to PDF"
 </li>
 <li><p>Refresh your Bitbucket repository to observe the new files as shown below</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/git10.PNG"><img alt="../_images/git10.PNG" class="align-center" src="../_images/git10.PNG" style="width: 744.0px; height: 340.8px;" /></a>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p>
+<a class="reference internal image-reference" href="../_images/BitBucketPushed.png"><img alt="../_images/BitBucketPushed.png" class="align-center" src="../_images/BitBucketPushed.png" style="width: 640px;" /></a>
 <br>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>After you push your assignments to Git, it is your responsibility to check your code has been successfully pushed to Bitbucket.</p>
-</div>
-</section>
-<section id="install-pycharm">
-<h3>Install PyCharm<a class="headerlink" href="#install-pycharm" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Download the latest version of <a class="reference external" href="https://www.jetbrains.com/edu-products/download/#section=pycharm-edu">PyCharm Edu</a> and install it on your computer.</p></li>
-<li><p>Ensure you have the installation optioned checked as shown below.</p></li>
-</ul>
-<a class="reference internal image-reference" href="../_images/PyCharmInstallationOptions.png"><img alt="../_images/PyCharmInstallationOptions.png" class="align-center" src="../_images/PyCharmInstallationOptions.png" style="width: 460px;" /></a>
-<br>
-</section>
-<section id="pycharm-configuration">
-<h3>PyCharm Configuration<a class="headerlink" href="#pycharm-configuration" title="Permalink to this headline">#</a></h3>
+=======
+>>>>>>> Stashed changes
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.</p>
@@ -591,7 +615,7 @@ title="Print to PDF"
 </ul>
 <br>
 <ul class="simple">
-<li><p><strong>[25 Points]</strong> Go to Windows Settings &gt; Apps.  Click on Code Composer Studio and take a screenshot as shown below.  For Mac users, it is in the Applications folder.</p></li>
+<li><p><strong>[25 Points]</strong> Go to Windows Settings &gt; Apps.  Click on PyCharm and take a screenshot as shown below.  For Mac users, it is in the Applications folder.</p></li>
 </ul>
 <br>
 <ul class="simple">
@@ -635,13 +659,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 1</p>
+            <p class="prev-next-title">🔬 Lab 1</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="PythonIntro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Python</p>
+        <p class="prev-next-title">💻 Introduction to Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
