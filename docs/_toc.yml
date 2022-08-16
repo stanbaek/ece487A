@@ -24,3 +24,4 @@ parts:
     sections:
     - file: Labs/not_ready.md
     - file: Labs/oop.ipynb
+    - file: Labs/ForwardKinematics

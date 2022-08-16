@@ -91,7 +91,14 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Open Settings under the `File` menu and browse to `Project: PycharmProjects` > `Python Interpreter`.
 - Click `+` 
 - Search for `numpy` and click `Install Package`.
-- Install `matplotlib` as well.
+- Install the following packages
+    - `matplotlib`
+    - `spatialmath-python`
+    - `sympy`
+    - `roboticstoolbox-python`
+    - `opencv-python`
+    - `serial`
+    
 
 ```{image} ./figures/InstallNumpy.gif
 :width: 720
