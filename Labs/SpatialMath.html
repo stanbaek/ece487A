@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔬 Lab 2 &#8212; Fundamentals of Robotics</title>
+    <title>Spatial Math for Python &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,11 +53,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Spatial Math for Python" href="SpatialMath.html" />
-    <link rel="prev" title="💻 Python Containers &amp; Numpy" href="PythonContainers.html" />
+    <link rel="next" title="💻 Object-Oriented Programming" href="oop.html" />
+    <link rel="prev" title="🔬 Lab 2" href="lab2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -167,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="lab2.html">
    🔬 Lab 2
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -175,9 +177,9 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="SpatialMath.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Spatial Math for Python
     </a>
    </li>
@@ -239,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/lab2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Labs/SpatialMath.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -259,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/lab2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/SpatialMath.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -280,6 +282,46 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -287,26 +329,110 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>🔬 Lab 2</h1>
+                <h1>Spatial Math for Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-2">
-<span id="labs-lab2"></span><h1>🔬 Lab 2<a class="headerlink" href="#lab-2" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="SpatialMath.html">Spatial Math for Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oop.html">💻 Object-Oriented Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ForwardKinematics.html">Forward Kinematics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Extra.html">ECE387 ICE 1: Introduction to Python3</a></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="spatial-math-for-python">
+<h1>Spatial Math for Python<a class="headerlink" href="#spatial-math-for-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>This lab assignment will introduce the spatialmath package that will be used throughout the semester to control robotic arms.</p>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>This lab has been adapted from the Spatial Math for Python Documentation <a class="reference external" href="https://petercorke.github.io/spatialmath-python/">https://petercorke.github.io/spatialmath-python/</a>.  Refer to the follwing links for more details.</p>
+<p><a class="reference external" href="https://github.com/petercorke/spatialmath-python">https://github.com/petercorke/spatialmath-python</a>
+<a class="reference external" href="https://petercorke.github.io/spatialmath-python/">https://petercorke.github.io/spatialmath-python/</a></p>
+</div>
+<div class="section" id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<p>Create a folder named Lab1 in which you add <a class="reference external" href="http://exercise1.py">exercise1.py</a>, <a class="reference external" href="http://exercise2.py">exercise2.py</a>, and so on for the following exercises.</p>
+<p><strong>Submit your code to Bitbucket and provide the outputs in Gradescope.</strong></p>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=60^\circ, \phi=45^\circ\)</span>.</p>
+<p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
+<p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
+<p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=90^\circ, \phi=45^\circ\)</span>.</p>
+<p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
+<p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
+<p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Find <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\psi\)</span> for YZY Euler angles, <span class="math notranslate nohighlight">\(R=R_Y(\phi)R_Z(\theta)R_Y(\psi)\)</span>, that generate the blue frame shown in figure below.  The blue frame has been rotated with respect to the blakc frame.  Use SE3.Rx, SE3.Ry and SE3.Rz.</p>
+<a class="reference internal image-reference" href="../_images/SpatialMath_Ex3.png"><img alt="../_images/SpatialMath_Ex3.png" class="align-center" src="../_images/SpatialMath_Ex3.png" style="width: 450px;" /></a>
+<br>
+<p>Use the following code snippet.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spatialmath.base</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">spatialmath</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># add your code here.</span>
+
+
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plotvol3</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -335,17 +461,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="PythonContainers.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">💻 Python Containers &amp; Numpy</p>
+            <p class="prev-next-title">🔬 Lab 2</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="SpatialMath.html" title="next page">
+    <a class='right-next' id="next-link" href="oop.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Spatial Math for Python</p>
+        <p class="prev-next-title">💻 Object-Oriented Programming</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
