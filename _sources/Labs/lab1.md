@@ -1,4 +1,4 @@
-(labs:lab1)=
+(Labs:Lab1)=
 # 🔬 Lab 1
 
 
