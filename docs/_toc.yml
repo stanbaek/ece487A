@@ -14,14 +14,13 @@ parts:
 
 - caption: Labs 
   chapters:
-  - file: Labs/lab1
-    sections:
-    - file: Labs/Installation.md
-    - file: Labs/PythonIntro.ipynb
-    - file: Labs/PythonContainers.ipynb
-
-  - file: Labs/lab2
-    sections:
-    - file: Labs/not_ready.md
-    - file: Labs/oop.ipynb
-    - file: Labs/ForwardKinematics
+  - file: Labs/Installation.md
+  - file: Labs/PythonIntro.ipynb
+  - file: Labs/PythonContainers.ipynb
+  - file: Labs/SpatialMath.md
+  - file: Labs/oop.ipynb
+  - file: Labs/ForwardKinematics.md
+  - file: Labs/Extra.ipynb
+  - file: Labs/RoboticsToolbox.ipynb
+  - file: Labs/P1_InverseKinematics.ipynb
+  - file: Labs/P2_VisionBasedManipulator.ipynb
