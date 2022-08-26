@@ -14,10 +14,10 @@ parts:
 
 - caption: Labs 
   chapters:
-  - file: Labs/Installation.md
-  - file: Labs/PythonIntro.ipynb
-  - file: Labs/PythonContainers.ipynb
-  - file: Labs/SpatialMath.md
+  - file: Labs/SoftwareConfiguration
+  - file: Labs/ICE1_PythonIntro.ipynb
+  - file: Labs/ICE2_PythonContainers.ipynb
+  - file: Labs/ICE3_SpatialMath.md
   - file: Labs/oop.ipynb
   - file: Labs/ForwardKinematics.md
   - file: Labs/Extra.ipynb

@@ -1,4 +1,4 @@
-# 💻 Software Configuration
+# 💻 Preflight: Software Setup
 
 ## 📜 Agenda
 - Create a Bitbucket repository.
