@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>❄️ ICE2: Python Containers &amp; Numpy &#8212; Fundamentals of Robotics</title>
+    <title>❄️ ICE2: Containers &amp; Numpy &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -143,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="SoftwareConfiguration.html">
-   💻 Preflight: Software Configuration
+   💻 Preflight: Software Setup
   </a>
  </li>
  <li class="toctree-l1">
@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   ❄️ ICE2: Python Containers &amp; Numpy
+   ❄️ ICE2: Containers &amp; Numpy
   </a>
  </li>
  <li class="toctree-l1">
@@ -401,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>❄️ ICE2: Python Containers & Numpy</h1>
+                <h1>❄️ ICE2: Containers & Numpy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -516,9 +516,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/PythonContainers.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="ice2-python-containers-numpy">
-<h1>❄️ ICE2: Python Containers &amp; Numpy<a class="headerlink" href="#ice2-python-containers-numpy" title="Permalink to this headline">¶</a></h1>
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE2_PythonContainers.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="ice2-containers-numpy">
+<h1>❄️ ICE2: Containers &amp; Numpy<a class="headerlink" href="#ice2-containers-numpy" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
 <p>This in-class exercise (ICE) will introduce Python data containers, such as lists, tuples, and strings.  It will also introduce NumPy, a fundametal package for scientific computing in Python.</p>
@@ -1329,73 +1329,6 @@ True
 </div>
 </div>
 <p><strong>Rule of thumb</strong>:  You must not use <code class="docutils literal notranslate"><span class="pre">==</span></code> for floating-point numbers and be very careful with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for floating-point numbers. Companies like Intel and Google never allow their programmers to use them for floating-point numbers. Intel once lost millions of dollars for a use of them and it had to redesign its chip.</p>
-<p>For Fall 2022
-Object oriented programming</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">copy</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
-[1, 2, 3, 4, 5]
-[1, 9, 3, 4, 5]
-[1, 9, 3, 4, 5]
-[1, 2, 3, 4, 5]
-[1, 2, 3, 4, 5]
-[1, 9, 3, 4, 5]
-[1, 2, 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[8, [0, 1, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[8, [0, 9, 2], 3, 4, 5]
-[1, [0, 9, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[8, [0, 1, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-[8, [0, 9, 2], 3, 4, 5]
-[1, [0, 1, 2], 3, 4, 5]
-</pre></div>
-</div>
-</div>
-</div>
 <hr></div>
 </div>
 <div class="section" id="homework">
