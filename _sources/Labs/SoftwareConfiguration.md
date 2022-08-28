@@ -146,6 +146,11 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 
 - Take a screenshot of your PyCharm settings as shown below
 
+```{image} ./figures/PyCharmSetting.png
+:width: 640
+:align: center
+```
+<br>
 
 
 ```{Warning}
