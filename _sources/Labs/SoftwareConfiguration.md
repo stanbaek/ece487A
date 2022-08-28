@@ -140,13 +140,19 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 ```
 
 ### Deliverable 1
-- Provide a screenshot of your Bitbucket repository as shown above 
+- Provide a screenshot of your Bitbucket repository as shown below 
+
+```{image} ./figures/BitBucketPushed.png
+:width: 640
+:align: center
+```
+<br>
 
 ### Deliverable 2
 
 - Take a screenshot of your PyCharm settings as shown below
 
-```{image} ./figures/PyCharmSetting.png
+```{image} ./figures/PyCharmSettings.png
 :width: 640
 :align: center
 ```
