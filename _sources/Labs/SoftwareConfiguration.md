@@ -1,4 +1,4 @@
-# 💻 Preflight: Software Setup
+# ✔️ Preflight: Software Setup
 
 ## 📜 Agenda
 - Create a Bitbucket repository.
@@ -70,7 +70,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 ### Install and Configure PyCharm
 
 - Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
-- Ensure you have the installation optioned checked as shown below. 
+- Ensure you have the installation options checked as shown below. 
 
 ```{image} ./figures/PyCharmInstallationOptions.png
 :width: 440
@@ -88,7 +88,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 ```
 <br>
 
-- Open Settings under the `File` menu and browse to `Project: PycharmProjects` > `Python Interpreter`.
+- Open `Settings` under the `File` menu and browse to `Project: PycharmProjects` > `Python Interpreter`.
 - Click `+` 
 - Search for `numpy` and click `Install Package`.
 - Install the following packages
@@ -106,18 +106,12 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 ```
 <br>
 
-- Go back to Git Bash. If you have already closed it, right click on an empty space inside the `workspace` folder and select `Git Bash Here`.
+- Go back to Git Bash. If you have already closed it, right click on an empty space inside the `PycharmProjects` folder and select `Git Bash Here`.
 - Type `git add -A` or `git add -all` and hit `Enter`.
 - Type `git commit -m "Initial commit."` and hit `Enter`.
 - Type `git push` as shown below
 - Enter your username and password if prompted.
 
-```{image} ./figures/GitPush.gif
-:width: 640
-:align: center
-```
-
-<br>
 
 - In the future you will repeat these three steps when committing your changes:
     - git add -A
@@ -126,14 +120,12 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 
 - Refresh your Bitbucket repository to observe the new files as shown below
 
-<<<<<<< Updated upstream
+
 ```{image} ./figures/BitBucketPushed.png
 :width: 640
 :align: center
 ```
 <br>
-=======
->>>>>>> Stashed changes
 
 ```{Attention} 
 It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.
@@ -147,16 +139,14 @@ Take screenshots of the following and submit them via Gradescope.  Use `Snip & S
 Do NOT take a picture of a computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315). 
 ```
 
-- **[25 Points]** Provide a screenshot of your Bitbucket repository as shown below
+### Deliverable 1
+- Provide a screenshot of your Bitbucket repository as shown above 
 
-<br>
+### Deliverable 2
 
-- **[25 Points]** Go to Windows Settings > Apps.  Click on PyCharm and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
+- Take a screenshot of your PyCharm settings as shown below
 
 
-<br>
-
-- **[-30 Points]** Take a picture of your screen with a mobile device or digital camera and submit it in Gradescope. Yes, I am serious...
 
 ```{Warning}
 You will lose 30 points every time you submit a picture of a computer screen taken by your phone or mobile device. 
