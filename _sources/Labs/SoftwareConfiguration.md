@@ -136,7 +136,9 @@ It is your responsibility to check your files have been successfully pushed to y
 Take screenshots of the following and submit them via Gradescope.  Use `Snip & Sketch` (Win+Shift+S) in Windows 10 or Shift+CMD+4 in Mac to take a screenshot. Save it in `png` or `jpg`.  
 
 ```{Warning}
-Do NOT take a picture of a computer screen with your phone because it will introduce sampling aliasing (more details in ECE215/ECE315). 
+Take a picture of your screen with a mobile device or digital camera and upload it in
+Gradescope to show that you have no idea what sampling aliasing (you learned it in ECE215) is and
+you are not qualified for bachelor's degree in ECE. You will lose 30 points every time you submit a picture of a computer screen taken by your phone or mobile device. Yes, I am serious..., and it takes more time if you do.
 ```
 
 ### Deliverable 1
@@ -159,9 +161,6 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 <br>
 
 
-```{Warning}
-You will lose 30 points every time you submit a picture of a computer screen taken by your phone or mobile device. 
-```
 
 
 
