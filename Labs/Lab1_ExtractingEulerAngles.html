@@ -167,13 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="RoboticsToolbox.html">
+  <a class="reference internal" href="ICE4_RoboticsToolbox.html">
    ❄️ ICE4: Robotics Toolbox
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="oop.html">
-   Object-Oriented Programming
+  <a class="reference internal" href="ICE5_OOP.html">
+   ❄️ ICE5: Object-Oriented Programming
   </a>
  </li>
  <li class="toctree-l1">
@@ -249,9 +249,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/Lab1_ExtractingEulerAngles.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Labs/Lab1_ExtractingEulerAngles.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -285,6 +285,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/Lab1_ExtractingEulerAngles.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -296,28 +313,28 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-   Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
+  <a class="reference internal nav-link" href="#floating-point-numbers">
+   Floating Point Numbers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   💻 Procedure
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-simulation-for-robotic-arm">
-     Python simulation for robotic arm
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#physical-implementation-of-forward-kinematics-for-robotic-arm">
-     Physical Implementation of Forward Kinematics for Robotic Arm
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
     </a>
    </li>
   </ul>
@@ -343,28 +360,28 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-   Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
+  <a class="reference internal nav-link" href="#floating-point-numbers">
+   Floating Point Numbers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   💻 Procedure
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-simulation-for-robotic-arm">
-     Python simulation for robotic arm
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#physical-implementation-of-forward-kinematics-for-robotic-arm">
-     Physical Implementation of Forward Kinematics for Robotic Arm
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
     </a>
    </li>
   </ul>
@@ -378,87 +395,209 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab1-extracting-euler-angles">
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/Lab1_ExtractingEulerAngles.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="lab1-extracting-euler-angles">
 <h1>🔬 Lab1: Extracting Euler Angles<a class="headerlink" href="#lab1-extracting-euler-angles" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
-<p>The purpose of this lab is to compare the theoretical solution to the forward kinematics problem with a physical implementation on the robotic arm shown below.</p>
-<a class="reference internal image-reference" href="../_images/xArm.jpg"><img alt="../_images/xArm.jpg" class="align-center" src="../_images/xArm.jpg" style="width: 350px;" /></a>
-<p>In this lab, you will</p>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>In this lab we will write Python code that extracts ZYX Euler angles (<span class="math notranslate nohighlight">\(\psi, \theta, \phi\)</span>) given a roation matrix.</p>
+<hr></div>
+<div class="section" id="floating-point-numbers">
+<h2>Floating Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following equalities</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="mf">0.01</span> <span class="o">+</span> <span class="mf">0.02</span> <span class="o">==</span> <span class="mf">0.03</span>       <span class="c1"># true</span>
+<span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span>          <span class="c1"># false</span>
+<span class="mf">1.09</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">109</span>         <span class="c1"># false</span>
+<span class="mf">1.08</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">108</span>         <span class="c1"># true</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">2.0</span>  <span class="c1"># false</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.0</span>          <span class="c1"># false</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1.0</span>          <span class="c1"># true</span>
+</pre></div>
+</div>
+<p>How come some of the equalities above are not true?</p>
+<p>There are infinitely many real numbers, but we have a limited memory space to store a floating number, e.g., <strong>32</strong>-bit floating-point numbers or <strong>64</strong>-bit double-precision numbers. For this reason, most real numbers cannot be precisely represented.  For example, we can represent 1.09 using a floating point, but the actual value of it will be 1.090000000000000079936058.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.09</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.24f</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.090000000000000079936058
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is why <code class="docutils literal notranslate"><span class="pre">1.09</span> <span class="pre">*</span> <span class="pre">100</span> <span class="pre">==</span> <span class="pre">109</span></code> returns false, not true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">1.09</span><span class="o">*</span><span class="mi">100</span> <span class="o">==</span> <span class="mi">109</span><span class="p">)</span>  <span class="c1"># returns false</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are more examples as you already knew from Skills Review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Rule of thumb</strong>:  You must not use <code class="docutils literal notranslate"><span class="pre">==</span></code> for floating-point numbers and be very careful with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for floating-point numbers. Companies like Intel and Google never allow their programmers to use them for floating-point numbers. Intel once lost millions of dollars for a use of <code class="docutils literal notranslate"><span class="pre">==</span></code> and it had to redesign its chip.  Your boss would not be happy with it if you use it.</p>
+</div>
+<p>All right, then how to compare two floating point numbers?</p>
+<p>Let <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are two floating point numbers to compare and <span class="math notranslate nohighlight">\(\epsilon\)</span> is an extremely small number, e.g., <span class="math notranslate nohighlight">\(\epsilon = 10^{-15}\)</span> Then, we can compare whether <span class="math notranslate nohighlight">\(|x-y|&lt;\epsilon\)</span> or not.  Basically, we want to test if the two numbers are very close to each other.  In most engineering applications, it works.</p>
+<p>Luckily Python numpy provides <code class="docutils literal notranslate"><span class="pre">isclose</span></code> to test two real numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>          <span class="c1"># returns false</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># returns true</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s fix the other examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mf">1.09</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">109</span><span class="p">))</span>     <span class="c1"># returns true</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>      <span class="c1"># returns true</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># returns true </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Never use <code class="docutils literal notranslate"><span class="pre">==</span></code> for floating-point numbers!</p>
+</div>
+<p>How about <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>?</p>
+<p>We know that <code class="docutils literal notranslate"><span class="pre">0.1+0.2</span> <span class="pre">&gt;</span> <span class="pre">0.3</span></code> is false, but it will return true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> we need to write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>For <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> we need to write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>For</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>   
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;less&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;greater&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we need to write</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  <span class="c1"># x == a</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;less&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>     
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;greater&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But we can also write</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  <span class="c1"># x == a</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>           <span class="c1"># because of the if-statement, x is not close to a</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;less&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>           <span class="c1"># because of the if-statement, x is not close to a</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;greater&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr></div>
+<div class="section" id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deliverable-1">
+<h3>Deliverable 1<a class="headerlink" href="#deliverable-1" title="Permalink to this headline">¶</a></h3>
+<p>Complete the <code class="docutils literal notranslate"><span class="pre">extract_euler_angles</span></code> function inside <code class="docutils literal notranslate"><span class="pre">extract_euler_angles.py</span></code> under PycharmProjects.</p>
 <ul class="simple">
-<li><p>Parameterize the robotic arm following the Denavit-Hartenberg (DH) convention.</p></li>
-<li><p>Use Python to compute the forward kinematic equations for the robot.</p></li>
-<li><p>Write a Python script that moves the robot to the configurations specified by the user.</p></li>
+<li><p>Your function must return a list, not numpy array.</p></li>
+<li><p>If there exists one solution, you must return [psi, theta, phi].</p></li>
+<li><p>If there exist two solutions, you must return [[psi1, theta1, phi1],[psi2, theta2, phi2]].</p></li>
+<li><p>If there exist no solutions, you must return an empty list, [].</p></li>
+<li><p>The solutions must be in radians, in the range [-pi, pi].</p></li>
+<li><p>Your function must return all the solutions.</p></li>
+<li><p>If the solutions degenerate, pick <span class="math notranslate nohighlight">\(\psi = 0\)</span> and calcualte the rest.</p></li>
 </ul>
 </div>
-<div class="section" id="prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-<h2>Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm<a class="headerlink" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h2>
-<p>Use the schematic diagram shown below to find the forward kinematics of the robotic manipulator.</p>
-<a class="reference internal image-reference" href="../_images/xArmSchematic.png"><img alt="../_images/xArmSchematic.png" class="align-center" src="../_images/xArmSchematic.png" style="width: 600px;" /></a>
-</div>
-<div class="section" id="procedure">
-<h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="python-simulation-for-robotic-arm">
-<h3>Python simulation for robotic arm<a class="headerlink" href="#python-simulation-for-robotic-arm" title="Permalink to this headline">¶</a></h3>
-<p>Write a Python function that finds ZYX Euler angles from a rotation matrix.</p>
-<p><strong>Deliverable 1</strong>: Submit the pose (position and orientation) of the tooltip for each configuration. Do not submit the figures.</p>
-</div>
-<div class="section" id="physical-implementation-of-forward-kinematics-for-robotic-arm">
-<h3>Physical Implementation of Forward Kinematics for Robotic Arm<a class="headerlink" href="#physical-implementation-of-forward-kinematics-for-robotic-arm" title="Permalink to this headline">¶</a></h3>
-<p>Carefully read the following functions inside <a class="reference external" href="http://xArm.py">xArm.py</a>.</p>
-<ul class="simple">
-<li><p>def joint_to_servo_angles(self, joint_angles, joint_names=None):</p></li>
-<li><p>def servo_angles_to_positions(self, servo_angles, joint_names=None):</p></li>
-<li><p>def get_servo_command(self, duration_ms, servo_positions, joint_names=None):</p></li>
-<li><p>def send_command(self, command):</p></li>
-<li><p>def move_joints(self, duration_ms, joint_angles, joint_names=None, wait=True):</p></li>
-<li><p>def move_to_initial_pose(self, duration_ms, wait=True):</p></li>
-</ul>
-<p>Comment out the first line after <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code>, which is located at the bottom of the code, and
-uncomment the second line.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">test_forward_kinematics</span><span class="p">()</span>         <span class="o">&lt;--</span>  <span class="n">COMMENT</span> <span class="n">OUT</span>
-    <span class="c1"># test_servo_position_command()   &lt;--  UNCOMMENT</span>
-    <span class="c1"># test_servo_angle_command()</span>
-    <span class="c1"># test_move_joints()</span>
-</pre></div>
-</div>
-<p>Carefully look at the joint angles for the corresponding servo angles.  Find the mathematical relationshop between servo angles (<span class="math notranslate nohighlight">\(\alpha_i\)</span>) and joint angles (<span class="math notranslate nohighlight">\(\theta_i\)</span>).</p>
-<p><strong>Deliverable 2</strong>: For each joint, report the mathematical equation for <span class="math notranslate nohighlight">\(\theta\)</span> in terms of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p>Comment out the first two lines after <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> and uncomment the third line.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">test_forward_kinematics</span><span class="p">()</span>         <span class="o">&lt;--</span>  <span class="n">COMMENT</span> <span class="n">OUT</span>
-    <span class="c1"># test_servo_position_command()   &lt;--  COMMENT OUT</span>
-    <span class="c1"># test_servo_angle_command()      &lt;--  UNCOMMENT</span>
-    <span class="c1"># test_move_joints()</span>
-</pre></div>
-</div>
-<p>Read <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_servo_angle_command():</span></code> and complete the rest of the function.</p>
-<p><strong>Deliverable 3</strong>: For each joint, report the mathematical equation for <span class="math notranslate nohighlight">\(\theta\)</span> in terms of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p>Comment out the first three lines after <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> and uncomment the last line.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">test_forward_kinematics</span><span class="p">()</span>         <span class="o">&lt;--</span>  <span class="n">COMMENT</span> <span class="n">OUT</span>
-    <span class="c1"># test_servo_position_command()   &lt;--  COMMENT OUT</span>
-    <span class="c1"># test_servo_angle_command()      &lt;--  COMMENT OUT</span>
-    <span class="c1"># test_move_joints()              &lt;--  UNCOMMENT</span>
-</pre></div>
-</div>
-<p>Update the following two lines inside the constructor, <code class="docutils literal notranslate"> <span class="pre">def</span> <span class="pre">__init__(self,</span> <span class="pre">simulation_only=False):</span></code></p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># alpha = direction * theta + offset</span>
-    <span class="c1"># where alpha is the servo angle and theta is the joint angle.</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">joint_servo_offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">joint_servo_direction</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Read <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_move_joints():</span></code> and complete the rest of the function.</p>
-<p><strong>Deliverable 4</strong>: Demo your robot moving the joints as described in the function.</p>
-<p>Go to <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_forward_kinematics():</span></code> and replace <code class="docutils literal notranslate"><span class="pre">True</span></code> with <code class="docutils literal notranslate"><span class="pre">False</span></code> in the following line.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>   <span class="n">robot</span> <span class="o">=</span> <span class="n">XArm</span><span class="p">(</span><span class="n">simulation_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="o">&lt;--</span> <span class="n">change</span> <span class="n">it</span> <span class="n">to</span> <span class="kc">False</span>
-</pre></div>
-</div>
-<p>Uncomment the first line after <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> and comment out the rest.
-Excute the code and use a ruler to measure the position of the tool-tip.  Compare the measure vaules with the calcualted vaules.</p>
-<p><strong>Deliverable 5</strong>  Report the measured values and the calculated values.  What is the average error?</p>
+<div class="section" id="deliverable-2">
+<h3>Deliverable 2<a class="headerlink" href="#deliverable-2" title="Permalink to this headline">¶</a></h3>
+<p>Write Python code that tests your <code class="docutils literal notranslate"><span class="pre">extract_euler_angles</span></code> function.</p>
+<ol class="simple">
+<li><p>Carefully select ZYX Euler angles (<span class="math notranslate nohighlight">\(\psi, \theta, \phi\)</span>) to test.</p></li>
+<li><p>Create a rotation matrix for each set of the Euler angles you selected.</p></li>
+<li><p>Pass the rotation matrix to your <code class="docutils literal notranslate"><span class="pre">extract_euler_angles</span></code> function to find the Euler angles.</p></li>
+<li><p>These returned Euler angles may not be the same as the Euler angles you selected.</p></li>
+<li><p>Find the rotation matrix for each returned Euler angle, and compare it with the matrix you created in (2)</p></li>
+</ol>
 </div>
 </div>
 </div>
