@@ -17,10 +17,16 @@ parts:
   - file: Labs/SoftwareConfiguration
   - file: Labs/ICE1_PythonIntro.ipynb
   - file: Labs/ICE2_PythonContainers.ipynb
+  - file: Labs/Lab1_ExtractingEulerAngles
   - file: Labs/ICE3_SpatialMath.md
-  - file: Labs/oop.ipynb
-  - file: Labs/ForwardKinematics.md
-  - file: Labs/Extra.ipynb
-  - file: Labs/RoboticsToolbox.ipynb
+  - file: Labs/ICE4_RoboticsToolbox.ipynb
+  - file: Labs/ICE5_OOP.ipynb
+  - file: Labs/Lab2_ForwardKinematics.md
   - file: Labs/P1_InverseKinematics.ipynb
+  - file: Labs/ICE6_LSE.ipynb
   - file: Labs/P2_VisionBasedManipulator.ipynb
+
+- caption: Supplementary 
+  chapters:
+  - file: Labs/NoPointer.ipynb
+  - file: Labs/Extra.ipynb
