@@ -1,13 +1,8 @@
-# 💻 Software Configuration
+# ✏️ HW 1 Setting up Bitbucket
 
 ## 📜 Agenda
 - Create a Bitbucket repository.
 - Configure git repository.
-- Install and Configure PyCharm
-
-:::{note}
-Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.
-:::
 
 ## 💻 Procedure
 
@@ -52,58 +47,19 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Notice that you have `(master)` at the end of the folder name. If you type `ls`, it should return nothing.
 
 ```{image} ./figures/GitClone.gif
-:width: 680
+:scale: 60%
 :align: center
 ```
 <br>
 
-- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProjects` folder.  The figure below shows an example of a local `PycharmProjects` folder on your computer.
+- Go to Teams > General > Files > Class Materials. Download the `PycharmProjects_XXXX` folder and copy everything into the `PycharmProject` folder in your home directory. Do not copy the `PycharmProjects_XXXX` folder itself into the `PycharmProject` folder.  The figure below shows an example of a local `PycharmProject` folder on your computer.
 
 
 ```{image} ./figures/PycharmProjectsFolder.png
-:width: 580
+:scale: 80%
 :align: center
 ```
-<br>
 
-
-### Install and Configure PyCharm
-
-- Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
-- Ensure you have the installation optioned checked as shown below. 
-
-```{image} ./figures/PyCharmInstallationOptions.png
-:width: 440
-:align: center
-```
-<br>
-
-- Start PyCharm and create a new project.
-- Ensure the project location is `PycharmProjects` under your home folder, e.g., C:\Users\stanley.baek\PycharmProjects.
-- The location of virtual environment should be `env` under `PycharmProjects`, e.g., C:\Users\stanley.baek\PycharmProjects\env.
-
-```{image} ./figures/PycharmNewProject.gif
-:width: 720
-:align: center
-```
-<br>
-
-- Open Settings under the `File` menu and browse to `Project: PycharmProjects` > `Python Interpreter`.
-- Click `+` 
-- Search for `numpy` and click `Install Package`.
-- Install the following packages
-    - `matplotlib`
-    - `spatialmath-python`
-    - `sympy`
-    - `roboticstoolbox-python`
-    - `opencv-python`
-    - `serial`
-    
-
-```{image} ./figures/InstallNumpy.gif
-:width: 720
-:align: center
-```
 <br>
 
 - Go back to Git Bash. If you have already closed it, right click on an empty space inside the `workspace` folder and select `Git Bash Here`.
@@ -113,7 +69,7 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 - Enter your username and password if prompted.
 
 ```{image} ./figures/GitPush.gif
-:width: 640
+:scale: 60%
 :align: center
 ```
 
@@ -126,14 +82,31 @@ Your repository name must be ECE487\_LastName\_FirstName. Otherwise, the instruc
 
 - Refresh your Bitbucket repository to observe the new files as shown below
 
-<<<<<<< Updated upstream
-```{image} ./figures/BitBucketPushed.png
-:width: 640
+```{image} ./figures/git10.PNG
+:scale: 60%
 :align: center
 ```
 <br>
-=======
->>>>>>> Stashed changes
+
+```{Attention}
+After you push your assignments to Git, it is your responsibility to check your code has been successfully pushed to Bitbucket.
+```
+
+
+
+### Install PyCharm
+
+- Download the latest version of [PyCharm Edu](https://www.jetbrains.com/edu-products/download/#section=pycharm-edu) and install it on your computer.
+- Ensure you have the installation optioned checked as shown below. 
+
+```{image} ./figures/PyCharmInstallationOptions.png
+:width: 460
+:align: center
+```
+<br>
+
+### PyCharm Configuration
+
 
 ```{Attention} 
 It is your responsibility to check your files have been successfully pushed to your Bitbucket repository. Always visit your Bitbucket repository after you push your assignments to the repository.
@@ -151,7 +124,7 @@ Do NOT take a picture of a computer screen with your phone because it will intro
 
 <br>
 
-- **[25 Points]** Go to Windows Settings > Apps.  Click on PyCharm and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
+- **[25 Points]** Go to Windows Settings > Apps.  Click on Code Composer Studio and take a screenshot as shown below.  For Mac users, it is in the Applications folder.
 
 
 <br>
