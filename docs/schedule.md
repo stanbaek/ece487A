@@ -23,27 +23,27 @@ This schedule is subject to change as appropriate.
  L14      | Quaternions 2                     | HW13               |    
  L15      | Quaternions 3                     | HW14               |    
  L16      | GR 1                              |                    |    
- L17      | ICE3 - Spatial Maths              |                    |    
+ L17      | ICE3 - Classes and Objects        | HW15               |    
  L18      | Pose in 3D Space                  | ICE3               |    
  L19      | Danavit-Hartenberg Representation | HW18               |    
  L20      | Forward Kinematics 1              | HW19               |    
  L21      | Forward Kinematics 2              | HW20               |    
- L22      | Lab 2 - Forward Kinematics        | HW21               |    
- L23      | Lab 2 - Forward Kinematics        |                    |                    |    
- L24      | Inverse Kinematics 1              | Lab2               |    
- L25      | Inverse Kinematics 2              | HW23               |    
- L26      | Inverse Kinematics 3              | HW19               |    
- L27      | Inverse Kinematics 4              | HW20               |    
- L28      | Project 1 - Inverse Kinematics    | P1 Preflight       |   
- L29      | Project 1 - Inverse Kinematics    | P1 checkpoint1     |
- L30      | Image Processing                  |                    |
- L31      | Morphology                        | Project 1 Due      |
- L32      | ICE4                              | HW21               |
- L33      | HSV, Lab3                         | HW22               |
- L34      | Lab4                              |                    |
- L35      | GR2                               |                    |
- L36      | Lab4                              | Lab3 Due           |
- L37      | Camera Model                      |                    |
- L38      | Project 2                         | Lab4 Due           |
- L39      | Project 2                         |                    |
+ L22      | ICE4 - Spatial Maths              | HW21               |    
+ L23      | ICE5 - Robotics Toolbox           | ICE4               |    
+ L24      | Lab2 - Forward Kinematics         | ICE5               |    
+ L25      | Inverse Kinematics 1              | Lab2               |    
+ L26      | Inverse Kinematics 2              | HW25               |    
+ L27      | Inverse Kinematics 3              | HW26               |    
+ L28      | Inverse Kinematics 4              | HW27               |    
+ L29      | Project 1 - Inverse Kinematics    | P1 Preflight       |   
+ L30      | Project 1 - Inverse Kinematics    | P1 checkpoint1     |
+ L31      | Image Processing                  |                    |
+ L32      | Morphology                        | Project 1 Due      |
+ L33      | ICE4                              | HW21               |
+ L34      | HSV, Lab3                         | HW22               |
+ L35      | Lab4                              |                    |
+ L36      | GR2                               |                    |
+ L37      | Lab4                              | Lab3 Due           |
+ L38      | Camera Model                      |                    |
+ L39      | Project 2                         | Lab4 Due           |
  L40      | Project 2                         | P2 Due Midnight    |

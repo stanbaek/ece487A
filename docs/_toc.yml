@@ -18,9 +18,9 @@ parts:
   - file: Labs/ICE1_PythonIntro.ipynb
   - file: Labs/ICE2_PythonContainers.ipynb
   - file: Labs/Lab1_ExtractingEulerAngles
-  - file: Labs/ICE3_SpatialMath.md
-  - file: Labs/ICE4_RoboticsToolbox.ipynb
-  - file: Labs/ICE5_OOP.ipynb
+  - file: Labs/ICE3_OOP.ipynb
+  - file: Labs/ICE4_SpatialMath.md
+  - file: Labs/ICE5_RoboticsToolbox.ipynb
   - file: Labs/Lab2_ForwardKinematics.md
   - file: Labs/P1_InverseKinematics.ipynb
   - file: Labs/ICE6_LSE.ipynb
