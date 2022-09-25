@@ -20,7 +20,7 @@ The **Grade distribution** for this course is shown below.
 |     GRs                |     30%     |     GRs                |     20%     |
 |     Labs               |     30%     |     Labs               |     15%     |
 |Homework + Skills Review|     40%     |Homework + Skills Review|     40%     |
-|                        |             |     Final   Project    |     25%     |
+|                        |             |     Projects           |     25%     |
 |                        |             |                        |             |
 |     Total              |     100%    |     Total              |     100%    |
 
