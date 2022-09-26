@@ -1,4 +1,4 @@
-# 🔬 Lab2: Forward Kinematics
+# Forward Kinematics
 
 
 ## Objectives

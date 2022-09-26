@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>❄️ ICE3: Classes and Objects &#8212; Fundamentals of Robotics</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -40,13 +38,14 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   ECE 487 Fundamentals of Robotics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ECE 487 Fundamentals of Robotics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Info
  </span>
@@ -214,107 +229,209 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/ICE3_OOP.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/stanbaek/ece487"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/ICE3_OOP.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/ICE3_OOP.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/ICE3_OOP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/stanbaek/ece487"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/ICE3_OOP.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Labs/ICE3_OOP.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-note-on-this-document">
    A note on this document
@@ -326,28 +443,37 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-objects-and-classes">
-   Introduction to Objects and Classes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classes">
    Classes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modules">
-   Modules
+  <a class="reference internal nav-link" href="#objects">
+   Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-constructors-and-methods">
+   Simple Constructors and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverable">
+   Deliverable
   </a>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>❄️ ICE3: Classes and Objects</h1>
@@ -371,18 +497,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-objects-and-classes">
-   Introduction to Objects and Classes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classes">
    Classes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modules">
-   Modules
+  <a class="reference internal nav-link" href="#objects">
+   Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-constructors-and-methods">
+   Simple Constructors and methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverable">
+   Deliverable
   </a>
  </li>
 </ul>
@@ -391,23 +527,100 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ice3-classes-and-objects">
-<h1>❄️ ICE3: Classes and Objects<a class="headerlink" href="#ice3-classes-and-objects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a-note-on-this-document">
-<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="ice3-classes-and-objects">
+<h1>❄️ ICE3: Classes and Objects<a class="headerlink" href="#ice3-classes-and-objects" title="Permalink to this headline">#</a></h1>
+<section id="a-note-on-this-document">
+<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this headline">#</a></h2>
 <p>This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
-<p><em>Reference: D. Beazley, Python Essential Reference, 4th ed, Addison Wesley, 2009</em></p>
+<p><em>References:</em></p>
+<ul class="simple">
+<li><p>D. Beazley, Python Essential Reference, 4th ed, Addison Wesley, 2009</p></li>
+<li><p>D. Arnow and G. Weiss, Introduction to Programming Using Java - an Object-Oriented Approach, Addison Wesley, 2000</p></li>
+</ul>
+</section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
+<p>This in-class exercise (ICE) will introduce object-oriented programming in Python.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">#</a></h2>
+<p><em>(from: <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">https://realpython.com/python3-object-oriented-programming/</a>)</em></p>
+<blockquote>
+"The primitive data structures available in Python, like numbers, strings, and lists are designed to represent simple things like the cost of something, the name of a poem, and your favorite colors, respectively.
+<p>What if you wanted to represent something much more complicated?</p>
+<p>For example, let’s say you wanted to track a number of different animals. If you used a list, the first element could be the animal’s name while the second element could represent its age.</p>
+<p>How would you know which element is supposed to be which? What if you had 100 different animals? Are you certain each animal has both a name and an age, and so forth? What if you wanted to add other properties to these animals? This lacks organization, and it’s the exact need for classes.</p>
+<p>Classes are used to create new user-defined data structures that contain arbitrary information about something. In the case of an animal, we could create an Animal() class to track properties about the Animal like the name and age.</p>
+<p>It’s important to note that a class just provides structure—it’s a blueprint for how something should be defined, but it doesn’t actually provide any real content itself. The Animal() class may specify that the name and age are necessary for defining an animal, but it will not actually state what a specific animal’s name or age is.</p>
+<p>It may help to think of a class as an idea for how something should be defined.”</p>
+</blockquote>
+</section>
+<section id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">#</a></h2>
+<p>All values used in a prgram are objects.  An <em>object</em> consists of internal data and methods that perform various kinds of operations involving that data.  You have already used objects and methods when working with the built-in types such as integers, strings, and lists. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
 </div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
-<p>This in-class exercise (ICE) will introduce Python3 fundamentals through application.</p>
 </div>
-<div class="section" id="introduction-to-objects-and-classes">
-<h2>Introduction to Objects and Classes<a class="headerlink" href="#introduction-to-objects-and-classes" title="Permalink to this headline">¶</a></h2>
-<p>All values used in a prgram are objects.  An <em>object</em> consists of internal data and methods that perform various kinds of operations involving that data.  You have already used objects and methods when working with the built-in types such as strings adn lists. For example,</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It tells us that <code class="docutils literal notranslate"><span class="pre">x</span></code> is an instance (object) of the <code class="docutils literal notranslate"><span class="pre">int</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The string, “Hello”, we typed in is actually an instance (object) of the <code class="docutils literal notranslate"><span class="pre">str</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;function&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">hello</span></code> function is an instance of the <code class="docutils literal notranslate"><span class="pre">function</span></code> class.  So, everything in Python is actually an instance (object) of some kind of class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_hello</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str_hello</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HELLO
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>?  It is a method defined in the <code class="docutils literal notranslate"><span class="pre">str</span></code> class that is acting on a specfic object, which in this case is <code class="docutils literal notranslate"><span class="pre">str_hello</span></code>.</p>
+<p>Let’s take a look at a list object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span> <span class="c1"># create a list object</span>
@@ -501,124 +714,161 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>It tells us that <code class="docutils literal notranslate"><span class="pre">x</span></code> is an instance (object) of the <code class="docutils literal notranslate"><span class="pre">int</span></code> class.</p>
+</section>
+<section id="simple-constructors-and-methods">
+<h2>Simple Constructors and methods<a class="headerlink" href="#simple-constructors-and-methods" title="Permalink to this headline">#</a></h2>
+<p>Let’s take a look at a simple class first</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Laugher</span><span class="p">:</span>   <span class="c1"># new class</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="k">pass</span>             <span class="c1"># do nothing</span>
+    <span class="k">def</span> <span class="nf">laugh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="c1"># method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;haha&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This defines a class called <code class="docutils literal notranslate"><span class="pre">Laughter</span></code>. It provides a single method, <code class="docutils literal notranslate"><span class="pre">laugh</span></code>, that simply prints “haha”. Using this definition, we can create a <code class="docutils literal notranslate"><span class="pre">Laughter</span></code> object, as follow</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">()</span>  
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>haha
 </pre></div>
 </div>
 </div>
 </div>
-<p>The string, “Hello”, we typed in is actually an instance (object) of the <code class="docutils literal notranslate"><span class="pre">str</span></code> class.</p>
+<p>The phrase <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Laugher:</span></code> indicates that this is the beginning of the definition of a class named <code class="docutils literal notranslate"><span class="pre">Laugher</span></code>. The next are the definition of a <strong>constructor</strong></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="k">pass</span>             <span class="c1"># do nothing</span>
+</pre></div>
+</div>
+<p>and a definition of a <strong>method</strong></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">laugh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>     <span class="c1"># method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;haha&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A constructor definition is always <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.  Constructors do not include a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement - they are always invoked in conjunction with the class name (<code class="docutils literal notranslate"><span class="pre">Laugher()</span></code> in our example), which itself returns a reference (pointer) to the newly created object. For example,</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">()</span>  
+</pre></div>
+</div>
+<p>actually calls <code class="docutils literal notranslate"><span class="pre">Laugher</span></code>’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method and assigns a new <code class="docutils literal notranslate"><span class="pre">Laugher</span></code> object to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Suppose we want the sender of the <code class="docutils literal notranslate"><span class="pre">laugh</span></code> message to decide whether the <em>laugh syllable</em> should be ha or ho or hee, etc. This is additional information, and so the sender of the message would have to provide it as an <em>argument</em>, as follows</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;ha&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;yuk&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We need to modify the <code class="docutils literal notranslate"><span class="pre">laugh</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Laugher</span><span class="p">:</span>   <span class="c1"># new class</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="k">pass</span>             <span class="c1"># do nothing</span>
+    <span class="k">def</span> <span class="nf">laugh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">syllable</span><span class="p">):</span>     <span class="c1"># method with an argument</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">syllable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">()</span>  
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;yuk&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;function&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yuk
 </pre></div>
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">hello</span></code> function is an instance of the <code class="docutils literal notranslate"><span class="pre">function</span></code> class.  So, everything in Python is actually an instance (object) of some kind of class.</p>
+<p>We want to print “haha” out as the default syllable without explicitly specifying the laugh syllables. A <strong>default</strong> is a behavior or value that is used to explicit behavior or value is provided. Let’s modify the <code class="docutils literal notranslate"><span class="pre">laugh</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_hello</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">str_hello</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Laugher</span><span class="p">:</span>   <span class="c1"># new class</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># constructor</span>
+        <span class="k">pass</span>             <span class="c1"># do nothing</span>
+    <span class="k">def</span> <span class="nf">laugh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">syllable</span><span class="o">=</span><span class="s2">&quot;haha&quot;</span><span class="p">):</span>     <span class="c1">#  method with an argument</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">syllable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can print the default syllable as well as user specified syllables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">()</span>  
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;yuk&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HELLO
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yuk
+haha
 </pre></div>
 </div>
 </div>
 </div>
-<p>What is <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>?  It is a method defined in the <code class="docutils literal notranslate"><span class="pre">str</span></code> class that is acting on a specfic object, which in this case is <code class="docutils literal notranslate"><span class="pre">str_hello</span></code>.</p>
+<p>Finally, suppose we wanted to give the creator of a <code class="docutils literal notranslate"><span class="pre">Laugher</span></code> object the option of specifying the default laugh syllable so that it would not have to always be “ha”.  This is additional information that would have to be supplied to the constructor as an <em>argument</em> when the object is created. For example, the following modification would display “heeheehee” and then “hoho”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># method</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;woof woof yap yap&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Laugher</span><span class="p">:</span>   <span class="c1"># new class</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>  <span class="c1"># constructor with an argument</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">syllable</span> <span class="o">=</span> <span class="n">s</span>   <span class="c1"># update the object variable</span>
+    <span class="k">def</span> <span class="nf">laugh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">syllable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>     <span class="c1">#  the default value of argument is None</span>
+        <span class="k">if</span> <span class="n">syllable</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">syllable</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">syllable</span><span class="p">)</span>
+
         
-    <span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>  <span class="c1"># d is an instance of Dog</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-<span class="n">d</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">(</span><span class="s2">&quot;hoho&quot;</span><span class="p">)</span>  
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;hehehehe&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">laugh</span><span class="p">()</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">(</span><span class="s2">&quot;hehe&quot;</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">laugh</span><span class="p">(</span><span class="s2">&quot;yuk&quot;</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">laugh</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Dog&#39;&gt;
-woof woof yap yap
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hehehehe
+hoho
+yuk
+hehe
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">add_one</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<p>How can a class definition support this?  The constructor now gets the <code class="docutils literal notranslate"><span class="pre">syllable</span></code> argument, so its signature must include a declaration of the <code class="docutils literal notranslate"><span class="pre">syllable</span></code> argument, as follows:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Laugher</span><span class="p">(</span><span class="s2">&quot;hoho&quot;</span><span class="p">)</span>  
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;  &quot;&quot;&quot;</span>
-<span class="k">class</span> <span class="nc">Chihuahua</span><span class="p">(</span><span class="n">Dog</span><span class="p">):</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;Cheeto&quot;</span>
-    
-<span class="n">ch</span> <span class="o">=</span> <span class="n">Chihuahua</span><span class="p">()</span>
-<span class="n">ch</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>woof woof yap yap
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<p><em>(from: <a class="reference external" href="https://realpython.com/python3-object-oriented-programming/">https://realpython.com/python3-object-oriented-programming/</a>)</em></p>
-<blockquote>
-"The primitive data structures available in Python, like numbers, strings, and lists are designed to represent simple things like the cost of something, the name of a poem, and your favorite colors, respectively.
-<p>What if you wanted to represent something much more complicated?</p>
-<p>For example, let’s say you wanted to track a number of different animals. If you used a list, the first element could be the animal’s name while the second element could represent its age.</p>
-<p>How would you know which element is supposed to be which? What if you had 100 different animals? Are you certain each animal has both a name and an age, and so forth? What if you wanted to add other properties to these animals? This lacks organization, and it’s the exact need for classes.</p>
-<p>Classes are used to create new user-defined data structures that contain arbitrary information about something. In the case of an animal, we could create an Animal() class to track properties about the Animal like the name and age.</p>
-<p>It’s important to note that a class just provides structure—it’s a blueprint for how something should be defined, but it doesn’t actually provide any real content itself. The Animal() class may specify that the name and age are necessary for defining an animal, but it will not actually state what a specific animal’s name or age is.</p>
-<p>It may help to think of a class as an idea for how something should be defined.”</p>
-</blockquote><p>Let’s create a <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class! What are some attributes of a <code class="docutils literal notranslate"><span class="pre">Cat</span></code>? It should have a <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>! It can also be <code class="docutils literal notranslate"><span class="pre">tired</span></code> and <code class="docutils literal notranslate"><span class="pre">hungry</span></code>. What are some actions (or methods) that the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> can do? It <code class="docutils literal notranslate"><span class="pre">feed</span></code> and <code class="docutils literal notranslate"><span class="pre">sleep</span></code> and <code class="docutils literal notranslate"><span class="pre">meow</span></code>! Should feeding and sleeping update specific attributes of the <code class="docutils literal notranslate"><span class="pre">Cat</span></code>? Now that we have our <code class="docutils literal notranslate"><span class="pre">Cat</span></code>, let’s code it up!</p>
+<p>Although it is the constructor that gets the default syllable as an argument, it is the <code class="docutils literal notranslate"><span class="pre">laugh()</span></code> method (with no arguments) that needs access to it. Unfortunately, methods cannot access variables, including parameters, of other methods. How can <code class="docutils literal notranslate"><span class="pre">laugh()</span></code> get access to this syllable?</p>
+<p>The answer is to declare the <code class="docutils literal notranslate"><span class="pre">syllable</span></code> variable using the <code class="docutils literal notranslate"><span class="pre">self</span></code> keyword.  Such as variable is called an an <em>instance variable</em> because it belongs to the object (instance) and not ot any one particular method. Instance variables may be accessed by <strong>all</strong> the methods in the class.</p>
+<ul class="simple">
+<li><p>A <strong>class</strong> encapsulates data and functionality: data as attributes (<code class="docutils literal notranslate"><span class="pre">self.syllable</span></code>), and functionality as methods (<code class="docutils literal notranslate"><span class="pre">laugh()</span></code>).</p></li>
+<li><p>An <strong>instance</strong> is an implementation of a class. Each instance has its own attributes independent of other instances - “hoho” for <code class="docutils literal notranslate"><span class="pre">x</span></code> and “hehe” for <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>The first argument when defining any method is always the <strong>self</strong> argument. This argument significes the instance on which you call the method. To define a method, you use <strong>self</strong> to access the instance attributes (e.g., <code class="docutils literal notranslate"><span class="pre">self.syllable</span></code>). But to call an instance method, you do not need to specify <strong>self</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">x.laugh()</span></code>).</p></li>
+</ul>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Let’s create a <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class! What are some attributes of a <code class="docutils literal notranslate"><span class="pre">Cat</span></code>? It should have a <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>! It can also be <code class="docutils literal notranslate"><span class="pre">tired</span></code> and <code class="docutils literal notranslate"><span class="pre">hungry</span></code>. What are some actions (or methods) that the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> can do? It <code class="docutils literal notranslate"><span class="pre">feed</span></code> and <code class="docutils literal notranslate"><span class="pre">sleep</span></code> and <code class="docutils literal notranslate"><span class="pre">meow</span></code>! Should feeding and sleeping update specific attributes of the <code class="docutils literal notranslate"><span class="pre">Cat</span></code>? Now that we have our <code class="docutils literal notranslate"><span class="pre">Cat</span></code>, let’s code it up!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
 
+    <span class="n">Cat</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Felis catus&quot;</span>   <span class="c1"># class variable. </span>
+    
     <span class="c1"># Initializer / Instance Attributes</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -659,7 +909,7 @@ woof woof yap yap
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the Cat object</span>
-<span class="n">kitty</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Fat Cat&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">pichu</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Pichu&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -667,119 +917,148 @@ woof woof yap yap
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call our instance methods</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">kitty</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">kitty</span><span class="o">.</span><span class="n">meow</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kitty</span><span class="o">.</span><span class="n">feed</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kitty</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kitty</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">kitty</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kitty</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Shawn&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kitty</span><span class="o">.</span><span class="n">meow</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
-<p>A Module is a python file that contains a collection of related definitions. Python has hundreds of standard modules. These are organized into what is known as the <a class="reference external" href="http://docs.python.org/library/">Python Standard Library</a>. You can also create and use your own modules. To use functionality from a module, you first have to import the entire module or parts of it into your namespace</p>
-<p>To import the entire module:
-<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code></p>
-<p>You can also import a module using a specific name:
-<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span> <span class="pre">as</span> <span class="pre">new_module_name</span></code></p>
-<p>To import specific definitions (e.g. functions, variables, etc) from the module into your local namespace:
-<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">name1,</span> <span class="pre">name2</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>To get the curent directory, you can use: <code class="docutils literal notranslate"><span class="pre">os.path.abspath(os.path.curdir)</span></code></p>
-<p>Let’s use glob, a pattern matching function. We will use an if statement to print:</p>
-<ul class="simple">
-<li><p>A list of directories if we are using Google Colab</p></li>
-<li><p>A list of ipynb files in the current folder if we are using Jupyter Notebook locally</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running on Colab... Printing list of directories&#39;</span><span class="p">)</span>
-    <span class="n">data_file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/*&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not running on Colab... Printing list of files&#39;</span><span class="p">)</span>
-    <span class="n">data_file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span><span class="p">,</span><span class="s1">&#39;*ipynb&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_file_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">meow</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not running on Colab... Printing list of files
-[&#39;./module-02-01_Nonlinear-Modeling.ipynb&#39;, &#39;./module-03-00_Two-Armed-Bandit.ipynb&#39;, &#39;./module-03-02_RL-Exercises.ipynb&#39;, &#39;./module-01-03_Python-Exercises.ipynb&#39;, &#39;./module-01-02_Working-with-Data.ipynb&#39;, &#39;./module-04-00_Social-Learning.ipynb&#39;, &#39;./module-01-01_Intro-to-Python.ipynb&#39;, &#39;./module-03-01_Models-of-Learning.ipynb&#39;, &#39;./module-04-01_Prosocial-RL-Exercises.ipynb&#39;, &#39;./module-02-00_Linear-Modeling.ipynb&#39;, &#39;./module-01-00_Jupyter-Notebooks.ipynb&#39;, &#39;./module-02-02_Modeling-Exercises.ipynb&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pichu is 7 years old. Pichu is tired. Pichu is hungry. 
+Pichu says Meow! Meow!
 </pre></div>
 </div>
 </div>
 </div>
-<p>This gives us a list of the files including the relative path from the current directory. What if we wanted just the filenames? There are several different ways to do this. First, we can use the the os.path.basename function. We loop over every file, grab the base file name and then append it to a new list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">data_file_list</span><span class="p">:</span>
-    <span class="n">file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pichu</span><span class="o">.</span><span class="n">feed</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pichu says Meow! Meow!
 </pre></div>
 </div>
 </div>
 </div>
-<p>It is also sometimes even cleaner to do this as a list comprehension</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data_file_list</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pichu is 7 years old. Pichu is tired. Pichu is not hungry. 
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pichu</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pichu is 7 years old. Pichu is not tired. Pichu is not hungry. 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Class variables (<code class="docutils literal notranslate"><span class="pre">species</span></code> in the <code class="docutils literal notranslate"><span class="pre">Cat</span></code> class) are associated with the class, not an instance of the class.  Hence, all instance share the same class variable <code class="docutils literal notranslate"><span class="pre">species</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Felis catus
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">leo</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Leo&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">leo</span><span class="o">.</span><span class="n">description</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">leo</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Cat</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Leo is 2 years old. Leo is tired. Leo is hungry. 
+Felis catus
+Felis catus
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cat</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Lynx rufus&quot;</span>  <span class="c1"># bobcat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">leo</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pichu</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lynx rufus
+Lynx rufus
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deliverable">
+<h2>Deliverable<a class="headerlink" href="#deliverable" title="Permalink to this headline">#</a></h2>
+<p>Go to ECE487 Teams and download <code class="docutils literal notranslate"><span class="pre">course_roster.py</span></code> under General &gt; Files &gt; Class Materials. Complete all the unfinished methods in the <code class="docutils literal notranslate"><span class="pre">Cadet</span></code> annd <code class="docutils literal notranslate"><span class="pre">Course</span></code> classes.
+The following methods should be impelemted</p>
+<ul class="simple">
+<li><p>class Cadet</p>
+<ul>
+<li><p>get_gpa(self)</p></li>
+</ul>
+</li>
+<li><p>class Course</p>
+<ul>
+<li><p>enroll(self, cadets)</p></li>
+<li><p>get_course_average(self)</p></li>
+<li><p>get_roster(self)</p></li>
+<li><p>get grade(self, cadet)</p></li>
+</ul>
+</li>
+</ul>
+<p>Once all the methods are correctly impeletemented, the <code class="docutils literal notranslate"><span class="pre">main</span></code> function will print the following.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">Cadets</span> <span class="n">enrolled</span> <span class="ow">in</span> <span class="n">ECE245</span><span class="p">:</span> <span class="n">Peter</span> <span class="n">Parker</span><span class="p">,</span> <span class="n">Clark</span> <span class="n">Kent</span><span class="p">,</span> <span class="n">Brue</span> <span class="n">Wayne</span><span class="p">,</span> <span class="n">Natasha</span> <span class="n">Romanoff</span>
+<span class="n">Cadets</span> <span class="n">enrolled</span> <span class="ow">in</span> <span class="n">ECE382</span><span class="p">:</span> <span class="n">Clark</span> <span class="n">Kent</span><span class="p">,</span> <span class="n">Brue</span> <span class="n">Wayne</span><span class="p">,</span> <span class="n">Natasha</span> <span class="n">Romanoff</span>
+<span class="n">Cadets</span> <span class="n">enrolled</span> <span class="ow">in</span> <span class="n">ECE487</span><span class="p">:</span> <span class="n">Clark</span> <span class="n">Kent</span><span class="p">,</span> <span class="n">Natasha</span> <span class="n">Romanoff</span>
+<span class="n">Cadets</span> <span class="n">enrolled</span> <span class="ow">in</span> <span class="n">ECE499</span><span class="p">:</span> <span class="n">Brue</span> <span class="n">Wayne</span>
+<span class="n">Peter</span> <span class="n">Parker</span> <span class="ow">is</span> <span class="n">taking</span> <span class="n">ECE245</span>
+<span class="n">Clark</span> <span class="n">Kent</span> <span class="ow">is</span> <span class="n">taking</span> <span class="n">ECE245</span><span class="p">,</span> <span class="n">ECE382</span><span class="p">,</span> <span class="n">ECE487</span>
+<span class="n">Brue</span> <span class="n">Wayne</span> <span class="ow">is</span> <span class="n">taking</span> <span class="n">ECE245</span><span class="p">,</span> <span class="n">ECE382</span><span class="p">,</span> <span class="n">ECE499</span>
+<span class="n">Natasha</span> <span class="n">Romanoff</span> <span class="ow">is</span> <span class="n">taking</span> <span class="n">ECE245</span><span class="p">,</span> <span class="n">ECE382</span><span class="p">,</span> <span class="n">ECE487</span>
+<span class="n">ECE245</span> <span class="n">average</span> <span class="ow">is</span> <span class="mf">78.25</span>
+<span class="n">ECE382</span> <span class="n">average</span> <span class="ow">is</span> <span class="mf">85.66666666666667</span>
+<span class="n">ECE487</span> <span class="n">average</span> <span class="ow">is</span> <span class="mf">94.5</span>
+<span class="n">ECE499</span> <span class="n">average</span> <span class="ow">is</span> <span class="mf">91.0</span>
+<span class="n">Peter</span> <span class="n">Parker</span><span class="s1">&#39;s GPA is 58.0</span>
+<span class="n">Clark</span> <span class="n">Kent</span><span class="s1">&#39;s GPA is 89.66666666666667</span>
+<span class="n">Brue</span> <span class="n">Wayne</span><span class="s1">&#39;s GPA is 82.0</span>
+<span class="n">Natasha</span> <span class="n">Romanoff</span><span class="s1">&#39;s GPA is 92.33333333333333</span>
+</pre></div>
+</div>
+<p>Push your code to Bitbucket and submit the output in Gradescope.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -803,9 +1082,11 @@ woof woof yap yap
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Lab1_ExtractingEulerAngles.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -821,24 +1102,28 @@ woof woof yap yap
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Stan Baek<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Stan Baek<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
