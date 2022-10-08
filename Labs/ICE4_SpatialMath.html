@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>❄️ ICE4: Spatial Math for Python &#8212; Fundamentals of Robotics</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,17 +18,21 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -38,14 +40,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,21 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -89,10 +76,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -110,15 +96,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    ECE 487 Fundamentals of Robotics
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   ECE 487 Fundamentals of Robotics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Info
  </span>
@@ -231,17 +216,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -249,196 +229,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/ICE4_SpatialMath.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/stanbaek/ece487"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/ICE4_SpatialMath.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Labs/ICE4_SpatialMath.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Labs/ICE4_SpatialMath.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/stanbaek/ece487"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/stanbaek/ece487/issues/new?title=Issue%20on%20page%20%2FLabs/ICE4_SpatialMath.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-this-document">
-   A note on this document
-  </a>
- </li>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/ICE4_SpatialMath.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
@@ -452,8 +330,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   Procedure
+  <a class="reference internal nav-link" href="#low-level-spatial-math-functions">
+   Low-Level Spatial Math Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -466,12 +344,12 @@ title="Print to PDF"
      Transformation Matrices in 3D
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-level-classes">
-     High-level classes
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-level-spatial-math-functions">
+   High-Level Spatial Math Functions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deliverables">
@@ -497,11 +375,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>❄️ ICE4: Spatial Math for Python</h1>
@@ -515,11 +394,6 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-this-document">
-   A note on this document
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
@@ -532,8 +406,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   Procedure
+  <a class="reference internal nav-link" href="#low-level-spatial-math-functions">
+   Low-Level Spatial Math Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -546,12 +420,12 @@ title="Print to PDF"
      Transformation Matrices in 3D
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-level-classes">
-     High-level classes
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-level-spatial-math-functions">
+   High-Level Spatial Math Functions
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deliverables">
@@ -581,30 +455,31 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ice4-spatial-math-for-python">
-<h1>❄️ ICE4: Spatial Math for Python<a class="headerlink" href="#ice4-spatial-math-for-python" title="Permalink to this headline">#</a></h1>
-<section id="a-note-on-this-document">
-<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this headline">#</a></h2>
-<p>This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
-</section>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>This lab assignment will introduce the spatialmath package that will be used throughout the semester to control robotic arms.</p>
-<section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
-<p>This lab has been adapted from the Spatial Math for Python Documentation <a class="reference external" href="https://petercorke.github.io/spatialmath-python/">https://petercorke.github.io/spatialmath-python/</a>.  Refer to the follwing links for more details.</p>
-<p><a class="reference external" href="https://github.com/petercorke/spatialmath-python">https://github.com/petercorke/spatialmath-python</a>
-<a class="reference external" href="https://petercorke.github.io/spatialmath-python/">https://petercorke.github.io/spatialmath-python/</a></p>
-</section>
-</section>
-<section id="procedure">
-<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h2>
-<section id="transformation-matrices-in-2d">
-<h3>Transformation Matrices in 2D<a class="headerlink" href="#transformation-matrices-in-2d" title="Permalink to this headline">#</a></h3>
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE4_SpatialMath.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="ice4-spatial-math-for-python">
+<h1>❄️ ICE4: Spatial Math for Python<a class="headerlink" href="#ice4-spatial-math-for-python" title="Permalink to this headline">¶</a></h1>
+<hr><p><strong>A note on this document</strong>
+This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or executable code. To run the executable code in this notebook, click <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE4_SpatialMath.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+. For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This in-class exercise will introduce the spatialmath package that will be used throughout the semester to control robotic arms.</p>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>This in-class exercise has been adapted from the Spatial Math for Python.  Refer to the follwing links for more details.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://petercorke.github.io/spatialmath-python/">Spatial Maths for Python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/petercorke/spatialmath-python">spatialmath-python github</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="low-level-spatial-math-functions">
+<h2>Low-Level Spatial Math Functions<a class="headerlink" href="#low-level-spatial-math-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transformation-matrices-in-2d">
+<h3>Transformation Matrices in 2D<a class="headerlink" href="#transformation-matrices-in-2d" title="Permalink to this headline">¶</a></h3>
 <p>First, import the <strong>low-level</strong> transform functions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,8 +505,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.70710678 -0.70710678]
+ [ 0.70710678  0.70710678]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+1.0
+</pre></div>
 </div>
-<p>As it is expected, R is a 2 by 2 matrix that is a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> object.  We can also create a homogeneous transformation matrix in 2-D that is a 3 by 3 matrix.</p>
+</div>
+</div>
+<p>As it is expected, R is a 2 by 2 matrix that is a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> object.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The objects returned by the <strong>low-level</strong> spatialmath functions are numpy arrays.</p>
+</div>
+<p>We can also create a homogeneous transformation matrix in 2-D that is a 3 by 3 matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Homogeneous transformation matrix for a rotation of 30 deg</span>
@@ -640,15 +528,31 @@ title="Print to PDF"
 
 <span class="c1"># Create a homogeneous transformation in 2-D that represents </span>
 <span class="c1"># a translation of (1,2) followed by a rotation of 45 deg</span>
-<span class="n">T1</span> <span class="o">=</span> <span class="n">transl2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="nd">@trot2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>   <span class="c1"># It is trans el-two not trans one-two</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="n">transl2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="nd">@trot2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>   <span class="c1"># It is trans-&#39;el&#39;-2 not trans-one-2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">T1</span><span class="p">)</span>
 
 <span class="nb">type</span><span class="p">(</span><span class="n">T1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.8660254 -0.5        0.       ]
+ [ 0.5        0.8660254  0.       ]
+ [ 0.         0.         1.       ]]
+[[ 0.70710678 -0.70710678  1.        ]
+ [ 0.70710678  0.70710678  2.        ]
+ [ 0.          0.          1.        ]]
+</pre></div>
 </div>
-<p><strong>Note</strong>: <code class="docutils literal notranslate"><span class="pre">*</span></code> is for element-wise multiplication whereas <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is for matrix multiplication.</p>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> is for element-wise multiplication whereas <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is for matrix multiplication.</p>
+</div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">transl2</span></code> creates a relative pose with a finite translation but zero rotation, while <code class="docutils literal notranslate"><span class="pre">trot2</span></code> creates a relative pose with a finite rotation but zero translation.  We can plot this, relative to the world coordinate frame, by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,8 +560,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
+</pre></div>
 </div>
-<p>If it does not display a plot in PyCharm, you need to install matplotlib package.  Go to File &gt; Settings &gt; Project &gt; Python Interpreter. Click + to install matplotlib. Once installation is complete add to your code</p>
+<img alt="../_images/ICE4_SpatialMath_13_1.png" src="../_images/ICE4_SpatialMath_13_1.png" />
+</div>
+</div>
+<p>If it does not display a plot in PyCharm, you need to install matplotlib package.  Go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">Project</span> <span class="pre">&gt;</span> <span class="pre">Python</span> <span class="pre">Interpreter</span></code>. Click <code class="docutils literal notranslate"><span class="pre">+</span></code> to install <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Once installation is complete add to your code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
@@ -673,11 +583,98 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ICE4_SpatialMath_16_1.png" src="../_images/ICE4_SpatialMath_16_1.png" />
+</div>
 </div>
 <p>We can run <code class="docutils literal notranslate"><span class="pre">help</span></code> function to learn details of these functions by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trplot2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function trplot2 in module spatialmath.base.transforms2d:
+
+trplot2(T, color=&#39;blue&#39;, frame=None, axislabel=True, axissubscript=True, textcolor=None, labels=(&#39;X&#39;, &#39;Y&#39;), length=1, arrow=True, rviz=False, ax=None, block=False, dims=None, wtl=0.2, width=1, d1=0.1, d2=1.15, **kwargs)
+    Plot a 2D coordinate frame
+    
+    :param T: an SE(3) or SO(3) pose to be displayed as coordinate frame
+    :type: ndarray(3,3) or ndarray(2,2)
+    :param color: color of the lines defining the frame
+    :type color: str
+    :param textcolor: color of text labels for the frame, default color of lines above
+    :type textcolor: str
+    :param frame: label the frame, name is shown below the frame and as subscripts on the frame axis labels
+    :type frame: str
+    :param axislabel: display labels on axes, default True
+    :type axislabel: bool
+    :param axissubscript: display subscripts on axis labels, default True
+    :type axissubscript: bool
+    :param labels: labels for the axes, defaults to X and Y
+    :type labels: 2-tuple of strings
+    :param length: length of coordinate frame axes, default 1
+    :type length: float
+    :param arrow: show arrow heads, default True
+    :type arrow: bool
+    :param ax: the axes to plot into, defaults to current axes
+    :type ax: Axes3D reference
+    :param block: run the GUI main loop until all windows are closed, default True
+    :type block: bool
+    :param dims: dimension of plot volume as [xmin, xmax, ymin, ymax]
+    :type dims: array_like(4)
+    :param wtl: width-to-length ratio for arrows, default 0.2
+    :type wtl: float
+    :param rviz: show Rviz style arrows, default False
+    :type rviz: bool
+    :param projection: 3D projection: ortho [default] or persp
+    :type projection: str
+    :param width: width of lines, default 1
+    :type width: float
+    :param d1: distance of frame axis label text from origin, default 0.05
+    :type d1: float
+    :param d2: distance of frame label text from origin, default 1.15
+    :type d2: float
+    :return: axes containing the frame
+    :rtype: AxesSubplot
+    :raises ValueError: bad argument
+    
+    Adds a 2D coordinate frame represented by the SO(2) or SE(2) matrix to the current axes.
+    
+    The appearance of the coordinate frame depends on many parameters:
+    
+    - coordinate axes depend on:
+        - ``color`` of axes
+        - ``width`` of line
+        - ``length`` of line
+        - ``arrow`` if True [default] draw the axis with an arrow head
+    - coordinate axis labels depend on:
+        - ``axislabel`` if True [default] label the axis, default labels are X, Y, Z
+        - ``labels`` 2-list of alternative axis labels
+        - ``textcolor`` which defaults to ``color``
+        - ``axissubscript`` if True [default] add the frame label ``frame`` as a subscript
+            for each axis label
+    - coordinate frame label depends on:
+        - `frame` the label placed inside {} near the origin of the frame
+    - a dot at the origin
+        - ``originsize`` size of the dot, if zero no dot
+        - ``origincolor`` color of the dot, defaults to ``color``
+        - If no current figure, one is created
+        - If current figure, but no axes, a 3d Axes is created
+    
+    Examples:
+    
+            trplot2(T, frame=&#39;A&#39;)
+            trplot2(T, frame=&#39;A&#39;, color=&#39;green&#39;)
+            trplot2(T1, &#39;labels&#39;, &#39;AB&#39;);
+    
+    :SymPy: not supported
+    
+    :seealso: :func:`tranimate2` :func:`plotvol2` :func:`axes_logic`
 </pre></div>
 </div>
 </div>
@@ -690,12 +687,26 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 2.]
+ [0. 1. 1.]
+ [0. 0. 1.]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now we can compose the two relative poses</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T3</span> <span class="o">=</span> <span class="n">T1</span><span class="nd">@T2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">T3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.70710678 -0.70710678  1.70710678]
+ [ 0.70710678  0.70710678  4.12132034]
+ [ 0.          0.          1.        ]]
 </pre></div>
 </div>
 </div>
@@ -710,8 +721,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
+</pre></div>
 </div>
-<p><strong>Notice that the displacement of (2,1) has been applied with respect to frame {A}.</strong> It is important to note that the final displacement is not (3,3) because the displacement is with respect to the rotated coordinate frame. The noncommutativity of composition is clearly demonstrated by</p>
+<img alt="../_images/ICE4_SpatialMath_24_1.png" src="../_images/ICE4_SpatialMath_24_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that the displacement of (2,1) has been applied with respect to frame {A}.  It is important to note that the final displacement is not (3,3) because the displacement is with respect to the rotated coordinate frame.</p>
+</div>
+<p>The noncommutativity of composition is clearly demonstrated by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T4</span> <span class="o">=</span> <span class="n">T2</span><span class="nd">@T1</span>
@@ -723,13 +744,25 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
+</pre></div>
 </div>
-<p>and we can see that Frame {D} is different to Frame {C} as shown in Figure 1.</p>
+<img alt="../_images/ICE4_SpatialMath_26_1.png" src="../_images/ICE4_SpatialMath_26_1.png" />
+</div>
+</div>
+<p>and we can see that Frame {D} is different to Frame {C}.</p>
 <p>Now we can define a point <span class="math notranslate nohighlight">\([3,2]^\top\)</span> relative to the world frame (Frame {0})</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># it must be a 2 by 1 column vector </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">P_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3]
+ [2]]
 </pre></div>
 </div>
 </div>
@@ -749,12 +782,28 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3.]
+ [2.]
+ [1.]]
+[[ 1.41421356]
+ [-1.41421356]
+ [ 1.        ]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>where we first convert the Euclidean point coordinates to homogeneous form by appending a one. The result is also in homogeneous form and has a negative y-coordinate in frame {A}.  Using <code class="docutils literal notranslate"><span class="pre">h2e</span></code> we could also have expressed this as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_A</span> <span class="o">=</span> <span class="n">h2e</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">T1</span><span class="p">)</span><span class="nd">@p_0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">P_A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.41421356]
+ [-1.41421356]]
 </pre></div>
 </div>
 </div>
@@ -768,15 +817,28 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.41]
+ [-1.41]]
+</pre></div>
 </div>
-</section>
-<section id="transformation-matrices-in-3d">
-<h3>Transformation Matrices in 3D<a class="headerlink" href="#transformation-matrices-in-3d" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="transformation-matrices-in-3d">
+<h3>Transformation Matrices in 3D<a class="headerlink" href="#transformation-matrices-in-3d" title="Permalink to this headline">¶</a></h3>
 <p>The spatial maths package provides functions to compute rotation matrices in 3D, for example <span class="math notranslate nohighlight">\(R_X(\theta)\)</span> is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">rotx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.00 0.00 0.00]
+ [0.00 0.00 -1.00]
+ [0.00 1.00 0.00]]
 </pre></div>
 </div>
 </div>
@@ -788,6 +850,12 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ICE4_SpatialMath_39_1.png" src="../_images/ICE4_SpatialMath_39_1.png" />
+</div>
 </div>
 <p>To illustrate compounding of rotations we will rotate the frame again, this time around its y-axis</p>
 <div class="cell docutils container">
@@ -797,6 +865,17 @@ Substituting numeric values</p>
 <span class="n">trplot</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00 0.00 1.00]
+ [1.00 0.00 -0.00]
+ [-0.00 1.00 0.00]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ICE4_SpatialMath_41_2.png" src="../_images/ICE4_SpatialMath_41_2.png" />
 </div>
 </div>
 <p>The non-commutativity of rotation can be shown by reversing the order of the rotations:</p>
@@ -808,12 +887,30 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00 1.00 0.00]
+ [0.00 0.00 -1.00]
+ [-1.00 0.00 0.00]]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ICE4_SpatialMath_43_2.png" src="../_images/ICE4_SpatialMath_43_2.png" />
+</div>
 </div>
 <p>The ZYX Euler angles <span class="math notranslate nohighlight">\(R=R_Z(\psi)R_Y(\theta)R_X(\phi)\)</span> is commonly used in robotic arms. The Euler angles are the 3-vector <span class="math notranslate nohighlight">\((\psi, \theta, \phi)\)</span>. For example, to compute the equivalent rotation matrix for <span class="math notranslate nohighlight">\((60^\circ, 45^\circ, 30^\circ)\)</span> we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Rzyx</span> <span class="o">=</span> <span class="n">rotz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="nd">@roty</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="nd">@rotx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Rzyx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.61 0.28 0.74]
+ [0.35 0.74 -0.57]
+ [-0.71 0.61 0.35]]
 </pre></div>
 </div>
 </div>
@@ -826,12 +923,24 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.61 0.28 0.74]
+ [0.35 0.74 -0.57]
+ [-0.71 0.61 0.35]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">rpy2r(alpha,</span> <span class="pre">beta,</span> <span class="pre">gamma)</span></code> transforms roll-pitch-yaw angles to a rotation matrix. The default is ZYX Euler angles - rotate by gamma about the z-axis, then by beta about the new y-axis, then by alpha about the new x-axis.  The inverse is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpy</span> <span class="o">=</span> <span class="n">tr2rpy</span><span class="p">(</span><span class="n">Rzyx</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rpy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.05 0.79 0.52]
 </pre></div>
 </div>
 </div>
@@ -844,12 +953,24 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60.00 45.00 30.00]
+</pre></div>
+</div>
+</div>
 </div>
 <p>in degrees.  To compute the rotation matrix for XYZ Euler angles with <span class="math notranslate nohighlight">\((60^\circ, 45^\circ, 30^\circ)\)</span> we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Rxyz</span> <span class="o">=</span> <span class="n">rotx</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="nd">@roty</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="nd">@rotz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Rxyz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.35 -0.61 0.71]
+ [0.93 0.13 -0.35]
+ [0.13 0.78 0.61]]
 </pre></div>
 </div>
 </div>
@@ -862,12 +983,24 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.35 -0.61 0.71]
+ [0.93 0.13 -0.35]
+ [0.13 0.78 0.61]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The inverse is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpy</span> <span class="o">=</span> <span class="n">tr2rpy</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rpy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-90.00 0.00 90.00]
 </pre></div>
 </div>
 </div>
@@ -880,12 +1013,25 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.00 0.00 1.00 0.00]
+ [0.00 1.00 0.00 0.00]
+ [-1.00 0.00 0.00 0.00]
+ [0.00 0.00 0.00 1.00]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>which is a 4 by 4 matrix. We can extract the Euler angles by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rpy</span> <span class="o">=</span> <span class="n">tr2rpy</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rpy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.00 90.00 -0.00]
 </pre></div>
 </div>
 </div>
@@ -899,6 +1045,12 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ICE4_SpatialMath_63_1.png" src="../_images/ICE4_SpatialMath_63_1.png" />
+</div>
 </div>
 <p>We can visualize a rotation more powerfully using the <code class="docutils literal notranslate"><span class="pre">tranimate</span></code> function which animates a rotation</p>
 <div class="cell docutils container">
@@ -910,18 +1062,18 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ICE4_SpatialMath_65_0.png" src="../_images/ICE4_SpatialMath_65_0.png" />
+</div>
 </div>
 <p>showing the world frame rotating into the specified coordinate frame.  You can also save the animation to a file by</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tranimate</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">nframes</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">movie</span><span class="o">=</span><span class="s1">&#39;out.mp4&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tranimate</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">nframes</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">movie</span><span class="o">=</span><span class="s1">&#39;out.mp4&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="high-level-classes">
-<h3>High-level classes<a class="headerlink" href="#high-level-classes" title="Permalink to this headline">#</a></h3>
+<div class="section" id="high-level-spatial-math-functions">
+<h2>High-Level Spatial Math Functions<a class="headerlink" href="#high-level-spatial-math-functions" title="Permalink to this headline">¶</a></h2>
 <p>The spatialmath package supports high-level classes that abstract the low-level numpy arrays into objects.  These objects obey the rules associated with the mathematical groups SO(2), SE(2), SO(3), SE(3), twists, and quaternioins.</p>
 <p>To create an object representing a rotation of 90 degrees about the x-axis is</p>
 <div class="cell docutils container">
@@ -954,6 +1106,10 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The objest returned by the <strong>high-level</strong> spatialmath functions are <em>not</em> numpy arrays.</p>
 </div>
 <p>The functions we used earlier, such as <code class="docutils literal notranslate"><span class="pre">rotx</span></code>, <code class="docutils literal notranslate"><span class="pre">roty</span></code>, <code class="docutils literal notranslate"><span class="pre">rotz</span></code>, <code class="docutils literal notranslate"><span class="pre">rpy2r</span></code>, returned the numpy <code class="docutils literal notranslate"><span class="pre">array</span></code> type. The compounding of rotations can be found by</p>
 <div class="cell docutils container">
@@ -998,12 +1154,28 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1         0         0         1         
+   0         1         0         2         
+   0         0         1         3         
+   0         0         0         1         
+</pre></div>
+</div>
+</div>
 </div>
 <p>which is a 4 by 4 matrix. A transformation matrix representing a translation followed by a rotation can be obtained by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">SE3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">SE3</span><span class="o">.</span><span class="n">Rx</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;deg&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1         0         0         1         
+   0         0.866    -0.5       2         
+   0         0.5       0.866     3         
+   0         0         0         1         
 </pre></div>
 </div>
 </div>
@@ -1016,14 +1188,36 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1         0         0         1         
+   0         0.866    -0.5       0.2321    
+   0         0.5       0.866     3.598     
+   0         0         0         1         
+</pre></div>
 </div>
-<p>which is different than a translation followed by a rotation.  <strong>Note</strong> that we used <code class="docutils literal notranslate"><span class="pre">SE3.Rx()</span></code> not <code class="docutils literal notranslate"><span class="pre">SO3.Rx()</span></code>.  <code class="docutils literal notranslate"><span class="pre">SE3.Rx()</span></code> returns a 4 by 4 SE(3) matrix whereas <code class="docutils literal notranslate"><span class="pre">SO3.Rx()</span></code> returns 3 by 3 SO(3) matrix.  We can print the pose (position and orientation) by</p>
+</div>
+</div>
+<p>which is different than a translation followed by a rotation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We used <code class="docutils literal notranslate"><span class="pre">SE3.Rx()</span></code> not <code class="docutils literal notranslate"><span class="pre">SO3.Rx()</span></code>.  <code class="docutils literal notranslate"><span class="pre">SE3.Rx()</span></code> returns a 4 by 4 SE(3) matrix whereas <code class="docutils literal notranslate"><span class="pre">SO3.Rx()</span></code> returns 3 by 3 SO(3) matrix.</p>
+</div>
+<p>We can print the pose (position and orientation) by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="o">.</span><span class="n">printline</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t = 1, 0.232, 3.6; rpy/zyx = 30°, 0°, 0°
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do not use <code class="docutils literal notranslate"><span class="pre">print(T)</span> <span class="pre">if</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">print</span> <span class="pre">the</span> <span class="pre">pose.</span>&#160; <span class="pre">Instead,</span> <span class="pre">use</span> </code>T.printline()<code class="docutils literal notranslate"><span class="pre">.</span>&#160; <span class="pre">You</span> <span class="pre">still</span> <span class="pre">need</span> <span class="pre">to</span> <span class="pre">use</span> </code>print(T)` to print the transformation matrix.</p>
 </div>
 <p>We can plot the transformation by</p>
 <div class="cell docutils container">
@@ -1032,37 +1226,39 @@ Substituting numeric values</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ICE4_SpatialMath_84_0.png" src="../_images/ICE4_SpatialMath_84_0.png" />
 </div>
-<p>***You can find class/function references of the spatial maths package at
-<a class="reference external" href="https://petercorke.github.io/spatialmath-python/">https://petercorke.github.io/spatialmath-python/</a> ***</p>
-</section>
-</section>
-<section id="deliverables">
-<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can find the class/function references of the spatial maths package <a class="reference external" href="https://petercorke.github.io/spatialmath-python/">here</a></p>
+</div>
+</div>
+<div class="section" id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
 <p>Create a folder named Lab1 in which you add <a class="reference external" href="http://exercise1.py">exercise1.py</a>, <a class="reference external" href="http://exercise2.py">exercise2.py</a>, and so on for the following exercises.</p>
 <p><strong>Submit your code to Bitbucket and provide the outputs in Gradescope.</strong></p>
-<section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=60^\circ, \phi=45^\circ\)</span>.</p>
 <p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
-</section>
-<section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
 <p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=90^\circ, \phi=45^\circ\)</span>.</p>
 <p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
-</section>
-<section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
-<p>Find <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\psi\)</span> for YZY Euler angles, <span class="math notranslate nohighlight">\(R=R_Y(\phi)R_Z(\theta)R_Y(\psi)\)</span>, that generate the blue frame shown in figure below.  The blue frame has been rotated with respect to the blakc frame.  Use SE3.Rx, SE3.Ry and SE3.Rz.</p>
-<div>
-<br>
-    <img src="figs/Ex3.png" width="450"/>
 </div>
-Use the following code snippet.<div class="cell docutils container">
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Find <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\psi\)</span> for YZY Euler angles, <span class="math notranslate nohighlight">\(R=R_Y(\phi)R_Z(\theta)R_Y(\psi)\)</span>, that generate the blue frame shown in figure below.  The blue frame has been rotated with respect to the black frame.  Use SE3.Rx, SE3.Ry and SE3.Rz.</p>
+<a class="reference internal image-reference" href="../_images/SpatialMath_Ex3.png"><img alt="../_images/SpatialMath_Ex3.png" class="align-center" src="../_images/SpatialMath_Ex3.png" style="width: 460px;" /></a>
+<p>Use the following code snippet.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spatialmath.base</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">spatialmath</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1082,9 +1278,9 @@ Use the following code snippet.<div class="cell docutils container">
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1108,11 +1304,9 @@ Use the following code snippet.<div class="cell docutils container">
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="ICE3_OOP.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1128,28 +1322,24 @@ Use the following code snippet.<div class="cell docutils container">
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Stan Baek<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Stan Baek<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
