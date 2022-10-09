@@ -13,6 +13,9 @@ copyright: '2022' # Copyright year to be placed in the footer
 execute:
   execute_notebooks         : off  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
   allow_errors              : true # If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.
+  exclude_patterns:
+    - 'ICE4_'
+    - 'ICE5_'
 
 # Define the name of the latex output file for PDF builds
 latex:
