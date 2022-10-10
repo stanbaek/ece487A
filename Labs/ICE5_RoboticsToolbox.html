@@ -380,10 +380,51 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ice5-robotics-toolbox">
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE5_RoboticsToolbox.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="ice5-robotics-toolbox">
 <h1>❄️ ICE5: Robotics Toolbox<a class="headerlink" href="#ice5-robotics-toolbox" title="Permalink to this headline">¶</a></h1>
 <p><strong>A note on this document</strong>
-This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or executable code. To run the executable code in this notebook, click <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE5_RoboticsToolbox.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+. For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install roboticstoolbox-python
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: roboticstoolbox-python in c:\users\stanb\appdata\roaming\python\python38\site-packages (0.11.0)
+Requirement already satisfied: spatialgeometry&gt;=0.2.0 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.2.0)
+Requirement already satisfied: scipy in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (1.7.3)
+Requirement already satisfied: rtb-data in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.10.1)
+Requirement already satisfied: pgraph-python in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.6.1)
+Requirement already satisfied: ansitable in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.9.6)
+Requirement already satisfied: qpsolvers in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (1.8.0)
+Requirement already satisfied: progress in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (1.6)
+Requirement already satisfied: spatialmath-python&gt;=0.11 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.11)
+Requirement already satisfied: numpy&gt;=1.18.0 in c:\program files\python38\lib\site-packages (from roboticstoolbox-python) (1.21.5)
+Requirement already satisfied: swift-sim&gt;=0.10.0 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (0.10.0)
+Requirement already satisfied: matplotlib in c:\users\stanb\appdata\roaming\python\python38\site-packages (from roboticstoolbox-python) (3.5.1)
+Requirement already satisfied: colored in c:\users\stanb\appdata\roaming\python\python38\site-packages (from spatialmath-python&gt;=0.11-&gt;roboticstoolbox-python) (1.4.3)
+Requirement already satisfied: sphinxcontrib-jsmath in c:\users\stanb\appdata\roaming\python\python38\site-packages (from spatialmath-python&gt;=0.11-&gt;roboticstoolbox-python) (1.0.1)
+Requirement already satisfied: websockets in c:\users\stanb\appdata\roaming\python\python38\site-packages (from swift-sim&gt;=0.10.0-&gt;roboticstoolbox-python) (10.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (4.29.1)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (21.3)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (9.0.1)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (0.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (2.8.2)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (1.3.2)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from matplotlib-&gt;roboticstoolbox-python) (3.0.6)
+Requirement already satisfied: quadprog&gt;=0.1.8 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from qpsolvers-&gt;roboticstoolbox-python) (0.1.11)
+Requirement already satisfied: six&gt;=1.5 in c:\users\stanb\appdata\roaming\python\python38\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;roboticstoolbox-python) (1.12.0)
+
+[notice] A new release of pip available: 22.1.2 -&gt; 22.2.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
 <p>A revolute joint and link can be created by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
