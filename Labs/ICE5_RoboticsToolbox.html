@@ -515,7 +515,7 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <p>If you fail importing roboticstoolbox, you need to uncomment the following line to install the roboticstoolbox-python package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install roboticstoolbox-python # delete &quot;#&quot; and run it.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install roboticstoolbox-python </span>
 </pre></div>
 </div>
 </div>
@@ -633,13 +633,16 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DHRobot: RPR, 3 joints (RPR), dynamics, modified DH parameters
-┏━━━━━┳━━━━━━━┳━━━━━━┳━━━━━━━━━┓
-┃aⱼ₋₁ ┃ ⍺ⱼ₋₁  ┃  θⱼ  ┃   dⱼ    ┃
-┣━━━━━╋━━━━━━━╋━━━━━━╋━━━━━━━━━┫
-┃ 0.0 ┃  0.0° ┃   q1 ┃       1 ┃
-┃ 0.0 ┃ 90.0° ┃ 0.0° ┃  q2 + 1 ┃
-┃ 0.0 ┃  0.0° ┃   q3 ┃       1 ┃
-┗━━━━━┻━━━━━━━┻━━━━━━┻━━━━━━━━━┛
+┌─────┬───────┬──────┬─────────┐
+│aⱼ₋₁ │ ⍺ⱼ₋₁  │  θⱼ  │   dⱼ    │
+├─────┼───────┼──────┼─────────┤
+│ 0.0 │  0.0° │   q1 │       1 │
+│ 0.0 │ 90.0° │ 0.0° │  q2 + 1 │
+│ 0.0 │  0.0° │   q3 │       1 │
+└─────┴───────┴──────┴─────────┘
+
+┌─┬──┐
+└─┴──┘
 </pre></div>
 </div>
 </div>
@@ -671,7 +674,6 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <span class="c1"># If it throws anerror after adding %matplotlib widget, </span>
 <span class="c1"># run &quot;pip install --upgrade jupyterlab ipympl&quot;</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> widget  
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">RPR</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qz</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -679,11 +681,11 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "881c478aa645401b91069f77ee8a2024", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "881c478aa645401b91069f77ee8a2024", "version_major": 2, "version_minor": 0}
-</script></div>
+<img alt="../_images/ICE5_RoboticsToolbox_22_0.png" src="../_images/ICE5_RoboticsToolbox_22_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>which shows a skeleton of the robot with pipes that connect the link coordinate frames as defined by the Denavit-Hartenberg parameters. The plot method has many options for showing the joint axes, wrist coordinate frame, shadows and so on. Also. we can rotate the figure by holding down the left mouse button.</p>
 <p>We can also animate as the robot moves along multiple configurations. Let’s animate the path from the <code class="docutils literal notranslate"><span class="pre">qz</span></code> to <code class="docutils literal notranslate"><span class="pre">q1</span></code> given by</p>
@@ -696,10 +698,12 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "f9cdfc60ce5f4219bff9f8dbac3d6095", "version_major": 2, "version_minor": 0}
-</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyPlot3D backend, t = 2.499999999999999, scene:
+<img alt="../_images/ICE5_RoboticsToolbox_24_0.png" src="../_images/ICE5_RoboticsToolbox_24_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyPlot3D backend, t = 2.499999999999999, scene:
   RPR
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -726,13 +730,13 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DHRobot: RRR, 3 joints (RRR), dynamics, modified DH parameters
-┏━━━━━┳━━━━━━━┳━━━━━┳━━━━━┓
-┃aⱼ₋₁ ┃ ⍺ⱼ₋₁  ┃ θⱼ  ┃ dⱼ  ┃
-┣━━━━━╋━━━━━━━╋━━━━━╋━━━━━┫
-┃ 0.0 ┃  0.0° ┃  q1 ┃ 0.2 ┃
-┃ 0.0 ┃ 90.0° ┃  q2 ┃ 0.0 ┃
-┃   1 ┃  0.0° ┃  q3 ┃ 0.0 ┃
-┗━━━━━┻━━━━━━━┻━━━━━┻━━━━━┛
+┌─────┬───────┬─────┬─────┐
+│aⱼ₋₁ │ ⍺ⱼ₋₁  │ θⱼ  │ dⱼ  │
+├─────┼───────┼─────┼─────┤
+│ 0.0 │  0.0° │  q1 │ 0.2 │
+│ 0.0 │ 90.0° │  q2 │ 0.0 │
+│   1 │  0.0° │  q3 │ 0.0 │
+└─────┴───────┴─────┴─────┘
 
 ┌─────┬──────┐
 │tool │ None │
@@ -797,10 +801,12 @@ represents the orientation of the tool tip and</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8e7c8e4f40464487bc8e7ded12d23d50", "version_major": 2, "version_minor": 0}
-</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyPlot3D backend, t = 0.05, scene:
+<img alt="../_images/ICE5_RoboticsToolbox_32_0.png" src="../_images/ICE5_RoboticsToolbox_32_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyPlot3D backend, t = 0.05, scene:
   RRR
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
