@@ -357,18 +357,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
+    <a class="reference internal nav-link" href="#deliverable-3">
+     Deliverable 3
     </a>
    </li>
   </ul>
@@ -433,18 +433,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
+    <a class="reference internal nav-link" href="#deliverable-3">
+     Deliverable 3
     </a>
    </li>
   </ul>
@@ -591,93 +591,8 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 </div>
 <p>We can run <code class="docutils literal notranslate"><span class="pre">help</span></code> function to learn details of these functions by</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trplot2</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trplot2</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function trplot2 in module spatialmath.base.transforms2d:
-
-trplot2(T, color=&#39;blue&#39;, frame=None, axislabel=True, axissubscript=True, textcolor=None, labels=(&#39;X&#39;, &#39;Y&#39;), length=1, arrow=True, rviz=False, ax=None, block=False, dims=None, wtl=0.2, width=1, d1=0.1, d2=1.15, **kwargs)
-    Plot a 2D coordinate frame
-    
-    :param T: an SE(3) or SO(3) pose to be displayed as coordinate frame
-    :type: ndarray(3,3) or ndarray(2,2)
-    :param color: color of the lines defining the frame
-    :type color: str
-    :param textcolor: color of text labels for the frame, default color of lines above
-    :type textcolor: str
-    :param frame: label the frame, name is shown below the frame and as subscripts on the frame axis labels
-    :type frame: str
-    :param axislabel: display labels on axes, default True
-    :type axislabel: bool
-    :param axissubscript: display subscripts on axis labels, default True
-    :type axissubscript: bool
-    :param labels: labels for the axes, defaults to X and Y
-    :type labels: 2-tuple of strings
-    :param length: length of coordinate frame axes, default 1
-    :type length: float
-    :param arrow: show arrow heads, default True
-    :type arrow: bool
-    :param ax: the axes to plot into, defaults to current axes
-    :type ax: Axes3D reference
-    :param block: run the GUI main loop until all windows are closed, default True
-    :type block: bool
-    :param dims: dimension of plot volume as [xmin, xmax, ymin, ymax]
-    :type dims: array_like(4)
-    :param wtl: width-to-length ratio for arrows, default 0.2
-    :type wtl: float
-    :param rviz: show Rviz style arrows, default False
-    :type rviz: bool
-    :param projection: 3D projection: ortho [default] or persp
-    :type projection: str
-    :param width: width of lines, default 1
-    :type width: float
-    :param d1: distance of frame axis label text from origin, default 0.05
-    :type d1: float
-    :param d2: distance of frame label text from origin, default 1.15
-    :type d2: float
-    :return: axes containing the frame
-    :rtype: AxesSubplot
-    :raises ValueError: bad argument
-    
-    Adds a 2D coordinate frame represented by the SO(2) or SE(2) matrix to the current axes.
-    
-    The appearance of the coordinate frame depends on many parameters:
-    
-    - coordinate axes depend on:
-        - ``color`` of axes
-        - ``width`` of line
-        - ``length`` of line
-        - ``arrow`` if True [default] draw the axis with an arrow head
-    - coordinate axis labels depend on:
-        - ``axislabel`` if True [default] label the axis, default labels are X, Y, Z
-        - ``labels`` 2-list of alternative axis labels
-        - ``textcolor`` which defaults to ``color``
-        - ``axissubscript`` if True [default] add the frame label ``frame`` as a subscript
-            for each axis label
-    - coordinate frame label depends on:
-        - `frame` the label placed inside {} near the origin of the frame
-    - a dot at the origin
-        - ``originsize`` size of the dot, if zero no dot
-        - ``origincolor`` color of the dot, defaults to ``color``
-        - If no current figure, one is created
-        - If current figure, but no axes, a 3d Axes is created
-    
-    Examples:
-    
-            trplot2(T, frame=&#39;A&#39;)
-            trplot2(T, frame=&#39;A&#39;, color=&#39;green&#39;)
-            trplot2(T1, &#39;labels&#39;, &#39;AB&#39;);
-    
-    :SymPy: not supported
-    
-    :seealso: :func:`tranimate2` :func:`plotvol2` :func:`axes_logic`
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can create another relative pose which is a displacement of (2,1) and zero rotation</p>
 <div class="cell docutils container">
@@ -725,7 +640,7 @@ trplot2(T, color=&#39;blue&#39;, frame=None, axislabel=True, axissubscript=True,
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_24_1.png" src="../_images/ICE4_SpatialMath_24_1.png" />
+<img alt="../_images/ICE4_SpatialMath_23_1.png" src="../_images/ICE4_SpatialMath_23_1.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -748,7 +663,7 @@ trplot2(T, color=&#39;blue&#39;, frame=None, axislabel=True, axissubscript=True,
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_26_1.png" src="../_images/ICE4_SpatialMath_26_1.png" />
+<img alt="../_images/ICE4_SpatialMath_25_1.png" src="../_images/ICE4_SpatialMath_25_1.png" />
 </div>
 </div>
 <p>and we can see that Frame {D} is different to Frame {C}.</p>
@@ -854,7 +769,7 @@ Substituting numeric values</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_39_1.png" src="../_images/ICE4_SpatialMath_39_1.png" />
+<img alt="../_images/ICE4_SpatialMath_38_1.png" src="../_images/ICE4_SpatialMath_38_1.png" />
 </div>
 </div>
 <p>To illustrate compounding of rotations we will rotate the frame again, this time around its y-axis</p>
@@ -875,7 +790,7 @@ Substituting numeric values</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_41_2.png" src="../_images/ICE4_SpatialMath_41_2.png" />
+<img alt="../_images/ICE4_SpatialMath_40_2.png" src="../_images/ICE4_SpatialMath_40_2.png" />
 </div>
 </div>
 <p>The non-commutativity of rotation can be shown by reversing the order of the rotations:</p>
@@ -896,7 +811,7 @@ Substituting numeric values</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;X&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_43_2.png" src="../_images/ICE4_SpatialMath_43_2.png" />
+<img alt="../_images/ICE4_SpatialMath_42_2.png" src="../_images/ICE4_SpatialMath_42_2.png" />
 </div>
 </div>
 <p>The ZYX Euler angles <span class="math notranslate nohighlight">\(R=R_Z(\psi)R_Y(\theta)R_X(\phi)\)</span> is commonly used in robotic arms. The Euler angles are the 3-vector <span class="math notranslate nohighlight">\((\psi, \theta, \phi)\)</span>. For example, to compute the equivalent rotation matrix for <span class="math notranslate nohighlight">\((60^\circ, 45^\circ, 30^\circ)\)</span> we write</p>
@@ -1049,7 +964,7 @@ Substituting numeric values</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes3DSubplot:xlabel=&#39;X&#39;, ylabel=&#39;Y&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/ICE4_SpatialMath_63_1.png" src="../_images/ICE4_SpatialMath_63_1.png" />
+<img alt="../_images/ICE4_SpatialMath_62_1.png" src="../_images/ICE4_SpatialMath_62_1.png" />
 </div>
 </div>
 <p>We can visualize a rotation more powerfully using the <code class="docutils literal notranslate"><span class="pre">tranimate</span></code> function which animates a rotation</p>
@@ -1063,7 +978,7 @@ Substituting numeric values</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ICE4_SpatialMath_65_0.png" src="../_images/ICE4_SpatialMath_65_0.png" />
+<img alt="../_images/ICE4_SpatialMath_64_0.png" src="../_images/ICE4_SpatialMath_64_0.png" />
 </div>
 </div>
 <p>showing the world frame rotating into the specified coordinate frame.  You can also save the animation to a file by</p>
@@ -1227,7 +1142,7 @@ Substituting numeric values</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ICE4_SpatialMath_84_0.png" src="../_images/ICE4_SpatialMath_84_0.png" />
+<img alt="../_images/ICE4_SpatialMath_83_0.png" src="../_images/ICE4_SpatialMath_83_0.png" />
 </div>
 </div>
 <div class="admonition tip">
@@ -1237,47 +1152,28 @@ Substituting numeric values</p>
 </div>
 <div class="section" id="deliverables">
 <h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
-<p>Create a folder named Lab1 in which you add <a class="reference external" href="http://exercise1.py">exercise1.py</a>, <a class="reference external" href="http://exercise2.py">exercise2.py</a>, and so on for the following exercises.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">ice4_ex1.py</span></code> and <code class="docutils literal notranslate"><span class="pre">ice4_ex2.py</span></code> in your local repository for Deliverables 1 and 2.</p>
 <p><strong>Submit your code to Bitbucket and provide the outputs in Gradescope.</strong></p>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-1">
+<h3>Deliverable 1<a class="headerlink" href="#deliverable-1" title="Permalink to this headline">¶</a></h3>
 <p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=60^\circ, \phi=45^\circ\)</span>.</p>
 <p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
 </div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-2">
+<h3>Deliverable 2<a class="headerlink" href="#deliverable-2" title="Permalink to this headline">¶</a></h3>
 <p>Using the ZYX Euler angles, find the rotation matrix <span class="math notranslate nohighlight">\(R_{ZYX}(\psi,\theta,\phi)\)</span> for <span class="math notranslate nohighlight">\(\psi=45^\circ, \theta=90^\circ, \phi=45^\circ\)</span>.</p>
 <p>(i) Use low-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>(ii) Use high-level spatial math functions to find <span class="math notranslate nohighlight">\(R_{ZYX}\)</span> and the Euler angles from <span class="math notranslate nohighlight">\(R_{ZYX}\)</span>.</p>
 <p>Did you get the same Euler angels, <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span>?  If not, explain why.</p>
 </div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
-<p>Find <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(\psi\)</span> for YZY Euler angles, <span class="math notranslate nohighlight">\(R=R_Y(\phi)R_Z(\theta)R_Y(\psi)\)</span>, that generate the blue frame shown in figure below.  The blue frame has been rotated with respect to the black frame.  Use SE3.Rx, SE3.Ry and SE3.Rz.</p>
-<a class="reference internal image-reference" href="../_images/SpatialMath_Ex3.png"><img alt="../_images/SpatialMath_Ex3.png" class="align-center" src="../_images/SpatialMath_Ex3.png" style="width: 460px;" /></a>
-<p>Use the following code snippet.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spatialmath.base</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">spatialmath</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># add your code here.</span>
-
-
-
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-<span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">plotvol3</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="section" id="deliverable-3">
+<h3>Deliverable 3<a class="headerlink" href="#deliverable-3" title="Permalink to this headline">¶</a></h3>
+<p>Shown below is the 3 DoF revolute-revolute-revolute (RRR) robotic arm we discussed in Lesson 21.</p>
+<a class="reference internal image-reference" href="../_images/RRR.png"><img alt="../_images/RRR.png" class="align-center" src="../_images/RRR.png" style="width: 760px;" /></a>
+<p>Download <code class="docutils literal notranslate"><span class="pre">RRR.py</span></code> from Teams &gt; General &gt; Files &gt; Class Materials &gt; Python Files.  Complete the <code class="docutils literal notranslate"><span class="pre">forkine</span></code> function for the robot.  Use the D-H table to construct the transformation matrices.</p>
+<p>Push your code to your repository using git.</p>
 </div>
 </div>
 </div>
