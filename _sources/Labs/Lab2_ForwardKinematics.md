@@ -14,6 +14,13 @@ In this lab, you will
 - Use Python to compute the forward kinematic equations for the robot.
 - Write a Python script that moves the robot to the configurations specified by the user.
 
+
+
+:::{note}
+First, solve the problem. Then, write the code. – John Johnson
+:::
+
+
 ## Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
 
 Use the schematic diagram shown below to find the forward kinematics of the robotic manipulator. 
