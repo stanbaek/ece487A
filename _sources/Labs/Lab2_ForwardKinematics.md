@@ -30,9 +30,13 @@ Use the schematic diagram shown below to find the DH table of the robotic manipu
 :align: center
 ```
 
-
+```{attention}
+Before starting this lab, check the solution to the DH-table posted in Gradescope to ensure you have the correct answer. If the solution is not published in Gradescope, go through your table with the instructor.
+```
 
 ## 💻 Procedure
+
+
 
 ### USB to Serial Connection
 
@@ -48,7 +52,7 @@ Use the schematic diagram shown below to find the DH table of the robotic manipu
 
 ### Python simulation for robotic arm
 
-Use Python to create an instance of the robotic arm. Download xArm.py from Teams and complete the constructor of XArm. XArm is a subclass of `DHRobot`.  You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`. 
+Use Python to create an instance of the robotic arm. Download xArm.py from Teams and complete the constructor of XArm. XArm is a subclass of [DHRobot](https://petercorke.github.io/robotics-toolbox-python/intro.html#denavit-hartenberg-parameters).  You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`. 
 
 
 
@@ -56,7 +60,7 @@ Use Python to create an instance of the robotic arm. Download xArm.py from Teams
 def __init__(self, simulation_only=False):
 
     self.B0 = 0.090
-    self.L0 = 0.010
+    self.L0 = 0.000
     self.L1 = 0.105
     self.L2 = 0.088
     self.L3 = 0.174

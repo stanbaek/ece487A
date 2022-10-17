@@ -519,6 +519,10 @@ title="Print to PDF"
 <h2>ICE5: Danavit-Hartenberg of 5 DoF robotic arm<a class="headerlink" href="#ice5-danavit-hartenberg-of-5-dof-robotic-arm" title="Permalink to this headline">#</a></h2>
 <p>Use the schematic diagram shown below to find the DH table of the robotic manipulator.</p>
 <a class="reference internal image-reference" href="../_images/xArm.png"><img alt="../_images/xArm.png" class="align-center" src="../_images/xArm.png" style="width: 450px;" /></a>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Before starting this lab, check the solution to the DH-table posted in Gradescope to ensure you have the correct answer. If the solution is not published in Gradescope, go through your table with the instructor.</p>
+</div>
 </section>
 <section id="procedure">
 <h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h2>
@@ -533,11 +537,11 @@ title="Print to PDF"
 </section>
 <section id="python-simulation-for-robotic-arm">
 <h3>Python simulation for robotic arm<a class="headerlink" href="#python-simulation-for-robotic-arm" title="Permalink to this headline">#</a></h3>
-<p>Use Python to create an instance of the robotic arm. Download <a class="reference external" href="http://xArm.py">xArm.py</a> from Teams and complete the constructor of XArm. XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>.  You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>.</p>
+<p>Use Python to create an instance of the robotic arm. Download <a class="reference external" href="http://xArm.py">xArm.py</a> from Teams and complete the constructor of XArm. XArm is a subclass of <a class="reference external" href="https://petercorke.github.io/robotics-toolbox-python/intro.html#denavit-hartenberg-parameters">DHRobot</a>.  You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">B0</span> <span class="o">=</span> <span class="mf">0.090</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">L0</span> <span class="o">=</span> <span class="mf">0.010</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">L0</span> <span class="o">=</span> <span class="mf">0.000</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L1</span> <span class="o">=</span> <span class="mf">0.105</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.088</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L3</span> <span class="o">=</span> <span class="mf">0.174</span>
