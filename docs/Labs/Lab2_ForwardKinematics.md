@@ -21,23 +21,38 @@ First, solve the problem. Then, write the code. – John Johnson
 :::
 
 
-## Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
+## ICE5: Danavit-Hartenberg of 5 DoF robotic arm
 
-Use the schematic diagram shown below to find the forward kinematics of the robotic manipulator. 
+Use the schematic diagram shown below to find the DH table of the robotic manipulator. 
 
-```{image} ./figures/xArmSchematic.png
-:width: 600
+```{image} ./figures/xArm.png
+:width: 450
 :align: center
 ```
 
-
+```{attention}
+Before starting this lab, check the solution to the DH-table posted in Gradescope to ensure you have the correct answer. If the solution is not published in Gradescope, go through your table with the instructor.
+```
 
 ## 💻 Procedure
 
 
+
+### USB to Serial Connection
+
+- Connect the provided USB cable to your computer.
+- Connect the UART port to the robot controller board shown in the figure below.
+- Note that the red wire (5V Vcc) is not connected to the board.
+
+```{image} ./figures/USB-UART_connection.jpg
+:width: 400
+:align: center
+```
+
+
 ### Python simulation for robotic arm
 
-Use Python to create an instance of the robotic arm. Download xArm.py from Teams and complete the constructor of XArm. XArm is a subclass of `DHRobot`.  You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`. 
+Use Python to create an instance of the robotic arm. Download xArm.py from Teams and complete the constructor of XArm. XArm is a subclass of [DHRobot](https://petercorke.github.io/robotics-toolbox-python/intro.html#denavit-hartenberg-parameters).  You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`. 
 
 
 
@@ -45,7 +60,7 @@ Use Python to create an instance of the robotic arm. Download xArm.py from Teams
 def __init__(self, simulation_only=False):
 
     self.B0 = 0.090
-    self.L0 = 0.010
+    self.L0 = 0.000
     self.L1 = 0.105
     self.L2 = 0.088
     self.L3 = 0.174
@@ -91,12 +106,12 @@ def test_forward_kinematics():
 ### Physical Implementation of Forward Kinematics for Robotic Arm
 
 Carefully read the following functions inside xArm.py.
-- def joint_to_servo_angles(self, joint_angles, joint_names=None):
-- def servo_angles_to_positions(self, servo_angles, joint_names=None):
-- def get_servo_command(self, duration_ms, servo_positions, joint_names=None):
-- def send_command(self, command):
-- def move_joints(self, duration_ms, joint_angles, joint_names=None, wait=True):
-- def move_to_initial_pose(self, duration_ms, wait=True):
+- `joint_to_servo_angles(self, joint_angles, joint_names=None)`
+- `servo_angles_to_positions(self, servo_angles, joint_names=None)`
+- `get_servo_command(self, duration_ms, servo_positions, joint_names=None)`
+- `send_command(self, command)`
+- `move_joints(self, duration_ms, joint_angles, joint_names=None, wait=True)`
+- `move_to_initial_pose(self, duration_ms, wait=True)`
 
 Comment out the first line after `__name__ == '__main__':`, which is located at the bottom of the code, and 
 uncomment the second line.  
@@ -152,6 +167,19 @@ Read `def test_move_joints():` and complete the rest of the function.
 
 
 **Deliverable 4**: Demo your robot moving the joints as described in the function.
+
+
+
+
+
+```{image} ./figures/xArm_Upright.png
+:width: 400
+:align: center
+```
+
+
+
+
 
 
 
