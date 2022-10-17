@@ -411,8 +411,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-   Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
+  <a class="reference internal nav-link" href="#ice5-danavit-hartenberg-of-5-dof-robotic-arm">
+   ICE5: Danavit-Hartenberg of 5 DoF robotic arm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -420,6 +420,11 @@ title="Print to PDF"
    💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usb-to-serial-connection">
+     USB to Serial Connection
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-simulation-for-robotic-arm">
      Python simulation for robotic arm
@@ -457,8 +462,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-   Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm
+  <a class="reference internal nav-link" href="#ice5-danavit-hartenberg-of-5-dof-robotic-arm">
+   ICE5: Danavit-Hartenberg of 5 DoF robotic arm
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -466,6 +471,11 @@ title="Print to PDF"
    💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usb-to-serial-connection">
+     USB to Serial Connection
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-simulation-for-robotic-arm">
      Python simulation for robotic arm
@@ -505,13 +515,22 @@ title="Print to PDF"
 <p>First, solve the problem. Then, write the code. – John Johnson</p>
 </div>
 </section>
-<section id="prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm">
-<h2>Prelab (Homework 17): Forward kinematics of 5 DoF robotic arm<a class="headerlink" href="#prelab-homework-17-forward-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">#</a></h2>
-<p>Use the schematic diagram shown below to find the forward kinematics of the robotic manipulator.</p>
-<a class="reference internal image-reference" href="../_images/xArmSchematic.png"><img alt="../_images/xArmSchematic.png" class="align-center" src="../_images/xArmSchematic.png" style="width: 600px;" /></a>
+<section id="ice5-danavit-hartenberg-of-5-dof-robotic-arm">
+<h2>ICE5: Danavit-Hartenberg of 5 DoF robotic arm<a class="headerlink" href="#ice5-danavit-hartenberg-of-5-dof-robotic-arm" title="Permalink to this headline">#</a></h2>
+<p>Use the schematic diagram shown below to find the DH table of the robotic manipulator.</p>
+<a class="reference internal image-reference" href="../_images/xArm.png"><img alt="../_images/xArm.png" class="align-center" src="../_images/xArm.png" style="width: 450px;" /></a>
 </section>
 <section id="procedure">
 <h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">#</a></h2>
+<section id="usb-to-serial-connection">
+<h3>USB to Serial Connection<a class="headerlink" href="#usb-to-serial-connection" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Connect the provided USB cable to your computer.</p></li>
+<li><p>Connect the UART port to the robot controller board shown in the figure below.</p></li>
+<li><p>Note that the red wire (5V Vcc) is not connected to the board.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/USB-UART_connection.jpg"><img alt="../_images/USB-UART_connection.jpg" class="align-center" src="../_images/USB-UART_connection.jpg" style="width: 400px;" /></a>
+</section>
 <section id="python-simulation-for-robotic-arm">
 <h3>Python simulation for robotic arm<a class="headerlink" href="#python-simulation-for-robotic-arm" title="Permalink to this headline">#</a></h3>
 <p>Use Python to create an instance of the robotic arm. Download <a class="reference external" href="http://xArm.py">xArm.py</a> from Teams and complete the constructor of XArm. XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>.  You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>.</p>
@@ -562,12 +581,12 @@ title="Print to PDF"
 <h3>Physical Implementation of Forward Kinematics for Robotic Arm<a class="headerlink" href="#physical-implementation-of-forward-kinematics-for-robotic-arm" title="Permalink to this headline">#</a></h3>
 <p>Carefully read the following functions inside <a class="reference external" href="http://xArm.py">xArm.py</a>.</p>
 <ul class="simple">
-<li><p>def joint_to_servo_angles(self, joint_angles, joint_names=None):</p></li>
-<li><p>def servo_angles_to_positions(self, servo_angles, joint_names=None):</p></li>
-<li><p>def get_servo_command(self, duration_ms, servo_positions, joint_names=None):</p></li>
-<li><p>def send_command(self, command):</p></li>
-<li><p>def move_joints(self, duration_ms, joint_angles, joint_names=None, wait=True):</p></li>
-<li><p>def move_to_initial_pose(self, duration_ms, wait=True):</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">joint_to_servo_angles(self,</span> <span class="pre">joint_angles,</span> <span class="pre">joint_names=None)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">servo_angles_to_positions(self,</span> <span class="pre">servo_angles,</span> <span class="pre">joint_names=None)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_servo_command(self,</span> <span class="pre">duration_ms,</span> <span class="pre">servo_positions,</span> <span class="pre">joint_names=None)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">send_command(self,</span> <span class="pre">command)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_joints(self,</span> <span class="pre">duration_ms,</span> <span class="pre">joint_angles,</span> <span class="pre">joint_names=None,</span> <span class="pre">wait=True)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_to_initial_pose(self,</span> <span class="pre">duration_ms,</span> <span class="pre">wait=True)</span></code></p></li>
 </ul>
 <p>Comment out the first line after <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code>, which is located at the bottom of the code, and
 uncomment the second line.</p>
@@ -607,6 +626,7 @@ uncomment the second line.</p>
 </div>
 <p>Read <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_move_joints():</span></code> and complete the rest of the function.</p>
 <p><strong>Deliverable 4</strong>: Demo your robot moving the joints as described in the function.</p>
+<a class="reference internal image-reference" href="../_images/xArm_Upright.png"><img alt="../_images/xArm_Upright.png" class="align-center" src="../_images/xArm_Upright.png" style="width: 400px;" /></a>
 <p>Go to <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">test_forward_kinematics():</span></code> and replace <code class="docutils literal notranslate"><span class="pre">True</span></code> with <code class="docutils literal notranslate"><span class="pre">False</span></code> in the following line.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>   <span class="n">robot</span> <span class="o">=</span> <span class="n">XArm</span><span class="p">(</span><span class="n">simulation_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="o">&lt;--</span> <span class="n">change</span> <span class="n">it</span> <span class="n">to</span> <span class="kc">False</span>
 </pre></div>
