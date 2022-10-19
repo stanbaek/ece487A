@@ -33,7 +33,7 @@ This is part of ICE5. Use the schematic diagram shown below to find the DH table
 ```
 
 ```{attention}
-Before starting this lab, check the solution to the DH-table posted in Gradescope to ensure you have the correct answer. If the solution is not published in Gradescope, go through your table with the instructor.
+Before starting this lab, check the solution to the DH table posted in Gradescope to ensure you have the correct answer. If the solution is not published in Gradescope, go through your table with the instructor.
 ```
 
 ### USB to Serial Connection
@@ -48,7 +48,7 @@ Before starting this lab, check the solution to the DH-table posted in Gradescop
 ```
 
 
-### Python simulation for robotic arm
+### Python simulation for rothe botic arm
 
 Download xArm.py from Teams and complete the constructor of XArm, which is a subclass of [DHRobot](https://petercorke.github.io/robotics-toolbox-python/intro.html#denavit-hartenberg-parameters).  You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`, such as the `fkine` method. 
 
@@ -101,20 +101,33 @@ def test_forward_kinematics():
         - use printline to print pose and angle. In Python Console, try
              from spatialmath import SE3
              help(SE3.printline)
-          to get help on function printline.
+          to get help on the printline function.
           
         Angles must be reported in degrees, not radians.
         """
 
 ```
 
-**Deliverable 1**: Submit the pose (position and orientation) of the tooltip for each configuration. You don't have to submit the figures, but they will be useful to verify your results. The angles must be in degrees.
+**Deliverable 1**: Submit the pose (position and orientation) of the tooltip for each configuration. You don't have to submit the figures, but they will help verify your results. The angles must be in degrees.
+
+
+
+```{caution}
+Always set the robot to the upright position as shown below before you send the first command to the robot. 
+```
+
+```{image} ./figures/xArm_Upright.png
+:width: 400
+:align: center
+```
+
+
 
 
 ### Physical Implementation of Forward Kinematics for Robotic Arm
 
 - Carefully read the following functions inside xArm.py.
-- You don't have to know how the following functions works, but you need to know what they do.
+- You don't have to know how the following functions work, but you need to know what they do.
     - `get_servo_command()`: 
     - `servo_angles_to_positions()`: 
     - `send_command()`
@@ -139,7 +152,7 @@ if __name__ == '__main__':
 
 Carefully look at the joint angles for the corresponding servo positions.  
 
-Comment out the first two lines after `__name__ == '__main__':` and uncomment the third line.  
+Comment out the first two test functions and uncomment the third line.  
 
 ```Python
     # test_forward_kinematics()       <--  COMMENT OUT
@@ -148,25 +161,25 @@ Comment out the first two lines after `__name__ == '__main__':` and uncomment th
     # test_move_joints()
 ```
 
-Read `def test_servo_angle_command():` and complete the rest of the function.
+- Read `def test_servo_angle_command():` and complete the rest of the function.  Run the Python script to find the mathematical relationship between the servo angles ($\alpha_i$) and the joint angles ($\theta_i$). For example, $\alpha_2 = -\theta_2 + \pi/2$ because when $\theta_2 = 0$, $\alpha_2 = 90^\circ$ and when $\theta_2 = 90$, $\alpha_2 = 0^\circ$, 
 
-Find the mathematical relationship between the servo angles ($\alpha_i$) and the joint angles ($\theta_i$). For example, $\alpha_2 = -\theta_2 + \pi/2$ because when $\theta_2 = 0$, $\alpha_2 = 90^\circ$ and when $\theta_2 = 90$, $\alpha_2 = 0^\circ$, 
+```{hint}
+You may want to put breakpoints in the code and execute one line at a time to observe the joint angles of the robot.
+```
 
 **Deliverable 2**: For each joint, report the mathematical equation for $\theta$ in terms of $\alpha$. 
 
-**Deliverable 3**: For each joint, report the mathematical equation for $\theta$ in terms of $\alpha$.
-
-Comment out the first three lines after `__name__ == '__main__':` and uncomment the last line.  
+Comment out the first three test functions and uncomment the last line.  
 
 ```Python
 if __name__ == '__main__':
-    # st_forward_kinematics()         <--  COMMENT OUT
+    # test_forward_kinematics()         <--  COMMENT OUT
     # test_servo_position_command()   <--  COMMENT OUT
     # test_servo_angle_command()      <--  COMMENT OUT
-    test_move_joints()              <--  UNCOMMENT
+    test_move_joints()                <--  UNCOMMENT
 ```
 
-Update the following two lines inside the constructor, ` def __init__(self, simulation_only=False):`
+Use the results from Deliverable 2 to update the following two lines of code inside the constructor, ` def __init__(self, simulation_only=False):`
 
 ```Python
     # alpha = direction * theta + offset
@@ -177,23 +190,7 @@ Update the following two lines inside the constructor, ` def __init__(self, simu
 
 Read `def test_move_joints():` and complete the rest of the function.
 
-
-**Deliverable 4**: Demo your robot moving the joints as described in the function.
-
-
-
-
-
-```{image} ./figures/xArm_Upright.png
-:width: 400
-:align: center
-```
-
-
-
-
-
-
+**Deliverable 3**: Demo your robot moving the joints as described in the function.
 
 Go to `def test_forward_kinematics():` and replace `True` with `False` in the following line.
 
@@ -201,8 +198,16 @@ Go to `def test_forward_kinematics():` and replace `True` with `False` in the fo
    robot = XArm(simulation_only=True)  <-- change it to False
 ```    
     
-Uncomment the first line after `__name__ == '__main__':` and comment out the rest. 
-Excute the code and use a ruler to measure the position of the tool-tip.  Compare the measure vaules with the calcualted vaules.  
+Uncomment the first test function inside __name__ == '__main__': and comment out the rest.
 
-**Deliverable 5**  Report the measured values and the calculated values.  What is the average error?  
+```Python
+if __name__ == '__main__':
+    test_forward_kinematics()         <--  UNCOMMENT
+    # test_servo_position_command()   <--  COMMENT OUT
+    # test_servo_angle_command()      <--  COMMENT OUT
+    # test_move_joints()              <--  COMMENT OUT
+```
 
+Execute the code and use a ruler to measure the position of the tooltip. Compare the measured values with the calculated values.
+
+**Deliverable 4**: Demo your robot moving the tooltip to the calculated position.
