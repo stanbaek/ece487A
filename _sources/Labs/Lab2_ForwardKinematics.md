@@ -210,5 +210,4 @@ if __name__ == '__main__':
 
 Execute the code and use a ruler to measure the position of the tooltip. Compare the measured values with the calculated values.
 
-
-
+**Deliverable 4**: Demo your robot moving the tooltip to the calculated position.
