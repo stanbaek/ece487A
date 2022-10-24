@@ -167,7 +167,7 @@ Comment out the first two test functions and uncomment the third line.
 You may want to put breakpoints in the code and execute one line at a time to observe the joint angles of the robot.
 ```
 
-**Deliverable 2**: For each joint, report the mathematical equation for $\theta$ in terms of $\alpha$. 
+**Deliverable 2**: For each joint, report the mathematical equation for $\alpha_i$ in terms of $\theta_i$, where $i\in \{1,2,3,4,5\}$ is the joint index. Write the five equations on paper and submit it in Gradescope. You don't have to impletement the equations in Python.  
 
 Comment out the first three test functions and uncomment the last line.  
 
