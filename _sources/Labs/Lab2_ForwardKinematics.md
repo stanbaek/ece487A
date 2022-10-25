@@ -208,6 +208,6 @@ if __name__ == '__main__':
     # test_move_joints()              <--  COMMENT OUT
 ```
 
-Execute the code and use a ruler to measure the position of the tooltip. Compare the measured values with the calculated values.
+You need to add the `move_joints` function inside `test_forward_kinematics`.  Execute the code and use a ruler to measure the position of the tooltip. Compare the measured values with the calculated values.
 
 **Deliverable 4**: Demo your robot moving the tooltip to the calculated position.
