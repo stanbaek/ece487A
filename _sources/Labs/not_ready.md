@@ -1,5 +1,0 @@
-# ✏️ Under construction
-
-## 📜 Agenda
-
-## 💻 Procedure
