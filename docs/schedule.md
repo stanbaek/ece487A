@@ -34,16 +34,16 @@ This schedule is subject to change as appropriate.
  L25      | Inverse Kinematics 1              | Lab2               |    
  L26      | Inverse Kinematics 2              | HW25               |    
  L27      | Inverse Kinematics 3              | HW26               |    
- L28      | Inverse Kinematics 4              | HW27               |    
- L29      | Project 1 - Inverse Kinematics    | P1 Preflight       |   
- L30      | Project 1 - Inverse Kinematics    | P1 checkpoint1     |
- L31      | Image Processing                  |                    |
- L32      | Morphology                        | Project 1 Due      |
- L33      | ICE4                              | HW21               |
- L34      | HSV, Lab3                         | HW22               |
- L35      | Lab4                              |                    |
- L36      | GR2                               |                    |
- L37      | Lab4                              | Lab3 Due           |
- L38      | Camera Model                      |                    |
- L39      | Project 2                         | Lab4 Due           |
- L40      | Project 2                         | P2 Due Midnight    |
+ L28      | Inverse Kinematics 4              |                    |    
+ L29      | Project1 - Inverse Kinematics     | HW28               |   
+ L30      | Project1 - Inverse Kinematics     |                    |
+ L31      | Project1 - Inverse Kinematics     |                    |
+ L32      | GR2                               |                    |
+ L33      | Least Square Estimate (LSE)       | P1                 |
+ L34      | ICE6 - LSE                        | HW33               |
+ L35      | Lab3 - LSE/Camera                 | ICE6               |
+ L36      | Lab3 - LSE/Camera                 |                    |
+ L37      | Project2 - Colaborative Robots    | Lab3 Due           |
+ L38      | Project2 - Colaborative Robots    |                    |
+ L39      | Project2 - Colaborative Robots    |                    |
+ L40      | Project2 - Colaborative Robots    | P2 Due Midnight    |
