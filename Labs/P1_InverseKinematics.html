@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔬 Proj1: Inverse Kinematics &#8212; Fundamentals of Robotics</title>
+    <title>🔬 Project1: Inverse Kinematics &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   🔬 Proj1: Inverse Kinematics
+   🔬 Project1: Inverse Kinematics
   </a>
  </li>
  <li class="toctree-l1">
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>🔬 Proj1: Inverse Kinematics</h1>
+                <h1>🔬 Project1: Inverse Kinematics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -391,8 +391,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="proj1-inverse-kinematics">
-<h1>🔬 Proj1: Inverse Kinematics<a class="headerlink" href="#proj1-inverse-kinematics" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="project1-inverse-kinematics">
+<h1>🔬 Project1: Inverse Kinematics<a class="headerlink" href="#project1-inverse-kinematics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown below.</p>
@@ -403,9 +403,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="inverse-kinematics-of-5-dof-robotic-arm">
 <h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h3>
 <p>Use the schematic diagram shown in the figure below to find the forward kinematics of the robotic manipulator.</p>
-<a class="reference internal image-reference" href="../_images/xArm.png"><img alt="../_images/xArm.png" class="align-center" src="../_images/xArm.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../_images/xArm2.png"><img alt="../_images/xArm2.png" class="align-center" src="../_images/xArm2.png" style="width: 450px;" /></a>
 <p>Use Python to create an instance of the robotic arm. You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, such as <code class="docutils literal notranslate"><span class="pre">fkine</span></code>.</p>
-<p><strong>Note:</strong> Frame {6} has been removed and replaced with Frame {5} because of a bug in robotics-toolbox.  It cannot plot the last link correctly if you use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
+<p><strong>Note:</strong> Frame {5} is attached at the tooltip because of a bug in robotics-toolbox.  It cannot plot the last link correctly if we use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
 <p>Use the following values for B0, L1, L2, L3, and L4.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 

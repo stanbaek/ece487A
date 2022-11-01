@@ -1,4 +1,4 @@
-# 🔬 Proj1: Inverse Kinematics
+# 🔬 Project1: Inverse Kinematics
 
 
 ## Objectives
@@ -15,14 +15,14 @@ The purpose of this project is to compare the theoretical solution to the invers
 
 Use the schematic diagram shown in the figure below to find the forward kinematics of the robotic manipulator. 
 
-```{image} ./figures/xArm.png
+```{image} ./figures/xArm2.png
 :width: 450
 :align: center
 ```
 
 Use Python to create an instance of the robotic arm. You need to use your DH table to create a `DHRobot` object.  Since XArm is a subclass of `DHRobot`, you can use all the methods and properties defined in `DHRobot`, such as `fkine`.   
 
-**Note:** Frame {6} has been removed and replaced with Frame {5} because of a bug in robotics-toolbox.  It cannot plot the last link correctly if you use `robot.tool = SE3([0, 0, L4])`
+**Note:** Frame {5} is attached at the tooltip because of a bug in robotics-toolbox.  It cannot plot the last link correctly if we use `robot.tool = SE3([0, 0, L4])`
 
 Use the following values for B0, L1, L2, L3, and L4. 
 
