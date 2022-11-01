@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🚩 P1: Inverse Kinematics &#8212; Fundamentals of Robotics</title>
+    <title>🔬 Proj1: Inverse Kinematics &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   🚩 P1: Inverse Kinematics
+   🔬 Proj1: Inverse Kinematics
   </a>
  </li>
  <li class="toctree-l1">
@@ -252,9 +252,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Labs/P1_InverseKinematics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Labs/P1_InverseKinematics.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -288,23 +288,6 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/stanbaek/ece487/master?urlpath=tree/docs/Labs/P1_InverseKinematics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -316,33 +299,33 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-this-document">
-   A note on this document
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure">
+   💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectives">
-     Objectives
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inverse-kinematics-of-5-dof-robotic-arm">
      Inverse kinematics of 5 DoF robotic arm
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-1-25-points-due-t29-0700">
-     Project Checkpoint 1 (25 points), Due T29 0700
+    <a class="reference internal nav-link" href="#deliverable-1-25-points">
+     Deliverable 1 (25 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-2-25-points-due-t29-0700">
-     Project Checkpoint 2 (25 points), Due T29 0700
+    <a class="reference internal nav-link" href="#deliverable-2-25-points">
+     Deliverable 2 (25 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-3-50-points-due-t30-1700">
-     Project Checkpoint 3 (50 points), Due T30 1700
+    <a class="reference internal nav-link" href="#deliverable-3-50-points">
+     Deliverable 3 (50 points)
     </a>
    </li>
   </ul>
@@ -357,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>🚩 P1: Inverse Kinematics</h1>
+                <h1>🔬 Proj1: Inverse Kinematics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -368,33 +351,33 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-note-on-this-document">
-   A note on this document
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure">
+   💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectives">
-     Objectives
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inverse-kinematics-of-5-dof-robotic-arm">
      Inverse kinematics of 5 DoF robotic arm
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-1-25-points-due-t29-0700">
-     Project Checkpoint 1 (25 points), Due T29 0700
+    <a class="reference internal nav-link" href="#deliverable-1-25-points">
+     Deliverable 1 (25 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-2-25-points-due-t29-0700">
-     Project Checkpoint 2 (25 points), Due T29 0700
+    <a class="reference internal nav-link" href="#deliverable-2-25-points">
+     Deliverable 2 (25 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#project-checkpoint-3-50-points-due-t30-1700">
-     Project Checkpoint 3 (50 points), Due T30 1700
+    <a class="reference internal nav-link" href="#deliverable-3-50-points">
+     Deliverable 3 (50 points)
     </a>
    </li>
   </ul>
@@ -408,32 +391,23 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="p1-inverse-kinematics">
-<h1>🚩 P1: Inverse Kinematics<a class="headerlink" href="#p1-inverse-kinematics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a-note-on-this-document">
-<h2>A note on this document<a class="headerlink" href="#a-note-on-this-document" title="Permalink to this headline">¶</a></h2>
-<p>This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or code, and for blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="proj1-inverse-kinematics">
+<h1>🔬 Proj1: Inverse Kinematics<a class="headerlink" href="#proj1-inverse-kinematics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="objectives">
-<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown below.</p>
-<img alt="Drawing" src="Labs/figs/xArm.jpg" />
-<p>In this project, you will</p>
-<ul class="simple">
-<li><p>Parameterize the robotic arm following the Denavit-Hartenberg (DH) convention.</p></li>
-<li><p>Use Python to find the closed-form solutions to the inverse kinematic equations for the robot.</p></li>
-<li><p>Write a Python script that moves the robotic arm to configurations specified by the user.</p></li>
-</ul>
+<a class="reference internal image-reference" href="../_images/xArm.jpg"><img alt="../_images/xArm.jpg" class="align-center" src="../_images/xArm.jpg" style="width: 300px;" /></a>
 </div>
+<div class="section" id="procedure">
+<h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="inverse-kinematics-of-5-dof-robotic-arm">
 <h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h3>
 <p>Use the schematic diagram shown in the figure below to find the forward kinematics of the robotic manipulator.</p>
-<img alt="Drawing" src="Labs/figs/xArm.png" />
+<a class="reference internal image-reference" href="../_images/xArm.png"><img alt="../_images/xArm.png" class="align-center" src="../_images/xArm.png" style="width: 450px;" /></a>
 <p>Use Python to create an instance of the robotic arm. You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, such as <code class="docutils literal notranslate"><span class="pre">fkine</span></code>.</p>
 <p><strong>Note:</strong> Frame {6} has been removed and replaced with Frame {5} because of a bug in robotics-toolbox.  It cannot plot the last link correctly if you use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
 <p>Use the following values for B0, L1, L2, L3, and L4.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">B0</span> <span class="o">=</span> <span class="mf">0.090</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L1</span> <span class="o">=</span> <span class="mf">0.010</span>
@@ -456,80 +430,17 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="project-checkpoint-1-25-points-due-t29-0700">
-<h3>Project Checkpoint 1 (25 points), Due T29 0700<a class="headerlink" href="#project-checkpoint-1-25-points-due-t29-0700" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-1-25-points">
+<h3>Deliverable 1 (25 points)<a class="headerlink" href="#deliverable-1-25-points" title="Permalink to this headline">¶</a></h3>
 <p>Demo <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics(</span> <span class="pre">)</span></code> with <code class="docutils literal notranslate"><span class="pre">simulation_only=False</span></code></p>
 <p>In your <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>, you must check the operating ranges of joint angles and should not return solutions that violate the oerating ranges. You can add the following two lines inside your constructor (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(...)</span></code>) and create a function that checks the ranges before returning from <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">max_joint_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">min_joint_angle</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_inverse_kinematics</span><span class="p">():</span>
-
-    <span class="n">robot</span> <span class="o">=</span> <span class="n">XArm</span><span class="p">(</span><span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">robot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-    <span class="n">duration_ms</span> <span class="o">=</span> <span class="mi">2000</span>
-    <span class="n">robot</span><span class="o">.</span><span class="n">move_to_initial_pose</span><span class="p">(</span><span class="n">duration_ms</span><span class="p">)</span>
-
-    <span class="n">poses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mi">45</span><span class="p">)),</span>
-                  <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">60</span><span class="p">)),</span>
-                  <span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">60</span><span class="p">)),</span>
-                  <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">L1</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L2</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L3</span> <span class="o">+</span> <span class="n">robot</span><span class="o">.</span><span class="n">L4</span><span class="p">),</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">B0</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.23</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">0.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.23</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span>  <span class="mf">0.27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="mf">0.45</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">poses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="mf">0.35</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-    
-
-    <span class="n">poses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">poses</span><span class="p">)</span>
-    <span class="n">axes_limits</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">]</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">pose</span> <span class="ow">in</span> <span class="n">poses</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desired pose: &quot;</span><span class="p">,</span> <span class="n">pose</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">pose</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span><span class="p">)</span>
-        <span class="n">joint_angles</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">invkine</span><span class="p">(</span><span class="n">pose</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">joint_angles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">joint_angles</span><span class="p">))</span>
-
-            <span class="k">for</span> <span class="n">angles</span> <span class="ow">in</span> <span class="n">joint_angles</span><span class="p">:</span>
-                <span class="n">T</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">fkine</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
-                <span class="n">T</span><span class="o">.</span><span class="n">printline</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;eul&#39;</span><span class="p">)</span>
-                <span class="n">robot</span><span class="o">.</span><span class="n">move_joints</span><span class="p">(</span><span class="n">duration_ms</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
-                <span class="n">robot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="n">axes_limits</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="n">robot</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="project-checkpoint-2-25-points-due-t29-0700">
-<h3>Project Checkpoint 2 (25 points), Due T29 0700<a class="headerlink" href="#project-checkpoint-2-25-points-due-t29-0700" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-2-25-points">
+<h3>Deliverable 2 (25 points)<a class="headerlink" href="#deliverable-2-25-points" title="Permalink to this headline">¶</a></h3>
 <p>Write a Python script that moves a cube located at (25, 0, 0) to (20, 16, 0) and demo your robot moving the cube.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a difference location.</p>
 <p>Add the following lines in your constructor</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gripper_close_pos</span> <span class="o">=</span> <span class="mi">2200</span>   <span class="c1"># close position</span>
@@ -585,8 +496,8 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="section" id="project-checkpoint-3-50-points-due-t30-1700">
-<h3>Project Checkpoint 3 (50 points), Due T30 1700<a class="headerlink" href="#project-checkpoint-3-50-points-due-t30-1700" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-3-50-points">
+<h3>Deliverable 3 (50 points)<a class="headerlink" href="#deliverable-3-50-points" title="Permalink to this headline">¶</a></h3>
 <p>Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a difference location.</p>
 </div>
 </div>
