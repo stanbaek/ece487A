@@ -22,7 +22,7 @@ parts:
   - file: Labs/ICE4_SpatialMath.md
   - file: Labs/ICE5_RoboticsToolbox.ipynb
   - file: Labs/Lab2_ForwardKinematics.md
-  - file: Labs/P1_InverseKinematics.ipynb
+  - file: Labs/P1_InverseKinematics
   - file: Labs/ICE6_LSE.ipynb
   - file: Labs/P2_VisionBasedManipulator.ipynb
 
