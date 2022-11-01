@@ -299,6 +299,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project1-is-not-ready">
+   Project1 is not ready
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
    Objectives
   </a>
@@ -351,6 +356,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project1-is-not-ready">
+   Project1 is not ready
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
    Objectives
   </a>
@@ -393,6 +403,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="project1-inverse-kinematics">
 <h1>🔬 Project1: Inverse Kinematics<a class="headerlink" href="#project1-inverse-kinematics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project1-is-not-ready">
+<h2>Project1 is not ready<a class="headerlink" href="#project1-is-not-ready" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown below.</p>
@@ -404,29 +417,23 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h3>
 <p>Use the schematic diagram shown in the figure below to find the forward kinematics of the robotic manipulator.</p>
 <a class="reference internal image-reference" href="../_images/xArm2.png"><img alt="../_images/xArm2.png" class="align-center" src="../_images/xArm2.png" style="width: 450px;" /></a>
+<p>Add the following methods at the end of <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">XArm(rbt.DHRobot)</span></code> right before “End of Class Xarm”</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gripper_close_pos</span> <span class="o">=</span> <span class="mi">2200</span>   <span class="c1"># close position</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gripper_open_pos</span> <span class="o">=</span> <span class="mi">1700</span>  <span class="c1"># open position</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_axes_limits</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">]</span>
+        
+</pre></div>
+</div>
 <p>Use Python to create an instance of the robotic arm. You need to use your DH table to create a <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code> object.  Since XArm is a subclass of <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, you can use all the methods and properties defined in <code class="docutils literal notranslate"><span class="pre">DHRobot</span></code>, such as <code class="docutils literal notranslate"><span class="pre">fkine</span></code>.</p>
 <p><strong>Note:</strong> Frame {5} is attached at the tooltip because of a bug in robotics-toolbox.  It cannot plot the last link correctly if we use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
 <p>Use the following values for B0, L1, L2, L3, and L4.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">B0</span> <span class="o">=</span> <span class="mf">0.090</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">L1</span> <span class="o">=</span> <span class="mf">0.010</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">L1</span> <span class="o">=</span> <span class="mf">0.010</span>  <span class="c1"># &lt;-- Ensure L1 is 0.01.</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.105</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L3</span> <span class="o">=</span> <span class="mf">0.088</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">L4</span> <span class="o">=</span> <span class="mf">0.174</span>
-
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-        <span class="p">[</span><span class="n">rbt</span><span class="o">.</span><span class="n">RevoluteMDH</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">B0</span><span class="p">),</span>
-         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">         write your code here</span>
-<span class="sd">         &quot;&quot;&quot;</span>
-         <span class="p">],</span>
-        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;xArm&quot;</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Do not use </span>
-    <span class="c1"># self.tool = SE3([...]) </span>
-    <span class="c1"># The built-in plot method won&#39;t be able to plot Link 4.</span>
 </pre></div>
 </div>
 </div>
@@ -442,59 +449,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="deliverable-2-25-points">
 <h3>Deliverable 2 (25 points)<a class="headerlink" href="#deliverable-2-25-points" title="Permalink to this headline">¶</a></h3>
 <p>Write a Python script that moves a cube located at (25, 0, 0) to (20, 16, 0) and demo your robot moving the cube.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a difference location.</p>
-<p>Add the following lines in your constructor</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gripper_close_pos</span> <span class="o">=</span> <span class="mi">2200</span>   <span class="c1"># close position</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gripper_open_pos</span> <span class="o">=</span> <span class="mi">1700</span>  <span class="c1"># open position</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">plot_axes_limits</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">]</span>
-        
-</pre></div>
-</div>
-<p>Add the following methods inside <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">XArm(rbt.DHRobot)</span></code>.  You can use them as needed.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">moveto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">pose</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Moves the tooltip to the specified pose.</span>
-<span class="sd">        :param duration_ms: time in milliseconds to travel from the current</span>
-<span class="sd">        position to the desired position.</span>
-<span class="sd">        :param pose: 1x5 array of the pose of the tooltip.</span>
-<span class="sd">        The first three elements are the position of the tooltip,</span>
-<span class="sd">        and the last two elements are the wrist angles.</span>
-<span class="sd">        :param wait: If true, sleep for duration_ms until the move is complete.</span>
-<span class="sd">        :param plot: If true, plot the robot.</span>
-<span class="sd">        :return: None</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="n">joint_angles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">invkine</span><span class="p">(</span><span class="n">pose</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">joint_angles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No solution to inverse kinematics for &quot;</span><span class="p">,</span> <span class="n">pose</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">move_joints</span><span class="p">(</span><span class="n">duration_ms</span><span class="p">,</span> <span class="n">joint_angles</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">wait</span><span class="o">=</span><span class="n">wait</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">joint_angles</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_axes_limits</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">open_gripper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">move_gripper</span><span class="p">(</span><span class="n">duration_ms</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gripper_open_pos</span><span class="p">,</span> <span class="n">wait</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">close_gripper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">move_gripper</span><span class="p">(</span><span class="n">duration_ms</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gripper_close_pos</span><span class="p">,</span> <span class="n">wait</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">move_gripper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-
-        <span class="n">packet</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">XArm</span><span class="o">.</span><span class="n">HEADER</span><span class="p">)</span>
-        <span class="n">num_bytes</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>  <span class="c1"># byte length + CMD + num_servos + time duration (2) + servo positions</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_bytes</span><span class="p">)</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">XArm</span><span class="o">.</span><span class="n">COMMAND</span><span class="p">)</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># only one servo</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">duration_ms</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">duration_ms</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># servo 6: gripper</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">position</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span>
-        <span class="n">packet</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">position</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">wait</span><span class="p">:</span>
-            <span class="n">sleep</span><span class="p">(</span><span class="n">duration_ms</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="deliverable-3-50-points">
 <h3>Deliverable 3 (50 points)<a class="headerlink" href="#deliverable-3-50-points" title="Permalink to this headline">¶</a></h3>
