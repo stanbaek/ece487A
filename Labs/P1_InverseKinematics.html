@@ -515,7 +515,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Parameterize the robotic arm following the Denavit-Hartenberg (DH) convention.</p></li>
 <li><p>Use Python to find the closed-form solutions to the inverse kinematic equations for the robot.</p></li>
-<li><p>Write a Python script that picks up blocks from known locations and stack them at a different location.</p></li>
+<li><p>Write a Python script that picks up blocks from known locations and stacks them at a different location.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/xArm_blocks.jpg"><img alt="../_images/xArm_blocks.jpg" class="align-center" src="../_images/xArm_blocks.jpg" style="width: 500px;" /></a>
 </section>
@@ -525,7 +525,7 @@ title="Print to PDF"
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Go to ECE487 Teams &gt; General &gt; Files &gt; Class Materials &gt; Python Files.</p></li>
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">proj1_fucntions.py</span></code> and copy everthing except the <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics</span></code> function and paste it in your <code class="docutils literal notranslate"><span class="pre">xarm.py</span></code> at the end of <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">XArm(rbt.DHRobot)</span></code> right before</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">proj1_fucntions.py</span></code> and copy everything except the <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics</span></code> function and paste it in your <code class="docutils literal notranslate"><span class="pre">xarm.py</span></code> at the end of <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">XArm(rbt.DHRobot)</span></code> right before</p></li>
 </ul>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; ======================================================================</span>
 <span class="sd">    End of Class XArm</span>
@@ -540,7 +540,7 @@ title="Print to PDF"
 <h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">#</a></h3>
 <p>Use the schematic diagram shown in the figure below for the forward/inverse kinematics of the robotic manipulator. Note that L1 is not 0.</p>
 <a class="reference internal image-reference" href="../_images/xArm2.png"><img alt="../_images/xArm2.png" class="align-center" src="../_images/xArm2.png" style="width: 450px;" /></a>
-<p><strong>Note:</strong> Frame {5} is attached at the tooltip because of a bug in robotics-toolbox.  It cannot render the end-effector link correctly if we use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
+<p><strong>Note:</strong> Frame {5} is attached to the tooltip because of a bug in the robotics toolbox.  It cannot render the end-effector link correctly if we use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
 <p>Use the following values for B0, L1, L2, L3, and L4.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
@@ -556,21 +556,23 @@ title="Print to PDF"
 <h3>Deliverable 1 (25 points)<a class="headerlink" href="#deliverable-1-25-points" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Complete the code inside the <code class="docutils literal notranslate"><span class="pre">invkine</span></code> method.</p></li>
-<li><p>In your <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>, you must check the operating ranges of joint angles and should not return solutions that violate the oerating ranges. Ensure you have the following two lines inside the constructor of XArm (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(...)</span></code>) and use the <code class="docutils literal notranslate"><span class="pre">check_joint_angle_limits</span></code> method to check the ranges before returning from <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>.</p></li>
+<li><p>In your <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>, you must check the operating ranges of joint angles and should not return solutions that violate the operating ranges. Ensure you have the following two lines inside the constructor of XArm (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__(...)</span></code>) and use the <code class="docutils literal notranslate"><span class="pre">check_joint_angle_limits</span></code> method to check the ranges before returning from <code class="docutils literal notranslate"><span class="pre">invkine()</span></code>.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">max_joint_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">min_joint_angle</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Demo <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics(</span> <span class="pre">)</span></code> with <code class="docutils literal notranslate"><span class="pre">simulation_only=False</span></code></p>
+<ul class="simple">
+<li><p>Demo <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics(</span> <span class="pre">)</span></code> with <code class="docutils literal notranslate"><span class="pre">simulation_only=False</span></code>.  Although it is not required, it is strongly recommended to run <code class="docutils literal notranslate"><span class="pre">test_inverse_kinematics(</span> <span class="pre">)</span></code> with <code class="docutils literal notranslate"><span class="pre">simulation_only=True</span></code> to observe the simulation outputs.</p></li>
+</ul>
 </section>
 <section id="deliverable-2-25-points">
 <h3>Deliverable 2 (25 points)<a class="headerlink" href="#deliverable-2-25-points" title="Permalink to this headline">#</a></h3>
-<p>Write a Python script that moves a cube located at (25, 0, 0) to (20, 16, 0) and demo your robot moving the cube.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles. You must lift up the block no less than 10 cm before placing it down. You may be asked to move the cube from a difference location.</p>
+<p>Write a Python script that moves a cube located at (25, 0, 0) to (20, 16, 0) and demo your robot moving the cube.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles. You must lift the block no less than 10 cm before placing it down. You may be asked to move the cube from a different location.</p>
 </section>
 <section id="deliverable-3-50-points">
 <h3>Deliverable 3 (50 points)<a class="headerlink" href="#deliverable-3-50-points" title="Permalink to this headline">#</a></h3>
-<p>Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a difference location.</p>
+<p>Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a different location.</p>
 </section>
 </section>
 </section>
