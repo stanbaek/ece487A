@@ -1,10 +1,7 @@
 # 🔬 Project1: Inverse Kinematics
 
 ## Objectives
-The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown below.  
-
-
-The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown in Figure 1. In this project, you will
+The purpose of this project is to compare the theoretical solution to the inverse kinematics with a physical implementation on the 5 DoF robotic arm shown below. In this project, you will
 - Parameterize the robotic arm following the Denavit-Hartenberg (DH) convention.
 - Use Python to find the closed-form solutions to the inverse kinematic equations for the robot.
 - Write a Python script that picks up blocks from known locations and stacks them at a different location.
@@ -66,6 +63,15 @@ self.min_joint_angle = (-pi/2, 0, -3*pi/4, -pi/2, -pi/2)
 ```
 
 - Demo `test_inverse_kinematics( )` with `simulation_only=False`.  Although it is not required, it is strongly recommended to run `test_inverse_kinematics( )` with `simulation_only=True` to observe the simulation outputs. 
+
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C3O-E2JJ3Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<br>
+
+
+
 
 
 ### Deliverable 2 (25 points)
