@@ -24,6 +24,7 @@ parts:
   - file: Labs/Lab2_ForwardKinematics.md
   - file: Labs/P1_InverseKinematics
   - file: Labs/ICE6_LSE.ipynb
+  - file: Labs/Lab3_CameraCalibration.ipynb
   - file: Labs/P2_VisionBasedManipulator.ipynb
 
 - caption: Supplementary 
