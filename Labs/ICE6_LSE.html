@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🚩 P2: Robot with Computer Vision" href="P2_VisionBasedManipulator.html" />
-    <link rel="prev" title="🚩 P1: Inverse Kinematics" href="P1_InverseKinematics.html" />
+    <link rel="next" title="❄️ Lab3: Camera Calibration" href="Lab3_CameraCalibration.html" />
+    <link rel="prev" title="🔬 Project1: Inverse Kinematics" href="P1_InverseKinematics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -198,12 +198,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="P1_InverseKinematics.html">
-   🚩 P1: Inverse Kinematics
+   🔬 Project1: Inverse Kinematics
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    ❄️ ICE6: Least Squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab3_CameraCalibration.html">
+   ❄️ Lab3: Camera Calibration
   </a>
  </li>
  <li class="toctree-l1">
@@ -412,12 +417,53 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-fall-example">
+   Free fall example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -429,6 +475,36 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-fall-example">
+   Free fall example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-1">
+     Deliverable 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-2">
+     Deliverable 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -436,8 +512,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ice6-least-squares">
+  <p><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE6_LSE.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="ice6-least-squares">
 <h1>❄️ ICE6: Least Squares<a class="headerlink" href="#ice6-least-squares" title="Permalink to this headline">#</a></h1>
+<p><strong>A note on this document</strong>
+This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or executable code. To run the executable code in this notebook, click <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE6_LSE.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+. For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+<p>Consider a set of measurements <span class="math notranslate nohighlight">\(\mathbf{y} = (y_1, y_2, \cdots, y_n)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \cdots, x_n)\)</span>.</p>
+<p>We want to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that our linear model, <span class="math notranslate nohighlight">\(y = mx+b\)</span>, best fits the measurements.</p>
+<p>Let’s plot the measurements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -447,25 +530,33 @@ title="Print to PDF"
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ICE6_LSE_1_0.png" src="../_images/ICE6_LSE_1_0.png" />
+<img alt="../_images/ICE6_LSE_3_0.png" src="../_images/ICE6_LSE_3_0.png" />
 </div>
 </div>
-<p>We can rewrite the line equation as y = Ab, where</p>
-<p><span class="math notranslate nohighlight">\(A = \begin{bmatrix} x &amp; 1\end{bmatrix} \)</span> and <span class="math notranslate nohighlight">\(b = \begin{bmatrix} m \\ c\end{bmatrix} \)</span>. That is</p>
-<p><span class="math notranslate nohighlight">\(y = mx + c = \begin{bmatrix} x &amp; 1\end{bmatrix} \begin{bmatrix} m \\ c\end{bmatrix} = Ab\)</span></p>
-<p>With the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values, we can obtain</p>
-<p><span class="math notranslate nohighlight">\(\begin{bmatrix} -1 \\ 0.4 \\ 0.7 \\ 2.1\end{bmatrix} = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 1 \\2 &amp; 1 \\3 &amp; 1 \end{bmatrix} \begin{bmatrix} m \\ c\end{bmatrix}\)</span></p>
-<p>Now use lstsq to solve for b:</p>
+<p>First, we can rewrite the line equation as <span class="math notranslate nohighlight">\(y = \mathbf{c} \cdot \mathbf{q}\)</span>, where</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{c} = \begin{bmatrix} x &amp; 1\end{bmatrix}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{q} = \begin{bmatrix} m \\ b\end{bmatrix} \)</span>. That is,</p>
+<p><span class="math notranslate nohighlight">\(y = mx + b = \begin{bmatrix} x &amp; 1\end{bmatrix} \begin{bmatrix} m \\ b\end{bmatrix} = \mathbf{c} \cdot \mathbf{q}\)</span></p>
+<p>Given <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \cdots, x_n)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y} = (y_1, y_2, \cdots, y_n)\)</span>, we can obtain</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix} -1 \\ 0.4 \\ 0.7 \\ 2.1\end{bmatrix} = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 1 \\2 &amp; 1 \\3 &amp; 1 \end{bmatrix} \begin{bmatrix} m \\ b\end{bmatrix}\)</span>  or <span class="math notranslate nohighlight">\(\mathbf{y} = C\mathbf{q}\)</span>,</p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(C = \begin{bmatrix} x_1 &amp; 1 \\ x_2 &amp; 1 \\x_3 &amp; 1 \\x_4 &amp; 1 \end{bmatrix} = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 1 \\2 &amp; 1 \\3 &amp; 1 \end{bmatrix} \)</span>.</p>
+<p>We can create the <span class="math notranslate nohighlight">\(C\)</span> matrix using <code class="docutils literal notranslate"><span class="pre">np.vstack</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x is a row vector.</span>
+<span class="c1"># Use vstack to append a row vector, [1, 1, ,,, 1] at the end of x.</span>
+<span class="c1"># It will be a 2 by n matrix.</span>
+<span class="c1"># We need to transpose the 2 by n matrix to make it n by 2 matrix</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -478,23 +569,29 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Now use <code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code> to solve for <span class="math notranslate nohighlight">\(\mathbf{q}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="c1"># or you can use</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9599999999999997 -0.8899999999999988
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.96 -0.89]
+0.9599999999999999 -0.8899999999999998
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s plot the line, <span class="math notranslate nohighlight">\(y = mx + b\)</span> with the values we just found.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -502,126 +599,138 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ICE6_LSE_5_0.png" src="../_images/ICE6_LSE_5_0.png" />
+<img alt="../_images/ICE6_LSE_9_0.png" src="../_images/ICE6_LSE_9_0.png" />
 </div>
 </div>
-<p>OpenMV Camera depth (the z-axis)</p>
+<section id="free-fall-example">
+<h2>Free fall example<a class="headerlink" href="#free-fall-example" title="Permalink to this headline">#</a></h2>
+<p>Consider a body in free fall shown below.</p>
+<a class="reference internal image-reference" href="../_images/FreeFall.png"><img alt="../_images/FreeFall.png" class="align-center" src="../_images/FreeFall.png" style="width: 200px;" /></a>
+<p>Suppose we measure the heights of the body every second after it is released at the initial height <span class="math notranslate nohighlight">\(y_0\)</span> with the initial speed of <span class="math notranslate nohighlight">\(\dot{y}_0\)</span>.  Given the measurements, we want to estimate the initial height, the initial speed, and the gravitational acceleration.</p>
+<p>The acceleration of the body is given by</p>
+<p><span class="math notranslate nohighlight">\(\ddot{y} = -g\)</span></p>
+<p>By integrating it, we can find the velocity</p>
+<p><span class="math notranslate nohighlight">\(\dot{y} = -gt + \dot{y}_0\)</span></p>
+<p>By integrating it one more time, we can find the displacement</p>
+<p><span class="math notranslate nohighlight">\(y = -\frac{1}{2}gt^2 + \dot{y}_0t + y_0\)</span></p>
+<p>So, our model is</p>
+<p><span class="math notranslate nohighlight">\(\hat{y} = -\frac{1}{2}gt^2 + \dot{y}_0 t + y_0 = \begin{bmatrix} 1 &amp; t &amp; -\frac{t^2}{2} \end{bmatrix} \begin{bmatrix} y_0 \\ \dot{y}_o \\ g \end{bmatrix} \)</span></p>
+<p>Given the measurements, <span class="math notranslate nohighlight">\(\mathbf{y} = (y(t_0), y(t_1), \cdots, y(t_n))\)</span> and <span class="math notranslate nohighlight">\(\mathbf{t} = (t_0, t_1, \cdots, t_n)\)</span>, we want to find <span class="math notranslate nohighlight">\(\mathbf{q} = \begin{bmatrix} y_0 &amp; \dot{y}_o &amp; g \end{bmatrix}^\top\)</span> that minimizes the squared error, <span class="math notranslate nohighlight">\(||\mathbf{e}||^2\)</span>. With the measurements, we can reconstruct the matrix as follows</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y} = \begin{bmatrix} y(t_0) \\ y(t_0) \\ \vdots \\ y(t_n) \end{bmatrix} = \begin{bmatrix} 1 &amp; t_0 &amp; -\frac{t_0^2}{2} \\ 1 &amp; t_1 &amp; -\frac{t_1^2}{2} \\ \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; t_n &amp; -\frac{t_n^2}{2} \end{bmatrix} \begin{bmatrix} y_0 \\ \dot{y}_o \\ g \end{bmatrix} \)</span></p>
+<p>With
+<span class="math notranslate nohighlight">\(C = \begin{bmatrix} 1 &amp; t_0 &amp; -\frac{t_0^2}{2} \\ 1 &amp; t_1 &amp; -\frac{t_1^2}{2} \\ \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; t_n &amp; -\frac{t_n^2}{2} \end{bmatrix}\)</span></p>
+<p>we can rewrite it in</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{y} = C \mathbf{q} \)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(C\)</span> is not a square matrix, there does not exist the inverse of <span class="math notranslate nohighlight">\(C\)</span>, which means we cannot find <span class="math notranslate nohighlight">\(\mathbf{q}\)</span> by</p>
+<p><span class="math notranslate nohighlight">\( \mathbf{q} = C^{-1} \mathbf{y}\)</span></p>
+<p>Instead, we need to use the least square estimate (LSE) which is given by</p>
+<p><span class="math notranslate nohighlight">\( \mathbf{q} = (C^\top C)^{-1} C^\top \mathbf{y}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.23</span><span class="p">,</span> <span class="mf">5.76</span><span class="p">,</span> <span class="mf">6.25</span><span class="p">,</span> <span class="mf">6.72</span><span class="p">,</span> <span class="mf">7.25</span><span class="p">,</span> <span class="mf">7.76</span><span class="p">,</span> <span class="mf">8.25</span><span class="p">,</span> <span class="mf">8.76</span><span class="p">,</span> <span class="mf">9.30</span><span class="p">,</span> <span class="mf">9.78</span><span class="p">,</span> <span class="mf">10.31</span><span class="p">,</span> <span class="mf">10.75</span><span class="p">,</span> <span class="mf">11.33</span><span class="p">,</span> <span class="mf">11.80</span><span class="p">,</span> <span class="mf">12.36</span><span class="p">,</span> <span class="mf">12.89</span><span class="p">,</span> <span class="mf">13.40</span><span class="p">,</span> <span class="mf">13.91</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">494.94014461</span><span class="p">,</span> <span class="mf">507.90896039</span><span class="p">,</span> <span class="mf">505.22104446</span><span class="p">,</span> <span class="mf">514.16752281</span><span class="p">,</span>
+       <span class="mf">501.03760921</span><span class="p">,</span> <span class="mf">512.27372226</span><span class="p">,</span> <span class="mf">506.25729082</span><span class="p">,</span> <span class="mf">519.31098721</span><span class="p">,</span>
+       <span class="mf">517.35119455</span><span class="p">,</span> <span class="mf">518.34500719</span><span class="p">,</span> <span class="mf">519.43274428</span><span class="p">,</span> <span class="mf">526.44327588</span><span class="p">,</span>
+       <span class="mf">522.94440423</span><span class="p">,</span> <span class="mf">510.27500976</span><span class="p">,</span> <span class="mf">530.25935105</span><span class="p">,</span> <span class="mf">518.20603986</span><span class="p">,</span>
+       <span class="mf">524.71868822</span><span class="p">,</span> <span class="mf">525.40621496</span><span class="p">,</span> <span class="mf">536.39890016</span><span class="p">,</span> <span class="mf">537.20679795</span><span class="p">,</span>
+       <span class="mf">531.97549049</span><span class="p">,</span> <span class="mf">531.89355501</span><span class="p">,</span> <span class="mf">530.9691791</span> <span class="p">,</span> <span class="mf">519.09709483</span><span class="p">,</span>
+       <span class="mf">531.21151466</span><span class="p">,</span> <span class="mf">531.05443774</span><span class="p">,</span> <span class="mf">530.53020296</span><span class="p">,</span> <span class="mf">533.87475854</span><span class="p">,</span>
+       <span class="mf">538.36426786</span><span class="p">,</span> <span class="mf">527.72764456</span><span class="p">,</span> <span class="mf">529.10979202</span><span class="p">,</span> <span class="mf">534.25255071</span><span class="p">,</span>
+       <span class="mf">528.75549033</span><span class="p">,</span> <span class="mf">522.85527636</span><span class="p">,</span> <span class="mf">536.32133201</span><span class="p">,</span> <span class="mf">521.3100716</span> <span class="p">,</span>
+       <span class="mf">528.1091566</span> <span class="p">,</span> <span class="mf">519.46924694</span><span class="p">,</span> <span class="mf">519.41092769</span><span class="p">,</span> <span class="mf">520.79686406</span><span class="p">,</span>
+       <span class="mf">519.93846816</span><span class="p">,</span> <span class="mf">516.86770344</span><span class="p">,</span> <span class="mf">509.90148208</span><span class="p">,</span> <span class="mf">510.51326661</span><span class="p">,</span>
+       <span class="mf">508.31253149</span><span class="p">,</span> <span class="mf">519.44185445</span><span class="p">,</span> <span class="mf">510.40323351</span><span class="p">,</span> <span class="mf">514.81167221</span><span class="p">,</span>
+       <span class="mf">508.93145792</span><span class="p">,</span> <span class="mf">506.78927246</span><span class="p">,</span> <span class="mf">503.84068939</span><span class="p">,</span> <span class="mf">496.865354</span>  <span class="p">,</span>
+       <span class="mf">501.99404182</span><span class="p">,</span> <span class="mf">499.78788123</span><span class="p">,</span> <span class="mf">490.93831227</span><span class="p">,</span> <span class="mf">495.25334285</span><span class="p">,</span>
+       <span class="mf">481.34690599</span><span class="p">,</span> <span class="mf">483.62699738</span><span class="p">,</span> <span class="mf">487.48676078</span><span class="p">,</span> <span class="mf">477.13434071</span><span class="p">,</span>
+       <span class="mf">472.93284874</span><span class="p">,</span> <span class="mf">467.48609631</span><span class="p">,</span> <span class="mf">471.42676396</span><span class="p">,</span> <span class="mf">462.61029894</span><span class="p">,</span>
+       <span class="mf">453.68093514</span><span class="p">,</span> <span class="mf">454.75557321</span><span class="p">,</span> <span class="mf">458.87031335</span><span class="p">,</span> <span class="mf">441.0566181</span> <span class="p">,</span>
+       <span class="mf">441.89473809</span><span class="p">,</span> <span class="mf">435.6396022</span> <span class="p">,</span> <span class="mf">431.82595852</span><span class="p">,</span> <span class="mf">430.4877946</span> <span class="p">,</span>
+       <span class="mf">425.13769744</span><span class="p">,</span> <span class="mf">433.39377499</span><span class="p">,</span> <span class="mf">417.19383723</span><span class="p">,</span> <span class="mf">411.3984193</span> <span class="p">,</span>
+       <span class="mf">412.21729864</span><span class="p">,</span> <span class="mf">399.65482787</span><span class="p">,</span> <span class="mf">391.16441599</span><span class="p">,</span> <span class="mf">394.84928496</span><span class="p">,</span>
+       <span class="mf">397.76328403</span><span class="p">,</span> <span class="mf">380.81427897</span><span class="p">,</span> <span class="mf">373.16521311</span><span class="p">,</span> <span class="mf">363.70635399</span><span class="p">,</span>
+       <span class="mf">368.01513611</span><span class="p">,</span> <span class="mf">361.12434462</span><span class="p">,</span> <span class="mf">352.11033439</span><span class="p">,</span> <span class="mf">347.76032976</span><span class="p">,</span>
+       <span class="mf">345.46984985</span><span class="p">,</span> <span class="mf">335.42433546</span><span class="p">,</span> <span class="mf">330.60651309</span><span class="p">,</span> <span class="mf">318.59015926</span><span class="p">,</span>
+       <span class="mf">316.38849782</span><span class="p">,</span> <span class="mf">310.13386233</span><span class="p">,</span> <span class="mf">302.52012775</span><span class="p">,</span> <span class="mf">290.65413548</span><span class="p">,</span>
+       <span class="mf">283.08686336</span><span class="p">,</span> <span class="mf">282.04215134</span><span class="p">,</span> <span class="mf">287.05055972</span><span class="p">,</span> <span class="mf">264.40202725</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;height (m)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.019609726398893156 -0.0021748384774351597
-</pre></div>
-</div>
-<img alt="../_images/ICE6_LSE_7_1.png" src="../_images/ICE6_LSE_7_1.png" />
-</div>
-</div>
-<p>OpenMV Camera Lateral (the x-axis)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.20 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.59</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.68</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.012164448830190381 0.0006524568008920347
-</pre></div>
-</div>
-<img alt="../_images/ICE6_LSE_9_1.png" src="../_images/ICE6_LSE_9_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.15 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.39</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.61</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.076</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">2.45</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01195889549443429 0.0012219816850676558
-</pre></div>
-</div>
-<img alt="../_images/ICE6_LSE_10_1.png" src="../_images/ICE6_LSE_10_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.25 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.64</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.79</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> <span class="mf">2.43</span><span class="p">,</span> <span class="mf">3.29</span><span class="p">,</span> <span class="mf">4.01</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.011768598437105551 0.0016262063294909554
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;height (m)&#39;)
 </pre></div>
 </div>
 <img alt="../_images/ICE6_LSE_11_1.png" src="../_images/ICE6_LSE_11_1.png" />
 </div>
 </div>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">#</a></h2>
+<p><strong>Submit your code and the output plot in Gradescope (not Bitbucket).</strong></p>
+<section id="deliverable-1">
+<h3>Deliverable 1<a class="headerlink" href="#deliverable-1" title="Permalink to this headline">#</a></h3>
+<p>Find <span class="math notranslate nohighlight">\(\mathbf{q}\)</span> and provide a plot of the fitted line with the measurements. Your plots must have correct labels, units, and legend.</p>
+<p>You can use <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE6_LSE.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a> to run this program and download the figures. The following code snippet will be useful.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> 
+
+<span class="kn">import</span> <span class="nn">google.colab.files</span>  
+<span class="n">google</span><span class="o">.</span><span class="n">colab</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> 
+</pre></div>
+</div>
+</section>
+<section id="deliverable-2">
+<h3>Deliverable 2<a class="headerlink" href="#deliverable-2" title="Permalink to this headline">#</a></h3>
+<p>Suppose you had a capacitor that you wanted to find its value. You constructed an RC circuit and applied a DC voltage. A few seconds later, you disconnected the power source and measured the voltage across the capactor.</p>
+<p>The voltage across a capacitor in an RC circuit is given by
+<span class="math notranslate nohighlight">\(v(t) = v_0 e^{-t/\tau}, t\geq 0\)</span></p>
+<p>Find the time constant <span class="math notranslate nohighlight">\(\tau\)</span> that best fits the model.  If the resistor in the circuit is  1 k<span class="math notranslate nohighlight">\(\Omega\)</span>, what is the value of the capacitor?  The time constant in an RC circuit is <span class="math notranslate nohighlight">\(\tau = RC\)</span>.</p>
+<p>Hint: Use the logarithm to find a linear function of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Use the following measurements of <span class="math notranslate nohighlight">\(v(t)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.15, 0.20, and 0.25 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.59</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.68</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.39</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.61</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.076</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">2.45</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.64</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.79</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> <span class="mf">2.43</span><span class="p">,</span> <span class="mf">3.29</span><span class="p">,</span> <span class="mf">4.01</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.01244283</span><span class="p">,</span> <span class="mf">4.88438776</span><span class="p">,</span> <span class="mf">4.61866927</span><span class="p">,</span> <span class="mf">4.60894011</span><span class="p">,</span> <span class="mf">4.41004693</span><span class="p">,</span>
+       <span class="mf">4.23826769</span><span class="p">,</span> <span class="mf">4.14274337</span><span class="p">,</span> <span class="mf">4.00588297</span><span class="p">,</span> <span class="mf">3.88199414</span><span class="p">,</span> <span class="mf">3.70225232</span><span class="p">,</span>
+       <span class="mf">3.58355439</span><span class="p">,</span> <span class="mf">3.43455927</span><span class="p">,</span> <span class="mf">3.30474357</span><span class="p">,</span> <span class="mf">3.18078036</span><span class="p">,</span> <span class="mf">3.07476507</span><span class="p">,</span>
+       <span class="mf">2.96726969</span><span class="p">,</span> <span class="mf">2.89063642</span><span class="p">,</span> <span class="mf">2.80789063</span><span class="p">,</span> <span class="mf">2.69423508</span><span class="p">,</span> <span class="mf">2.49191736</span><span class="p">,</span>
+       <span class="mf">2.50954028</span><span class="p">,</span> <span class="mf">2.44712497</span><span class="p">,</span> <span class="mf">2.38835945</span><span class="p">,</span> <span class="mf">2.30025698</span><span class="p">,</span> <span class="mf">2.13790825</span><span class="p">,</span>
+       <span class="mf">2.01659547</span><span class="p">,</span> <span class="mf">2.07912399</span><span class="p">,</span> <span class="mf">2.00577069</span><span class="p">,</span> <span class="mf">1.92508211</span><span class="p">,</span> <span class="mf">1.7565095</span> <span class="p">,</span>
+       <span class="mf">1.7865158</span> <span class="p">,</span> <span class="mf">1.78987426</span><span class="p">,</span> <span class="mf">1.56199575</span><span class="p">,</span> <span class="mf">1.72613664</span><span class="p">,</span> <span class="mf">1.58584813</span><span class="p">,</span>
+       <span class="mf">1.51952741</span><span class="p">,</span> <span class="mf">1.49326173</span><span class="p">,</span> <span class="mf">1.40786616</span><span class="p">,</span> <span class="mf">1.32605959</span><span class="p">,</span> <span class="mf">1.22720959</span><span class="p">,</span>
+       <span class="mf">1.19448915</span><span class="p">,</span> <span class="mf">1.20467148</span><span class="p">,</span> <span class="mf">1.12784961</span><span class="p">,</span> <span class="mf">1.1784009</span> <span class="p">,</span> <span class="mf">1.10309822</span><span class="p">,</span>
+       <span class="mf">1.09199671</span><span class="p">,</span> <span class="mf">1.05440677</span><span class="p">,</span> <span class="mf">0.92322795</span><span class="p">,</span> <span class="mf">0.95694284</span><span class="p">,</span> <span class="mf">0.90854489</span><span class="p">,</span>
+       <span class="mf">0.97174071</span><span class="p">,</span> <span class="mf">0.81287511</span><span class="p">,</span> <span class="mf">0.82147023</span><span class="p">,</span> <span class="mf">0.8520071</span> <span class="p">,</span> <span class="mf">0.86750312</span><span class="p">,</span>
+       <span class="mf">0.70163675</span><span class="p">,</span> <span class="mf">0.77931194</span><span class="p">,</span> <span class="mf">0.73922824</span><span class="p">,</span> <span class="mf">0.69029541</span><span class="p">,</span> <span class="mf">0.6377564</span> <span class="p">,</span>
+       <span class="mf">0.58477345</span><span class="p">,</span> <span class="mf">0.61595619</span><span class="p">,</span> <span class="mf">0.59972651</span><span class="p">,</span> <span class="mf">0.51719116</span><span class="p">,</span> <span class="mf">0.50915179</span><span class="p">,</span>
+       <span class="mf">0.57589605</span><span class="p">,</span> <span class="mf">0.5485081</span> <span class="p">,</span> <span class="mf">0.51194423</span><span class="p">,</span> <span class="mf">0.50774903</span><span class="p">,</span> <span class="mf">0.46536343</span><span class="p">,</span>
+       <span class="mf">0.40064362</span><span class="p">,</span> <span class="mf">0.4548967</span> <span class="p">,</span> <span class="mf">0.37060314</span><span class="p">,</span> <span class="mf">0.44504432</span><span class="p">,</span> <span class="mf">0.40862983</span><span class="p">,</span>
+       <span class="mf">0.38155415</span><span class="p">,</span> <span class="mf">0.32950763</span><span class="p">,</span> <span class="mf">0.38447669</span><span class="p">,</span> <span class="mf">0.31214141</span><span class="p">,</span> <span class="mf">0.29181047</span><span class="p">,</span>
+       <span class="mf">0.24943998</span><span class="p">,</span> <span class="mf">0.28925818</span><span class="p">,</span> <span class="mf">0.22684326</span><span class="p">,</span> <span class="mf">0.25104928</span><span class="p">,</span> <span class="mf">0.24648863</span><span class="p">,</span>
+       <span class="mf">0.29750812</span><span class="p">,</span> <span class="mf">0.16686111</span><span class="p">,</span> <span class="mf">0.26215788</span><span class="p">,</span> <span class="mf">0.17941954</span><span class="p">,</span> <span class="mf">0.25641971</span><span class="p">,</span>
+       <span class="mf">0.17907152</span><span class="p">,</span> <span class="mf">0.22507161</span><span class="p">,</span> <span class="mf">0.1988562</span> <span class="p">,</span> <span class="mf">0.26396801</span><span class="p">,</span> <span class="mf">0.17906211</span><span class="p">,</span>
+       <span class="mf">0.18801865</span><span class="p">,</span> <span class="mf">0.16303685</span><span class="p">,</span> <span class="mf">0.19193568</span><span class="p">,</span> <span class="mf">0.18761862</span><span class="p">,</span> <span class="mf">0.12386653</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (sec)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;voltage (V)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.011957625369020303 0.0011718472861639983
-</pre></div>
-</div>
-<img alt="../_images/ICE6_LSE_12_1.png" src="../_images/ICE6_LSE_12_1.png" />
+<img alt="../_images/ICE6_LSE_15_0.png" src="../_images/ICE6_LSE_15_0.png" />
 </div>
 </div>
+<p>Report the time constant <span class="math notranslate nohighlight">\(\tau\)</span> and the capacitance <span class="math notranslate nohighlight">\(C\)</span> and submit a plot of the fitted line with the measurements.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -655,13 +764,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">🚩 P1: Inverse Kinematics</p>
+            <p class="prev-next-title">🔬 Project1: Inverse Kinematics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="P2_VisionBasedManipulator.html" title="next page">
+    <a class='right-next' id="next-link" href="Lab3_CameraCalibration.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🚩 P2: Robot with Computer Vision</p>
+        <p class="prev-next-title">❄️ Lab3: Camera Calibration</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
