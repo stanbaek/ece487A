@@ -198,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="P2_VisionBasedManipulator.html">
-   🚩 P2: Robot with Computer Vision
+   🔬 P2: Vision-Based Control
   </a>
  </li>
 </ul>
@@ -323,6 +323,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#least-sqaures-regression">
+   Least Sqaures Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#free-fall-example">
    Free fall example
   </a>
@@ -365,6 +370,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#least-sqaures-regression">
+   Least Sqaures Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#free-fall-example">
    Free fall example
   </a>
@@ -400,10 +410,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>❄️ ICE6: Least Squares<a class="headerlink" href="#ice6-least-squares" title="Permalink to this headline">¶</a></h1>
 <p><strong>A note on this document</strong>
 This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy-to-read format. Blocks can contain text or executable code. To run the executable code in this notebook, click <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/ICE6_LSE.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
-. For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
-<p>Consider a set of measurements <span class="math notranslate nohighlight">\(\mathbf{y} = (y_1, y_2, \cdots, y_n)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \cdots, x_n)\)</span>.</p>
-<p>We want to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that our linear model, <span class="math notranslate nohighlight">\(y = mx+b\)</span>, best fits the measurements.</p>
-<p>Let’s plot the measurements.</p>
+For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+<div class="section" id="least-sqaures-regression">
+<h2>Least Sqaures Regression<a class="headerlink" href="#least-sqaures-regression" title="Permalink to this headline">¶</a></h2>
+<p>We need to solve a least squares regression problem to find a linear equation that best fits the measured data. Let the measured data is given by <span class="math notranslate nohighlight">\(\mathbf{y} = (y_1, y_2, \cdots, y_n)\)</span> and the corresponding values are given by <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \cdots, x_n)\)</span>.</p>
+<p>The goal is to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\(y = mx + b\)</span> best approximates the linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Let’s first plot the data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -465,12 +477,14 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.96 -0.89]
-0.9599999999999999 -0.8899999999999998
+0.9599999999999997 -0.8899999999999996
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s plot the line, <span class="math notranslate nohighlight">\(y = mx + b\)</span> with the values we just found.</p>
+<p>With <span class="math notranslate nohighlight">\(m=0.96\)</span> and <span class="math notranslate nohighlight">\(b=-0.89\)</span>, the best fitting line is</p>
+<p><span class="math notranslate nohighlight">\(y = 0.96x-0.89\)</span></p>
+<p>Let’s plot the line, <span class="math notranslate nohighlight">\(y = mx + b\)</span> along with the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -483,6 +497,7 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/ICE6_LSE_9_0.png" src="../_images/ICE6_LSE_9_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="free-fall-example">
