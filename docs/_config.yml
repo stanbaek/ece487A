@@ -42,6 +42,8 @@ output:
     number_sections: true
    
 parse:
+  myst_substitutions:
+      sub3: My _global_ value!
   myst_enable_extensions:
     # for parsing of dollar $ and $$ encapsulated math.
     - dollarmath
@@ -56,6 +58,12 @@ parse:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
     - html_image
+    - deflist
+    - html_admonition
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
 
 #######################################################################################
 # Advanced and power-user settings
