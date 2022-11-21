@@ -15,19 +15,6 @@ In this project, you will
 :align: center
 ```
 
-## AprilTags
-
-AprilTag is a visual fiducial system, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration. We will learn how fiducial markers are used in image processing. Specifically, we will utilize MicroPython to identify different AprilTags and use the 3D position and orientation to determine the distance of an object from the camera.
-
-```{image} ./figures/AprilTags.png
-:width: 500
-:align: center
-```
-
-A fiducial marker is an artificial feature used in creating controllable experiments, ground truthing, and in simplifying the development of systems where perception is not the central objective. A few examples of fiducial markers include ArUco Markers, AprilTags, and QR codes. Each of these different tags hold information such as an ID or, in the case of QR codes, websites, messages, and etc. We will primarily be focusing on AprilTags as there is a very robust Python package already built. This library identifies AprilTags and will provide information about the tags size, distance, and orientation.
-
-ref: https://april.eecs.umich.edu/software/apriltag
-
 
 ## 💻 Procedure
 
