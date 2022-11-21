@@ -53,6 +53,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -337,6 +339,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure">
+   💻 Procedure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openmv-cam">
+     OpenMV Cam
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-openmv-micropython">
+     Update OpenMV MicroPython
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -374,6 +393,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure">
+   💻 Procedure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openmv-cam">
+     OpenMV Cam
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-openmv-micropython">
+     Update OpenMV MicroPython
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -392,12 +428,6 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this lab is to calibrate the OpenMV camera that will be used in your Project 2.</p>
-<p>In this project, you will</p>
-<ul class="simple">
-<li><p>Use OpenMV camera to detect, identify, and localize multiple AprilTags.</p></li>
-<li><p>Write a Python script to search for blocks and find the locations of the blocks using the AprilTags attached on them.</p></li>
-<li><p>Write a Python script for the robotic arm to move the blocks.</p></li>
-</ul>
 <a class="reference internal image-reference" href="../_images/AprilTagBlocks.jpg"><img alt="../_images/AprilTagBlocks.jpg" class="align-center" src="../_images/AprilTagBlocks.jpg" style="width: 500px;" /></a>
 </div>
 <div class="section" id="background">
@@ -408,17 +438,73 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <a class="reference internal image-reference" href="../_images/AprilTags.png"><img alt="../_images/AprilTags.png" class="align-center" src="../_images/AprilTags.png" style="width: 500px;" /></a>
 <p>A fiducial marker is an artificial feature used in creating controllable experiments, ground truthing, and in simplifying the development of systems where perception is not the central objective. A few examples of fiducial markers include ArUco Markers, AprilTags, and QR codes. Each of these different tags hold information such as an ID or, in the case of QR codes, websites, messages, and etc. We will primarily be focusing on AprilTags as there is a very robust Python package already built. This library identifies AprilTags and will provide information about the tags size, distance, and orientation.</p>
 <p>ref: <a class="reference external" href="https://april.eecs.umich.edu/software/apriltag">https://april.eecs.umich.edu/software/apriltag</a></p>
-<p>OpenMV Camera depth (the z-axis)</p>
+</div>
+</div>
+<div class="section" id="procedure">
+<h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><strong>Read this page thoroughly.</strong></p></li>
+<li><p>Then, go to Colab by clicking the icon at the end of this page and complete the sensor calibration. <strong>AR means action required in Colab.</strong></p></li>
+</ol>
+<div class="section" id="openmv-cam">
+<h3>OpenMV Cam<a class="headerlink" href="#openmv-cam" title="Permalink to this headline">¶</a></h3>
+<p>Go to <a class="reference external" href="https://openmv.io/pages/download">https://openmv.io/pages/download</a> to download the latest OpenMV IDE.  Install the software on your computer.</p>
+<ul class="simple">
+<li><p>Connect the camera to your computer and run the software.</p></li>
+<li><p>Download <code class="docutils literal notranslate"><span class="pre">find_apriltags_3d_pose_4.py</span></code> from Teams.</p></li>
+<li><p>In OpenMV IDE, go to File &gt; Open File and select <code class="docutils literal notranslate"><span class="pre">find_apriltags_3d_pose_4.py</span></code> to load.</p></li>
+<li><p>Click the Connect button on the bottom left of the IDE.</p></li>
+<li><p>Click the Start button (green arrow).</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Serial</span> <span class="pre">Terminal</span></code> tab at the bottom of the window.</p></li>
+<li><p>Bring in blocks under the camera to detect them.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/DetectingBlock.png"><img alt="../_images/DetectingBlock.png" class="align-center" src="../_images/DetectingBlock.png" style="width: 350px;" /></a>
+<p>On Serial Terminal, you will find numbers similar to</p>
+<p><code class="docutils literal notranslate"><span class="pre">2,3,4.041906,-1.517668,-9.712036,181.984062,358.371687,224.128056,4,5.561428,1.540591,-9.330090,160.538206,354.057860,201.279116</span></code></p>
+<p>The descriptions of the data fields are as follows.</p>
+<ul class="simple">
+<li><p>Field 1: Number of AprilTags detected.</p></li>
+<li><p>Field 2: AprilTag ID</p></li>
+<li><p>Field 3: x value</p></li>
+<li><p>Field 4: y value</p></li>
+<li><p>Field 5: z value</p></li>
+<li><p>Field 6: Rx value</p></li>
+<li><p>Field 7: Ry value</p></li>
+<li><p>Field 8: Rz value</p></li>
+<li><p>Field 9: AprilTag ID (if there are more than 1 AprilTag)</p></li>
+<li><p>Field 10: x value</p></li>
+<li><p>Field 11: y value</p></li>
+<li><p>Field 12: z value</p></li>
+<li><p>Field 13: Rx value</p></li>
+<li><p>Field 14: Ry value</p></li>
+<li><p>Field 15: Rz value</p></li>
+<li><p>:</p></li>
+<li><p>:</p></li>
+</ul>
+<p>The values are based on large-sized AprilTags. So, the distances returned by the program must be scaled. For example, <span class="math notranslate nohighlight">\(z = -9.712\)</span> m is incorrect, and it shoud probably be 11 cm. So, we need to find the scale factor and offset.</p>
+<p>We need to solve a least squares regression problem to find a linear equation that best fits the measured data.</p>
+<p>The goal is to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\( d = mz + b \)</span> best approximates the linear relationship between <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(z\)</span>, where <span class="math notranslate nohighlight">\(d\)</span> is the actual distance between the camera lenz and the block and <span class="math notranslate nohighlight">\(z\)</span> is the OpenMV output.</p>
+<p>Place the camera at the orign and a block with an AprilTag at <span class="math notranslate nohighlight">\((x,y)\)</span> = (10, 0) cm. Place the block on top of another block for 1 inch above the ground.</p>
+<p>As you move the block 1 cm in the camera’s <span class="math notranslate nohighlight">\(z\)</span> direction at a time, record the <span class="math notranslate nohighlight">\(z\)</span> values returned by the apriltag detection in OpenMV IDE.  The <span class="math notranslate nohighlight">\(x\)</span> direction on the grid is the <span class="math notranslate nohighlight">\(-z\)</span> direction of the camera.</p>
+<p><strong>AR: Take measurements and put them in the array below</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="c1"># add your measurements here</span>
-<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.23</span><span class="p">,</span> <span class="mf">5.76</span><span class="p">,</span> <span class="mf">6.25</span><span class="p">,</span> <span class="mf">6.72</span><span class="p">,</span> <span class="mf">7.25</span><span class="p">,</span> <span class="mf">7.76</span><span class="p">,</span> <span class="mf">8.25</span><span class="p">,</span> <span class="mf">8.76</span><span class="p">,</span> <span class="mf">9.30</span><span class="p">,</span> <span class="mf">9.78</span><span class="p">,</span> <span class="mf">10.31</span><span class="p">,</span> <span class="mf">10.75</span><span class="p">,</span> <span class="mf">11.33</span><span class="p">,</span> <span class="mf">11.80</span><span class="p">,</span> <span class="mf">12.36</span><span class="p">,</span> <span class="mf">12.89</span><span class="p">,</span> <span class="mf">13.40</span><span class="p">,</span> <span class="mf">13.91</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># Distances from 8 cm to 23 cm</span>
+<span class="c1"># Change the range if needed</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>  
+<span class="c1"># Add your measurements here</span>
+<span class="c1"># Do not add negative signs, e.g.,</span>
+<span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.14</span><span class="p">,</span> <span class="mf">4.67</span><span class="p">,</span> <span class="mf">5.16</span><span class="p">,</span> <span class="mf">5.63</span><span class="p">,</span> <span class="mf">6.13</span><span class="p">,</span> <span class="mf">6.64</span><span class="p">,</span> <span class="mf">7.12</span><span class="p">,</span> <span class="mf">7.65</span><span class="p">,</span> <span class="mf">8.13</span><span class="p">,</span> <span class="mf">8.69</span><span class="p">,</span> <span class="mf">9.18</span><span class="p">,</span> <span class="mf">9.73</span><span class="p">,</span> <span class="mf">10.28</span><span class="p">,</span> <span class="mf">10.70</span><span class="p">,</span> <span class="mf">11.30</span><span class="p">,</span> <span class="mf">11.83</span><span class="p">])</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;AprilTag output (no unit)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual distance (m)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -426,23 +512,27 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.019609726398893156 -0.0021748384774351597
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.0195674513003242 -0.00029218538219802267
 </pre></div>
 </div>
-<img alt="../_images/Lab3_CameraCalibration_11_1.png" src="../_images/Lab3_CameraCalibration_11_1.png" />
+<img alt="../_images/Lab3_CameraCalibration_5_1.png" src="../_images/Lab3_CameraCalibration_5_1.png" />
 </div>
 </div>
-<p>OpenMV Camera Lateral (the x-axis)</p>
+<p>Repeat the same for the <span class="math notranslate nohighlight">\(x\)</span> direction (horizontal direction) of the camera - It is the <span class="math notranslate nohighlight">\(y\)</span> direction of the grid. You can ignore the offset this time, because the pixel at the center of the image is always <span class="math notranslate nohighlight">\((x, y)\)</span> = (0,0).  The offset you observe while taking measurements are due to the misalignment of the camera’s <span class="math notranslate nohighlight">\(x-y\)</span> plane and the grid’s <span class="math notranslate nohighlight">\(x-y\)</span> plane.</p>
+<p>You don’t have to repeat it for camera’s <span class="math notranslate nohighlight">\(y\)</span> direction (vertical direction). We can use the same fitting values for the <span class="math notranslate nohighlight">\(x\)</span> direction. They should be them same theoretically.</p>
+<p><strong>AR: Take measurements and put them in the array below</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.20 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.59</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.68</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.34</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">1.68</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">3.28</span><span class="p">,</span> <span class="mf">4.12</span><span class="p">])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;AprilTag output (no unit)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual distance (m)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -450,82 +540,37 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.012164448830190381 0.0006524568008920347
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01165609905756856 0.001229188627889056
 </pre></div>
 </div>
-<img alt="../_images/Lab3_CameraCalibration_13_1.png" src="../_images/Lab3_CameraCalibration_13_1.png" />
+<img alt="../_images/Lab3_CameraCalibration_7_1.png" src="../_images/Lab3_CameraCalibration_7_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.15 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.39</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.61</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.076</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">2.45</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+<div class="section" id="update-openmv-micropython">
+<h3>Update OpenMV MicroPython<a class="headerlink" href="#update-openmv-micropython" title="Permalink to this headline">¶</a></h3>
+<p>Since we are not going to use the orientation of AprilTags, we don’t have to send it to the PC.  Update the mz, bz, mx, my values in your MicroPython code.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tag_output</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">num_tags</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># mz is the slope for the z direction</span>
+<span class="c1"># bz is the offset for the z direction</span>
+<span class="c1"># mx is the slope for the x direction</span>
+<span class="c1"># my is the slope for the y direction, and it should be the same as mx</span>
+<span class="n">mz</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">bz</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mx</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">my</span> <span class="o">=</span> <span class="mi">1</span>  
+
+
+<span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">()</span>
+    <span class="p">:</span>
+    <span class="p">:</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01195889549443429 0.0012219816850676558
-</pre></div>
-</div>
-<img alt="../_images/Lab3_CameraCalibration_14_1.png" src="../_images/Lab3_CameraCalibration_14_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.25 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.64</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.79</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> <span class="mf">2.43</span><span class="p">,</span> <span class="mf">3.29</span><span class="p">,</span> <span class="mf">4.01</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.011768598437105551 0.0016262063294909554
-</pre></div>
-</div>
-<img alt="../_images/Lab3_CameraCalibration_15_1.png" src="../_images/Lab3_CameraCalibration_15_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.15, 0.20, and 0.25 m away</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.59</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.68</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">1.61</span><span class="p">,</span> <span class="mf">2.40</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.39</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.41</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.61</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.076</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">1.58</span><span class="p">,</span> <span class="mf">2.45</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.38</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.64</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.79</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> <span class="mf">2.43</span><span class="p">,</span> <span class="mf">3.29</span><span class="p">,</span> <span class="mf">4.01</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.011957625369020303 0.0011718472861639983
-</pre></div>
-</div>
-<img alt="../_images/Lab3_CameraCalibration_16_1.png" src="../_images/Lab3_CameraCalibration_16_1.png" />
-</div>
-</div>
+<p>Save the code to OpenMV cam as shown below</p>
+<a class="reference internal image-reference" href="../_images/OpenMV_SaveToCam.png"><img alt="../_images/OpenMV_SaveToCam.png" class="align-center" src="../_images/OpenMV_SaveToCam.png" style="width: 350px;" /></a>
 </div>
 </div>
 </div>

@@ -16,51 +16,6 @@ In this project, you will
 ```
 
 
-## 💻 Procedure
-
-### OpenMV Cam
-
-Go to https://openmv.io/pages/download to download the latest OpenMV IDE.  Install the software on your computer.
-
-- Connect the camera to your computer and run the software. 
-- Download `find_apriltags_3d_pose_4.py` from Teams.
-- In OpenMV IDE, go to File > Open File and select `find_apriltags_3d_pose_4.py` to load.
-- Click the Connect button on the bottom left of the IDE.  
-- Click the Start button (green arrow).
-- Click the `Serial Terminal` tab at the bottom of the window.
-- Bring in blocks under the camera to detect them.
-
-
-```{image} ./figures/DetectingBlock.png
-:width: 350
-:align: center
-```
-
-On Serial Terminal, you will find numbers similar to
-
-`2,3,4.041906,-1.517668,-9.712036,181.984062,358.371687,224.128056,4,5.561428,1.540591,-9.330090,160.538206,354.057860,201.279116`
-
-The descriptions of the data fields are as follows.
-- Field 1: Number of AprilTags detected.
-- Field 2: AprilTag ID
-- Field 3: x value
-- Field 4: y value
-- Field 5: z value
-- Field 6: Rx value
-- Field 7: Ry value
-- Field 8: Rz value
-- Field 9: AprilTag ID
-- Field 10: x value
-- Field 11: y value
-- Field 12: z value
-- Field 13: Rx value
-- Field 14: Ry value
-- Field 15: Rz value
--    :
--    :
-
-The values are based on large-sized AprilTags. So, the distances returned by the program must be scaled. For example, $z = -9.712$ m is incorrect, and it shoud probably be 11 cm. So, we need to find the scale factor and offset.  
-
 
 ### Least Sqaures Regression
 
@@ -73,24 +28,9 @@ and the corresponding values are given by
 
 $$ x = [0, 1, 2, 3]$$
 
-The goal is to find $m$ and $c$ such that 
-
-$$ y = mx + c $$ best approximates the linear relationship between $x$ and $y$.
 
 Let's first plot the data
 
-```Python
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.array([0, 1, 2, 3])
-y = np.array([-10, 4, 7, 21])
-
-plt.plot(x, y, 'o', markersize=10)
-plt.grid('on')
-plt.show()
-
-```
 
 
 ### Deliverable 1 (25 points)

@@ -309,17 +309,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#objectives">
    Objectives
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   💻 Procedure
-  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#openmv-cam">
-     OpenMV Cam
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#least-sqaures-regression">
      Least Sqaures Regression
@@ -366,17 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#objectives">
    Objectives
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedure">
-   💻 Procedure
-  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#openmv-cam">
-     OpenMV Cam
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#least-sqaures-regression">
      Least Sqaures Regression
@@ -420,46 +400,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Write a Python script for the robotic arm to move the blocks.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/AprilTagBlocks.jpg"><img alt="../_images/AprilTagBlocks.jpg" class="align-center" src="../_images/AprilTagBlocks.jpg" style="width: 500px;" /></a>
-</div>
-<div class="section" id="procedure">
-<h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="openmv-cam">
-<h3>OpenMV Cam<a class="headerlink" href="#openmv-cam" title="Permalink to this headline">¶</a></h3>
-<p>Go to <a class="reference external" href="https://openmv.io/pages/download">https://openmv.io/pages/download</a> to download the latest OpenMV IDE.  Install the software on your computer.</p>
-<ul class="simple">
-<li><p>Connect the camera to your computer and run the software.</p></li>
-<li><p>Download <code class="docutils literal notranslate"><span class="pre">find_apriltags_3d_pose_4.py</span></code> from Teams.</p></li>
-<li><p>In OpenMV IDE, go to File &gt; Open File and select <code class="docutils literal notranslate"><span class="pre">find_apriltags_3d_pose_4.py</span></code> to load.</p></li>
-<li><p>Click the Connect button on the bottom left of the IDE.</p></li>
-<li><p>Click the Start button (green arrow).</p></li>
-<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Serial</span> <span class="pre">Terminal</span></code> tab at the bottom of the window.</p></li>
-<li><p>Bring in blocks under the camera to detect them.</p></li>
-</ul>
-<a class="reference internal image-reference" href="../_images/DetectingBlock.png"><img alt="../_images/DetectingBlock.png" class="align-center" src="../_images/DetectingBlock.png" style="width: 350px;" /></a>
-<p>On Serial Terminal, you will find numbers similar to</p>
-<p><code class="docutils literal notranslate"><span class="pre">2,3,4.041906,-1.517668,-9.712036,181.984062,358.371687,224.128056,4,5.561428,1.540591,-9.330090,160.538206,354.057860,201.279116</span></code></p>
-<p>The descriptions of the data fields are as follows.</p>
-<ul class="simple">
-<li><p>Field 1: Number of AprilTags detected.</p></li>
-<li><p>Field 2: AprilTag ID</p></li>
-<li><p>Field 3: x value</p></li>
-<li><p>Field 4: y value</p></li>
-<li><p>Field 5: z value</p></li>
-<li><p>Field 6: Rx value</p></li>
-<li><p>Field 7: Ry value</p></li>
-<li><p>Field 8: Rz value</p></li>
-<li><p>Field 9: AprilTag ID</p></li>
-<li><p>Field 10: x value</p></li>
-<li><p>Field 11: y value</p></li>
-<li><p>Field 12: z value</p></li>
-<li><p>Field 13: Rx value</p></li>
-<li><p>Field 14: Ry value</p></li>
-<li><p>Field 15: Rz value</p></li>
-<li><p>:</p></li>
-<li><p>:</p></li>
-</ul>
-<p>The values are based on large-sized AprilTags. So, the distances returned by the program must be scaled. For example, <span class="math notranslate nohighlight">\(z = -9.712\)</span> m is incorrect, and it shoud probably be 11 cm. So, we need to find the scale factor and offset.</p>
-</div>
 <div class="section" id="least-sqaures-regression">
 <h3>Least Sqaures Regression<a class="headerlink" href="#least-sqaures-regression" title="Permalink to this headline">¶</a></h3>
 <p>We need to solve a least squares regression problem to find a linear equation that best fits the measured data.
@@ -469,20 +409,7 @@ Let the measured data is given by</p>
 <p>and the corresponding values are given by</p>
 <div class="math notranslate nohighlight">
 \[ x = [0, 1, 2, 3]\]</div>
-<p>The goal is to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> such that</p>
-<p>$<span class="math notranslate nohighlight">\( y = mx + c \)</span><span class="math notranslate nohighlight">\( best approximates the linear relationship between \)</span>x<span class="math notranslate nohighlight">\( and \)</span>y$.</p>
 <p>Let’s first plot the data</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="deliverable-1-25-points">
 <h3>Deliverable 1 (25 points)<a class="headerlink" href="#deliverable-1-25-points" title="Permalink to this headline">¶</a></h3>
