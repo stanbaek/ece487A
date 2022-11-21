@@ -198,7 +198,7 @@ def test_search_for_blocks():
     robot.search_for_blocks(duration_ms, pose, steps)
 ```
 
-## 🚚 Deliverable
+## 🚚 Deliverables
 
 ###  Deliverable 1 (10 points)
 

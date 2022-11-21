@@ -356,6 +356,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   🚚 Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-1-50-points">
+     Deliverable 1 (50 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-2-points">
+     Deliverable 2 (??? points)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -410,6 +427,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deliverables">
+   🚚 Deliverables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-1-50-points">
+     Deliverable 1 (50 points)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deliverable-2-points">
+     Deliverable 2 (??? points)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -425,6 +459,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>A note on this document</strong>
 This document is known as a Jupyter notebook; it is used in academia and industry to allow text and executable code to coexist in a very easy to read format. Blocks can contain text or executable code. To run the executable code in this notebook, click <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/Lab3_CameraCalibration.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
 . For blocks containing code, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code>, or click the arrow on the block to run the code. Earlier blocks of code need to be run for the later blocks of code to work.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Interactive matplotlib figures do not seem to work properly in jupyter notebook and Google Colab. ```</p>
+</div>
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this lab is to calibrate the OpenMV camera that will be used in your Project 2.</p>
@@ -434,9 +472,9 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="apriltags">
 <h3>AprilTags<a class="headerlink" href="#apriltags" title="Permalink to this headline">¶</a></h3>
-<p>AprilTag is a visual fiducial system, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration. We will learn how fiducial markers are used in image processing. Specifically, we will utilize MicroPython to identify different AprilTags and use the 3D position and orientation to determine the distance of an object from the camera.</p>
+<p>AprilTag is a visual fiducial system, useful for various tasks, including augmented reality, robotics, and camera calibration. We will learn how fiducial markers are used in image processing. Specifically, we will utilize MicroPython to identify different AprilTags and use the 3D position and orientation to determine the distance of an object from the camera.</p>
 <a class="reference internal image-reference" href="../_images/AprilTags.png"><img alt="../_images/AprilTags.png" class="align-center" src="../_images/AprilTags.png" style="width: 500px;" /></a>
-<p>A fiducial marker is an artificial feature used in creating controllable experiments, ground truthing, and in simplifying the development of systems where perception is not the central objective. A few examples of fiducial markers include ArUco Markers, AprilTags, and QR codes. Each of these different tags hold information such as an ID or, in the case of QR codes, websites, messages, and etc. We will primarily be focusing on AprilTags as there is a very robust Python package already built. This library identifies AprilTags and will provide information about the tags size, distance, and orientation.</p>
+<p>A fiducial marker is an artificial feature used in creating controllable experiments, ground truthing, and simplifying systems development where perception is not the central objective. Examples of fiducial markers include ArUco Markers, AprilTags, and QR codes. Each of these different tags holds information such as an ID or, in the case of QR codes, websites, messages, etc. We will primarily focus on AprilTags as a very robust Python package is already built. This library identifies AprilTags and will provide information about the tag’s size, distance, and orientation.</p>
 <p>ref: <a class="reference external" href="https://april.eecs.umich.edu/software/apriltag">https://april.eecs.umich.edu/software/apriltag</a></p>
 </div>
 </div>
@@ -481,12 +519,16 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <li><p>:</p></li>
 <li><p>:</p></li>
 </ul>
-<p>The values are based on large-sized AprilTags. So, the distances returned by the program must be scaled. For example, <span class="math notranslate nohighlight">\(z = -9.712\)</span> m is incorrect, and it shoud probably be 11 cm. So, we need to find the scale factor and offset.</p>
-<p>We need to solve a least squares regression problem to find a linear equation that best fits the measured data.</p>
-<p>The goal is to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\( d = mz + b \)</span> best approximates the linear relationship between <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(z\)</span>, where <span class="math notranslate nohighlight">\(d\)</span> is the actual distance between the camera lenz and the block and <span class="math notranslate nohighlight">\(z\)</span> is the OpenMV output.</p>
-<p>Place the camera at the orign and a block with an AprilTag at <span class="math notranslate nohighlight">\((x,y)\)</span> = (10, 0) cm. Place the block on top of another block for 1 inch above the ground.</p>
+<p>The values are based on large-sized AprilTags. So, the distances returned by the program must be scaled. For example, <span class="math notranslate nohighlight">\(z = -9.712\)</span> is incorrect, and it should probably be 11 cm. So, we need to find the scale factor and offset.</p>
+<p>We must solve a least squares regression problem to find a linear equation that best fits the measured data.</p>
+<p>The goal is to find <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> such that <span class="math notranslate nohighlight">\( d = mz + b \)</span> best approximates the linear relationship between <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(z\)</span>, where <span class="math notranslate nohighlight">\(d\)</span> is the actual distance between the camera lens and the block and <span class="math notranslate nohighlight">\(z\)</span> is the OpenMV output.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your b should be close to 0.</p>
+</div>
+<p>Place the camera at the origin and a block with an AprilTag at <span class="math notranslate nohighlight">\((x,y)\)</span> = (10, 0) cm. Place the block on top of another block 1 inch above the ground.</p>
 <a class="reference internal image-reference" href="../_images/OpenMV_Calibration.png"><img alt="../_images/OpenMV_Calibration.png" class="align-center" src="../_images/OpenMV_Calibration.png" style="width: 350px;" /></a>
-<p>As you move the block 1 cm in the camera’s <span class="math notranslate nohighlight">\(z\)</span> direction at a time, record the <span class="math notranslate nohighlight">\(z\)</span> values returned by the apriltag detection in OpenMV IDE.  The <span class="math notranslate nohighlight">\(x\)</span> direction on the grid is the <span class="math notranslate nohighlight">\(-z\)</span> direction of the camera.</p>
+<p>As you move the block 1 cm in the camera’s <span class="math notranslate nohighlight">\(z\)</span> direction at a time, record the <span class="math notranslate nohighlight">\(z\)</span> values returned by the April tag detection in OpenMV IDE.  The <span class="math notranslate nohighlight">\(x\)</span> direction on the grid is the <span class="math notranslate nohighlight">\(-z\)</span> direction of the camera.</p>
 <p><strong>AR: Take measurements and put them in the array below</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,52 +541,23 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 <span class="c1"># Do not add negative signs, e.g.,</span>
 <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.14</span><span class="p">,</span> <span class="mf">4.67</span><span class="p">,</span> <span class="mf">5.16</span><span class="p">,</span> <span class="mf">5.63</span><span class="p">,</span> <span class="mf">6.13</span><span class="p">,</span> <span class="mf">6.64</span><span class="p">,</span> <span class="mf">7.12</span><span class="p">,</span> <span class="mf">7.65</span><span class="p">,</span> <span class="mf">8.13</span><span class="p">,</span> <span class="mf">8.69</span><span class="p">,</span> <span class="mf">9.18</span><span class="p">,</span> <span class="mf">9.73</span><span class="p">,</span> <span class="mf">10.28</span><span class="p">,</span> <span class="mf">10.70</span><span class="p">,</span> <span class="mf">11.30</span><span class="p">,</span> <span class="mf">11.83</span><span class="p">])</span>
 
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;AprilTag output (no unit)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual distance (m)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Write your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.0195674513003242 -0.00029218538219802267
-</pre></div>
 </div>
-<img alt="../_images/Lab3_CameraCalibration_5_1.png" src="../_images/Lab3_CameraCalibration_5_1.png" />
-</div>
-</div>
-<p>Repeat the same for the <span class="math notranslate nohighlight">\(x\)</span> direction (horizontal direction) of the camera - It is the <span class="math notranslate nohighlight">\(y\)</span> direction of the grid. You can ignore the offset this time, because the pixel at the center of the image is always <span class="math notranslate nohighlight">\((x, y)\)</span> = (0,0).  The offset you observe while taking measurements are due to the misalignment of the camera’s <span class="math notranslate nohighlight">\(x-y\)</span> plane and the grid’s <span class="math notranslate nohighlight">\(x-y\)</span> plane.</p>
-<p>You don’t have to repeat it for camera’s <span class="math notranslate nohighlight">\(y\)</span> direction (vertical direction). We can use the same fitting values for the <span class="math notranslate nohighlight">\(x\)</span> direction. They should be them same theoretically.</p>
+<p>Repeat the same for the <span class="math notranslate nohighlight">\(x\)</span> direction (horizontal direction) of the camera - It is the <span class="math notranslate nohighlight">\(y\)</span> direction of the grid. You can ignore the offset this time because the pixel at the center of the image is always <span class="math notranslate nohighlight">\((x, y)\)</span> = (0,0).  The offset you observe while taking measurements is due to the misalignment of the camera’s <span class="math notranslate nohighlight">\(x-y\)</span> plane and the grid’s <span class="math notranslate nohighlight">\(x-y\)</span> plane.</p>
+<p>You don’t have to repeat it for the camera’s <span class="math notranslate nohighlight">\(y\)</span> direction (vertical direction). We can use the same fitting values for the <span class="math notranslate nohighlight">\(x\)</span> direction. They should be the same, theoretically.</p>
 <p><strong>AR: Take measurements and put them in the array below</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># At 0.20 m away</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">4.34</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.75</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.13</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">1.68</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mf">3.28</span><span class="p">,</span> <span class="mf">4.12</span><span class="p">])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measured data&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted line&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;AprilTag output (no unit)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Actual distance (m)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Write your code here</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01165609905756856 0.001229188627889056
-</pre></div>
-</div>
-<img alt="../_images/Lab3_CameraCalibration_7_1.png" src="../_images/Lab3_CameraCalibration_7_1.png" />
 </div>
 </div>
 </div>
@@ -572,6 +585,19 @@ This document is known as a Jupyter notebook; it is used in academia and industr
 </div>
 <p>Save the code to OpenMV cam as shown below</p>
 <a class="reference internal image-reference" href="../_images/OpenMV_SaveToCam.png"><img alt="../_images/OpenMV_SaveToCam.png" class="align-center" src="../_images/OpenMV_SaveToCam.png" style="width: 350px;" /></a>
+<p>Go to href=“https://colab.research.google.com/github/stanbaek/ece487/blob/main/docs/Labs/Lab3_CameraCalibration.ipynb”&gt;<img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+to write your code.</p>
+</div>
+</div>
+<div class="section" id="deliverables">
+<h2>🚚 Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deliverable-1-50-points">
+<h3>Deliverable 1 (50 points)<a class="headerlink" href="#deliverable-1-50-points" title="Permalink to this headline">¶</a></h3>
+<p>Provide the LSE plots for the x-axis and z-axis of the camera.  Provide the mz, bz, mx, and my values.</p>
+</div>
+<div class="section" id="deliverable-2-points">
+<h3>Deliverable 2 (??? points)<a class="headerlink" href="#deliverable-2-points" title="Permalink to this headline">¶</a></h3>
+<p>Have a very nice and relaxing holiday!</p>
 </div>
 </div>
 </div>
