@@ -1,12 +1,11 @@
-# 🔬 P2: Vision-Based Control
+# 🔬 Project2: Vision-Based Control
 
-
-## Objectives
+## 📌 Objectives
 
 The purpose of this project is to control the robotic arm using computer vision.
 
 In this project, you will  
-- Use OpenMV camera to detect, identify, and localize multiple AprilTags.
+- Use the OpenMV camera to detect, identify, and localize multiple AprilTags.
 - Write a Python script to search for blocks and find the locations of the blocks using the AprilTags attached on them.
 - Write a Python script for the robotic arm to move the blocks.
 
@@ -15,7 +14,18 @@ In this project, you will
 :align: center
 ```
 
-## Procedure
+## 💻 Procedure
+
+
+###
+
+
+```{image} ./figures/xArm_Cam.png
+:width: 500
+:align: center
+```
+
+
 
 ### Search for Blocks
 
@@ -249,7 +259,7 @@ Your report should include the following sections or similar:
 
 - Objective
 - Methods
-- Results and Analyses
+- Analysis and Results
 - Conclusion 
 
 There are no requirements for font size, page margins, number of pages, etc. Write a professional, senior-level report. 

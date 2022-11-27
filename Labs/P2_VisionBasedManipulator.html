@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔬 P2: Vision-Based Control &#8212; Fundamentals of Robotics</title>
+    <title>🔬 Project2: Vision-Based Control &#8212; Fundamentals of Robotics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -198,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   🔬 P2: Vision-Based Control
+   🔬 Project2: Vision-Based Control
   </a>
  </li>
 </ul>
@@ -307,14 +307,18 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
-   Objectives
+   📌 Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#procedure">
-   Procedure
+   💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#search-for-blocks">
      Search for Blocks
@@ -359,7 +363,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>🔬 P2: Vision-Based Control</h1>
+                <h1>🔬 Project2: Vision-Based Control</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -371,14 +375,18 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
-   Objectives
+   📌 Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#procedure">
-   Procedure
+   💻 Procedure
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#search-for-blocks">
      Search for Blocks
@@ -422,21 +430,25 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="p2-vision-based-control">
-<h1>🔬 P2: Vision-Based Control<a class="headerlink" href="#p2-vision-based-control" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="project2-vision-based-control">
+<h1>🔬 Project2: Vision-Based Control<a class="headerlink" href="#project2-vision-based-control" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<h2>📌 Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this project is to control the robotic arm using computer vision.</p>
 <p>In this project, you will</p>
 <ul class="simple">
-<li><p>Use OpenMV camera to detect, identify, and localize multiple AprilTags.</p></li>
+<li><p>Use the OpenMV camera to detect, identify, and localize multiple AprilTags.</p></li>
 <li><p>Write a Python script to search for blocks and find the locations of the blocks using the AprilTags attached on them.</p></li>
 <li><p>Write a Python script for the robotic arm to move the blocks.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/AprilTagBlocks.jpg"><img alt="../_images/AprilTagBlocks.jpg" class="align-center" src="../_images/AprilTagBlocks.jpg" style="width: 500px;" /></a>
 </div>
 <div class="section" id="procedure">
-<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<h2>💻 Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/xArm_Cam.png"><img alt="../_images/xArm_Cam.png" class="align-center" src="../_images/xArm_Cam.png" style="width: 500px;" /></a>
+</div>
 <div class="section" id="search-for-blocks">
 <h3>Search for Blocks<a class="headerlink" href="#search-for-blocks" title="Permalink to this headline">¶</a></h3>
 <p>We need to search for blocks with AprilTags using the OpenMV cammera attached to the robotic arm. Add the following code to the constructor (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">--init__(...)</span></code>) into your <code class="docutils literal notranslate"><span class="pre">xArm.py</span></code></p>
@@ -659,7 +671,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>Objective</p></li>
 <li><p>Methods</p></li>
-<li><p>Results and Analyses</p></li>
+<li><p>Analysis and Results</p></li>
 <li><p>Conclusion</p></li>
 </ul>
 <p>There are no requirements for font size, page margins, number of pages, etc. Write a professional, senior-level report.
