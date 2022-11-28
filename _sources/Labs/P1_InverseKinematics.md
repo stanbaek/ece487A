@@ -26,6 +26,7 @@ The purpose of this project is to compare the theoretical solution to the invers
 
 - Copy the `test_inverse_kinematics` function and paste it right before `if __name__ == '__main__':`
 
+(P1:Procedure:InvKine)=
 ### Inverse kinematics of 5 DoF robotic arm
 
 Use the schematic diagram shown in the figure below for the forward/inverse kinematics of the robotic manipulator. Note that L1 is not 0.
@@ -74,4 +75,4 @@ Write a Python script that moves a cube located at (25, 0, 0) to (20, 16, 0) and
 
 ### Deliverable 3 (50 points)
 
-Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a different location.
+Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  **You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles except the intial pose.** You may be asked to move the cube from a different location.

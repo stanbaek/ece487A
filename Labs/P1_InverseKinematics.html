@@ -450,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="inverse-kinematics-of-5-dof-robotic-arm">
-<h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h3>
+<span id="p1-procedure-invkine"></span><h3>Inverse kinematics of 5 DoF robotic arm<a class="headerlink" href="#inverse-kinematics-of-5-dof-robotic-arm" title="Permalink to this headline">¶</a></h3>
 <p>Use the schematic diagram shown in the figure below for the forward/inverse kinematics of the robotic manipulator. Note that L1 is not 0.</p>
 <a class="reference internal image-reference" href="../_images/xArm2.png"><img alt="../_images/xArm2.png" class="align-center" src="../_images/xArm2.png" style="width: 450px;" /></a>
 <p><strong>Note:</strong> Frame {5} is attached to the tooltip because of a bug in the robotics toolbox.  It cannot render the end-effector link correctly if we use <code class="docutils literal notranslate"><span class="pre">robot.tool</span> <span class="pre">=</span> <span class="pre">SE3([0,</span> <span class="pre">0,</span> <span class="pre">L4])</span></code></p>
@@ -492,7 +492,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="deliverable-3-50-points">
 <h3>Deliverable 3 (50 points)<a class="headerlink" href="#deliverable-3-50-points" title="Permalink to this headline">¶</a></h3>
-<p>Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles.  You may be asked to move the cube from a different location.</p>
+<p>Write a Python script that moves a stack of five cubes located at (23, -15, 0) to (23, 15, 0) and demo your robot moving the cubes.  <strong>You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles except the intial pose.</strong> You may be asked to move the cube from a different location.</p>
 </div>
 </div>
 </div>

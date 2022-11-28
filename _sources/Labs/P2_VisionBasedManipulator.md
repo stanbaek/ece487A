@@ -27,89 +27,38 @@ In this section, we need to find the location of an AprilTag using the OpenMV ca
 :align: center
 ```
 
-- Given the position of an AprilTag, $^C\mathbf{p}_{A} = \left({}^Cx_A, {}^Cy_A, {}^Cz_A\right)$, and the joint angles of the robotic arm, $(\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)$, find 
-$^B\mathbf{p}_{A} = \left({}^Bx_A, {}^By_A, {}^Bz_A \right)$. You can use ${}^1T_2$, ${}^2T_3$, etc., but it should be descriptive enough to seamlessly write in Python.     
+Given the position of an AprilTag, $^C\mathbf{p}_{A} = \left({}^Cx_A, {}^Cy_A, {}^Cz_A\right)$, the joint angles of the robotic arm, $(\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)$, the link lengths defined in [Project 1](P1:Procedure:InvKine), and the  camera offset distance ($d_s$ in the above figure), find  
+$^B\mathbf{p}_{A} = \left({}^Bx_A, {}^By_A, {}^Bz_A \right)$. Include your mathematical derivation in the final report.  You can use ${}^1T_2$, ${}^2T_3$, etc., but it should be descriptive enough to seamlessly write in Python. 
 
 ### Search for Blocks
 
-We need to search for blocks with AprilTags using the OpenMV cammera attached to the robotic arm. Add the following code to the constructor (`def --init__(...)`) into your `xArm.py`
+We need to search for blocks with AprilTags using the OpenMV cammera attached to the robotic arm. Use the following code snippet in the constructor (`def --init__(...)`) 
 
 ```Python
-        self.B0 = 0.090
-        self.L1 = 0.010
-        self.L2 = 0.105
-        self.L3 = 0.088
-        self.L4 = 0.170
-        #self.camera_distance = 0.133 # distance of OpenMV cam from Joint5
-        self.camera_dist_offset = 0.037  # L4 - camera_distance
+self.camera_dist_offset = 0.037  # L4 - camera_distance
+
+self.mvcam = None
+self.curr_joint_angles = None
         
-                
-        
-        # ADD this for OpenMV Cam
-        self.mvcam = None
-        self.curr_joint_angles = None
-        
-        # dictionary for block locations
-        # for short tutorial for Python dictionary, visit https://www.w3schools.com/python/python_dictionaries.asp
-        self.block_locations = dict()
+# dictionary for block locations
+# for short tutorial for Python dictionary, visit https://www.w3schools.com/python/python_dictionaries.asp
+self.block_locations = dict()
 ```
 
-Add the following `Tag` class before `class XArm(rbt.DHRobot):`
-
+The `Tag` class in `xarm.py` can be used to store AprilTag data.
 
 ```Python
 class Tag(NamedTuple):
-    """ Data structure for AprilTag
-    """
-    id: int
-    x: float
-    y: float
-    z: float
-                
-class XArm(rbt.DHRobot):
 ```
 
-Add the following two functions into your xArm.py.
+Use the following function to connect to your OpenMV camera.
 
 ```Python
-    def connect_mvcam(self):
-
-        if isinstance(self.mvcam, serial.Serial):
-            print(f"The robot is already connected to {self.comm.port}")
-            return
-
-        ports = list_ports.comports()
-        comport = None
-
-        for port, desc, hwid in sorted(ports):
-            if 'OpenMV Cam' in desc:
-                comport = port
-                print("Info: OpenMV Cam is connected to")
-                print("{}: {} [{}]".format(port, desc, hwid))
-                break
-
-        if comport is None:
-            print("Error: Serial port for OpenMV is not available.")
-            print("OpenMV Cam is not connected.")
-            return
-
-        # A serial port is found.  Try to connect.
-        try:
-            self.mvcam = serial.Serial(
-                port=comport,
-                baudrate=115200,
-                parity=serial.PARITY_NONE,
-                stopbits=serial.STOPBITS_ONE,
-                bytesize=serial.EIGHTBITS,
-                timeout=0.01
-            )
-            print(f"Info: OpenMV is connected to {comport}")
-
-        except serial.SerialException:
-            print("Error: Serial port is not available.")
-            print("OpenMV is not connected.")
+def connect_mvcam(self):
+```
             
-            
+
+```Python
     def search_for_blocks(self, duration_ms, pose, steps):
         """ Search for blocks with AprilTags.
         The robotic arm will be moved from the current pose to pose (argument) for duration_ms.
@@ -213,9 +162,9 @@ def test_search_for_blocks():
 
 ## 🚚 Deliverables
 
-###  Deliverable 1 (10 points)
+###  Deliverable 1 (20 points)
 
-Your code should be able to find and identify blocks placed at,
+Your code should be able to find and identify the blocks placed at,
 - (22, 0, 0)
 - (30, 0, 0)
 - (19, -10, 0)
@@ -242,7 +191,7 @@ A few ideas that you may want to consider (not necessarily good ideas)
 
 In the real engineering world, there are always multiple solutions available. There is no right or wrong solution, but there are better solutions. I would like to see your ideas, implementation, justification, and analysis. 
 
-### Deliverable 3 (30+ points)
+### Deliverable 3 (20+ points)
 
 **Demo (30 pts):** Search for a block with AprilTag ID 0 (let's call it Block 0) and Block 1, and place Block 0 on top of Block 1.
 
@@ -253,6 +202,9 @@ The blocks are placed anywhere near the five locations ($\pm 5$ cm) in Deliverab
 - 3 blocks: + 5 points
 - 3 blocks: + 7 points
 
+
+
+**You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles except the intial pose.** 
 
 ### Deliverable 4 (20 points)
 

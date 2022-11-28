@@ -333,8 +333,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable-1-10-points">
-     Deliverable 1 (10 points)
+    <a class="reference internal nav-link" href="#deliverable-1-20-points">
+     Deliverable 1 (20 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -343,8 +343,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable-3-30-points">
-     Deliverable 3 (30+ points)
+    <a class="reference internal nav-link" href="#deliverable-3-20-points">
+     Deliverable 3 (20+ points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -402,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable-1-10-points">
-     Deliverable 1 (10 points)
+    <a class="reference internal nav-link" href="#deliverable-1-20-points">
+     Deliverable 1 (20 points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -412,8 +412,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deliverable-3-30-points">
-     Deliverable 3 (30+ points)
+    <a class="reference internal nav-link" href="#deliverable-3-20-points">
+     Deliverable 3 (20+ points)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -451,85 +451,31 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Apriltag Localization<a class="headerlink" href="#apriltag-localization" title="Permalink to this headline">¶</a></h3>
 <p>In this section, we need to find the location of an AprilTag using the OpenMV camera. Let <span class="math notranslate nohighlight">\(^C\mathbf{p}_{A}\)</span> be the position of the AprilTag with repsect to the camera frame and <span class="math notranslate nohighlight">\(^B\mathbf{p}_{A}\)</span> be the position of the AprilTag with repsect to the base frame. Note that the camera frame is attached to the camera lens.  Given the joint angles, <span class="math notranslate nohighlight">\((\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)\)</span>, we can find the tooltip pose with repect to the base frame, <span class="math notranslate nohighlight">\(^BT_{T}\)</span>, using the forward kinematics. Using the same method, we can also find the camera pose with respect to the base frame, <span class="math notranslate nohighlight">\(^BT_{C}\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/xArm_Cam.png"><img alt="../_images/xArm_Cam.png" class="align-center" src="../_images/xArm_Cam.png" style="width: 500px;" /></a>
-<ul class="simple">
-<li><p>Given the position of an AprilTag, <span class="math notranslate nohighlight">\(^C\mathbf{p}_{A} = \left({}^Cx_A, {}^Cy_A, {}^Cz_A\right)\)</span>, and the joint angles of the robotic arm, <span class="math notranslate nohighlight">\((\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)\)</span>, find
-<span class="math notranslate nohighlight">\(^B\mathbf{p}_{A} = \left({}^Bx_A, {}^By_A, {}^Bz_A \right)\)</span>. You can use <span class="math notranslate nohighlight">\({}^1T_2\)</span>, <span class="math notranslate nohighlight">\({}^2T_3\)</span>, etc., but it should be descriptive enough to seamlessly write in Python.</p></li>
-</ul>
+<p>Given the position of an AprilTag, <span class="math notranslate nohighlight">\(^C\mathbf{p}_{A} = \left({}^Cx_A, {}^Cy_A, {}^Cz_A\right)\)</span>, the joint angles of the robotic arm, <span class="math notranslate nohighlight">\((\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)\)</span>, the link lengths defined in <a class="reference internal" href="P1_InverseKinematics.html#p1-procedure-invkine"><span class="std std-ref">Project 1</span></a>, and the  camera offset distance (<span class="math notranslate nohighlight">\(d_s\)</span> in the above figure), find<br />
+<span class="math notranslate nohighlight">\(^B\mathbf{p}_{A} = \left({}^Bx_A, {}^By_A, {}^Bz_A \right)\)</span>. Include your mathematical derivation in the final report.  You can use <span class="math notranslate nohighlight">\({}^1T_2\)</span>, <span class="math notranslate nohighlight">\({}^2T_3\)</span>, etc., but it should be descriptive enough to seamlessly write in Python.</p>
 </div>
 <div class="section" id="search-for-blocks">
 <h3>Search for Blocks<a class="headerlink" href="#search-for-blocks" title="Permalink to this headline">¶</a></h3>
-<p>We need to search for blocks with AprilTags using the OpenMV cammera attached to the robotic arm. Add the following code to the constructor (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">--init__(...)</span></code>) into your <code class="docutils literal notranslate"><span class="pre">xArm.py</span></code></p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">B0</span> <span class="o">=</span> <span class="mf">0.090</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">L1</span> <span class="o">=</span> <span class="mf">0.010</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">L2</span> <span class="o">=</span> <span class="mf">0.105</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">L3</span> <span class="o">=</span> <span class="mf">0.088</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">L4</span> <span class="o">=</span> <span class="mf">0.170</span>
-        <span class="c1">#self.camera_distance = 0.133 # distance of OpenMV cam from Joint5</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">camera_dist_offset</span> <span class="o">=</span> <span class="mf">0.037</span>  <span class="c1"># L4 - camera_distance</span>
+<p>We need to search for blocks with AprilTags using the OpenMV cammera attached to the robotic arm. Use the following code snippet in the constructor (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">--init__(...)</span></code>)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">camera_dist_offset</span> <span class="o">=</span> <span class="mf">0.037</span>  <span class="c1"># L4 - camera_distance</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">mvcam</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">curr_joint_angles</span> <span class="o">=</span> <span class="kc">None</span>
         
-                
-        
-        <span class="c1"># ADD this for OpenMV Cam</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mvcam</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">curr_joint_angles</span> <span class="o">=</span> <span class="kc">None</span>
-        
-        <span class="c1"># dictionary for block locations</span>
-        <span class="c1"># for short tutorial for Python dictionary, visit https://www.w3schools.com/python/python_dictionaries.asp</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">block_locations</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="c1"># dictionary for block locations</span>
+<span class="c1"># for short tutorial for Python dictionary, visit https://www.w3schools.com/python/python_dictionaries.asp</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">block_locations</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Add the following <code class="docutils literal notranslate"><span class="pre">Tag</span></code> class before <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">XArm(rbt.DHRobot):</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Tag</span></code> class in <code class="docutils literal notranslate"><span class="pre">xarm.py</span></code> can be used to store AprilTag data.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tag</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Data structure for AprilTag</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">z</span><span class="p">:</span> <span class="nb">float</span>
-                
-<span class="k">class</span> <span class="nc">XArm</span><span class="p">(</span><span class="n">rbt</span><span class="o">.</span><span class="n">DHRobot</span><span class="p">):</span>
 </pre></div>
 </div>
-<p>Add the following two functions into your <a class="reference external" href="http://xArm.py">xArm.py</a>.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">connect_mvcam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mvcam</span><span class="p">,</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The robot is already connected to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">comm</span><span class="o">.</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="n">ports</span> <span class="o">=</span> <span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()</span>
-        <span class="n">comport</span> <span class="o">=</span> <span class="kc">None</span>
-
-        <span class="k">for</span> <span class="n">port</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">hwid</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ports</span><span class="p">):</span>
-            <span class="k">if</span> <span class="s1">&#39;OpenMV Cam&#39;</span> <span class="ow">in</span> <span class="n">desc</span><span class="p">:</span>
-                <span class="n">comport</span> <span class="o">=</span> <span class="n">port</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Info: OpenMV Cam is connected to&quot;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">hwid</span><span class="p">))</span>
-                <span class="k">break</span>
-
-        <span class="k">if</span> <span class="n">comport</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Serial port for OpenMV is not available.&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OpenMV Cam is not connected.&quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-        <span class="c1"># A serial port is found.  Try to connect.</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">mvcam</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span>
-                <span class="n">port</span><span class="o">=</span><span class="n">comport</span><span class="p">,</span>
-                <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">,</span>
-                <span class="n">parity</span><span class="o">=</span><span class="n">serial</span><span class="o">.</span><span class="n">PARITY_NONE</span><span class="p">,</span>
-                <span class="n">stopbits</span><span class="o">=</span><span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_ONE</span><span class="p">,</span>
-                <span class="n">bytesize</span><span class="o">=</span><span class="n">serial</span><span class="o">.</span><span class="n">EIGHTBITS</span><span class="p">,</span>
-                <span class="n">timeout</span><span class="o">=</span><span class="mf">0.01</span>
-            <span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Info: OpenMV is connected to </span><span class="si">{</span><span class="n">comport</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">except</span> <span class="n">serial</span><span class="o">.</span><span class="n">SerialException</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: Serial port is not available.&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OpenMV is not connected.&quot;</span><span class="p">)</span>
-            
-            
-    <span class="k">def</span> <span class="nf">search_for_blocks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">pose</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+<p>Use the following function to connect to your OpenMV camera.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">connect_mvcam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">search_for_blocks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration_ms</span><span class="p">,</span> <span class="n">pose</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Search for blocks with AprilTags.</span>
 <span class="sd">        The robotic arm will be moved from the current pose to pose (argument) for duration_ms.</span>
 <span class="sd">        During the transition from the current pose to the desired pose, the robot will stop moving to search</span>
@@ -630,9 +576,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="deliverables">
 <h2>🚚 Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="deliverable-1-10-points">
-<h3>Deliverable 1 (10 points)<a class="headerlink" href="#deliverable-1-10-points" title="Permalink to this headline">¶</a></h3>
-<p>Your code should be able to find and identify blocks placed at,</p>
+<div class="section" id="deliverable-1-20-points">
+<h3>Deliverable 1 (20 points)<a class="headerlink" href="#deliverable-1-20-points" title="Permalink to this headline">¶</a></h3>
+<p>Your code should be able to find and identify the blocks placed at,</p>
 <ul class="simple">
 <li><p>(22, 0, 0)</p></li>
 <li><p>(30, 0, 0)</p></li>
@@ -660,8 +606,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>In the real engineering world, there are always multiple solutions available. There is no right or wrong solution, but there are better solutions. I would like to see your ideas, implementation, justification, and analysis.</p>
 </div>
-<div class="section" id="deliverable-3-30-points">
-<h3>Deliverable 3 (30+ points)<a class="headerlink" href="#deliverable-3-30-points" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="deliverable-3-20-points">
+<h3>Deliverable 3 (20+ points)<a class="headerlink" href="#deliverable-3-20-points" title="Permalink to this headline">¶</a></h3>
 <p><strong>Demo (30 pts):</strong> Search for a block with AprilTag ID 0 (let’s call it Block 0) and Block 1, and place Block 0 on top of Block 1.</p>
 <p>The blocks are placed anywhere near the five locations (<span class="math notranslate nohighlight">\(\pm 5\)</span> cm) in Deliverable 1.</p>
 <p><strong>Demo (3 - 7 bonus pts):</strong> Move multiple blocks (Blocks 0 - 3) on top of Block 4.</p>
@@ -670,6 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>3 blocks: + 5 points</p></li>
 <li><p>3 blocks: + 7 points</p></li>
 </ul>
+<p><strong>You must use the inverse kinematics, not the forward kinematics with pre-calculated joint angles except the intial pose.</strong></p>
 </div>
 <div class="section" id="deliverable-4-20-points">
 <h3>Deliverable 4 (20 points)<a class="headerlink" href="#deliverable-4-20-points" title="Permalink to this headline">¶</a></h3>
