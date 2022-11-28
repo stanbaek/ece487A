@@ -17,7 +17,9 @@ In this project, you will
 ## 💻 Procedure
 
 
-###
+### Apriltag Localization
+
+In this section, we need to find the location of an AprilTag using the OpenMV camera. Let $^C\mathbf{p}_{A}$ be the position of the AprilTag with repsect to the camera frame and $^B\mathbf{p}_{A}$ be the position of the AprilTag with repsect to the base frame. Note that the camera frame is attached to the camera lens.  Given the joint angles, $(\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)$, we can find the tooltip pose with repect to the base frame, $^BT_{T}$, using the forward kinematics. Using the same method, we can also find the camera pose with respect to the base frame, $^BT_{C}$. 
 
 
 ```{image} ./figures/xArm_Cam.png
@@ -25,7 +27,8 @@ In this project, you will
 :align: center
 ```
 
-
+- Given the position of an AprilTag, $^C\mathbf{p}_{A} = \left({}^Cx_A, {}^Cy_A, {}^Cz_A\right)$, and the joint angles of the robotic arm, $(\theta_1, \theta_2, \theta_3, \theta_4, \theta_5)$, find 
+$^B\mathbf{p}_{A} = \left({}^Bx_A, {}^By_A, {}^Bz_A \right)$. You can use ${}^1T_2$, ${}^2T_3$, etc., but it should be descriptive enough to seamlessly write in Python.     
 
 ### Search for Blocks
 
