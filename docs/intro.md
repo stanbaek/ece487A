@@ -1,4 +1,4 @@
-# ECE 487 Fundamentals of Robotics
+# ECE 487 Advanced Robotics
 
 ## 👨‍🏫 Instructor Information
 [![name](https://img.shields.io/badge/Instructor-Dr.%20Stan%20Baek-blue)](https://stanbaek.github.io)
